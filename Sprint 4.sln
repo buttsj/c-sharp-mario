@@ -1,0 +1,38 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30501.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sprint_4", "Sprint 4\Sprint_4\Sprint_4.csproj", "{C99C98FB-97FA-4C71-93E7-154BE4FD4350}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sprint_4Content", "Sprint 4\Sprint_4Content\Sprint_4Content.contentproj", "{F4621168-D22D-477C-95B7-627D4106DEEC}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 3
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://butts102.visualstudio.com/defaultcollection
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = Sprint\u00204\\Sprint_4\\Sprint_4.csproj
+		SccProjectName1 = Sprint\u00204/Sprint_4
+		SccLocalPath1 = Sprint\u00204\\Sprint_4
+		SccProjectUniqueName2 = Sprint\u00204\\Sprint_4Content\\Sprint_4Content.contentproj
+		SccProjectName2 = Sprint\u00204/Sprint_4Content
+		SccLocalPath2 = Sprint\u00204\\Sprint_4Content
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C99C98FB-97FA-4C71-93E7-154BE4FD4350}.Debug|x86.ActiveCfg = Debug|x86
+		{C99C98FB-97FA-4C71-93E7-154BE4FD4350}.Debug|x86.Build.0 = Debug|x86
+		{C99C98FB-97FA-4C71-93E7-154BE4FD4350}.Release|x86.ActiveCfg = Release|x86
+		{C99C98FB-97FA-4C71-93E7-154BE4FD4350}.Release|x86.Build.0 = Release|x86
+		{F4621168-D22D-477C-95B7-627D4106DEEC}.Debug|x86.ActiveCfg = Debug|x86
+		{F4621168-D22D-477C-95B7-627D4106DEEC}.Release|x86.ActiveCfg = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
