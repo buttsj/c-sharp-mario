@@ -29,7 +29,7 @@ namespace Sprint4
             builder.Build(fileName, levelEnemies, levelBlocks, levelItems, levelBackgrounds);
             collision = new CollisionDetector(game);
             soundManager = new SoundManager(game);
-            soundManager.PlaySong(SoundManager.songs.athletic);
+            //soundManager.PlaySong(SoundManager.songs.athletic);
             background = game.Content.Load<Texture2D>("background");
         }
 

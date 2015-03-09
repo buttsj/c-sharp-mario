@@ -16,9 +16,10 @@ namespace Sprint4
         private int starTimer;
         public Vector2 position;
         public Vector2 velocity;
-        public Vector2 maxVelocity = new Vector2((float)2, (float)20);
+        public Vector2 maxVelocity = new Vector2((float)2, (float)16);
         public Vector2 minVelocity = new Vector2((float) -2, (float)-5);
         Game1 game;
+        public int marioHeight = 0;
 
 
         public Mario(Game1 game, Vector2 position)
@@ -55,7 +56,7 @@ namespace Sprint4
         public void Down()
         {
             state.Down();
-            velocity.Y++;
+            //velocity.Y++;
         }
 
         public void GoLeft()
