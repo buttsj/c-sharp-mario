@@ -224,9 +224,10 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Sprint_4Content\Sprint_4Content.contentproj">
-      <Name>Sprint_4Content</Name>
+    <ProjectReference Include="..\Sprint_4Content\Sprint4Content.contentproj">
+      <Name>Sprint4Content</Name>
       <XnaReferenceType>Content</XnaReferenceType>
+      <Project>{F4621168-D22D-477C-95B7-627D4106DEEC}</Project>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
