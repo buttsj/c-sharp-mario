@@ -11,11 +11,8 @@ namespace Sprint4
 {
     class CameraController
     {
-        private KeyboardState keyboardState;
+       
         private Game1 game;
-
-        ICommands currentCommand;
-        Dictionary<Keys, ICommands> commandLibrary;
 
         public CameraController(Game1 game)
         {
