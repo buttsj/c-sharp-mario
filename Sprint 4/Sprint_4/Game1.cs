@@ -20,6 +20,7 @@ namespace Sprint4
         public static ContentManager gameContent;
         public Level level;
         CollisionTests tester;
+        IGameState gameState;
         public SoundManager soundManager;
 
         public Game1()
@@ -31,6 +32,7 @@ namespace Sprint4
 
         protected override void Initialize()
         {
+            gameState = new PlayGameState(this);
             keyboardController = new KeyboardController(this);
             gamepadController = new GamepadController(this);
             soundManager = new SoundManager(this);
@@ -47,9 +49,7 @@ namespace Sprint4
 
         protected override void Update(GameTime gameTime)
         {
-            keyboardController.Update();
-            //gamepadController.Update();
-            level.Update(gameTime);
+            gameState.Update(gameTime);
             base.Update(gameTime);
         }
 
@@ -57,7 +57,7 @@ namespace Sprint4
         {
             GraphicsDevice.Clear(Color.White);
             spriteBatch.Begin();
-            level.Draw(spriteBatch);
+            gameState.Draw(spriteBatch);
             spriteBatch.End();
             base.Draw(gameTime);
         }
