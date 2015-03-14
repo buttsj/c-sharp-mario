@@ -41,6 +41,7 @@ namespace Sprint4
             if (!enemy.isDead)
             {
                 state.TakeDamage();
+                game.soundManager.shrink.Play();
             }
             marioIsBig = false;
         }

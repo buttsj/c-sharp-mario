@@ -15,11 +15,11 @@ namespace Sprint4
     {
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
+        public static ContentManager gameContent;
         public IController keyboardController;
         public IController gamepadController;
-        public static ContentManager gameContent;
-        public Level level;
         public IGameState gameState;
+        public Level level;
         public SoundManager soundManager;
 
         public Game1()

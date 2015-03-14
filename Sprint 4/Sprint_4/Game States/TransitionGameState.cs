@@ -18,7 +18,6 @@ namespace Sprint4
             this.prevState = prevState;
             this.newState = newState;
             currentState = prevState;
-            game.soundManager.shrink.Play();
         }
         public void Update(GameTime gameTime)
         {

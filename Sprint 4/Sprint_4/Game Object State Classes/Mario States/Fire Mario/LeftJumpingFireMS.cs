@@ -26,7 +26,7 @@ namespace Sprint4
 
         public void TakeDamage()
         {
-            game.level.mario.state = new LeftJumpingSmallMS(game);
+            game.gameState = new TransitionGameState(game, game.level.mario.state, new LeftJumpingSmallMS(game));
         }
         public void Up()
         {

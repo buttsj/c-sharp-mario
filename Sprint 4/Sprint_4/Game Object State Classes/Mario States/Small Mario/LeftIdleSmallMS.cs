@@ -53,7 +53,7 @@ namespace Sprint4
         }
         public void MakeBigMario()
         {
-            game.level.mario.state = new LeftIdleBigMS(game);
+            game.gameState = new TransitionGameState(game, game.level.mario.state, new LeftIdleBigMS(game));
         }
         public void MakeSmallMario()
         {
@@ -61,7 +61,7 @@ namespace Sprint4
         }
         public void MakeFireMario()
         {
-            game.level.mario.state = new LeftIdleFireMS(game);
+            game.gameState = new TransitionGameState(game, game.level.mario.state, new LeftIdleFireMS(game));
         }
         public void MakeDeadMario()
         {
