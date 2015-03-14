@@ -67,7 +67,7 @@ namespace Sprint4
                     if (block.state.GetType().Equals(new BrickBlockState(game).GetType()) && mario.marioIsBig)
                     {
                         destroyedBlocks.Add(block);
-                        game.level.soundManager.PlaySoundEffect(SoundManager.sfx.brick);
+                        game.soundManager.PlaySoundEffect(SoundManager.sfx.brick);
                     }
                 }
             }

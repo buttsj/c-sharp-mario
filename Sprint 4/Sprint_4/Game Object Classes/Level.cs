@@ -18,7 +18,6 @@ namespace Sprint4
         public List<Item> levelItems = new List<Item>();
         public List<KeyValuePair<IAnimatedSprite, Vector2>> levelBackgrounds = new List<KeyValuePair<IAnimatedSprite, Vector2>>();
         public CollisionDetector collision;
-        public SoundManager soundManager;
         public Texture2D background;
         
         public Level(Game1 game, string fileName, bool haveSound)
@@ -28,9 +27,8 @@ namespace Sprint4
             builder = new LevelBuilder(game);
             builder.Build(fileName, levelEnemies, levelBlocks, levelItems, levelBackgrounds);
             collision = new CollisionDetector(game);
-            soundManager = new SoundManager(game);
-            //soundManager.PlaySong(SoundManager.songs.athletic);
             background = game.Content.Load<Texture2D>("background");
+            game.soundManager.PlaySong(SoundManager.songs.athletic);
         }
 
         public void Update(GameTime gameTime)

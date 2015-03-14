@@ -1,4 +1,5 @@
 ﻿using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Audio;
 using Microsoft.Xna.Framework.Graphics;
 using System;
 using System.Collections.Generic;
@@ -20,6 +21,7 @@ namespace Sprint4
         public Vector2 minVelocity = new Vector2((float) -2, (float)-5);
         Game1 game;
         public int marioHeight = 0;
+        SoundEffectInstance jumpFX;
 
 
         public Mario(Game1 game, Vector2 position)
@@ -31,6 +33,7 @@ namespace Sprint4
             this.game = game;
             this.position.X = position.X;
             this.position.Y = position.Y;
+            jumpFX = this.game.soundManager.jump.CreateInstance();
         }
 
         public void TakeDamage(Enemy enemy)
@@ -49,6 +52,12 @@ namespace Sprint4
             {
                 physState = new JumpingState(game);
                 velocity.Y -= (float)2;
+
+                if (jumpFX.State == SoundState.Stopped)
+                {
+                    jumpFX.Play();
+                }
+
             }
             state.Up();
         }
@@ -127,7 +136,7 @@ namespace Sprint4
             {
                 marioIsStar = false;
                 starTimer = 1000;
-                game.level.soundManager.PlaySong(SoundManager.songs.athletic);
+                game.soundManager.PlaySong(SoundManager.songs.athletic);
             }
             state.Update(gameTime);
             physState.Update(this, gameTime);

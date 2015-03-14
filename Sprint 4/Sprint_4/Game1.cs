@@ -20,6 +20,7 @@ namespace Sprint4
         public static ContentManager gameContent;
         public Level level;
         CollisionTests tester;
+        public SoundManager soundManager;
 
         public Game1()
         {
@@ -32,7 +33,8 @@ namespace Sprint4
         {
             keyboardController = new KeyboardController(this);
             gamepadController = new GamepadController(this);
-            level = new Level(this, "/Maps/Map.csv", false);            
+            soundManager = new SoundManager(this);
+            level = new Level(this, "/Maps/Map.csv", false);
             base.Initialize();
         }
 

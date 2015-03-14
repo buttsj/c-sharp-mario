@@ -13,6 +13,7 @@ namespace Sprint4
         public bool isDead = false;
         public enum Enemies { Dino, Koopa, Bill, SmashedDino}
         public float xpos = 0, ypos = 0;
+        Game1 game;
 
         public Enemy(Game1 game, Enemy.Enemies type, Vector2 position)
         {
@@ -34,6 +35,7 @@ namespace Sprint4
             }
             xpos = position.X;
             ypos = position.Y;
+            this.game = game;
         }
         public void GoLeft()
         {
@@ -46,6 +48,7 @@ namespace Sprint4
         public void TakeDamage()
         {
             state.TakeDamage(this);
+            game.soundManager.enemyDamage.Play();
         }
         public void Update(GameTime gameTime)
         {

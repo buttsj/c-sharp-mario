@@ -19,26 +19,26 @@ namespace Sprint4
             if (item.sprite.GetType().Equals((factory.build(SpriteFactory.sprites.star)).GetType()))
             {
                 mario.marioIsStar = true;
-                game.level.soundManager.PlaySong(SoundManager.songs.star);
+                game.soundManager.PlaySong(SoundManager.songs.star);
             }
             if (item.sprite.GetType().Equals((factory.build(SpriteFactory.sprites.superMushroom)).GetType()))
             {
                 mario.MakeBigMario();
-                game.level.soundManager.PlaySoundEffect(SoundManager.sfx.grow);
+                game.soundManager.PlaySoundEffect(SoundManager.sfx.grow);
             }
             if (item.sprite.GetType().Equals((factory.build(SpriteFactory.sprites.fireFlower)).GetType()))
             {
                 mario.MakeFireMario();
-                game.level.soundManager.PlaySoundEffect(SoundManager.sfx.grow);
+                game.soundManager.PlaySoundEffect(SoundManager.sfx.grow);
             }
             if (item.sprite.GetType().Equals((factory.build(SpriteFactory.sprites.coin)).GetType()))
             {
-                game.level.soundManager.PlaySoundEffect(SoundManager.sfx.coin);
+                game.soundManager.PlaySoundEffect(SoundManager.sfx.coin);
                 //coinCount++
             }
             if (item.sprite.GetType().Equals((factory.build(SpriteFactory.sprites.oneUpMushroom)).GetType()))
             {
-                game.level.soundManager.PlaySoundEffect(SoundManager.sfx.oneUp);
+                game.soundManager.PlaySoundEffect(SoundManager.sfx.oneUp);
                 //lifeCount++
             }
         }
