@@ -12,13 +12,14 @@ namespace Sprint4
     {
         public IEnemyState state;
         public bool isDead = false;
+        int deathTimer = 15;
         public enum Enemies { Dino, Koopa, Bill, SmashedDino}
         public bool right = false, left = true;
-        public float xpos = 0, ypos = 0;
+        public Vector2 position;
         Game1 game;
         SoundEffectInstance hurtFX;
 
-        public Enemy(Game1 game, Enemy.Enemies type, Vector2 position)
+        public Enemy(Game1 game, Enemy.Enemies type, Vector2 location)
         {
             if (type == Enemy.Enemies.Bill)
             {
@@ -36,8 +37,7 @@ namespace Sprint4
             {
                 state = new LeftSmashedDinoState(game);
             }
-            xpos = position.X;
-            ypos = position.Y;
+            position = location;
             this.game = game;
             hurtFX = this.game.soundManager.enemyDamage.CreateInstance();
         }
@@ -72,14 +72,22 @@ namespace Sprint4
             {
                 state.GoRight(this);
             }
+            if (isDead)
+            {
+                deathTimer--;
+            }
+            if (deathTimer <= 0)
+            {
+                state = new NullEnemyState();
+            }
         }
-        public void Draw(SpriteBatch spriteBatch, Vector2 location)
+        public void Draw(SpriteBatch spriteBatch)
         {
-            state.Draw(spriteBatch, location);
+            state.Draw(spriteBatch, position);
         }
         public Rectangle GetRectangle()
         {
-            return state.GetRectangle(new Vector2(xpos, ypos));
+            return state.GetRectangle(position);
         }
     }
 }

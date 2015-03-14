@@ -27,7 +27,7 @@ namespace Sprint4
         public void TakeDamage(Enemy enemy)
         {
             enemy.state = new RightSmashedDinoState(game);
-            enemy.ypos += 16;
+            enemy.position.Y += 16;
         }
         public void GoLeft(Enemy enemy)
         {
@@ -35,7 +35,7 @@ namespace Sprint4
         }
         public void GoRight(Enemy enemy)
         {
-            enemy.xpos++;
+            enemy.position.X++;
         }
 
         public void Update(GameTime gameTime)

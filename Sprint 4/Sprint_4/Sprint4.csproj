@@ -81,7 +81,6 @@
     <Compile Include="Collision Detection and Response\CollisionDetector.cs" />
     <Compile Include="Collision Detection and Response\EnemyCollisionResponder.cs" />
     <Compile Include="Collision Detection and Response\ItemCollisionResponder.cs" />
-    <Compile Include="CollisionTests.cs" />
     <Compile Include="Command Classes\DownCommand.cs" />
     <Compile Include="Command Classes\IdleCommand.cs" />
     <Compile Include="Command Classes\LeftCommand.cs" />
@@ -95,6 +94,7 @@
     <Compile Include="Command Classes\UpCommand.cs" />
     <Compile Include="Controller Classes\GamepadController.cs" />
     <Compile Include="Controller Classes\KeyboardController.cs" />
+    <Compile Include="Game Object State Classes\Enemy States\NullEnemyState.cs" />
     <Compile Include="Game States\TransitionGameState.cs" />
     <Compile Include="Game States\PlayGameState .cs" />
     <Compile Include="Game States\DeadGameState.cs" />

@@ -34,7 +34,7 @@ namespace Sprint4
         }
         public void GoRight(Enemy enemy)
         {
-            enemy.xpos++;
+            enemy.position.X++;
         }
 
         public void Update(GameTime gameTime)

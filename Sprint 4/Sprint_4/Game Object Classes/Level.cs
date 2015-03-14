@@ -54,7 +54,7 @@ namespace Sprint4
             spriteBatch.Draw(background, new Rectangle(0, 0, 800, 480), Color.White);
             foreach (Enemy enemy in levelEnemies)
             {
-                enemy.Draw(spriteBatch, new Vector2(enemy.xpos, enemy.ypos));
+                enemy.Draw(spriteBatch);
             }
             foreach (Item item in levelItems)
             {

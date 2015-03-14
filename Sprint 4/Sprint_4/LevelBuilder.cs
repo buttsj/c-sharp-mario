@@ -59,8 +59,8 @@ namespace Sprint4
                     if(itemDictionary.ContainsKey(words[i]))
                     {
                         Item item = new Item(factory.build(itemDictionary[words[i]]));
-                        item.xpos = xCoord;
-                        item.ypos = yCoord;
+                        item.position.X = xCoord;
+                        item.position.Y = yCoord;
                         levelItems.Add(item);
                     }
                     if (backgroundDictionary.ContainsKey(words[i]))

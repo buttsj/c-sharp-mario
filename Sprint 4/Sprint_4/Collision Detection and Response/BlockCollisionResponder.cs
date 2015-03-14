@@ -46,10 +46,11 @@ namespace Sprint4
                        // back up. I've added 1 to his position to stop it, but this causes a tiny dip into the ground when he
                         //lands
                     //mario.position.Y = mario.position.Y - intersection.Height +1;
-                    //Another possible fix is this, but now he can't crouch until I figure out how to fix that. He also has 
+                    //Another possible fix is this, but now he has 
                     // a little bounce up when he lands, which may not be an issue. I think that's caused by 
                     // mario hitting the ground in his falling sprite, then realizing he's supposed to be in ground state and 
-                    // switching to standing/walking mode. The state logic might not be able to keep up.
+                    // switching to standing/walking mode. The state logic might not be able to keep up. It only happens sometimes,
+                    // so who knows?
                     
                     if (!mario.physState.GetType().Equals((new JumpingState(game)).GetType()))
                     {
@@ -64,10 +65,6 @@ namespace Sprint4
                 else
                 {
                     mario.position.Y = mario.position.Y + intersection.Height;
-                    if (hitBlock.State == SoundState.Stopped)
-                    {
-                        hitBlock.Play();
-                    }
                     block.Reaction();
                     mario.physState = new FallingState(game);
                     mario.marioHeight = 0;
@@ -89,22 +86,22 @@ namespace Sprint4
             {
                 if (itemRect.Right > blockRect.Left && itemRect.Right < blockRect.Right)
                 {
-                    item.xpos = item.xpos - intersection.Width;
+                    item.position.X= item.position.X - intersection.Width;
                 }
                 else
                 {
-                    item.xpos = item.xpos + intersection.Width;
+                    item.position.X = item.position.X + intersection.Width;
                 }
             }
             else
             {
                 if (itemRect.Bottom > blockRect.Top && itemRect.Bottom < blockRect.Bottom)
                 {
-                    item.ypos = item.ypos - intersection.Height;
+                    item.position.Y = item.position.Y - intersection.Height;
                 }
                 else
                 {
-                    item.ypos = item.ypos + intersection.Height;
+                    item.position.Y = item.position.Y + intersection.Height;
                 }
             }
         }
@@ -118,12 +115,12 @@ namespace Sprint4
             {
                 if (enemyRect.Right > blockRect.Left && enemyRect.Right < blockRect.Right)
                 {
-                    enemy.xpos = enemy.xpos - intersection.Width;
+                    enemy.position.X = enemy.position.X - intersection.Width;
                     enemy.GoLeft();
                 }
                 else
                 {
-                    enemy.xpos = enemy.xpos + intersection.Width;
+                    enemy.position.X = enemy.position.X + intersection.Width;
                     enemy.GoRight();
                 }
             }
@@ -131,11 +128,11 @@ namespace Sprint4
             {
                 if (enemyRect.Bottom > blockRect.Top && enemyRect.Bottom < blockRect.Bottom)
                 {
-                    enemy.ypos = enemy.ypos - intersection.Height;
+                    enemy.position.Y = enemy.position.Y - intersection.Height;
                 }
                 else
                 {
-                    enemy.ypos = enemy.ypos + intersection.Height;
+                    enemy.position.Y = enemy.position.Y + intersection.Height;
                 }
             }
         }

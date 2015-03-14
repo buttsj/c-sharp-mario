@@ -23,6 +23,7 @@ namespace Sprint4
             {
                 if (!mario.marioIsStar)
                 {
+                    //rework this collision detection, as it makes the game brutally hard.
                     mario.TakeDamage(enemy);
                 }
                 else
@@ -59,13 +60,13 @@ namespace Sprint4
             {
                 if (enemy1Rect.Right > enemy2Rect.Left && enemy1Rect.Right < enemy2Rect.Right)
                 {
-                    enemy1.xpos = enemy1.xpos - intersection.Width;
+                    enemy1.position.X -= intersection.Width;
                     enemy1.GoLeft();
                     enemy2.GoRight();
                 }
                 else
                 {
-                    enemy1.xpos = enemy1.xpos + intersection.Width;
+                    enemy1.position.X += intersection.Width;
                     enemy1.GoRight();
                     enemy2.GoLeft();
                 }
