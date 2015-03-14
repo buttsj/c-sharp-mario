@@ -39,7 +39,6 @@ namespace Sprint4
         }
         public void GoLeft()
         {
-            game.level.mario.position.X--;
         }
         public void GoRight()
         {

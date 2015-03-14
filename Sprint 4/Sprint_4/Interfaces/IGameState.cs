@@ -7,7 +7,7 @@ using System.Text;
 
 namespace Sprint4
 {
-    interface IGameState
+    public interface IGameState
     {
         void Update(GameTime gameTime);
         void Draw(SpriteBatch spriteBatch);

@@ -19,8 +19,7 @@ namespace Sprint4
         public IController gamepadController;
         public static ContentManager gameContent;
         public Level level;
-        CollisionTests tester;
-        IGameState gameState;
+        public IGameState gameState;
         public SoundManager soundManager;
 
         public Game1()
@@ -42,9 +41,7 @@ namespace Sprint4
 
         protected override void LoadContent()
         {
-            //tester = new CollisionTests(this);
             spriteBatch = new SpriteBatch(GraphicsDevice);
-            //tester.Test();
         }
 
         protected override void Update(GameTime gameTime)

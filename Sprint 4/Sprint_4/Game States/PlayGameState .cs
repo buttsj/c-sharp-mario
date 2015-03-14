@@ -7,22 +7,24 @@ using System.Text;
 
 namespace Sprint4
 {
-    class TransitionGameState :IGameState
+    class PlayGameState :IGameState
     {
         Game1 game;
-        public TransitionGameState(Game1 game)
+
+        public PlayGameState(Game1 game)
         {
             this.game = game;
         }
         public void Update(GameTime gameTime)
         {
-            //mario's transition animation. His previous and future state should be used to swap between 
-            //in the animation. Lasts ~2 seconds, then goes back to playState. Everything else is frozen.
+            game.keyboardController.Update();
+            //gamepadController.Update();
+            game.level.Update(gameTime);
         }
 
         public void Draw(SpriteBatch spriteBatch)
-        {
-            game.level.Draw(spriteBatch);
+        {     
+            game.level.Draw(spriteBatch);   
         }
     }
 }

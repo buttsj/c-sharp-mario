@@ -95,10 +95,10 @@
     <Compile Include="Command Classes\UpCommand.cs" />
     <Compile Include="Controller Classes\GamepadController.cs" />
     <Compile Include="Controller Classes\KeyboardController.cs" />
-    <Compile Include="TransitionGameState.cs" />
-    <Compile Include="PlayGameState .cs" />
-    <Compile Include="DeadGameState.cs" />
-    <Compile Include="IGameState.cs" />
+    <Compile Include="Game States\TransitionGameState.cs" />
+    <Compile Include="Game States\PlayGameState .cs" />
+    <Compile Include="Game States\DeadGameState.cs" />
+    <Compile Include="Interfaces\IGameState.cs" />
     <Compile Include="Physics States\FallingState.cs" />
     <Compile Include="Game Object Classes\Block.cs" />
     <Compile Include="Game Object Classes\Enemy.cs" />

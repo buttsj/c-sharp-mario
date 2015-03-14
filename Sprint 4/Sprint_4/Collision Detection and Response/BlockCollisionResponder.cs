@@ -1,4 +1,5 @@
 ﻿using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Audio;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,11 +11,13 @@ namespace Sprint4
     {
         ISpriteFactory factory = new SpriteFactory();
         Game1 game;
+        SoundEffectInstance hitBlock;
 
 
         public BlockCollisionResponder(Game1 game)
         {
             this.game = game;
+            hitBlock = game.soundManager.land.CreateInstance();
         }
         
         public void MarioBlockCollide(Mario mario, Block block, List<Block> destroyedBlocks, List<Block> standingBlocks)
@@ -61,6 +64,10 @@ namespace Sprint4
                 else
                 {
                     mario.position.Y = mario.position.Y + intersection.Height;
+                    if (hitBlock.State == SoundState.Stopped)
+                    {
+                        hitBlock.Play();
+                    }
                     block.Reaction();
                     mario.physState = new FallingState(game);
                     mario.marioHeight = 0;
@@ -112,10 +119,12 @@ namespace Sprint4
                 if (enemyRect.Right > blockRect.Left && enemyRect.Right < blockRect.Right)
                 {
                     enemy.xpos = enemy.xpos - intersection.Width;
+                    enemy.GoLeft();
                 }
                 else
                 {
                     enemy.xpos = enemy.xpos + intersection.Width;
+                    enemy.GoRight();
                 }
             }
             else

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using Microsoft.Xna.Framework.Audio;
 
 namespace Sprint4
 {
@@ -12,8 +13,10 @@ namespace Sprint4
         public IEnemyState state;
         public bool isDead = false;
         public enum Enemies { Dino, Koopa, Bill, SmashedDino}
+        public bool right = false, left = true;
         public float xpos = 0, ypos = 0;
         Game1 game;
+        SoundEffectInstance hurtFX;
 
         public Enemy(Game1 game, Enemy.Enemies type, Vector2 position)
         {
@@ -36,23 +39,39 @@ namespace Sprint4
             xpos = position.X;
             ypos = position.Y;
             this.game = game;
+            hurtFX = this.game.soundManager.enemyDamage.CreateInstance();
         }
         public void GoLeft()
         {
             state.GoLeft(this);
+            left = true;
+            right = false;
         }
         public void GoRight()
         {
             state.GoRight(this);
+            left = false;
+            right = true;
         }
         public void TakeDamage()
         {
             state.TakeDamage(this);
-            game.soundManager.enemyDamage.Play();
+            if (hurtFX.State == SoundState.Stopped)
+            {
+                hurtFX.Play();
+            }
         }
         public void Update(GameTime gameTime)
         {
             state.Update(gameTime);
+            if (left)
+            {
+                state.GoLeft(this);
+            }
+            else
+            {
+                state.GoRight(this);
+            }
         }
         public void Draw(SpriteBatch spriteBatch, Vector2 location)
         {

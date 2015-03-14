@@ -64,8 +64,10 @@ namespace Sprint4
 
         public void Down()
         {
+            //mario can still move left and right when in crouch state. Need to fix. The problem is that he's
+            //in falling state due to his velocity, but if I turn that off he wont crouch.
             state.Down();
-            //velocity.Y++;
+            velocity.Y++;
         }
 
         public void GoLeft()
@@ -149,11 +151,10 @@ namespace Sprint4
                 state.Draw(spriteBatch, position);
             }
             if (!marioIsStar)
-                {
-                    state.Draw(spriteBatch, position);
-                }
-                    state.Draw(spriteBatch, position);
+            {
+                state.Draw(spriteBatch, position);
             }
+         }
         }
     }
 

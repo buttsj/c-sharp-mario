@@ -17,6 +17,7 @@ namespace Sprint4
             ISpriteFactory factory = new SpriteFactory();
             sprite = factory.build(SpriteFactory.sprites.deadMario);
             this.game = game;
+            game.gameState = new DeadGameState(game);
         }
         public Rectangle getRectangle(Vector2 location)
         {
