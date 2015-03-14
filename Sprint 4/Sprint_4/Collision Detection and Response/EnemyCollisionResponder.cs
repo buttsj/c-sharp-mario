@@ -50,5 +50,27 @@ namespace Sprint4
                 }
             }
         }
+        public void EnemyEnemyCollide(Enemy enemy1, Enemy enemy2)
+        {
+            Rectangle enemy1Rect = enemy1.GetRectangle();
+            Rectangle enemy2Rect = enemy2.GetRectangle();
+            Rectangle intersection = Rectangle.Intersect(enemy1Rect, enemy2Rect);
+            if (intersection.Height > intersection.Width)
+            {
+                if (enemy1Rect.Right > enemy2Rect.Left && enemy1Rect.Right < enemy2Rect.Right)
+                {
+                    enemy1.xpos = enemy1.xpos - intersection.Width;
+                    enemy1.GoLeft();
+                    enemy2.GoRight();
+                }
+                else
+                {
+                    enemy1.xpos = enemy1.xpos + intersection.Width;
+                    enemy1.GoRight();
+                    enemy2.GoLeft();
+                }
+            }
+          
+        }
     }
 }

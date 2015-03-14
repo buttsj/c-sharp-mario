@@ -84,6 +84,14 @@ namespace Sprint4
                         blockResponder.EnemyBlockCollide(enemy, block);
                     }
                 }
+                foreach (Enemy otherEnemy in levelEnemies)
+                {
+                    Rectangle otherEnemyRect = enemy.GetRectangle();
+                    if (otherEnemy != enemy && enemyRect.Intersects(otherEnemyRect))
+                    {
+                        enemyResponder.EnemyEnemyCollide(enemy, otherEnemy);
+                    }
+                }
             }
 
             foreach (Item obtainedItem in obtainedItems)
