@@ -24,7 +24,7 @@ namespace Sprint4
         public Level(Game1 game, string fileName, bool haveSound)
         {
             this.game = game;
-            mario = new Mario(this.game, new Vector2(250, 444));
+            mario = new Mario(this.game, new Vector2(250, (float)440));
             builder = new LevelBuilder(game);
             builder.Build(fileName, levelEnemies, levelBlocks, levelItems, levelBackgrounds);
             collision = new CollisionDetector(game);

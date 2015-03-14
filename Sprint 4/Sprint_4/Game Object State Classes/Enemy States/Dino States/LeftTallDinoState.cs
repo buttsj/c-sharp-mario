@@ -26,6 +26,7 @@ namespace Sprint4
         public void TakeDamage(Enemy enemy)
         {
             enemy.state = new LeftSmashedDinoState(game);
+            enemy.ypos += 16;
         }
         public void GoLeft(Enemy enemy)
         {

@@ -18,9 +18,10 @@ namespace Sprint4
         }
         public void Update(Mario mario, GameTime gameTime)
         {
-            mario.position += mario.velocity * ((float)gameTime.ElapsedGameTime.Milliseconds / (float)40.0);
-            mario.velocity *= speedDecayRate;
             mario.velocity.Y = 0;
+            mario.position += mario.velocity * ((float)gameTime.ElapsedGameTime.Milliseconds /(float)40);
+
+            mario.velocity *= speedDecayRate;
             if (game.level.collision.standingBlocks.Count == 0)
             {
                 mario.physState = new FallingState(game);

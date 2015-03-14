@@ -35,6 +35,7 @@ namespace Sprint4
                 if (marioRect.Bottom > enemyRect.Top && marioRect.Bottom < enemyRect.Bottom)
                 {
                     enemy.TakeDamage();
+                    mario.velocity.Y = -20;
                 }
                 else
                 {

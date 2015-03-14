@@ -27,6 +27,7 @@ namespace Sprint4
         {
             enemy.state = new DeadDinoState(game);
             enemy.isDead = true;
+            enemy.ypos += 8;
         }
         public void GoLeft(Enemy enemy)
         {

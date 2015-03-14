@@ -26,8 +26,8 @@ namespace Sprint4
         public Rectangle GetRectangle(Vector2 location)
         {
             int width = Texture.Width / Columns;
-            int height = Texture.Height / Rows;
-            return new Rectangle((int)location.X, (int)location.Y, width, height);
+            int height = Texture.Height/ Rows;
+            return new Rectangle((int)location.X , (int)location.Y, width, height);
         }
 
         public void Update(GameTime gameTime) 
