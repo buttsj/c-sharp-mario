@@ -18,8 +18,8 @@ namespace Sprint4
         public int invicibilityFrames = 0;
         public Vector2 position;
         public Vector2 velocity;
-        public Vector2 maxVelocity = new Vector2((float)2, (float)16);
-        public Vector2 minVelocity = new Vector2((float) -2, (float)-5);
+        public Vector2 maxVelocity = new Vector2((float)6, (float)16);
+        public Vector2 minVelocity = new Vector2((float) -6, (float)-5);
         public int marioHeight = 0;
         SoundEffectInstance jumpFX;
 
@@ -30,6 +30,14 @@ namespace Sprint4
             this.game = game;
             this.position = position;
             jumpFX = game.soundManager.jump.CreateInstance();
+        }
+
+        public void Run()
+        {
+            if (velocity.X > minVelocity.X && velocity.X < maxVelocity.X)
+            {
+                velocity.X *= (float)1.3;
+            }
         }
 
         public void TakeDamage()

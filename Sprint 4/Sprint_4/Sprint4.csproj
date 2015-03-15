@@ -81,6 +81,7 @@
     <Compile Include="Collision Detection and Response\CollisionDetector.cs" />
     <Compile Include="Collision Detection and Response\EnemyCollisionResponder.cs" />
     <Compile Include="Collision Detection and Response\ItemCollisionResponder.cs" />
+    <Compile Include="Command Classes\RunCommand.cs" />
     <Compile Include="Command Classes\DownCommand.cs" />
     <Compile Include="Command Classes\IdleCommand.cs" />
     <Compile Include="Command Classes\LeftCommand.cs" />

@@ -23,6 +23,7 @@ namespace Sprint4
 
             commandLibrary = new Dictionary<Keys, ICommands>();
             commandLibrary.Add(Keys.W, currentCommand = new UpCommand(this.game));
+            commandLibrary.Add(Keys.X, currentCommand = new RunCommand(this.game));
             commandLibrary.Add(Keys.Up, currentCommand = new UpCommand(this.game));
             commandLibrary.Add(Keys.S, currentCommand = new DownCommand(this.game));
             commandLibrary.Add(Keys.Down, currentCommand = new DownCommand(this.game));
