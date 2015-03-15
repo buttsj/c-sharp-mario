@@ -86,10 +86,6 @@
     <Compile Include="Command Classes\LeftCommand.cs" />
     <Compile Include="Command Classes\ResetSceneCommand.cs" />
     <Compile Include="Command Classes\RightCommand.cs" />
-    <Compile Include="Command Classes\SetBigCommand.cs" />
-    <Compile Include="Command Classes\SetDeadCommand.cs" />
-    <Compile Include="Command Classes\SetFireCommand.cs" />
-    <Compile Include="Command Classes\SetSmallCommand.cs" />
     <Compile Include="Command Classes\TestQuitCommand.cs" />
     <Compile Include="Command Classes\UpCommand.cs" />
     <Compile Include="Controller Classes\GamepadController.cs" />

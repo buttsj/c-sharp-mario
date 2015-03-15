@@ -20,7 +20,7 @@ namespace Sprint4
         public CollisionDetector collision;
         public Texture2D background;
         
-        public Level(Game1 game, string fileName, bool haveSound)
+        public Level(Game1 game, string fileName)
         {
             this.game = game;
             mario = new Mario(this.game, new Vector2(250, (float)440));
@@ -28,7 +28,7 @@ namespace Sprint4
             builder.Build(fileName, levelEnemies, levelBlocks, levelItems, levelBackgrounds);
             collision = new CollisionDetector(game);
             background = game.Content.Load<Texture2D>("background");
-            //game.soundManager.PlaySong(SoundManager.songs.athletic);
+            game.soundManager.PlaySong(SoundManager.songs.athletic);
         }
 
         public void Update(GameTime gameTime)

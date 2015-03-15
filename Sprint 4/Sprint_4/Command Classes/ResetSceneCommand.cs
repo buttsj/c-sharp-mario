@@ -15,7 +15,7 @@ namespace Sprint4
 
         public void Execute()
         {
-            game.level = new Level(game, "/Maps/Map.csv", true);
+            game.level = new Level(game, "/Maps/Map.csv");
         }
     }
 }

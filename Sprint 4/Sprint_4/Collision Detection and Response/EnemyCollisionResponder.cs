@@ -24,7 +24,7 @@ namespace Sprint4
                 if (!mario.marioIsStar)
                 {
                     //rework this collision detection, as it makes the game brutally hard.
-                    mario.TakeDamage(enemy);
+                    mario.TakeDamage();
                 }
                 else
                 {
@@ -42,7 +42,7 @@ namespace Sprint4
                 {
                     if (!mario.marioIsStar)
                     {
-                        mario.TakeDamage(enemy);
+                        mario.TakeDamage();
                     }
                     else
                     {

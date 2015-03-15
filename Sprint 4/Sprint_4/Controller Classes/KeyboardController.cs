@@ -32,11 +32,6 @@ namespace Sprint4
             commandLibrary.Add(Keys.Right, currentCommand = new RightCommand(this.game));
             commandLibrary.Add(Keys.Q, currentCommand = new TestQuitCommand(this.game));
             commandLibrary.Add(Keys.R, currentCommand = new ResetSceneCommand(this.game));
-
-            commandLibrary.Add(Keys.Y, currentCommand = new SetSmallCommand(this.game));
-            commandLibrary.Add(Keys.U, currentCommand = new SetBigCommand(this.game));
-            commandLibrary.Add(Keys.I, currentCommand = new SetFireCommand(this.game));
-            commandLibrary.Add(Keys.O, currentCommand = new SetDeadCommand(this.game));
         }
 
         public void Update()

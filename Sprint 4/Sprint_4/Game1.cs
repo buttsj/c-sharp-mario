@@ -35,7 +35,7 @@ namespace Sprint4
             keyboardController = new KeyboardController(this);
             gamepadController = new GamepadController(this);
             soundManager = new SoundManager(this);
-            level = new Level(this, "/Maps/Map.csv", false);
+            level = new Level(this, "/Maps/Map.csv");
             base.Initialize();
         }
 
