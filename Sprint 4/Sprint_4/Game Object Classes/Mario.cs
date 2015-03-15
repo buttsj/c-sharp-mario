@@ -15,6 +15,7 @@ namespace Sprint4
         public IMarioPhysicsState physState;
         public bool marioIsStar = false, marioIsBig = false, marioIsFire = false, isDead = false;
         private int starTimer = 1000;
+        public int invicibilityFrames = 0;
         public Vector2 position;
         public Vector2 velocity;
         public Vector2 maxVelocity = new Vector2((float)2, (float)16);
@@ -37,6 +38,7 @@ namespace Sprint4
             if (!isDead)
             {
                 game.soundManager.shrink.Play();
+                invicibilityFrames = 100;
             }
             marioIsBig = false;
             marioIsFire = false;
@@ -119,6 +121,10 @@ namespace Sprint4
             {
                 starTimer--;
             }
+            if (invicibilityFrames != 0)
+            {
+                invicibilityFrames--;
+            }
             if (starTimer == 0)
             {
                 marioIsStar = false;
@@ -131,15 +137,19 @@ namespace Sprint4
 
         public void Draw(SpriteBatch spriteBatch)
         {
-            if (marioIsStar & starTimer % 5 != 0)
+            if (marioIsStar && starTimer % 5 != 0)
             {
                 state.Draw(spriteBatch, position);
             }
-            if (!marioIsStar)
+            if (invicibilityFrames % 5 != 0)
+            {
+                state.Draw(spriteBatch, position);
+            }
+            if (!marioIsStar && invicibilityFrames ==0)
             {
                 state.Draw(spriteBatch, position);
             }
          }
-        }
+       }
     }
 

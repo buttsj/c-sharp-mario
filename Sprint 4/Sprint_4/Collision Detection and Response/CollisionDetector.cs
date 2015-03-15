@@ -35,7 +35,7 @@ namespace Sprint4
             Rectangle marioRect = mario.state.getRectangle(new Vector2(mario.position.X, mario.position.Y));
             foreach (Enemy enemy in levelEnemies)
             {
-                if (!enemy.isDead)
+                if (!enemy.isDead && mario.invicibilityFrames ==0)
                 {
                     Rectangle enemyRect = enemy.GetRectangle();
                     if (marioRect.Intersects(enemyRect))
