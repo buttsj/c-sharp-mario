@@ -13,7 +13,7 @@ namespace Sprint4
         Game1 game;
         public IMarioState state;
         public IMarioPhysicsState physState;
-        public bool marioIsStar = false, marioIsBig = false, marioIsFire = false, isDead = false;
+        public bool marioIsStar = false, marioIsBig = false, marioIsFire = false, isDead = false, isCrouch = false;
         private int starTimer = 1000;
         public int invicibilityFrames = 0;
         public Vector2 position;
@@ -70,16 +70,15 @@ namespace Sprint4
 
         public void Down()
         {
-            //mario can still move left and right when in crouch state. Need to fix. The problem is that he's
-            //in falling state due to his velocity, but if I turn that off he wont crouch.
             state.Down();
             velocity.Y++;
+            isCrouch = true;
         }
 
         public void GoLeft()
         {
             state.GoLeft();
-            if (velocity.X > minVelocity.X)
+            if (velocity.X > minVelocity.X && !isCrouch)
             {
                 velocity.X -= (float).3;
             }
@@ -88,7 +87,7 @@ namespace Sprint4
         public void GoRight()
         {
             state.GoRight();
-            if (velocity.X < maxVelocity.X)
+            if (velocity.X < maxVelocity.X && !isCrouch)
             {
                 velocity.X += (float).3;
             }
@@ -97,6 +96,7 @@ namespace Sprint4
         public void Idle()
         {
             state.Idle();
+            isCrouch = false;
         }
 
         public void Land()
