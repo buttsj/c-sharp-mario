@@ -31,7 +31,7 @@ namespace Sprint4
         }
         public void GoLeft(Enemy enemy)
         {
-            enemy.position.X--;
+            enemy.position.X-=(float)1.5;
         }
         public void GoRight(Enemy enemy)
         {

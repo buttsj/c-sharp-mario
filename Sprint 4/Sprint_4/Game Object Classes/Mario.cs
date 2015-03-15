@@ -13,7 +13,7 @@ namespace Sprint4
         Game1 game;
         public IMarioState state;
         public IMarioPhysicsState physState;
-        public bool marioIsStar = false, marioIsBig = false, marioIsFire = false;
+        public bool marioIsStar = false, marioIsBig = false, marioIsFire = false, isDead = false;
         private int starTimer = 1000;
         public Vector2 position;
         public Vector2 velocity;
@@ -34,7 +34,10 @@ namespace Sprint4
         public void TakeDamage()
         {
             state.TakeDamage();
-            //game.soundManager.shrink.Play();
+            if (!isDead)
+            {
+                game.soundManager.shrink.Play();
+            }
             marioIsBig = false;
             marioIsFire = false;
         }

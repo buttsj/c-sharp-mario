@@ -16,6 +16,7 @@ namespace Sprint4
         {
             this.game = game;
             game.soundManager.PlaySong(SoundManager.songs.death);
+            game.level.mario.isDead = true;
         }
 
         public void Update(GameTime gameTime)

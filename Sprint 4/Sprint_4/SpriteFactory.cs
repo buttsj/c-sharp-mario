@@ -16,7 +16,7 @@ namespace Sprint4
             walkingRightSquishedDino, walkingLeftSquishedDino, deadShellessKoopa, leftWalkShellessKoopa, rightWalkShellessKoopa,
             banzaiBill, deadBanzaiBill, piranhaPlant, 
             //items
-            oneUpMushroom, fireFlower, superMushroom, coin, redShell, star,
+            oneUpMushroom, fireFlower, superMushroom, coin, redShell, star, fireball,
             //blocks
             questionBlock, brickBlock, usedBlock, wingedBlock, exclamationBlock, 
             //background
@@ -168,6 +168,11 @@ namespace Sprint4
             {
                 Texture2D bush3 = Game1.gameContent.Load<Texture2D>("Items/bush3");
                 return new Bush3Sprite(bush3, 1, 1);
+            }
+            if (sprite == sprites.fireball)
+            {
+                Texture2D fireball = Game1.gameContent.Load<Texture2D>("Items/marioFireball");
+                return new FireballSprite(fireball, 1, 1);
             }
 
             //BLOCKS

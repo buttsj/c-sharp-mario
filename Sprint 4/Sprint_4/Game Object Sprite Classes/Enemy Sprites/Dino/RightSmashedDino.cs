@@ -32,7 +32,7 @@ namespace Sprint4
         public void Update(GameTime gameTime) 
         {
             animTimer++;
-            if (animTimer == 12)
+            if (animTimer == 3)
             {
                 animTimer =0;
 
