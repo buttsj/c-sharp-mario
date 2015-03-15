@@ -21,16 +21,20 @@ namespace Sprint4
         }
         public void Update(GameTime gameTime)
         {
+            Rectangle prevRect = prevState.getRectangle(game.level.mario.position);
+            Rectangle newRect = newState.getRectangle(game.level.mario.position);
             timer--;
             if (currentState == prevState && timer%5 == 0)
             {
                 currentState = newState;
                 game.level.mario.state = newState;
+                game.level.mario.position.Y -= (newRect.Height - prevRect.Height);
             }
             else if(timer %5 == 0 && currentState == newState)
             { 
                 currentState = prevState;
                 game.level.mario.state = prevState;
+                game.level.mario.position.Y += (newRect.Height - prevRect.Height);
             }
             if (timer <= 0)
             {

@@ -52,12 +52,10 @@ namespace Sprint4
             {
                 physState = new JumpingState(game);
                 velocity.Y -= (float)2;
-
                 if (jumpFX.State == SoundState.Stopped)
                 {
                     jumpFX.Play();
                 }
-
             }
             state.Up();
         }
