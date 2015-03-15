@@ -43,6 +43,10 @@ namespace Sprint4
             {
                 commands.Add(new UpCommand(this.game));
             }
+            if (gamepadState.Buttons.X.Equals(ButtonState.Pressed))
+            {
+                commands.Add(new RunCommand(this.game));
+            }
             if (gamepadState.Buttons.Back == ButtonState.Pressed)
             {
                 commands.Add(new ResetSceneCommand(this.game));

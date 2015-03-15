@@ -18,7 +18,7 @@ namespace Sprint4
         public void Update(GameTime gameTime)
         {
             game.keyboardController.Update();
-            //gamepadController.Update();
+            game.gamepadController.Update();
             game.level.Update(gameTime);
         }
 

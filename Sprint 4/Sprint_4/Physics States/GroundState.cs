@@ -9,7 +9,7 @@ namespace Sprint4
     public class GroundState :IMarioPhysicsState
     {
         Game1 game;
-        public Vector2 speedDecayRate = new Vector2((float)0.80, (float)0.80);
+        public Vector2 speedDecayRate = new Vector2((float)0.73, (float)0.70);
         public GroundState(Mario mario, Game1 game)
         {
             this.game = game;

@@ -18,8 +18,8 @@ namespace Sprint4
         public int invicibilityFrames = 0;
         public Vector2 position;
         public Vector2 velocity;
-        public Vector2 maxVelocity = new Vector2((float)6, (float)16);
-        public Vector2 minVelocity = new Vector2((float) -6, (float)-5);
+        public Vector2 maxVelocity = new Vector2((float)6, (float)17);
+        public Vector2 minVelocity = new Vector2((float) -6, (float)-3.5);
         public int marioHeight = 0;
         SoundEffectInstance jumpFX;
 

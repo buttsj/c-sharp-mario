@@ -9,7 +9,7 @@ namespace Sprint4
     class JumpingState : IMarioPhysicsState
     {
         Game1 game;
-        public Vector2 speedDecayRate = new Vector2((float)0.85, (float)0.85);
+        public Vector2 speedDecayRate = new Vector2((float)0.75, (float)0.80);
         public static int maxJumpHeight = 100, jumpHeight = 0;
         public JumpingState(Game1 game)
         {
