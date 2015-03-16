@@ -21,6 +21,7 @@ namespace Sprint4
         public IGameState gameState;
         public Level level;
         public SoundManager soundManager;
+        public Camera gameCamera;
 
         public Game1()
         {
@@ -36,6 +37,7 @@ namespace Sprint4
             gamepadController = new GamepadController(this);
             soundManager = new SoundManager(this);
             level = new Level(this, "/Maps/Map.csv");
+            gameCamera = new Camera(GraphicsDevice.Viewport);
             base.Initialize();
         }
 
@@ -53,7 +55,8 @@ namespace Sprint4
         protected override void Draw(GameTime gameTime)
         {
             GraphicsDevice.Clear(Color.White);
-            spriteBatch.Begin();
+            Vector2 parallax = new Vector2(1.0f);
+            spriteBatch.Begin(SpriteSortMode.Deferred, null, null, null, null, null, gameCamera.GetViewMatrix(parallax));
             gameState.Draw(spriteBatch);
             spriteBatch.End();
             base.Draw(gameTime);

@@ -76,7 +76,7 @@
     <Reference Include="System.Net" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Camera Classes\CameraController.cs" />
+    <Compile Include="Camera Classes\Camera.cs" />
     <Compile Include="Collision Detection and Response\BlockCollisionResponder.cs" />
     <Compile Include="Collision Detection and Response\CollisionDetector.cs" />
     <Compile Include="Collision Detection and Response\EnemyCollisionResponder.cs" />

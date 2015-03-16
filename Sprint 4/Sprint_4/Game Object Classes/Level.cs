@@ -47,6 +47,7 @@ namespace Sprint4
             }
             collision.Detect(mario, levelEnemies, levelBlocks, levelItems);
             mario.Update(gameTime);
+            game.gameCamera.LookAt(mario.position);
         }
 
         public void Draw(SpriteBatch spriteBatch)
