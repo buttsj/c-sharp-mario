@@ -137,6 +137,10 @@ namespace Sprint4
                 starTimer = 1000;
                 game.soundManager.PlaySong(SoundManager.songs.athletic);
             }
+            if (position.Y > 500)
+            {
+                state = new DeadMS(game);
+            }
             state.Update(gameTime);
             physState.Update(this, gameTime);
         }
