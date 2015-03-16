@@ -46,6 +46,7 @@ namespace Sprint4
                 blockUpdater.Update(gameTime);
             }
             collision.Detect(mario, levelEnemies, levelBlocks, levelItems);
+
             mario.Update(gameTime);
             game.gameCamera.LookAt(mario.position);
         }
@@ -55,11 +56,17 @@ namespace Sprint4
             spriteBatch.Draw(background, new Rectangle(0, 0, 800, 480), Color.White);
             foreach (Enemy enemy in levelEnemies)
             {
-                enemy.Draw(spriteBatch);
+                if (game.gameCamera.InCameraView(enemy.GetRectangle()))
+                {
+                    enemy.Draw(spriteBatch);
+                }
             }
             foreach (Item item in levelItems)
             {
-                item.Draw(spriteBatch);
+                if (game.gameCamera.InCameraView(item.GetRectangle()))
+                {
+                    item.Draw(spriteBatch);
+                }
             }
             foreach (KeyValuePair<IAnimatedSprite, Vector2> backgroundObject in levelBackgrounds)
             {
