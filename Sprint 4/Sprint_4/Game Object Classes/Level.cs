@@ -28,7 +28,7 @@ namespace Sprint4
             builder.Build(fileName, levelEnemies, levelBlocks, levelItems, levelBackgrounds);
             collision = new CollisionDetector(game);
             background = game.Content.Load<Texture2D>("background");
-            game.soundManager.PlaySong(SoundManager.songs.athletic);
+            //game.soundManager.PlaySong(SoundManager.songs.athletic);
         }
 
         public void Update(GameTime gameTime)

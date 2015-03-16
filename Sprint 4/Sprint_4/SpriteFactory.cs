@@ -90,12 +90,12 @@ namespace Sprint4
             if (sprite == sprites.leftWalkShellessKoopa)
             {
                 Texture2D leftShellessKoopa = Game1.gameContent.Load<Texture2D>("Enemies/Shell-Less Koopa/leftWalkShellessKoopa");
-                return new LeftWalkingShellessKoopa(leftShellessKoopa, 2, 1);
+                return new LeftWalkingShellessKoopa(leftShellessKoopa, 1, 2);
             }
             if (sprite == sprites.rightWalkShellessKoopa)
             {
                 Texture2D rightShellessKoopa = Game1.gameContent.Load<Texture2D>("Enemies/Shell-Less Koopa/rightWalkShellessKoopa");
-                return new RightWalkingShellessKoopa(rightShellessKoopa, 2, 1);
+                return new RightWalkingShellessKoopa(rightShellessKoopa, 1, 2);
             }
             if (sprite == sprites.deadBanzaiBill)
             {

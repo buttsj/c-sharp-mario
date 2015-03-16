@@ -27,6 +27,7 @@ namespace Sprint4
         {
             enemy.state = new DeadShellessKS(game);
             enemy.isDead = true;
+            enemy.position.Y += 8;
         }
         public void GoLeft(Enemy enemy)
         {
