@@ -20,7 +20,6 @@ namespace Sprint4
         public CollisionDetector collision;
         
         public Texture2D background;
-        public Vector2 backgroundPos = new Vector2(0, 0);
         
         public Level(Game1 game, string fileName)
         {
@@ -55,8 +54,7 @@ namespace Sprint4
 
         public void Draw(SpriteBatch spriteBatch)
         {
-            backgroundPos = new Vector2(-game.gameCamera.Position.X, 0);
-            spriteBatch.Draw(background, new Rectangle(0, 0, 800, 480), null, Color.White, 0, backgroundPos, SpriteEffects.None, 0);
+            spriteBatch.Draw(background, new Rectangle(0, 0, 800, 480), null, Color.White, 0, new Vector2(-game.gameCamera.Position.X / 2.0f, 0), SpriteEffects.None, 0);
             foreach (Enemy enemy in levelEnemies)
             {
                 if (game.gameCamera.InCameraView(enemy.GetRectangle()))
