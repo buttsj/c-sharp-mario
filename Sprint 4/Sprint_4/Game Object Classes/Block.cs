@@ -12,7 +12,7 @@ namespace Sprint4
         public IBlockState state;
         public float xpos = 0, ypos = 0;
 
-        public enum BlockType { used, question, winged, exclamation, brick, pipe, ground}
+        public enum BlockType { used, question, winged, exclamation, brick, pipe, ground, leftEdge, rightEdge}
 
         public Block(Game1 game, Block.BlockType type, Vector2 position)
         {
@@ -44,6 +44,15 @@ namespace Sprint4
             {
                 state = new GroundBlockState(game);
             }
+            if (type == BlockType.leftEdge)
+            {
+                state = new LeftEdgeBlockState(game);
+            }
+            if (type == BlockType.rightEdge)
+            {
+                state = new RightEdgeBlockState(game);
+            }
+
             xpos = position.X;
             ypos = position.Y;
         }

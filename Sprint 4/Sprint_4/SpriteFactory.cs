@@ -21,7 +21,7 @@ namespace Sprint4
             questionBlock, brickBlock, usedBlock, wingedBlock, exclamationBlock, 
             //background
             bluePipe, bush1, bush2, bush3, launcherPiper, launcherPipeSupport, yellowPipe, whitePipe, exitSign,
-            ground,
+            ground, rightEdge, leftEdge,
             //Mario big
             leftCrouchingMarioBig,  leftIdleMarioBig, leftJumpingMarioBig,  
             leftMovingMarioBig, leftQuickturnMarioBig, leftShellKickMarioBig, leftSlidingMarioBig, rightCrouchingMarioBig,
@@ -205,6 +205,16 @@ namespace Sprint4
             {
                 Texture2D ground = Game1.gameContent.Load<Texture2D>("ground tile");
                 return new GroundBlockSprite(ground, 1, 1);
+            }
+            if (sprite == sprites.leftEdge)
+            {
+                Texture2D leftEdge = Game1.gameContent.Load<Texture2D>("Items/leftGroundEdge");
+                return new GroundBlockSprite(leftEdge, 1, 1);
+            }
+            if (sprite == sprites.rightEdge)
+            {
+                Texture2D rightEdge = Game1.gameContent.Load<Texture2D>("Items/rightGroundEdge");
+                return new GroundBlockSprite(rightEdge, 1, 1);
             }
 
 

@@ -38,6 +38,8 @@ namespace Sprint4
             blockDictionary.Add("!", Block.BlockType.exclamation);
             blockDictionary.Add("B", Block.BlockType.brick);
             blockDictionary.Add("g", Block.BlockType.ground);
+            blockDictionary.Add("l", Block.BlockType.leftEdge);
+            blockDictionary.Add("r", Block.BlockType.rightEdge);
             this.game = game;
         }
 
