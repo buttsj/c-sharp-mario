@@ -23,10 +23,12 @@ namespace Sprint4
         public void GoLeft()
         {
             position.X--;
+            left = true;
         }
         public void GoRight()
         {
             position.X++;
+            left = false;
         }
         public void Update(GameTime gametime)
         {

@@ -87,10 +87,12 @@ namespace Sprint4
                 if (itemRect.Right > blockRect.Left && itemRect.Right < blockRect.Right)
                 {
                     item.position.X= item.position.X - intersection.Width;
+                    item.GoLeft();
                 }
                 else
                 {
                     item.position.X = item.position.X + intersection.Width;
+                    item.GoRight();
                 }
             }
             else
