@@ -18,7 +18,9 @@ namespace Sprint4
         public List<Item> levelItems = new List<Item>();
         public List<KeyValuePair<IAnimatedSprite, Vector2>> levelBackgrounds = new List<KeyValuePair<IAnimatedSprite, Vector2>>();
         public CollisionDetector collision;
+        
         public Texture2D background;
+        public Vector2 backgroundPos = new Vector2(0, 0);
         
         public Level(Game1 game, string fileName)
         {
@@ -53,7 +55,8 @@ namespace Sprint4
 
         public void Draw(SpriteBatch spriteBatch)
         {
-            spriteBatch.Draw(background, new Rectangle(0, 0, 800, 480), Color.White);
+            backgroundPos = new Vector2(-game.gameCamera.Position.X, 0);
+            spriteBatch.Draw(background, new Rectangle(0, 0, 800, 480), null, Color.White, 0, backgroundPos, SpriteEffects.None, 0);
             foreach (Enemy enemy in levelEnemies)
             {
                 if (game.gameCamera.InCameraView(enemy.GetRectangle()))
