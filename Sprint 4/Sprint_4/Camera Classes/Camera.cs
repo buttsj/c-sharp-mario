@@ -18,6 +18,7 @@ namespace Sprint4
 
         private Game1 game;
         private Viewport viewport;
+        private Vector2 marioPosition;
         public Camera(Viewport viewport, Game1 game)
         {
             this.viewport = viewport;
@@ -33,7 +34,8 @@ namespace Sprint4
 
         public void LookAt(Vector2 position)
         {
-            Position.X = position.X - viewport.Width / 2.0f;
+            marioPosition = position;
+            Position.X = marioPosition.X - viewport.Width / 2.0f;
 
             if (Position.X < -200)
                 Position.X = -200;
@@ -50,8 +52,9 @@ namespace Sprint4
 
         public bool InCameraView(Rectangle obj)
         {
+            Rectangle viewportRect = new Rectangle((int)(marioPosition.X - 200), 250, (int)(viewport.Width / 2.0f), (int)(viewport.Height / 2.0f));
             // not working correctly
-            if (viewport.Bounds.Intersects(obj))
+            if (viewportRect.Intersects(obj))
             {
                 return true;
             }

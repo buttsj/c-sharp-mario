@@ -36,15 +36,24 @@ namespace Sprint4
         {
             foreach (Enemy enemy in levelEnemies)
             {
-                enemy.Update(gameTime);
+                if (game.gameCamera.InCameraView(enemy.GetRectangle()))
+                {
+                    enemy.Update(gameTime);
+                }
             }
             foreach (Item item in levelItems)
             {
-                item.Update(gameTime);
+                if (game.gameCamera.InCameraView(item.GetRectangle()))
+                {
+                    item.Update(gameTime);
+                }
             }
             foreach (Block blockUpdater in levelBlocks)
             {
-                blockUpdater.Update(gameTime);
+                if (game.gameCamera.InCameraView(blockUpdater.GetRectangle()))
+                {
+                    blockUpdater.Update(gameTime);
+                }
             }
             collision.Detect(mario, levelEnemies, levelBlocks, levelItems);
 
@@ -55,6 +64,7 @@ namespace Sprint4
         public void Draw(SpriteBatch spriteBatch)
         {
             spriteBatch.Draw(background, new Rectangle(0, 0, 800, 480), null, Color.White, 0, new Vector2(-game.gameCamera.Position.X / 2.0f, 0), SpriteEffects.None, 0);
+            
             foreach (Enemy enemy in levelEnemies)
             {
                 if (game.gameCamera.InCameraView(enemy.GetRectangle()))
@@ -75,7 +85,10 @@ namespace Sprint4
             }
             foreach (Block blockDrawer in levelBlocks)
             {
-                blockDrawer.Draw(spriteBatch, new Vector2(blockDrawer.xpos, blockDrawer.ypos));
+                if (game.gameCamera.InCameraView(blockDrawer.GetRectangle()))
+                {
+                    blockDrawer.Draw(spriteBatch, new Vector2(blockDrawer.xpos, blockDrawer.ypos));
+                }
             }
             mario.Draw(spriteBatch);
         }
