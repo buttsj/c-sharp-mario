@@ -24,7 +24,7 @@ namespace Sprint4
             this.viewport = viewport;
             this.game = game;
             Origin = new Vector2(viewport.Width / 2.0f, viewport.Height / 2.0f);
-            Zoom = 2.0f;
+            Zoom = 1.0f;
         }
 
         public Vector2 Position = new Vector2(0, 125.0f);
@@ -52,7 +52,7 @@ namespace Sprint4
 
         public bool InCameraView(Rectangle obj)
         {
-            Rectangle viewportRect = new Rectangle((int)(marioPosition.X - 200), 250, (int)(viewport.Width / 2.0f), (int)(viewport.Height / 2.0f));
+            Rectangle viewportRect = new Rectangle((int)(marioPosition.X - 200), 250, ((int)(viewport.Width / 2.0f)) + 30, (int)(viewport.Height / 2.0f));
             // not working correctly
             if (viewportRect.Intersects(obj))
             {
