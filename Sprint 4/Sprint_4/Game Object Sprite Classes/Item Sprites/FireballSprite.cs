@@ -29,10 +29,28 @@ namespace Sprint4
             int height = Texture.Height / Rows;
             return new Rectangle((int)location.X, (int)location.Y, width, height);
         }
-        public void Update(GameTime gameTime) { }
+        public void Update(GameTime gameTime) {
+            animTimer += gameTime.ElapsedGameTime.Milliseconds;
+            if (animTimer > 90)
+            {
+                animTimer -= 90;
+
+                currentFrame = (currentFrame + 1) % totalFrames;
+                if (currentFrame == totalFrames)
+                { currentFrame = 0; }
+            }    
+        }
         public void Draw(SpriteBatch spriteBatch, Vector2 location)
         {
-            spriteBatch.Draw(Texture, location, Color.White);
+            int width = Texture.Width / Columns;
+            int height = Texture.Height / Rows;
+            int row = (int)((float)currentFrame / (float)Columns);
+            int column = currentFrame % Columns;
+
+            Rectangle sourceRectangle = new Rectangle(width * column, height * row, width, height);
+            Rectangle destinationRectangle = new Rectangle((int)location.X, (int)location.Y, width, height);
+
+            spriteBatch.Draw(Texture, destinationRectangle, sourceRectangle, Color.White);
         }
     }
 }
