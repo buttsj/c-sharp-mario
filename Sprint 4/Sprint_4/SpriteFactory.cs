@@ -171,8 +171,8 @@ namespace Sprint4
             }
             if (sprite == sprites.fireball)
             {
-                Texture2D fireball = Game1.gameContent.Load<Texture2D>("Items/marioFireball");
-                return new FireballSprite(fireball, 1, 1);
+                Texture2D fireball = Game1.gameContent.Load<Texture2D>("Items/fireball");
+                return new FireballSprite(fireball, 1, 4);
             }
 
             //BLOCKS
