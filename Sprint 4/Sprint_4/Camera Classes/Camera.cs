@@ -14,6 +14,7 @@ namespace Sprint4
     {
 
         // source for code so far: http://www.david-gouveia.com/portfolio/2d-camera-with-parallax-scrolling-in-xna/
+        // still needs modifying
 
         private Game1 game;
         private Viewport viewport;
@@ -33,7 +34,8 @@ namespace Sprint4
 
         public void LookAt(Vector2 position)
         {
-            Position.X = position.X - viewport.Width / 2.0f;
+            marioPosition = position;
+            Position.X = marioPosition.X - viewport.Width / 2.0f;
 
             if (Position.X < -200)
                 Position.X = -200;
