@@ -14,7 +14,6 @@ namespace Sprint4
     {
 
         // source for code so far: http://www.david-gouveia.com/portfolio/2d-camera-with-parallax-scrolling-in-xna/
-        // still needs modifying
 
         private Game1 game;
         private Viewport viewport;
@@ -24,7 +23,7 @@ namespace Sprint4
             this.viewport = viewport;
             this.game = game;
             Origin = new Vector2(viewport.Width / 2.0f, viewport.Height / 2.0f);
-            Zoom = 1.0f;
+            Zoom = 2.0f;
         }
 
         public Vector2 Position = new Vector2(0, 125.0f);
@@ -34,8 +33,7 @@ namespace Sprint4
 
         public void LookAt(Vector2 position)
         {
-            marioPosition = position;
-            Position.X = marioPosition.X - viewport.Width / 2.0f;
+            Position.X = position.X - viewport.Width / 2.0f;
 
             if (Position.X < -200)
                 Position.X = -200;
@@ -52,9 +50,7 @@ namespace Sprint4
 
         public bool InCameraView(Rectangle obj)
         {
-            Rectangle viewportRect = new Rectangle((int)(marioPosition.X - 200), 250, ((int)(viewport.Width / 2.0f)) + 30, (int)(viewport.Height / 2.0f));
-            // not working correctly
-            if (viewportRect.Intersects(obj))
+            if (new Rectangle((int)(marioPosition.X - 200), 250, ((int)(viewport.Width / 2.0f)) + 30, (int)(viewport.Height / 2.0f)).Intersects(obj))
             {
                 return true;
             }
