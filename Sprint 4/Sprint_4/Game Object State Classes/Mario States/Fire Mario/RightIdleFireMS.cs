@@ -10,8 +10,7 @@ namespace Sprint4
     public class RightIdleFireMS : IMarioState
     {
         Game1 game;
-        IAnimatedSprite sprite;
-        
+        IAnimatedSprite sprite;        
 
         public RightIdleFireMS(Game1 game)
         {
@@ -66,7 +65,7 @@ namespace Sprint4
         }
         public void MakeFireballMario()
         {
-            game.level.mario.state = new RightFireballFireMS(game);
+           game.level.mario.state = new RightFireballFireMS(game);            
         }
         public void MakeDeadMario()
         {

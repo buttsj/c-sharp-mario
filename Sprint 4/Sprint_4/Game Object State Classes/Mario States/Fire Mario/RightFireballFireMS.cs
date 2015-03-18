@@ -29,7 +29,7 @@ namespace Sprint4
         }
         public void Up()
         {
-            game.level.mario.state = new RightIdleFireMS(game);
+            game.level.mario.state = new RightJumpingFireMS(game);
         }
         public void Down()
         {
@@ -41,11 +41,11 @@ namespace Sprint4
         }
         public void GoRight()
         {
-            game.level.mario.state = new RightMovingFireMS(game);   
+            game.level.mario.state = new RightMovingFireMS(game);
         }
         public void Idle()
         {
-            game.level.mario.state = new RightIdleFireMS(game);
+          
         }
         public void Land()
         {
