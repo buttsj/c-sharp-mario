@@ -42,6 +42,8 @@ namespace Sprint4
             blockDictionary.Add("r", Block.BlockType.rightEdge);
             this.game = game;
 
+            //added just to see what the sprite looks like
+            itemDictionary.Add("FB", SpriteFactory.sprites.fireball);
         }
 
         public void Build(string fileName, List<Enemy> levelEnemies, 
