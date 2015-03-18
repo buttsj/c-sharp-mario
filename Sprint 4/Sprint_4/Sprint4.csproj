@@ -81,6 +81,7 @@
     <Compile Include="Collision Detection and Response\CollisionDetector.cs" />
     <Compile Include="Collision Detection and Response\EnemyCollisionResponder.cs" />
     <Compile Include="Collision Detection and Response\ItemCollisionResponder.cs" />
+    <Compile Include="Command Classes\FireballCommand.cs" />
     <Compile Include="Command Classes\RunCommand.cs" />
     <Compile Include="Command Classes\DownCommand.cs" />
     <Compile Include="Command Classes\IdleCommand.cs" />
@@ -95,6 +96,8 @@
     <Compile Include="Game Object State Classes\Block States\RightEdgeBlockState.cs" />
     <Compile Include="Game Object State Classes\Block States\LeftEdgeBlockState.cs" />
     <Compile Include="Game Object State Classes\Enemy States\NullEnemyState.cs" />
+    <Compile Include="Game Object State Classes\Mario States\Fire Mario\LeftFireballFireMS.cs" />
+    <Compile Include="Game Object State Classes\Mario States\Fire Mario\RightFireballFireMS.cs" />
     <Compile Include="Game States\TransitionGameState.cs" />
     <Compile Include="Game States\PlayGameState .cs" />
     <Compile Include="Game States\DeadGameState.cs" />

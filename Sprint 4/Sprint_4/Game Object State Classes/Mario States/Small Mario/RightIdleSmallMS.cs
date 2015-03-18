@@ -64,6 +64,10 @@ namespace Sprint4
         {
             game.gameState = new TransitionGameState(game, game.level.mario.state, new RightIdleFireMS(game));
         }
+        public void MakeFireballMario()
+        {
+            
+        }
         public void MakeDeadMario()
         {
             game.level.mario.state = new DeadMS(game);

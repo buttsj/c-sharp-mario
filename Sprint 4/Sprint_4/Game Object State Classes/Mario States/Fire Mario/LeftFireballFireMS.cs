@@ -7,42 +7,41 @@ using System.Text;
 
 namespace Sprint4
 {
-    class LeftJumpingFireMS : IMarioState
+    class LeftFireballFireMS : IMarioState
     {
         Game1 game;
         IAnimatedSprite sprite;
-        
 
-        public LeftJumpingFireMS(Game1 game)
+
+        public LeftFireballFireMS(Game1 game)
         {
             ISpriteFactory factory = new SpriteFactory();
-            sprite = factory.build(SpriteFactory.sprites.leftJumpingMarioFire);
+            sprite = factory.build(SpriteFactory.sprites.leftFireballMarioFire);
             this.game = game;
         }
         public Rectangle getRectangle(Vector2 location)
         {
             return sprite.GetRectangle(location);
         }
-
         public void TakeDamage()
         {
-            game.gameState = new TransitionGameState(game, game.level.mario.state, new LeftJumpingSmallMS(game));
+            game.gameState = new TransitionGameState(game, game.level.mario.state, new LeftIdleSmallMS(game));
         }
         public void Up()
         {
-            game.level.mario.position.Y--;
+            game.level.mario.state = new LeftIdleFireMS(game);
         }
         public void Down()
         {
-            game.level.mario.state = new LeftIdleFireMS(game);
+            game.level.mario.state = new LeftCrouchingFireMS(game);
         }
         public void GoLeft()
         {
-            game.level.mario.position.X--;
+            game.level.mario.state = new LeftMovingFireMS(game);
         }
         public void GoRight()
         {
-            game.level.mario.state = new RightJumpingFireMS(game);
+            game.level.mario.state = new RightFireballFireMS(game);
         }
         public void Idle()
         {
@@ -50,23 +49,23 @@ namespace Sprint4
         }
         public void Land()
         {
-            game.level.mario.state = new LeftMovingFireMS(game);
+
         }
         public void MakeBigMario()
         {
-            game.level.mario.state = new LeftJumpingBigMS(game);
+            game.level.mario.state = new LeftIdleBigMS(game);
         }
         public void MakeSmallMario()
         {
-            game.level.mario.state = new LeftJumpingSmallMS(game);
+            game.level.mario.state = new LeftIdleSmallMS(game);
         }
         public void MakeFireMario()
         {
-            // null
+            game.level.mario.state = new LeftIdleFireMS(game);
         }
         public void MakeFireballMario()
         {
-            game.level.mario.state = new LeftFireballFireMS(game);
+            // null
         }
         public void MakeDeadMario()
         {

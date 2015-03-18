@@ -61,7 +61,11 @@ namespace Sprint4
         }
         public void MakeFireMario()
         {
-           //nop
+           //null
+        }
+        public void MakeFireballMario()
+        {
+            game.level.mario.state = new RightFireballFireMS(game);
         }
         public void MakeDeadMario()
         {

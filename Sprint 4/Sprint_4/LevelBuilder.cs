@@ -41,6 +41,7 @@ namespace Sprint4
             blockDictionary.Add("l", Block.BlockType.leftEdge);
             blockDictionary.Add("r", Block.BlockType.rightEdge);
             this.game = game;
+
         }
 
         public void Build(string fileName, List<Enemy> levelEnemies, 

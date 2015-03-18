@@ -121,6 +121,12 @@ namespace Sprint4
             marioIsFire = true;
         }
 
+        public void MakeFireballMario()
+        {
+            state.MakeFireballMario();
+            marioIsBig = true;
+            marioIsFire = true;
+        }
         public void Update(GameTime gameTime)
         {
             if (starTimer != 0 & marioIsStar)

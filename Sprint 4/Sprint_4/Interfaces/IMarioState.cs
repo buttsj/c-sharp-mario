@@ -22,7 +22,9 @@ namespace Sprint4
         void MakeBigMario();
         void MakeSmallMario();
         void MakeFireMario();
+        void MakeFireballMario();
         void MakeDeadMario();
+        
 
         Rectangle getRectangle(Vector2 location);
     }
