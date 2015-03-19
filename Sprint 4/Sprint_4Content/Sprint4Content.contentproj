@@ -613,8 +613,8 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Items\fireball.png">
-      <Name>fireball</Name>
+    <Compile Include="Items\fireball1.png">
+      <Name>fireball1</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>

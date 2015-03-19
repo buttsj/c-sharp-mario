@@ -171,7 +171,7 @@ namespace Sprint4
             }
             if (sprite == sprites.fireball)
             {
-                Texture2D fireball = Game1.gameContent.Load<Texture2D>("Items/fireball");
+                Texture2D fireball = Game1.gameContent.Load<Texture2D>("Items/fireball1");
                 return new FireballSprite(fireball, 1, 4);
             }
 
