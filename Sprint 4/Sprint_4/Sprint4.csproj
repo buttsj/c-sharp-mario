@@ -92,6 +92,7 @@
     <Compile Include="Command Classes\UpCommand.cs" />
     <Compile Include="Controller Classes\GamepadController.cs" />
     <Compile Include="Controller Classes\KeyboardController.cs" />
+    <Compile Include="Game Object Classes\Fireball.cs" />
     <Compile Include="Game Object Sprite Classes\Item Sprites\FireballSprite.cs" />
     <Compile Include="Game Object State Classes\Block States\RightEdgeBlockState.cs" />
     <Compile Include="Game Object State Classes\Block States\LeftEdgeBlockState.cs" />
@@ -101,6 +102,7 @@
     <Compile Include="Game States\TransitionGameState.cs" />
     <Compile Include="Game States\PlayGameState .cs" />
     <Compile Include="Game States\DeadGameState.cs" />
+    <Compile Include="Interfaces\IFireballState.cs" />
     <Compile Include="Interfaces\IGameState.cs" />
     <Compile Include="Physics States\FallingState.cs" />
     <Compile Include="Game Object Classes\Block.cs" />
