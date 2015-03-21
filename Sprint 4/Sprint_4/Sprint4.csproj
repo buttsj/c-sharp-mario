@@ -263,6 +263,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="CODE REVIEWS\" />
+    <Folder Include="Game Object State Classes\Fireball States\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\XNA Game Studio\Microsoft.Xna.GameStudio.targets" />
