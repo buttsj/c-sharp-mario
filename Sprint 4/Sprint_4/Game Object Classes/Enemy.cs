@@ -63,6 +63,7 @@ namespace Sprint4
         }
         public void Update(GameTime gameTime)
         {
+            position.Y++;
             state.Update(gameTime);
             if (left)
             {
