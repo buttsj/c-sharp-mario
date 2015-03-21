@@ -25,7 +25,7 @@ namespace Sprint4
             Origin = new Vector2(viewport.Width / 2.0f, viewport.Height / 2.0f);
             Zoom = 2.0f;
         }
-
+        
         public Vector2 Position = new Vector2(0, 125.0f);
         public Vector2 Origin { get; set; }
         public float Zoom { get; set; }

@@ -58,6 +58,7 @@ namespace Sprint4
 
             Vector2 parallax = new Vector2(1.0f);
             spriteBatch.Begin(SpriteSortMode.Deferred, null, null, null, null, null, gameCamera.GetViewMatrix(parallax));
+
             gameState.Draw(spriteBatch);
             spriteBatch.End();
             base.Draw(gameTime);
