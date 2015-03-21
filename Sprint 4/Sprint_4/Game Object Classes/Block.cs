@@ -10,11 +10,11 @@ namespace Sprint4
     public class Block
     {
         public IBlockState state;
-        public float xpos = 0, ypos = 0;
+        public Vector2 position = new Vector2(0, 0);
 
         public enum BlockType { used, question, winged, exclamation, brick, pipe, ground, leftEdge, rightEdge}
 
-        public Block(Game1 game, Block.BlockType type, Vector2 position)
+        public Block(Game1 game, Block.BlockType type, Vector2 location)
         {
             if (type == BlockType.used)
             {
@@ -53,13 +53,13 @@ namespace Sprint4
                 state = new RightEdgeBlockState(game);
             }
 
-            xpos = position.X;
-            ypos = position.Y;
+            position.X = location.X;
+            position.Y = location.Y;
         }
 
         public void Update(GameTime gameTime)
         {
-            state.Update(gameTime);
+            state.Update(gameTime, this);
         }
         public void Draw(SpriteBatch spriteBatch, Vector2 location)
         {
@@ -67,11 +67,11 @@ namespace Sprint4
         }
         public void Reaction()
         {
-            state.Reaction();
+            state.Reaction(this);
         }
         public Rectangle GetRectangle()
         {
-            return state.GetRectangle(new Vector2(xpos, ypos));
+            return state.GetRectangle(position);
         }
     }
 }

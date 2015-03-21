@@ -11,7 +11,8 @@ namespace Sprint4
     {
         Game1 game;
         IAnimatedSprite sprite;
-        
+        int bumpAnimTimer = 0;
+        bool isBumped = false;
 
         public BrickBlockState(Game1 game)
         {
@@ -23,18 +24,33 @@ namespace Sprint4
         {
             return sprite.GetRectangle(location);
         }
-        public void Update(GameTime gameTime)
+        public void Update(GameTime gameTime, Block block)
         {
             sprite.Update(gameTime);
+            if (bumpAnimTimer > 0)
+            {
+                bumpAnimTimer--;
+            }
+            else if (isBumped && bumpAnimTimer <=0)
+            {
+                bumpAnimTimer = 0;
+                block.position.Y+=2;
+                isBumped = false;
+            }
         }
         public void Draw(SpriteBatch spriteBatch, Vector2 location)
         {
             sprite.Draw(spriteBatch, location);
         }
 
-        public void Reaction()
+        public void Reaction(Block block)
         {
-            // null 
+            if (!isBumped)
+            {
+                block.position.Y -= 2;
+                bumpAnimTimer = 7;
+                isBumped = true;
+            }
         }
     }
 }

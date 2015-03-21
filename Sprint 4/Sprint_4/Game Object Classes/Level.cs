@@ -87,7 +87,7 @@ namespace Sprint4
             {
                 if (game.gameCamera.InCameraView(blockDrawer.GetRectangle()))
                 {
-                    blockDrawer.Draw(spriteBatch, new Vector2(blockDrawer.xpos, blockDrawer.ypos));
+                    blockDrawer.Draw(spriteBatch, blockDrawer.position);
                 }
             }
             mario.Draw(spriteBatch);

@@ -25,7 +25,7 @@ namespace Sprint4
             return sprite.GetRectangle(location);
         }
 
-        public void Update(GameTime gameTime)
+        public void Update(GameTime gameTime, Block block)
         {
             sprite.Update(gameTime);
         }
@@ -33,7 +33,7 @@ namespace Sprint4
         {
             sprite.Draw(spriteBatch, location);
         }
-        public void Reaction()
+        public void Reaction(Block block)
         {
             sprite = factory.build(SpriteFactory.sprites.usedBlock);
         }
