@@ -40,10 +40,7 @@ namespace Sprint4
             blockDictionary.Add("g", Block.BlockType.ground);
             blockDictionary.Add("l", Block.BlockType.leftEdge);
             blockDictionary.Add("r", Block.BlockType.rightEdge);
-            this.game = game;
-
-            //added just to see what the sprite looks like
-            itemDictionary.Add("FB", SpriteFactory.sprites.fireball);
+            this.game = game;            
         }
 
         public void Build(string fileName, List<Enemy> levelEnemies, 
