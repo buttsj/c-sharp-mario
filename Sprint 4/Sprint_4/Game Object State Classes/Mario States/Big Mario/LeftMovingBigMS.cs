@@ -57,11 +57,11 @@ namespace Sprint4
         }
         public void MakeSmallMario()
         {
-            // no-op
+            game.gameState = new TransitionGameState(game, game.level.mario.state, new RightMovingSmallMS(game));
         }
         public void MakeFireMario()
         {
-          game.level.mario.state = new LeftMovingFireMS(game);
+            game.gameState = new TransitionGameState(game, game.level.mario.state, new LeftMovingFireMS(game));
         }
         public void MakeFireballMario()
         {
