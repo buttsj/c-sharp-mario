@@ -12,6 +12,7 @@ namespace Sprint4
     {
         Game1 game;
         public Mario mario;
+        public Fireball fireball;
         public LevelBuilder builder;
         public List<Enemy> levelEnemies = new List<Enemy>();
         public List<Block> levelBlocks = new List<Block>();
@@ -55,7 +56,7 @@ namespace Sprint4
                     blockUpdater.Update(gameTime);
                 }
             }
-            collision.Detect(mario, levelEnemies, levelBlocks, levelItems);
+            collision.Detect(mario, fireball, levelEnemies, levelBlocks, levelItems);
 
             mario.Update(gameTime);
             game.gameCamera.LookAt(mario.position);
