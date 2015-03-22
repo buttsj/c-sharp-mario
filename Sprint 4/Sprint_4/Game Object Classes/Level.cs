@@ -16,7 +16,7 @@ namespace Sprint4
         public LevelBuilder builder;
         public List<Enemy> levelEnemies = new List<Enemy>();
         public List<Block> levelBlocks = new List<Block>();
-        public List<Item> levelItems = new List<Item>();
+        public List<Item> levelItems = new List<Item>();       
         public List<KeyValuePair<IAnimatedSprite, Vector2>> levelBackgrounds = new List<KeyValuePair<IAnimatedSprite, Vector2>>();
         public CollisionDetector collision;
         
@@ -26,7 +26,15 @@ namespace Sprint4
         {
             this.game = game;
             mario = new Mario(this.game, new Vector2(250, (float)440));
-           // fireball = new Fireball(this.game, new Vector2(0, (float)0));
+            /*
+            if (mario.isLeft)
+            {
+                fireball = new Fireball(this.game, new Vector2(mario.position.X - 5, mario.position.Y)
+            } else {
+                fireball = new Fireball(this.game, new Vector2(mario.position.X + 5, mario.position.Y))
+            }  
+            
+             */
             builder = new LevelBuilder(game);
             builder.Build(fileName, levelEnemies, levelBlocks, levelItems, levelBackgrounds);
             collision = new CollisionDetector(game);
@@ -57,10 +65,16 @@ namespace Sprint4
                     blockUpdater.Update(gameTime);
                 }
             }
-            collision.Detect(mario, levelEnemies, levelBlocks, levelItems);
+            /*
+            if (game.gameCamera.InCameraView(Fireball.GetRectangle()))
+            {
+                fireball.Update(gameTime);
+            }
+             */
+            collision.Detect(mario, levelEnemies, levelBlocks, levelItems); //fireball should be added after mario
 
             mario.Update(gameTime);
-            //fireball.Update(gameTime);
+            
             game.gameCamera.LookAt(mario.position);
         }
 
@@ -93,7 +107,13 @@ namespace Sprint4
                     blockDrawer.Draw(spriteBatch, blockDrawer.position);
                 }
             }
-            
+
+            /*
+            if (game.gameCamera.InCameraView(Fireball.GetRectangle()))
+            {
+                fireball.Draw(spriteBatch);
+            }
+             */
             mario.Draw(spriteBatch);
         }
     }
