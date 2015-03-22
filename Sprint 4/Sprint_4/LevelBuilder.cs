@@ -40,7 +40,8 @@ namespace Sprint4
             blockDictionary.Add("g", Block.BlockType.ground);
             blockDictionary.Add("l", Block.BlockType.leftEdge);
             blockDictionary.Add("r", Block.BlockType.rightEdge);
-            this.game = game;            
+            blockDictionary.Add("!SM", Block.BlockType.exMush);
+            this.game = game;
         }
 
         public void Build(string fileName, List<Enemy> levelEnemies, 
@@ -60,7 +61,7 @@ namespace Sprint4
                 { 
                     if(itemDictionary.ContainsKey(words[i]))
                     {
-                        Item item = new Item(factory.build(itemDictionary[words[i]]));
+                        Item item = new Item(game, factory.build(itemDictionary[words[i]]));
                         item.position.X = xCoord;
                         item.position.Y = yCoord;
                         levelItems.Add(item);

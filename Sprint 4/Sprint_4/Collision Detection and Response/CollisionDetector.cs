@@ -69,7 +69,7 @@ namespace Sprint4
                 foreach (Item item in levelItems)
                 {
                     Rectangle itemRect = item.GetRectangle();
-                    if (blockRect.Intersects(itemRect))
+                    if (blockRect.Intersects(itemRect) && !item.isSpawning)
                     {
                         blockResponder.ItemBlockCollide(item, block);
                     }

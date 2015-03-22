@@ -11,10 +11,15 @@ namespace Sprint4
     {
         public Vector2 position = new Vector2(0, 0);
         bool left = true;
+        Game1 game;
         public IAnimatedSprite sprite;
-        public Item(IAnimatedSprite sprite)
+        public bool isSpawning = false;
+        int spawnTimer = 0;
+
+        public Item(Game1 game, IAnimatedSprite sprite)
         {
             this.sprite = sprite;
+            this.game = game;
         }
         public void Draw(SpriteBatch spriteBatch)
         {
@@ -32,20 +37,39 @@ namespace Sprint4
         }
         public void Update(GameTime gametime)
         {
-            position.Y++;
-            sprite.Update(gametime);
-            if (left)
+            if (!isSpawning)
             {
-                GoLeft();
+                position.Y++;
+                sprite.Update(gametime);
+                if (left)
+                {
+                    GoLeft();
+                }
+                else
+                {
+                    GoRight();
+                }
             }
             else
             {
-                GoRight();
+                position.Y-=(float).3;
+                spawnTimer--;
+                if (spawnTimer == 0)
+                {
+                    isSpawning = false;
+                }
             }
         }
         public Rectangle GetRectangle()
         {
             return sprite.GetRectangle(position);
+        }
+
+        public void Spawn(){
+            game.level.levelItems.Add(this);
+            isSpawning = true;
+            spawnTimer = 50;
+            game.soundManager.itemSpawn.Play();
         }
     }
 }
