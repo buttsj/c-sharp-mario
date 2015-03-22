@@ -10,6 +10,7 @@ namespace Sprint4
     {
         ISpriteFactory factory = new SpriteFactory();
         Game1 game;
+        
         public EnemyCollisionResponder(Game1 game)
         {
             this.game = game;

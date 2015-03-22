@@ -13,7 +13,7 @@ namespace Sprint4
         Game1 game;
         public IMarioState state;
         public IMarioPhysicsState physState;
-        public bool marioIsStar = false, marioIsBig = false, marioIsFire = false, isDead = false, isCrouch = false;
+        public bool marioIsStar = false, marioIsBig = false, marioIsFire = false, isDead = false, isCrouch = false, isFireball = false, isLeft = false;
         private int starTimer = 1000;
         public int invicibilityFrames = 0;
         public Vector2 position;
@@ -82,6 +82,7 @@ namespace Sprint4
             {
                 velocity.X -= (float).3;
             }
+            isLeft = true;
         }
 
         public void GoRight()
@@ -91,6 +92,7 @@ namespace Sprint4
             {
                 velocity.X += (float).3;
             }
+            isLeft = false;
         }
 
         public void Idle()
@@ -126,6 +128,7 @@ namespace Sprint4
             state.MakeFireballMario();
             marioIsBig = true;
             marioIsFire = true;
+            isFireball = true;
         }
         public void Update(GameTime gameTime)
         {

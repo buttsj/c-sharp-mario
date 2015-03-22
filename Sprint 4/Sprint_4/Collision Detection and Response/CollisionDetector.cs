@@ -35,6 +35,7 @@ namespace Sprint4
         {
             standingBlocks = new List<Block>();
             Rectangle marioRect = mario.state.getRectangle(new Vector2(mario.position.X, mario.position.Y));
+            Rectangle fireballRect = fireball.GetRectangle();
             foreach (Enemy enemy in levelEnemies)
             {
                 if (!enemy.isDead && mario.invicibilityFrames ==0)
@@ -45,7 +46,14 @@ namespace Sprint4
                         enemyResponder.MarioEnemyCollide(mario, enemy);
                     }
                 }
-
+                if (!enemy.isDead)
+                {
+                    Rectangle enemyRect = enemy.GetRectangle();
+                    if (fireballRect.Intersects(enemyRect))
+                    {
+                        fireballResponder.EnemyFireballCollide(enemy, fireball);
+                    }                    
+                }
             }
             foreach (Item item in levelItems)
             {
@@ -63,6 +71,10 @@ namespace Sprint4
                 if (marioRect.Intersects(blockRect))
                 {
                     blockResponder.MarioBlockCollide(mario, block, destroyedBlocks, standingBlocks);
+                }
+                if(fireballRect.Intersects(blockRect))
+                {
+                    fireballResponder.BlockFireballCollide(block, fireball);
                 }
             }
 
