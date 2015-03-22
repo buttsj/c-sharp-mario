@@ -13,6 +13,7 @@ namespace Sprint4
         Game1 game;
         public Mario mario;
         //public Fireball fireball;
+        //public List<Fireball> levelFireballs = new List<Fireball>();
         public LevelBuilder builder;
         public List<Enemy> levelEnemies = new List<Enemy>();
         public List<Block> levelBlocks = new List<Block>();
@@ -29,11 +30,11 @@ namespace Sprint4
             /*
             if (mario.isLeft)
             {
-                fireball = new Fireball(this.game, new Vector2(mario.position.X - 5, mario.position.Y)
+                fireball = new Fireball(this.game, new Vector2(mario.position.X - 5, mario.position.Y);
             } else {
-                fireball = new Fireball(this.game, new Vector2(mario.position.X + 5, mario.position.Y))
+                fireball = new Fireball(this.game, new Vector2(mario.position.X + 5, mario.position.Y));             
             }  
-            
+            levelFireballs.Add(fireball);
              */
             builder = new LevelBuilder(game);
             builder.Build(fileName, levelEnemies, levelBlocks, levelItems, levelBackgrounds);
@@ -68,10 +69,13 @@ namespace Sprint4
                 }
             }
             /*
-            if (game.gameCamera.InCameraView(Fireball.GetRectangle()))
-            {
-                fireball.Update(gameTime);
-            }
+            foreach (Fireball fireball in levelFireballs)
+             {
+                if (game.gameCamera.InCameraView(Fireball.GetRectangle()))
+                {
+                    fireball.Update(gameTime);
+                }
+             }
              */
             collision.Detect(mario, levelEnemies, levelBlocks, levelItems); //fireball should be added after mario
 
@@ -115,9 +119,12 @@ namespace Sprint4
             }
 
             /*
-            if (game.gameCamera.InCameraView(Fireball.GetRectangle()))
+            foreach (Fireball fireball in levelFireballs)
             {
-                fireball.Draw(spriteBatch);
+                if (game.gameCamera.InCameraView(Fireball.GetRectangle()))
+                {
+                    fireball.Draw(spriteBatch);
+                }
             }
              */
             mario.Draw(spriteBatch);
