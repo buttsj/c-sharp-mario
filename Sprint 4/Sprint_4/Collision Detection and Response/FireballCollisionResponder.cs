@@ -14,29 +14,7 @@ namespace Sprint4
         {
             this.game = game;
         }
-        public void MarioFireballCollide(Mario mario, Fireball fireball)
-        {
-            Rectangle marioRect = mario.state.getRectangle(new Vector2(mario.position.X, mario.position.Y));
-            Rectangle fireballRect = fireball.GetRectangle();
-            Rectangle intersection = Rectangle.Intersect(marioRect, fireballRect);
-            if (intersection.Height > intersection.Width)
-            {
-                if (!mario.marioIsStar)
-                {
-                    //rework this collision detection, as it makes the game brutally hard.
-                    mario.TakeDamage();                    
-                }
-                fireball.state = new NullFireballState(game);
-            }
-            else
-            {
-               if (!mario.marioIsStar)
-               {
-                    mario.TakeDamage();                    
-               }
-               fireball.state = new NullFireballState(game);
-            }
-        }
+        
         public void EnemyFireballCollide(Enemy enemy, Fireball fireball)
         {
             Rectangle enemyRect = enemy.GetRectangle();
@@ -61,13 +39,11 @@ namespace Sprint4
             Rectangle fireballRect = fireball.GetRectangle();
             Rectangle intersection = Rectangle.Intersect(blockRect, fireballRect);
             if (intersection.Height > intersection.Width)
-            {
-                block.Reaction();
+            {               
                 fireball.state = new NullFireballState(game);
             }
             else
-            {
-                block.Reaction();
+            {                
                 fireball.state = new NullFireballState(game);
             }
         }        
