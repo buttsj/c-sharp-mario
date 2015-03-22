@@ -20,6 +20,7 @@ namespace Sprint4
         {            
             position = location;
             this.game = game;
+            state = new FireballState(game);
         }
 
         public void GoLeft()

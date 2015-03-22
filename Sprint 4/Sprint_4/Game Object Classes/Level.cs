@@ -12,8 +12,8 @@ namespace Sprint4
     {
         Game1 game;
         public Mario mario;
-        //public Fireball fireball;
-        //public List<Fireball> levelFireballs = new List<Fireball>();
+        public Fireball fireball;
+        public List<Fireball> levelFireballs = new List<Fireball>();
         public LevelBuilder builder;
         public List<Enemy> levelEnemies = new List<Enemy>();
         public List<Block> levelBlocks = new List<Block>();
@@ -27,15 +27,19 @@ namespace Sprint4
         {
             this.game = game;
             mario = new Mario(this.game, new Vector2(250, (float)440));
-            /*
-            if (mario.isLeft)
+
+            if (mario.isFireball)
             {
-                fireball = new Fireball(this.game, new Vector2(mario.position.X - 5, mario.position.Y);
-            } else {
-                fireball = new Fireball(this.game, new Vector2(mario.position.X + 5, mario.position.Y));             
-            }  
-            levelFireballs.Add(fireball);
-             */
+                if (mario.isLeft)
+                {
+                    fireball = new Fireball(this.game, new Vector2(mario.position.X - 5, mario.position.Y));
+                }
+                else
+                {
+                    fireball = new Fireball(this.game, new Vector2(mario.position.X + 5, mario.position.Y));
+                }
+                levelFireballs.Add(fireball);
+            }
             builder = new LevelBuilder(game);
             builder.Build(fileName, levelEnemies, levelBlocks, levelItems, levelBackgrounds);
             collision = new CollisionDetector(game);
@@ -68,16 +72,16 @@ namespace Sprint4
                     blockUpdater.Update(gameTime);
                 }
             }
-            /*
+            
             foreach (Fireball fireball in levelFireballs)
              {
-                if (game.gameCamera.InCameraView(Fireball.GetRectangle()))
+                if (game.gameCamera.InCameraView(fireball.GetRectangle()));
                 {
                     fireball.Update(gameTime);
                 }
              }
-             */
-            collision.Detect(mario, levelEnemies, levelBlocks, levelItems); //fireball should be added after mario
+             
+            collision.Detect(mario, levelFireballs, levelEnemies, levelBlocks, levelItems); 
 
             mario.Update(gameTime);
             if (mario.position.X < 0)
@@ -118,15 +122,15 @@ namespace Sprint4
                 }
             }
 
-            /*
+            
             foreach (Fireball fireball in levelFireballs)
             {
-                if (game.gameCamera.InCameraView(Fireball.GetRectangle()))
+                if (game.gameCamera.InCameraView(fireball.GetRectangle()))
                 {
                     fireball.Draw(spriteBatch);
                 }
             }
-             */
+             
             mario.Draw(spriteBatch);
         }
     }
