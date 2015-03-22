@@ -38,8 +38,10 @@ namespace Sprint4
             builder = new LevelBuilder(game);
             builder.Build(fileName, levelEnemies, levelBlocks, levelItems, levelBackgrounds);
             collision = new CollisionDetector(game);
-            background = game.Content.Load<Texture2D>("background");
             game.soundManager.PlaySong(SoundManager.songs.athletic);
+
+            background = game.Content.Load<Texture2D>("background2");
+
         }
 
         public void Update(GameTime gameTime)
@@ -74,14 +76,18 @@ namespace Sprint4
             collision.Detect(mario, levelEnemies, levelBlocks, levelItems); //fireball should be added after mario
 
             mario.Update(gameTime);
-            
+            if (mario.position.X < 0)
+            {
+                mario.position.X = 0;
+            }
             game.gameCamera.LookAt(mario.position);
         }
 
         public void Draw(SpriteBatch spriteBatch)
         {
-            spriteBatch.Draw(background, new Rectangle(0, 0, 800, 480), null, Color.White, 0, new Vector2(-game.gameCamera.Position.X / 2.0f, 0), SpriteEffects.None, 0);
-            
+
+            spriteBatch.Draw(background, new Rectangle(0, 55, 4096, 432), Color.White);
+
             foreach (Enemy enemy in levelEnemies)
             {
                 if (game.gameCamera.InCameraView(enemy.GetRectangle()))

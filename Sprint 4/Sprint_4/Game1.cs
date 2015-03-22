@@ -56,9 +56,7 @@ namespace Sprint4
         {
             GraphicsDevice.Clear(Color.White);
 
-            Vector2 parallax = new Vector2(1.0f);
-            spriteBatch.Begin(SpriteSortMode.Deferred, null, null, null, null, null, gameCamera.GetViewMatrix(parallax));
-
+            spriteBatch.Begin(SpriteSortMode.Deferred, null, null, null, null, null, gameCamera.GetViewMatrix());
             gameState.Draw(spriteBatch);
             spriteBatch.End();
             base.Draw(gameTime);

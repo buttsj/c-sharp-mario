@@ -39,9 +39,9 @@ namespace Sprint4
                 Position.X = -200;
         }
 
-        public Matrix GetViewMatrix(Vector2 parallax)
+        public Matrix GetViewMatrix()
         {
-            return Matrix.CreateTranslation(new Vector3(-Position * parallax, 0.0f)) *
+            return Matrix.CreateTranslation(new Vector3(-Position, 0.0f)) *
                 Matrix.CreateTranslation(new Vector3(-Origin, 0.0f)) *
                 Matrix.CreateRotationZ(Rotation) *
                 Matrix.CreateScale(Zoom, Zoom, 1) *
