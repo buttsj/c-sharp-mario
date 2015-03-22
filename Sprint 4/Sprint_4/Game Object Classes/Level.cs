@@ -12,7 +12,7 @@ namespace Sprint4
     {
         Game1 game;
         public Mario mario;
-        public Fireball fireball;
+        //public Fireball fireball;
         public LevelBuilder builder;
         public List<Enemy> levelEnemies = new List<Enemy>();
         public List<Block> levelBlocks = new List<Block>();
@@ -26,6 +26,7 @@ namespace Sprint4
         {
             this.game = game;
             mario = new Mario(this.game, new Vector2(250, (float)440));
+           // fireball = new Fireball(this.game, new Vector2(0, (float)0));
             builder = new LevelBuilder(game);
             builder.Build(fileName, levelEnemies, levelBlocks, levelItems, levelBackgrounds);
             collision = new CollisionDetector(game);
@@ -56,9 +57,10 @@ namespace Sprint4
                     blockUpdater.Update(gameTime);
                 }
             }
-            collision.Detect(mario, fireball, levelEnemies, levelBlocks, levelItems);
+            collision.Detect(mario, levelEnemies, levelBlocks, levelItems);
 
             mario.Update(gameTime);
+            //fireball.Update(gameTime);
             game.gameCamera.LookAt(mario.position);
         }
 
@@ -91,6 +93,7 @@ namespace Sprint4
                     blockDrawer.Draw(spriteBatch, blockDrawer.position);
                 }
             }
+            
             mario.Draw(spriteBatch);
         }
     }

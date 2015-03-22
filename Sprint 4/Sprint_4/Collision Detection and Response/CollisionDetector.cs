@@ -16,7 +16,7 @@ namespace Sprint4
         public ItemCollisionResponder itemResponder;
         public EnemyCollisionResponder enemyResponder;
         public BlockCollisionResponder blockResponder;
-        public FireballCollisionResponder fireballResponder;
+       // public FireballCollisionResponder fireballResponder;
         public List<Block> standingBlocks;
 
         public CollisionDetector(Game1 game)
@@ -26,16 +26,16 @@ namespace Sprint4
             itemResponder = new ItemCollisionResponder(game);
             blockResponder = new BlockCollisionResponder(game);
             enemyResponder = new EnemyCollisionResponder(game);
-            fireballResponder = new FireballCollisionResponder(game);
+           // fireballResponder = new FireballCollisionResponder(game);
             standingBlocks = new List<Block>();
         }
 
-        public void Detect(Mario mario, Fireball fireball, List<Enemy> levelEnemies,
+        public void Detect(Mario mario, List<Enemy> levelEnemies,
             List<Block> levelBlocks, List<Item> levelItems)
         {
             standingBlocks = new List<Block>();
             Rectangle marioRect = mario.state.getRectangle(new Vector2(mario.position.X, mario.position.Y));
-            Rectangle fireballRect = fireball.GetRectangle();
+           // Rectangle fireballRect = fireball.GetRectangle(); 
             foreach (Enemy enemy in levelEnemies)
             {
                 if (!enemy.isDead && mario.invicibilityFrames ==0)
@@ -46,6 +46,7 @@ namespace Sprint4
                         enemyResponder.MarioEnemyCollide(mario, enemy);
                     }
                 }
+                /*
                 if (!enemy.isDead)
                 {
                     Rectangle enemyRect = enemy.GetRectangle();
@@ -54,6 +55,7 @@ namespace Sprint4
                         fireballResponder.EnemyFireballCollide(enemy, fireball);
                     }                    
                 }
+                 * */
             }
             foreach (Item item in levelItems)
             {
@@ -72,10 +74,12 @@ namespace Sprint4
                 {
                     blockResponder.MarioBlockCollide(mario, block, destroyedBlocks, standingBlocks);
                 }
+                /*
                 if(fireballRect.Intersects(blockRect))
                 {
                     fireballResponder.BlockFireballCollide(block, fireball);
                 }
+                 */
             }
 
             foreach (Block block in levelBlocks)
