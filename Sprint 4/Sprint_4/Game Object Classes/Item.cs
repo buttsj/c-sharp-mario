@@ -15,6 +15,7 @@ namespace Sprint4
         public IAnimatedSprite sprite;
         public bool isSpawning = false;
         int spawnTimer = 0;
+        public bool isCoin = false;
 
         public Item(Game1 game, IAnimatedSprite sprite)
         {
@@ -66,10 +67,17 @@ namespace Sprint4
         }
 
         public void Spawn(){
-            game.level.levelItems.Add(this);
             isSpawning = true;
-            spawnTimer = 50;
-            game.soundManager.itemSpawn.Play();
+            if (!isCoin)
+            {
+                game.level.levelItems.Add(this);
+                spawnTimer = 50;
+                game.soundManager.itemSpawn.Play();
+            }
+            else
+            {
+                game.soundManager.coinCollect.Play();
+            }
         }
     }
 }

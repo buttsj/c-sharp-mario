@@ -16,7 +16,9 @@ namespace Sprint4
         public Vector2 position = new Vector2(0, 0);
         Game1 game;
 
-        public enum BlockType { used, question, winged, exclamation, brick, pipe, ground, leftEdge, rightEdge, exMush}
+        //split this off into a factory
+        public enum BlockType { used, question, winged, exclamation, brick, pipe, ground, leftEdge, rightEdge, quesMush,
+        quesCoin, ques1up, quesStar}
 
         public Block(Game1 game, Block.BlockType type, Vector2 location)
         {
@@ -57,11 +59,30 @@ namespace Sprint4
             {
                 state = new RightEdgeBlockState(game);
             }
-            if (type == BlockType.exMush)
+            if (type == BlockType.quesMush)
             {
-                state = new ExclamationBlockState(game);
+                state = new QuestionBlockState(game);
                 prize = new Item(game, factory.build(SpriteFactory.sprites.superMushroom));
                 prize.position = location;
+            }
+            if (type == BlockType.quesStar)
+            {
+                state = new QuestionBlockState(game);
+                prize = new Item(game, factory.build(SpriteFactory.sprites.star));
+                prize.position = location;
+            }
+            if (type == BlockType.ques1up)
+            {
+                state = new QuestionBlockState(game);
+                prize = new Item(game, factory.build(SpriteFactory.sprites.oneUpMushroom));
+                prize.position = location;
+            }
+            if (type == BlockType.quesCoin)
+            {
+                state = new QuestionBlockState(game);
+                prize = new Item(game, factory.build(SpriteFactory.sprites.coin));
+                prize.position = location;
+                prize.isCoin = true;
             }
             position = location;
             this.game = game;

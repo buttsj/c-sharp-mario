@@ -40,7 +40,10 @@ namespace Sprint4
             blockDictionary.Add("g", Block.BlockType.ground);
             blockDictionary.Add("l", Block.BlockType.leftEdge);
             blockDictionary.Add("r", Block.BlockType.rightEdge);
-            blockDictionary.Add("!SM", Block.BlockType.exMush);
+            blockDictionary.Add("?SM", Block.BlockType.quesMush);
+            blockDictionary.Add("?C", Block.BlockType.quesCoin);
+            blockDictionary.Add("?1U", Block.BlockType.ques1up);
+            blockDictionary.Add("?*", Block.BlockType.quesStar);
             this.game = game;
         }
 
