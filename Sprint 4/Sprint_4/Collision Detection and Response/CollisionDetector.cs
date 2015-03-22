@@ -47,7 +47,7 @@ namespace Sprint4
             foreach (Item item in levelItems)
             {
                 Rectangle itemRect = item.GetRectangle();
-                if (marioRect.Intersects(itemRect))
+                if (marioRect.Intersects(itemRect) && !item.isSpawning)
                 {
                     obtainedItems.Add(item);
                     itemResponder.MarioItemCollide(item, mario);
