@@ -9,6 +9,16 @@ namespace Sprint4
 {
     class NullFireballState : IFireballState
     {
+        Game1 game;
+        IAnimatedSprite sprite;
+        ISpriteFactory factory;
+
+        public NullFireballState(Game1 game)
+        {
+            factory = new SpriteFactory();
+            sprite = factory.build(SpriteFactory.sprites.fireball);
+            this.game = game;
+        }
         public Rectangle GetRectangle(Vector2 position)
         {
             return new Rectangle(0, 0, 0, 0);

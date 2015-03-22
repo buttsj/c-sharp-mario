@@ -24,16 +24,17 @@ namespace Sprint4
                 if (!mario.marioIsStar)
                 {
                     //rework this collision detection, as it makes the game brutally hard.
-                    mario.TakeDamage();
-                }                
+                    mario.TakeDamage();                    
+                }
+                fireball.state = new NullFireballState(game);
             }
             else
             {
                if (!mario.marioIsStar)
                {
-                    mario.TakeDamage();
-               }                    
-                
+                    mario.TakeDamage();                    
+               }
+               fireball.state = new NullFireballState(game);
             }
         }
         public void EnemyFireballCollide(Enemy enemy, Fireball fireball)
@@ -43,14 +44,13 @@ namespace Sprint4
             Rectangle intersection = Rectangle.Intersect(enemyRect, fireballRect);
             if (intersection.Height > intersection.Width)
             {
-                if (enemyRect.Right > fireballRect.Left && enemyRect.Right < fireballRect.Right)
-                {
-                    enemy.TakeDamage();
-                }
-                else
-                {
-                    enemy.TakeDamage();
-                }
+                enemy.TakeDamage();
+                fireball.state = new NullFireballState(game);
+            }
+            else
+            {
+                enemy.TakeDamage();
+                fireball.state = new NullFireballState(game);
             }
 
         }
@@ -62,18 +62,14 @@ namespace Sprint4
             Rectangle intersection = Rectangle.Intersect(blockRect, fireballRect);
             if (intersection.Height > intersection.Width)
             {
-                if (blockRect.Right > fireballRect.Left && blockRect.Right < fireballRect.Right)
-                {
-                    block.Reaction();
-                }
-                else
-                {
-                    block.Reaction();
-                }
+                block.Reaction();
+                fireball.state = new NullFireballState(game);
             }
-
-        }
-
-        
+            else
+            {
+                block.Reaction();
+                fireball.state = new NullFireballState(game);
+            }
+        }        
     }
 }
