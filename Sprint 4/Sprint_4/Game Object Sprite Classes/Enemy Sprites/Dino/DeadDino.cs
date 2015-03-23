@@ -23,7 +23,7 @@ namespace Sprint4
             currentFrame = 0;
             totalFrames = Rows * Columns;
         }
-        public Rectangle GetRectangle(Vector2 location)
+        public Rectangle GetBoundingBox(Vector2 location)
         {
             int width = Texture.Width / Columns;
             int height = Texture.Height/ Rows;

@@ -12,6 +12,6 @@ namespace Sprint4
         void Update(GameTime gameTime, Block block);
         void Draw(SpriteBatch spriteBatch, Vector2 location);
         void Reaction(Block block);
-        Rectangle GetRectangle(Vector2 location);
+        Rectangle GetBoundingBox(Vector2 location);
     }
 }

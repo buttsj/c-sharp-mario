@@ -60,9 +60,9 @@ namespace Sprint4
             }            
         }
 
-        public Rectangle GetRectangle()
+        public Rectangle GetBoundingBox()
         {
-            return state.GetRectangle(position);
+            return state.GetBoundingBox(position);
         }
     }
 }

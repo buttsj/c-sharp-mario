@@ -19,9 +19,9 @@ namespace Sprint4
             sprite = factory.build(SpriteFactory.sprites.rightIdleMarioSmall);
             this.game = game;
         }
-        public Rectangle getRectangle(Vector2 location)
+        public Rectangle GetBoundingBox(Vector2 location)
         {
-            return sprite.GetRectangle(location);
+            return sprite.GetBoundingBox(location);
         }
 
         public void TakeDamage()

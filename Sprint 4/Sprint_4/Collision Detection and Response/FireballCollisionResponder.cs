@@ -18,8 +18,8 @@ namespace Sprint4
         
         public void EnemyFireballCollide(Enemy enemy, Fireball fireball)
         {
-            Rectangle enemyRect = enemy.GetRectangle();
-            Rectangle fireballRect = fireball.GetRectangle();
+            Rectangle enemyRect = enemy.GetBoundingBox();
+            Rectangle fireballRect = fireball.GetBoundingBox();
             Rectangle intersection = Rectangle.Intersect(enemyRect, fireballRect);
             if (intersection.Height > intersection.Width)
             {
@@ -36,8 +36,8 @@ namespace Sprint4
 
         public void BlockFireballCollide(Block block, Fireball fireball)
         {
-            Rectangle blockRect = block.GetRectangle();
-            Rectangle fireballRect = fireball.GetRectangle();
+            Rectangle blockRect = block.GetBoundingBox();
+            Rectangle fireballRect = fireball.GetBoundingBox();
             Rectangle intersection = Rectangle.Intersect(blockRect, fireballRect);
             if (intersection.Height > intersection.Width)
             {               

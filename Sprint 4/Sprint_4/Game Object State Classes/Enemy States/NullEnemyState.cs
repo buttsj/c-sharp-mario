@@ -9,7 +9,7 @@ namespace Sprint4
 {
     class NullEnemyState :IEnemyState
     {
-        public Rectangle GetRectangle(Vector2 position)
+        public Rectangle GetBoundingBox(Vector2 position)
         {
             return new Rectangle(0, 0, 0, 0);
         }

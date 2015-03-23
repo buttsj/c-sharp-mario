@@ -11,7 +11,7 @@ namespace Sprint4
     {
         void Update(GameTime gameTime);
         void Draw(SpriteBatch spriteBatch, Vector2 location);
-        Rectangle GetRectangle(Vector2 location);
+        Rectangle GetBoundingBox(Vector2 location);
         void GoLeft(Fireball fireball);
         void GoRight(Fireball fireball);
     }

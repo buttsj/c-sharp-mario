@@ -61,9 +61,9 @@ namespace Sprint4
                 }
             }
         }
-        public Rectangle GetRectangle()
+        public Rectangle GetBoundingBox()
         {
-            return sprite.GetRectangle(position);
+            return sprite.GetBoundingBox(position);
         }
 
         public void Spawn(){

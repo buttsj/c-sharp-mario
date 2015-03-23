@@ -9,7 +9,7 @@ namespace Sprint4
 {
     public interface IAnimatedSprite
     {
-        Rectangle GetRectangle(Vector2 location);
+        Rectangle GetBoundingBox(Vector2 location);
         void Update(GameTime gameTime);
         void Draw(SpriteBatch spriteBatch, Vector2 location);
     }

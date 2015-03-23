@@ -19,7 +19,7 @@ namespace Sprint4
             sprite = factory.build(SpriteFactory.sprites.fireball);
             this.game = game;
         }
-        public Rectangle GetRectangle(Vector2 position)
+        public Rectangle GetBoundingBox(Vector2 position)
         {
             return new Rectangle(0, 0, 0, 0);
         }

@@ -42,21 +42,21 @@ namespace Sprint4
         {
             foreach (Enemy enemy in levelEnemies)
             {
-                if (game.gameCamera.InCameraView(enemy.GetRectangle()))
+                if (game.gameCamera.InCameraView(enemy.GetBoundingBox()))
                 {
                     enemy.Update(gameTime);
                 }
             }
             foreach (Item item in levelItems)
             {
-                if (game.gameCamera.InCameraView(item.GetRectangle()))
+                if (game.gameCamera.InCameraView(item.GetBoundingBox()))
                 {
                     item.Update(gameTime);
                 }
             }
             foreach (Block blockUpdater in levelBlocks)
             {
-                if (game.gameCamera.InCameraView(blockUpdater.GetRectangle()))
+                if (game.gameCamera.InCameraView(blockUpdater.GetBoundingBox()))
                 {
                     blockUpdater.Update(gameTime);
                 }
@@ -64,7 +64,7 @@ namespace Sprint4
             
             foreach (Fireball fireball in levelFireballs)
              {
-                if (game.gameCamera.InCameraView(fireball.GetRectangle()));
+                if (game.gameCamera.InCameraView(fireball.GetBoundingBox()));
                 {
                     fireball.Update(gameTime);
                 }
@@ -87,14 +87,14 @@ namespace Sprint4
 
             foreach (Enemy enemy in levelEnemies)
             {
-                if (game.gameCamera.InCameraView(enemy.GetRectangle()))
+                if (game.gameCamera.InCameraView(enemy.GetBoundingBox()))
                 {
                     enemy.Draw(spriteBatch);
                 }
             }
             foreach (Item item in levelItems)
             {
-                if (game.gameCamera.InCameraView(item.GetRectangle()))
+                if (game.gameCamera.InCameraView(item.GetBoundingBox()))
                 {
                     item.Draw(spriteBatch);
                 }
@@ -105,7 +105,7 @@ namespace Sprint4
             }
             foreach (Block blockDrawer in levelBlocks)
             {
-                if (game.gameCamera.InCameraView(blockDrawer.GetRectangle()))
+                if (game.gameCamera.InCameraView(blockDrawer.GetBoundingBox()))
                 {
                     blockDrawer.Draw(spriteBatch, blockDrawer.position);
                 }
@@ -114,7 +114,7 @@ namespace Sprint4
             
             foreach (Fireball fireball in levelFireballs)
             {
-                if (game.gameCamera.InCameraView(fireball.GetRectangle()))
+                if (game.gameCamera.InCameraView(fireball.GetBoundingBox()))
                 {
                     fireball.Draw(spriteBatch);
                 }

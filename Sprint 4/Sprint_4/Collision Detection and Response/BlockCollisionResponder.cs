@@ -22,8 +22,8 @@ namespace Sprint4
         
         public void MarioBlockCollide(Mario mario, Block block, List<Block> destroyedBlocks, List<Block> standingBlocks)
         {
-            Rectangle marioRect = mario.state.getRectangle(new Vector2(mario.position.X, mario.position.Y));
-            Rectangle blockRect = block.GetRectangle();
+            Rectangle marioRect = mario.state.GetBoundingBox(new Vector2(mario.position.X, mario.position.Y));
+            Rectangle blockRect = block.GetBoundingBox();
             Rectangle intersection = Rectangle.Intersect(marioRect, blockRect);
 
             if (intersection.Height > intersection.Width)
@@ -79,8 +79,8 @@ namespace Sprint4
 
         public void ItemBlockCollide(Item item, Block block)
         {
-            Rectangle itemRect = item.GetRectangle();
-            Rectangle blockRect = block.GetRectangle();
+            Rectangle itemRect = item.GetBoundingBox();
+            Rectangle blockRect = block.GetBoundingBox();
             Rectangle intersection = Rectangle.Intersect(itemRect, blockRect);
             if (intersection.Height > intersection.Width)
             {
@@ -110,8 +110,8 @@ namespace Sprint4
 
         public void EnemyBlockCollide(Enemy enemy, Block block)
         {
-            Rectangle enemyRect = enemy.GetRectangle();
-            Rectangle blockRect = block.GetRectangle();
+            Rectangle enemyRect = enemy.GetBoundingBox();
+            Rectangle blockRect = block.GetBoundingBox();
             Rectangle intersection = Rectangle.Intersect(enemyRect, blockRect);
             if (intersection.Height > intersection.Width)
             {

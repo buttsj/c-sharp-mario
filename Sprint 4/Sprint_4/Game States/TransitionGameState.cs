@@ -21,8 +21,8 @@ namespace Sprint4
         }
         public void Update(GameTime gameTime)
         {
-            Rectangle prevRect = prevState.getRectangle(game.level.mario.position);
-            Rectangle newRect = newState.getRectangle(game.level.mario.position);
+            Rectangle prevRect = prevState.GetBoundingBox(game.level.mario.position);
+            Rectangle newRect = newState.GetBoundingBox(game.level.mario.position);
             timer--;
             if (currentState == prevState && timer%5 == 0)
             {

@@ -20,7 +20,7 @@ namespace Sprint4
             Rows = rows;
             Columns = columns;
         }
-        public Rectangle GetRectangle(Vector2 location)
+        public Rectangle GetBoundingBox(Vector2 location)
         {
             int width = Texture.Width / Columns;
             int height = Texture.Height / Rows;

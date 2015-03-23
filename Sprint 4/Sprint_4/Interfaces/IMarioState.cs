@@ -26,7 +26,7 @@ namespace Sprint4
         void MakeDeadMario();
         
 
-        Rectangle getRectangle(Vector2 location);
+        Rectangle GetBoundingBox(Vector2 location);
     }
 }
 

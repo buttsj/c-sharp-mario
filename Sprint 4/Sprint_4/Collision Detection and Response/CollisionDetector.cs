@@ -34,12 +34,12 @@ namespace Sprint4
             List<Block> levelBlocks, List<Item> levelItems)
         {
             standingBlocks = new List<Block>();
-            Rectangle marioRect = mario.state.getRectangle(new Vector2(mario.position.X, mario.position.Y));
+            Rectangle marioRect = mario.state.GetBoundingBox(new Vector2(mario.position.X, mario.position.Y));
             foreach (Enemy enemy in levelEnemies)
             {
                 if (!enemy.isDead && mario.invicibilityFrames ==0)
                 {
-                    Rectangle enemyRect = enemy.GetRectangle();
+                    Rectangle enemyRect = enemy.GetBoundingBox();
                     if (marioRect.Intersects(enemyRect))
                     {
                         enemyResponder.MarioEnemyCollide(mario, enemy);
@@ -49,8 +49,8 @@ namespace Sprint4
               {
                   if (!enemy.isDead)
                   {
-                      Rectangle enemyRect = enemy.GetRectangle();
-                      Rectangle fireballRect = fireball.GetRectangle();
+                      Rectangle enemyRect = enemy.GetBoundingBox();
+                      Rectangle fireballRect = fireball.GetBoundingBox();
                       if (fireballRect.Intersects(enemyRect))
                       {
                           fireballResponder.EnemyFireballCollide(enemy, fireball);
@@ -61,7 +61,7 @@ namespace Sprint4
             }
             foreach (Item item in levelItems)
             {
-                Rectangle itemRect = item.GetRectangle();
+                Rectangle itemRect = item.GetBoundingBox();
                 if (marioRect.Intersects(itemRect) && !item.isSpawning)
                 {
                     obtainedItems.Add(item);
@@ -71,7 +71,7 @@ namespace Sprint4
 
             foreach (Block block in levelBlocks)
             {
-                Rectangle blockRect = block.GetRectangle();
+                Rectangle blockRect = block.GetBoundingBox();
                 if (marioRect.Intersects(blockRect))
                 {
                     blockResponder.MarioBlockCollide(mario, block, destroyedBlocks, standingBlocks);
@@ -79,7 +79,7 @@ namespace Sprint4
 
                 foreach (Fireball fireball in levelFireballs)
                 { 
-                    Rectangle fireballRect = fireball.GetRectangle();
+                    Rectangle fireballRect = fireball.GetBoundingBox();
                     if(fireballRect.Intersects(blockRect))
                     {
                         fireballResponder.BlockFireballCollide(block, fireball);
@@ -90,10 +90,10 @@ namespace Sprint4
 
             foreach (Block block in levelBlocks)
             {
-                Rectangle blockRect = block.GetRectangle();
+                Rectangle blockRect = block.GetBoundingBox();
                 foreach (Item item in levelItems)
                 {
-                    Rectangle itemRect = item.GetRectangle();
+                    Rectangle itemRect = item.GetBoundingBox();
                     if (blockRect.Intersects(itemRect) && !item.isSpawning)
                     {
                         blockResponder.ItemBlockCollide(item, block);
@@ -103,10 +103,10 @@ namespace Sprint4
 
             foreach (Enemy enemy in levelEnemies)
             {
-                    Rectangle enemyRect = enemy.GetRectangle();
+                    Rectangle enemyRect = enemy.GetBoundingBox();
                     foreach (Block block in levelBlocks)
                     {
-                        Rectangle blockRect = block.GetRectangle();
+                        Rectangle blockRect = block.GetBoundingBox();
                         if (blockRect.Intersects(enemyRect))
                         {
                             blockResponder.EnemyBlockCollide(enemy, block);
@@ -115,7 +115,7 @@ namespace Sprint4
 
                     foreach (Enemy otherEnemy in levelEnemies)
                     {
-                        Rectangle otherEnemyRect = enemy.GetRectangle();
+                        Rectangle otherEnemyRect = enemy.GetBoundingBox();
                         if (otherEnemy != enemy && enemyRect.Intersects(otherEnemyRect))
                         {
                             enemyResponder.EnemyEnemyCollide(enemy, otherEnemy);

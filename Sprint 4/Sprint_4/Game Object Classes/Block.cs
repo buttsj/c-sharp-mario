@@ -105,9 +105,9 @@ namespace Sprint4
                 prizeSpawned = true;
             }
         }
-        public Rectangle GetRectangle()
+        public Rectangle GetBoundingBox()
         {
-            return state.GetRectangle(position);
+            return state.GetBoundingBox(position);
         }
     }
 }
