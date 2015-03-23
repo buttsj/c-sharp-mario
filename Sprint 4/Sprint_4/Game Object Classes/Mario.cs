@@ -13,6 +13,7 @@ namespace Sprint4
         Game1 game;
         public IMarioState state;
         public IMarioPhysicsState physState;
+        public Fireball fireball;
         public bool marioIsStar = false, marioIsBig = false, marioIsFire = false, isDead = false, isCrouch = false, isFireball = false, isLeft = false;
         private int starTimer = 1000;
         public int invicibilityFrames = 0;
@@ -27,9 +28,11 @@ namespace Sprint4
         {
             state = new RightIdleSmallMS(game);
             physState = new GroundState(this, game);
+            fireball = new Fireball(this.game, new Vector2(0, 0));
             this.game = game;
             this.position = position;
             jumpFX = game.soundManager.jump.CreateInstance();
+                        
         }
 
         public void Run()
@@ -83,6 +86,7 @@ namespace Sprint4
                 velocity.X -= (float).3;
             }
             isLeft = true;
+            
         }
 
         public void GoRight()
@@ -126,12 +130,28 @@ namespace Sprint4
         public void MakeFireballMario()
         {
             state.MakeFireballMario();
+            if (isLeft)
+            {
+                fireball = new Fireball(this.game, new Vector2(position.X - 5, position.Y));
+                fireball.left = true;
+            }
+            else
+            {
+                fireball = new Fireball(this.game, new Vector2(position.X + 5, position.Y));
+                fireball.left = false;
+            }
+            if (isFireball)
+            {
+                game.level.levelFireballs.Add(fireball);
+            }
+            
             marioIsBig = true;
             marioIsFire = true;
             isFireball = true;
         }
         public void Update(GameTime gameTime)
         {
+            
             if (starTimer != 0 & marioIsStar)
             {
                 starTimer--;
@@ -150,12 +170,18 @@ namespace Sprint4
             {
                 state = new DeadMS(game);
             }
+            fireball.Update(gameTime);
+           
             state.Update(gameTime);
             physState.Update(this, gameTime);
         }
 
         public void Draw(SpriteBatch spriteBatch)
         {
+            if (fireball.fireballLifespan !=0)
+            {
+                fireball.Draw(spriteBatch);
+            }
             if (marioIsStar && starTimer % 5 != 0)
             {
                 state.Draw(spriteBatch, position);

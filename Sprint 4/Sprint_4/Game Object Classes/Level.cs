@@ -28,18 +28,7 @@ namespace Sprint4
             this.game = game;
             mario = new Mario(this.game, new Vector2(250, (float)440));
 
-            if (mario.isFireball)
-            {
-                if (mario.isLeft)
-                {
-                    fireball = new Fireball(this.game, new Vector2(mario.position.X - 5, mario.position.Y));
-                }
-                else
-                {
-                    fireball = new Fireball(this.game, new Vector2(mario.position.X + 5, mario.position.Y));
-                }
-                levelFireballs.Add(fireball);
-            }
+            
             builder = new LevelBuilder(game);
             builder.Build(fileName, levelEnemies, levelBlocks, levelItems, levelBackgrounds);
             collision = new CollisionDetector(game);
