@@ -24,12 +24,12 @@ namespace Sprint4
             if (intersection.Height > intersection.Width)
             {
                 enemy.TakeDamage();
-                fireball.state = new NullFireballState(game);
+                fireball.state = new NullFireballState(game);                
             }
             else
             {
                 enemy.TakeDamage();
-                fireball.state = new NullFireballState(game);
+                fireball.state = new NullFireballState(game);                
             }
 
         }
@@ -40,41 +40,12 @@ namespace Sprint4
             Rectangle fireballRect = fireball.GetBoundingBox();
             Rectangle intersection = Rectangle.Intersect(blockRect, fireballRect);
             if (intersection.Height > intersection.Width)
-            {
-                if (block.state.Equals(new GroundBlockState(game)))
-                {
-                    if (fireball.left)
-                    {
-                        fireball.GoLeft();
-                    }
-                    else
-                    {
-                        fireball.GoRight();
-                    }
-                }
-                else
-                {
-                    fireball.state = new NullFireballState(game);
-                }
-                
+            {                
+                    fireball.state = new NullFireballState(game);                                
             }
             else
-            {
-                if (block.state.Equals(new GroundBlockState(game)))
-                {
-                    if (fireball.left)
-                    {
-                        fireball.GoLeft();
-                    }
-                    else
-                    {
-                        fireball.GoRight();
-                    }
-                }
-                else
-                {
-                    fireball.state = new NullFireballState(game);
-                }
+            {                
+                    fireball.state = new NullFireballState(game);                 
             }
         }        
     }

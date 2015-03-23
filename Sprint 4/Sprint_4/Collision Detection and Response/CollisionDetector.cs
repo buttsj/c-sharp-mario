@@ -85,7 +85,6 @@ namespace Sprint4
                         fireballResponder.BlockFireballCollide(block, fireball);
                     }
                 }               
-              
             }
 
             foreach (Block block in levelBlocks)

@@ -63,11 +63,8 @@ namespace Sprint4
             }
             
             foreach (Fireball fireball in levelFireballs)
-             {
-                if (game.gameCamera.InCameraView(fireball.GetBoundingBox()))
-                {
-                    fireball.Update(gameTime);
-                }
+             {                
+                fireball.Update(gameTime);                
              }
              
             collision.Detect(mario, levelFireballs, levelEnemies, levelBlocks, levelItems); 
@@ -119,7 +116,6 @@ namespace Sprint4
                     fireball.Draw(spriteBatch);
                 }
             }
-             
             mario.Draw(spriteBatch);
         }
     }

@@ -53,7 +53,7 @@ namespace Sprint4
                 }
             }
                      
-           // position.Y++;       
+           position.Y = position.Y + (float).1;       
         }
 
         public void Draw(SpriteBatch spriteBatch)
