@@ -57,8 +57,8 @@ namespace Sprint4
 
         public void Up()
         {
-            //mario needs to have an initial velocity, which slows as he gets higher. Max height is based on the time
-            //it takes for his velocity to reach 0.
+            // Mario needs to have an initial velocity, which slows as he gets higher
+            // Max height is based on the time it takes for his velocity to reach 0
             if (velocity.Y > minVelocity.Y && physState.GetType() != (new FallingState(game)).GetType())
             {
                 physState = new JumpingState(game);

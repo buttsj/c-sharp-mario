@@ -11,28 +11,28 @@ namespace Sprint4
     {
         public enum sprites
         {
-            //enemies
+            // Enemies
             leftDeadDino, rightDeadDino, walkingLeftDino, walkingRightDino,
             walkingRightSquishedDino, walkingLeftSquishedDino, deadShellessKoopa, leftWalkShellessKoopa, rightWalkShellessKoopa,
             banzaiBill, deadBanzaiBill, piranhaPlant, 
-            //items
+            // Items
             oneUpMushroom, fireFlower, superMushroom, coin, redShell, star, fireball,
-            //blocks
+            // Blocks
             questionBlock, brickBlock, usedBlock, wingedBlock, exclamationBlock, 
-            //background
+            // Background items
             bluePipe, bush1, bush2, bush3, launcherPiper, launcherPipeSupport, yellowPipe, whitePipe, exitSign,
             ground, rightEdge, leftEdge,
-            //Mario big
+            // Mario big
             leftCrouchingMarioBig,  leftIdleMarioBig, leftJumpingMarioBig,  
             leftMovingMarioBig, leftQuickturnMarioBig, leftShellKickMarioBig, leftSlidingMarioBig, rightCrouchingMarioBig,
             rightIdleMarioBig, rightJumpingMarioBig,  rightMovingMarioBig, 
             rightQuickturnMarioBig, rightShellKickMarioBig, victoryMarioBig,
-            //Mario fire
+            // Mario fire
             leftCrouchingMarioFire, leftIdleMarioFire, leftJumpingMarioFire, leftQuickturnMarioFire, 
             leftFireballMarioFire, leftMovingMarioFire, rightMovingMarioFire, rightCrouchingMarioFire,
             rightJumpingMarioFire, rightQuickturnMarioFire, rightFireballMarioFire,
             rightIdleMarioFire, victoryMarioFire,
-            //Mario small
+            // Mario small
             deadMario, leftCrouchingMarioSmall, leftIdleMarioSmall, leftJumpingMarioSmall, 
             leftMovingMarioSmall, rightCrouchingMarioSmall, rightIdleMarioSmall, rightJumpingMarioSmall, 
             rightMovingMarioSmall
@@ -218,8 +218,7 @@ namespace Sprint4
             }
 
 
-            //MARIOS
-            //small
+            //SMALL MARIO
             if (sprite == sprites.deadMario)
             {
                 Texture2D deadMario = Game1.gameContent.Load<Texture2D>("Mario Sprites/Small Mario/deadMario");
@@ -266,7 +265,7 @@ namespace Sprint4
                 return new RightMovingMarioSmallSprite(rightMovingMarioSmall, 1, 2);
             }
 
-            //BIG
+            //BIG MARIO
             if (sprite == sprites.leftCrouchingMarioBig)
             {
                 Texture2D leftCrouchingMarioBig = Game1.gameContent.Load<Texture2D>("Mario Sprites/Big Mario/leftCrouchingMarioBig");
@@ -315,7 +314,7 @@ namespace Sprint4
             }
 
 
-            //FIRE
+            //FIRE MARIO
             if (sprite == sprites.leftCrouchingMarioFire)
             {
                 Texture2D leftCrouchingMarioFire = Game1.gameContent.Load<Texture2D>("Mario Sprites/Fire Mario/leftFacingCrouchingMarioFire");

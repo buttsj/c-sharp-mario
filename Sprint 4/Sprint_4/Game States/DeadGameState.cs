@@ -21,8 +21,8 @@ namespace Sprint4
 
         public void Update(GameTime gameTime)
         {
-            //mario's death animation, followed by respawning into playState. Nothing in the level moves
-            //but mario. Have a dead keyboard? It only takes pause and quit inputs.
+            // Mario's death animation, followed by respawning into playState
+            // Nothing in the level moves but Mario
             if (pauseTimer > 0)
             {
                 pauseTimer--;

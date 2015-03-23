@@ -16,7 +16,6 @@ namespace Sprint4
         public Vector2 position = new Vector2(0, 0);
         Game1 game;
 
-        //split this off into a factory
         public enum BlockType { used, question, winged, exclamation, brick, pipe, ground, leftEdge, rightEdge, quesMush,
         quesCoin, ques1up, quesStar}
 
