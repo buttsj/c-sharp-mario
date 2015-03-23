@@ -30,28 +30,17 @@ namespace Sprint4
             {
                 if (marioRect.Right > blockRect.Left && marioRect.Right < blockRect.Right)
                 {
-                    mario.position.X = mario.position.X - intersection.Width;
+                    mario.position.X -= intersection.Width;
                 }
                 else
                 {
-                    mario.position.X = mario.position.X + intersection.Width;
+                    mario.position.X += intersection.Width;
                 }
             }
-            else
+            else if (intersection.Height < intersection.Width)
             {
                 if (marioRect.Bottom > blockRect.Top && marioRect.Bottom < blockRect.Bottom)
-                {
-                    //This is the root of the vibration. The intersection height is too great, and is sending mario 
-                     // into the air by a few pixels. Then falling state kicks in until he collides again, then bounces 
-                       // back up. I've added 1 to his position to stop it, but this causes a tiny dip into the ground when he
-                        //lands
-                    //mario.position.Y = mario.position.Y - intersection.Height +1;
-                    //Another possible fix is this, but now he has 
-                    // a little bounce up when he lands, which may not be an issue. I think that's caused by 
-                    // mario hitting the ground in his falling sprite, then realizing he's supposed to be in ground state and 
-                    // switching to standing/walking mode. The state logic might not be able to keep up. It only happens sometimes,
-                    // so who knows?
-                    
+                {  
                     if (!mario.physState.GetType().Equals((new JumpingState(game)).GetType()))
                     {
                         mario.velocity.Y = 0;

@@ -64,7 +64,7 @@ namespace Sprint4
             
             foreach (Fireball fireball in levelFireballs)
              {
-                if (game.gameCamera.InCameraView(fireball.GetBoundingBox()));
+                if (game.gameCamera.InCameraView(fireball.GetBoundingBox()))
                 {
                     fireball.Update(gameTime);
                 }

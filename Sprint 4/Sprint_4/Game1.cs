@@ -44,6 +44,7 @@ namespace Sprint4
         protected override void LoadContent()
         {
             spriteBatch = new SpriteBatch(GraphicsDevice);
+
         }
 
         protected override void Update(GameTime gameTime)
@@ -55,8 +56,8 @@ namespace Sprint4
         protected override void Draw(GameTime gameTime)
         {
             GraphicsDevice.Clear(Color.White);
-
             spriteBatch.Begin(SpriteSortMode.Deferred, null, null, null, null, null, gameCamera.GetViewMatrix());
+            
             gameState.Draw(spriteBatch);
             spriteBatch.End();
             base.Draw(gameTime);
