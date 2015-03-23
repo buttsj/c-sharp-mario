@@ -24,7 +24,6 @@ namespace Sprint4
             {
                 if (!mario.marioIsStar)
                 {
-                    //rework this collision detection, as it makes the game brutally hard.
                     mario.TakeDamage();
                 }
                 else
