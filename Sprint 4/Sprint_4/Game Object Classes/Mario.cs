@@ -16,6 +16,7 @@ namespace Sprint4
         public Fireball fireball;
         public bool marioIsStar = false, marioIsBig = false, marioIsFire = false, isDead = false, isCrouch = false, isFireball = false, isLeft = false;
         private int starTimer = 1000;
+        private int fireballTimer = 20;
         public int invicibilityFrames = 0;
         public Vector2 position;
         public Vector2 velocity;
@@ -51,6 +52,7 @@ namespace Sprint4
                 game.soundManager.shrink.Play();
                 invicibilityFrames = 100;
             }
+            isFireball = false;
             marioIsBig = false;
             marioIsFire = false;
         }
@@ -118,6 +120,7 @@ namespace Sprint4
             }
             marioIsBig = true;
             marioIsFire = false;
+            isFireball = false;
         }
 
         public void MakeFireMario()
@@ -125,29 +128,33 @@ namespace Sprint4
             state.MakeFireMario();
             marioIsBig = true;
             marioIsFire = true;
+            isFireball = false;
         }
 
         public void MakeFireballMario()
         {
             state.MakeFireballMario();
-            if (isLeft)
+            isFireball = true;
+            if (isFireball & fireballTimer == 0)
             {
-                fireball = new Fireball(this.game, new Vector2(position.X - 5, position.Y));
-                fireball.left = true;
-            }
-            else
-            {
-                fireball = new Fireball(this.game, new Vector2(position.X + 5, position.Y));
-                fireball.left = false;
-            }
-            if (isFireball)
-            {
+                if (isLeft)
+                {
+                    fireball = new Fireball(this.game, new Vector2(position.X - 5, position.Y + 3));
+                    fireball.left = true;
+                    isFireball = false;                    
+                }
+                else
+                {
+                    fireball = new Fireball(this.game, new Vector2(position.X + 5, position.Y + 3));
+                    fireball.left = false;
+                    isFireball = false;                    
+                }          
                 game.level.levelFireballs.Add(fireball);
-            }
+            }            
             
             marioIsBig = true;
             marioIsFire = true;
-            isFireball = true;
+            
         }
         public void Update(GameTime gameTime)
         {
@@ -170,7 +177,19 @@ namespace Sprint4
             {
                 state = new DeadMS(game);
             }
+
             fireball.Update(gameTime);
+            
+            if (fireballTimer != 0 )
+            {
+                fireballTimer--;
+                isFireball = false;
+            }
+            else
+            {
+                fireballTimer = 20;                
+            }
+
            
             state.Update(gameTime);
             physState.Update(this, gameTime);
@@ -178,7 +197,7 @@ namespace Sprint4
 
         public void Draw(SpriteBatch spriteBatch)
         {
-            if (fireball.fireballLifespan !=0)
+            if (fireball.fireballLifespan !=0 && fireballTimer == 0)
             {
                 fireball.Draw(spriteBatch);
             }

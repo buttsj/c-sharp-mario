@@ -30,22 +30,22 @@ namespace Sprint4
         }
         public void Up()
         {
-            game.level.mario.state = new LeftIdleBigMS(game);
+            game.level.mario.state = new LeftIdleBigMS(game);          
         }
         public void Down()
         {
-            game.level.mario.position.Y++;
+            game.level.mario.position.Y++;            
         }
         public void GoLeft()
         {
         }
         public void GoRight()
         {
-            game.level.mario.state = new RightCrouchingBigMS(game);
+            game.level.mario.state = new RightCrouchingBigMS(game);            
         }
         public void Idle()
         {
-            game.level.mario.state = new LeftIdleBigMS(game);
+            game.level.mario.state = new LeftIdleBigMS(game);            
         }
         public void Land()
         {

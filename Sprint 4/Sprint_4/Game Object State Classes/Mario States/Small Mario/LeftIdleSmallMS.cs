@@ -29,19 +29,19 @@ namespace Sprint4
         }
         public void Up()
         {
-            game.level.mario.state = new LeftJumpingSmallMS(game);
+            game.level.mario.state = new LeftJumpingSmallMS(game);         
         }
         public void Down()
         {
-            game.level.mario.state = new LeftCrouchingSmallMS(game);
+            game.level.mario.state = new LeftCrouchingSmallMS(game);          
         }
         public void GoLeft()
         {
-            game.level.mario.state = new LeftMovingSmallMS(game);
+            game.level.mario.state = new LeftMovingSmallMS(game);            
         }
         public void GoRight()
         {
-            game.level.mario.state = new RightMovingSmallMS(game);
+            game.level.mario.state = new RightMovingSmallMS(game);            
         }
         public void Idle()
         {
@@ -53,7 +53,7 @@ namespace Sprint4
         }
         public void MakeBigMario()
         {
-            game.gameState = new TransitionGameState(game, game.level.mario.state, new LeftIdleBigMS(game));
+            game.gameState = new TransitionGameState(game, game.level.mario.state, new LeftIdleBigMS(game));            
         }
         public void MakeSmallMario()
         {
@@ -61,7 +61,7 @@ namespace Sprint4
         }
         public void MakeFireMario()
         {
-            game.gameState = new TransitionGameState(game, game.level.mario.state, new LeftIdleFireMS(game));
+            game.gameState = new TransitionGameState(game, game.level.mario.state, new LeftIdleFireMS(game));            
         }
         public void MakeFireballMario()
         {
