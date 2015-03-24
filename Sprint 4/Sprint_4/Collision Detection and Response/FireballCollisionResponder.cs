@@ -21,19 +21,9 @@ namespace Sprint4
             Rectangle enemyRect = enemy.GetBoundingBox();
             Rectangle fireballRect = fireball.GetBoundingBox();
             Rectangle intersection = Rectangle.Intersect(enemyRect, fireballRect);
-            if (intersection.Height > intersection.Width)
-            {
-                enemy.TakeDamage();
-                fireball.state = new NullFireballState(game);
-                game.level.mario.fireballCount--;
-            }
-            else
-            {
-                enemy.TakeDamage();
-                fireball.state = new NullFireballState(game);
-                game.level.mario.fireballCount--;
-            }
-
+            enemy.TakeDamage();
+            fireball.state = new NullFireballState(game);
+            game.level.mario.fireballCount--;
         }
 
         public void BlockFireballCollide(Block block, Fireball fireball)
@@ -41,15 +31,14 @@ namespace Sprint4
             Rectangle blockRect = block.GetBoundingBox();
             Rectangle fireballRect = fireball.GetBoundingBox();
             Rectangle intersection = Rectangle.Intersect(blockRect, fireballRect);
-            if (intersection.Height > intersection.Width)
-            {                
-                fireball.state = new NullFireballState(game);
-                game.level.mario.fireballCount--;                
+            if (fireballRect.Bottom > blockRect.Top && fireballRect.Bottom < blockRect.Bottom)
+            {
+                fireball.position.Y = fireball.position.Y - intersection.Height;
             }
-            else
-            {                
+            if (!block.state.GetType().Equals((new GroundBlockState(game).GetType())))
+            {
                 fireball.state = new NullFireballState(game);
-                game.level.mario.fireballCount--; 
+                game.level.mario.fireballCount--;
             }
         }        
     }
