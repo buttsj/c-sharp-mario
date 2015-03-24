@@ -17,7 +17,7 @@ namespace Sprint4
         {
             ISpriteFactory factory = new SpriteFactory();
             sprite = factory.build(SpriteFactory.sprites.rightIdleMarioSmall);
-            this.game = game;
+            this.game = game;            
         }
         public Rectangle GetBoundingBox(Vector2 location)
         {
@@ -46,7 +46,7 @@ namespace Sprint4
         }
         public void Idle()
         {
-
+            
         }
         public void Land()
         {

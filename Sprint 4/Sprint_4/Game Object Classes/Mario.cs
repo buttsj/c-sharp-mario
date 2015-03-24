@@ -16,7 +16,7 @@ namespace Sprint4
         public Fireball fireball;
         public bool marioIsStar = false, marioIsBig = false, marioIsFire = false, isDead = false, isCrouch = false, isFireball = false, isLeft = false;
         private int starTimer = 1000;
-        private int fireballTimer = 20;
+        private int fireballTimer = 10;
         public int invicibilityFrames = 0;
         public Vector2 position;
         public Vector2 velocity;
@@ -178,8 +178,7 @@ namespace Sprint4
                 state = new DeadMS(game);
             }
 
-            fireball.Update(gameTime);
-            
+            fireball.Update(gameTime);            
             if (fireballTimer != 0 )
             {
                 fireballTimer--;
@@ -187,7 +186,7 @@ namespace Sprint4
             }
             else
             {
-                fireballTimer = 20;                
+                fireballTimer = 10;                
             }
 
            
