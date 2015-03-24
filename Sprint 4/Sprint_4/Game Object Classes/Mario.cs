@@ -117,9 +117,13 @@ namespace Sprint4
             if (!marioIsFire)
             {
                 state.MakeBigMario();
+                marioIsFire = false;
             }
-            marioIsBig = true;
-            marioIsFire = false;
+            else
+            {
+                marioIsFire = true;
+            }            
+            marioIsBig = true;          
             isFireball = false;
         }
 
