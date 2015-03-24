@@ -24,12 +24,14 @@ namespace Sprint4
             if (intersection.Height > intersection.Width)
             {
                 enemy.TakeDamage();
-                fireball.state = new NullFireballState(game);                
+                fireball.state = new NullFireballState(game);
+                game.level.mario.fireballCount--;
             }
             else
             {
                 enemy.TakeDamage();
-                fireball.state = new NullFireballState(game);                
+                fireball.state = new NullFireballState(game);
+                game.level.mario.fireballCount--;
             }
 
         }
@@ -41,11 +43,13 @@ namespace Sprint4
             Rectangle intersection = Rectangle.Intersect(blockRect, fireballRect);
             if (intersection.Height > intersection.Width)
             {                
-                    fireball.state = new NullFireballState(game);                                
+                fireball.state = new NullFireballState(game);
+                game.level.mario.fireballCount--;                
             }
             else
             {                
-                    fireball.state = new NullFireballState(game);                 
+                fireball.state = new NullFireballState(game);
+                game.level.mario.fireballCount--; 
             }
         }        
     }

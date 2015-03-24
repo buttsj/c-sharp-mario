@@ -17,6 +17,7 @@ namespace Sprint4
         public bool marioIsStar = false, marioIsBig = false, marioIsFire = false, isDead = false, isCrouch = false, isFireball = false, isLeft = false;
         private int starTimer = 1000;
         private int fireballTimer = 10;
+        public int fireballCount = 0;
         public int invicibilityFrames = 0;
         public Vector2 position;
         public Vector2 velocity;
@@ -139,30 +140,29 @@ namespace Sprint4
         {
             state.MakeFireballMario();
             isFireball = true;
-            if (isFireball & fireballTimer == 0)
+            if (fireballCount < 3)
             {
-                if (isLeft)
+                if (fireballTimer == 0)
                 {
-                    fireball = new Fireball(this.game, new Vector2(position.X - 5, position.Y + 3));
-                    fireball.left = true;
-                    isFireball = false;                    
+                    if (isLeft)
+                    {
+                        fireball = new Fireball(this.game, new Vector2(position.X - 5, position.Y + 3));
+                        fireball.left = true;
+                    }
+                    else
+                    {
+                        fireball = new Fireball(this.game, new Vector2(position.X + 5, position.Y + 3));
+                        fireball.left = false;
+                    }
+                    game.level.levelFireballs.Add(fireball);
+                    fireballCount++;
                 }
-                else
-                {
-                    fireball = new Fireball(this.game, new Vector2(position.X + 5, position.Y + 3));
-                    fireball.left = false;
-                    isFireball = false;                    
-                }          
-                game.level.levelFireballs.Add(fireball);
-            }            
-            
+            }
             marioIsBig = true;
-            marioIsFire = true;
-            
+            marioIsFire = true;            
         }
         public void Update(GameTime gameTime)
-        {
-            
+        {            
             if (starTimer != 0 & marioIsStar)
             {
                 starTimer--;
@@ -181,19 +181,16 @@ namespace Sprint4
             {
                 state = new DeadMS(game);
             }
-
             fireball.Update(gameTime);            
             if (fireballTimer != 0 )
             {
                 fireballTimer--;
-                isFireball = false;
+                isFireball = false;                
             }
             else
             {
                 fireballTimer = 10;                
-            }
-
-           
+            }           
             state.Update(gameTime);
             physState.Update(this, gameTime);
         }

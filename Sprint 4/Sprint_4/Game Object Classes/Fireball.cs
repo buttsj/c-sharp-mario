@@ -14,7 +14,7 @@ namespace Sprint4
         public bool left = true;
         public Vector2 position;
         public int fireballLifespan = 200;
-        public int numFireballs;
+        
         Game1 game;        
 
         public Fireball(Game1 game, Vector2 location)
@@ -37,7 +37,7 @@ namespace Sprint4
         
         public void Update(GameTime gameTime)
         {
-            numFireballs++;
+            
             state.Update(gameTime);
             
             if (fireballLifespan != 0)
@@ -52,7 +52,7 @@ namespace Sprint4
                     state.GoRight(this);
                 }
             }
-                     
+                                 
            position.Y = position.Y + (float).1;       
         }
 
