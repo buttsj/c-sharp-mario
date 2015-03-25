@@ -236,6 +236,7 @@
     <Content Include="GameThumbnail.png">
       <XnaPlatformSpecific>true</XnaPlatformSpecific>
     </Content>
+    <Content Include="CODE REVIEWS\JackCodeReadability.txt" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Sprint_4Content\Sprint4Content.contentproj">

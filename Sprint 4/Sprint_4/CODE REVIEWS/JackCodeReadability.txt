@@ -1,0 +1,23 @@
+CODE READABILITY REVIEW
+
+Author: John (Jack) Butts
+
+Date: 03/25/2015
+
+Sprint Number: Four
+
+Name of .csv File: Map.csv
+
+Author of .csv File: John Chumley
+
+Number of minutes taken to review: 2
+
+Comments:
+
+-John worked on the Map file this Sprint so I reviewed that
+
+-Map is understandable with use of a .csv file because I can visualize the map
+
+-Ground is clear and enemies are obviously labelled
+
+-Naming convention for blocks with items could be done without needing more than one letter/symbol, but it works fine
