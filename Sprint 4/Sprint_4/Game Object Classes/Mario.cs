@@ -140,7 +140,7 @@ namespace Sprint4
         {
             state.MakeFireballMario();
             isFireball = true;
-            if (fireballCount < 3)
+            if (fireballCount < 3 && marioIsFire)
             {
                 if (fireballTimer == 0)
                 {
@@ -157,9 +157,7 @@ namespace Sprint4
                     game.level.levelFireballs.Add(fireball);
                     fireballCount++;
                 }
-            }
-            marioIsBig = true;
-            marioIsFire = true;            
+            }           
         }
         public void Update(GameTime gameTime)
         {            
@@ -182,6 +180,7 @@ namespace Sprint4
                 state = new DeadMS(game);
             }
             fireball.Update(gameTime);            
+                        
             if (fireballTimer != 0 )
             {
                 fireballTimer--;

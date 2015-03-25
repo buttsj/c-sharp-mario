@@ -14,6 +14,7 @@ namespace Sprint4
         public Mario mario;
         public Fireball fireball;
         public List<Fireball> levelFireballs = new List<Fireball>();
+        public List<Fireball> deadFireballs = new List<Fireball>();
         public LevelBuilder builder;
         public List<Enemy> levelEnemies = new List<Enemy>();
         public List<Block> levelBlocks = new List<Block>();
@@ -64,8 +65,18 @@ namespace Sprint4
             
             foreach (Fireball fireball in levelFireballs)
              {
-                fireball.Update(gameTime);                                               
+                fireball.Update(gameTime);
+                if (fireball.fireballLifespan == 0)
+                {
+                    deadFireballs.Add(fireball);                    
+                }                             
              }
+
+            foreach (Fireball fireball in deadFireballs)
+            {
+                levelFireballs.Remove(fireball);
+                mario.fireballCount--;
+            }
              
             collision.Detect(mario, levelFireballs, levelEnemies, levelBlocks, levelItems); 
 

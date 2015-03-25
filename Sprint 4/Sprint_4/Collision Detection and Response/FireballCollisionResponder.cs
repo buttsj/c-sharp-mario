@@ -23,7 +23,7 @@ namespace Sprint4
             Rectangle intersection = Rectangle.Intersect(enemyRect, fireballRect);
             enemy.TakeDamage();
             fireball.state = new NullFireballState(game);
-            game.level.mario.fireballCount--;
+            game.level.deadFireballs.Add(fireball);
         }
 
         public void BlockFireballCollide(Block block, Fireball fireball)
@@ -38,7 +38,8 @@ namespace Sprint4
             if (!block.state.GetType().Equals((new GroundBlockState(game).GetType())))
             {
                 fireball.state = new NullFireballState(game);
-                game.level.mario.fireballCount--;
+                game.level.deadFireballs.Add(fireball);
+
             }
         }        
     }
