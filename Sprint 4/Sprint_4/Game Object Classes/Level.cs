@@ -68,14 +68,18 @@ namespace Sprint4
                 fireball.Update(gameTime);
                 if (fireball.fireballLifespan == 0)
                 {
-                    deadFireballs.Add(fireball);                    
+                    deadFireballs.Add(fireball);
+                    if (mario.fireballCount > 0)
+                    {
+                        mario.fireballCount--;
+                    } 
                 }                             
              }
 
             foreach (Fireball fireball in deadFireballs)
             {
                 levelFireballs.Remove(fireball);
-                mario.fireballCount--;
+                               
             }
              
             collision.Detect(mario, levelFireballs, levelEnemies, levelBlocks, levelItems); 

@@ -24,6 +24,7 @@ namespace Sprint4
             enemy.TakeDamage();
             fireball.state = new NullFireballState(game);
             game.level.deadFireballs.Add(fireball);
+            game.level.mario.fireballCount--;
         }
 
         public void BlockFireballCollide(Block block, Fireball fireball)
@@ -39,6 +40,7 @@ namespace Sprint4
             {
                 fireball.state = new NullFireballState(game);
                 game.level.deadFireballs.Add(fireball);
+                game.level.mario.fireballCount--;
 
             }
         }        
