@@ -482,6 +482,9 @@
       <Name>Map</Name>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <Compile Include="Maps\TestMap.csv">
+      <Name>TestMap</Name>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Sound\Music\Course Clear BGM.mp3">
