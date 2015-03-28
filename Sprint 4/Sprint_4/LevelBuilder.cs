@@ -10,15 +10,17 @@ namespace Sprint4
     public class LevelBuilder
     {
         public Dictionary<string, SpriteFactory.sprites> itemDictionary =  new Dictionary<string, SpriteFactory.sprites>();
-        public Dictionary<string, Block.BlockType> blockDictionary = new Dictionary<string, Block.BlockType>();
+        public Dictionary<string, BlockFactory.BlockType> blockDictionary = new Dictionary<string, BlockFactory.BlockType>();
         public Dictionary<string, Enemy.Enemies> enemyDictionary = new Dictionary<string, Enemy.Enemies>();
         public Dictionary<string, SpriteFactory.sprites> backgroundDictionary = new Dictionary<string, SpriteFactory.sprites>();
         Game1 game;
         ISpriteFactory factory;
+        BlockFactory blockFactory;
 
         public LevelBuilder(Game1 game)
         {
             factory = new SpriteFactory();
+            blockFactory = new BlockFactory(game);
             itemDictionary.Add("F", SpriteFactory.sprites.fireFlower);
             itemDictionary.Add("C", SpriteFactory.sprites.coin);
             itemDictionary.Add("SM", SpriteFactory.sprites.superMushroom);
@@ -27,24 +29,24 @@ namespace Sprint4
             backgroundDictionary.Add("bush1", SpriteFactory.sprites.bush1);
             backgroundDictionary.Add("bush2", SpriteFactory.sprites.bush2);
             backgroundDictionary.Add("bush3", SpriteFactory.sprites.bush3);
-            blockDictionary.Add("Pi", Block.BlockType.pipe);
+            blockDictionary.Add("Pi", BlockFactory.BlockType.pipe);
             enemyDictionary.Add("Koop", Enemy.Enemies.Koopa);
             enemyDictionary.Add("Tdin", Enemy.Enemies.Dino);
             enemyDictionary.Add("Bill", Enemy.Enemies.Bill);
             enemyDictionary.Add("Sdin", Enemy.Enemies.SmashedDino);
-            blockDictionary.Add("Wing", Block.BlockType.winged);
-            blockDictionary.Add("X", Block.BlockType.used);
-            blockDictionary.Add("?", Block.BlockType.question);
-            blockDictionary.Add("!", Block.BlockType.exclamation);
-            blockDictionary.Add("B", Block.BlockType.brick);
-            blockDictionary.Add("g", Block.BlockType.ground);
-            blockDictionary.Add("l", Block.BlockType.leftEdge);
-            blockDictionary.Add("r", Block.BlockType.rightEdge);
-            blockDictionary.Add("?SM", Block.BlockType.quesMush);
-            blockDictionary.Add("?C", Block.BlockType.quesCoin);
-            blockDictionary.Add("?1U", Block.BlockType.ques1up);
-            blockDictionary.Add("?*", Block.BlockType.quesStar);
-            blockDictionary.Add("?F", Block.BlockType.quesFlower);
+            blockDictionary.Add("Wing", BlockFactory.BlockType.winged);
+            blockDictionary.Add("X", BlockFactory.BlockType.used);
+            blockDictionary.Add("?", BlockFactory.BlockType.question);
+            blockDictionary.Add("!", BlockFactory.BlockType.exclamation);
+            blockDictionary.Add("B", BlockFactory.BlockType.brick);
+            blockDictionary.Add("g", BlockFactory.BlockType.ground);
+            blockDictionary.Add("l", BlockFactory.BlockType.leftEdge);
+            blockDictionary.Add("r", BlockFactory.BlockType.rightEdge);
+            blockDictionary.Add("?SM", BlockFactory.BlockType.quesMush);
+            blockDictionary.Add("?C", BlockFactory.BlockType.quesCoin);
+            blockDictionary.Add("?1U", BlockFactory.BlockType.ques1up);
+            blockDictionary.Add("?*", BlockFactory.BlockType.quesStar);
+            blockDictionary.Add("?F", BlockFactory.BlockType.quesFlower);
             this.game = game;
         }
 
@@ -78,7 +80,7 @@ namespace Sprint4
                     }
                     if (blockDictionary.ContainsKey(words[i]))
                     {
-                        Block block = new Block(game, blockDictionary[words[i]], new Vector2(xCoord, yCoord));
+                        Block block = blockFactory.build(blockDictionary[words[i]], new Vector2(xCoord, yCoord));
                         levelBlocks.Add(block);
                     }
                     if (enemyDictionary.ContainsKey(words[i]))
