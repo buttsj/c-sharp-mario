@@ -16,7 +16,7 @@ namespace Sprint4
             this.game = game;
         }
         
-        public void EnemyFireballCollide(Enemy enemy, Fireball fireball)
+        public void EnemyFireballCollide(BasicEnemy enemy, Fireball fireball)
         {
             Rectangle enemyRect = enemy.GetBoundingBox();
             Rectangle fireballRect = fireball.GetBoundingBox();

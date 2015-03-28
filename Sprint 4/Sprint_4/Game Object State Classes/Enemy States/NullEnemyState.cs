@@ -13,14 +13,14 @@ namespace Sprint4
         {
             return new Rectangle(0, 0, 0, 0);
         }
-        public void TakeDamage(Enemy hurtEnemy)
+        public void TakeDamage(BasicEnemy hurtEnemy)
         {
         }
-        public void GoLeft(Enemy enemy)
+        public void GoLeft(BasicEnemy enemy)
         {
             // null
         }
-        public void GoRight(Enemy enemy)
+        public void GoRight(BasicEnemy enemy)
         {
             // null
         }

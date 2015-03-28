@@ -12,8 +12,8 @@ namespace Sprint4
         void Update(GameTime gameTime);
         void Draw(SpriteBatch spriteBatch, Vector2 location);
         Rectangle GetBoundingBox(Vector2 location);
-        void TakeDamage(Enemy enemy);
-        void GoLeft(Enemy enemy);
-        void GoRight(Enemy enemy);
+        void TakeDamage(BasicEnemy enemy);
+        void GoLeft(BasicEnemy enemy);
+        void GoRight(BasicEnemy enemy);
     }
 }

@@ -15,7 +15,7 @@ namespace Sprint4
         {
             this.game = game;
         }
-        public void MarioEnemyCollide(Mario mario, Enemy enemy)
+        public void MarioEnemyCollide(Mario mario, BasicEnemy enemy)
         {
             Rectangle marioRect = mario.state.GetBoundingBox(new Vector2(mario.position.X, mario.position.Y));
             Rectangle enemyRect = enemy.GetBoundingBox();
@@ -51,7 +51,7 @@ namespace Sprint4
                 }
             }
         }
-        public void EnemyEnemyCollide(Enemy enemy1, Enemy enemy2)
+        public void EnemyEnemyCollide(BasicEnemy enemy1, BasicEnemy enemy2)
         {
             Rectangle enemy1Rect = enemy1.GetBoundingBox();
             Rectangle enemy2Rect = enemy2.GetBoundingBox();

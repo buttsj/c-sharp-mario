@@ -10,7 +10,7 @@ namespace Sprint4
     class LivesScreenGameState :IGameState
     {
         Game1 game;
-        int timer = 200;
+        int timer = 150;
         SpriteFont font;
 
         public LivesScreenGameState(Game1 game)

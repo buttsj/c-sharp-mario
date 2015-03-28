@@ -96,9 +96,7 @@ namespace Sprint4
                 prize = new Item(game, factory.build(SpriteFactory.sprites.fireFlower));
                 prize.position = location;
             }
-            Block product = new Block(game, location, prize);
-            product.state = state;
-            product.prize = prize;
+            Block product = new Block(game, location, prize, state);
             return product;
         }
     }

@@ -23,16 +23,16 @@ namespace Sprint4
             return sprite.GetBoundingBox(location);
         }
 
-        public void TakeDamage(Enemy enemy)
+        public void TakeDamage(BasicEnemy enemy)
         {
             enemy.state = new LeftSmashedDinoState(game);
             enemy.position.Y += 16;
         }
-        public void GoLeft(Enemy enemy)
+        public void GoLeft(BasicEnemy enemy)
         {
             enemy.position.X--;
         }
-        public void GoRight(Enemy enemy)
+        public void GoRight(BasicEnemy enemy)
         {
             enemy.state = new RightTallDinoState(game);
         }

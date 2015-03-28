@@ -8,50 +8,32 @@ using Microsoft.Xna.Framework.Audio;
 
 namespace Sprint4
 {
-    public class Enemy
+    public class BasicEnemy
     {
         public IEnemyState state;
         public bool isDead = false;
-        int deathTimer = 15;
-        public enum Enemies { Dino, Koopa, Bill, SmashedDino}
-        public bool right = false, left = true;
+        int deathAnimationTimer = 15;
+        public bool left = true;
         public Vector2 position;
         Game1 game;
         SoundEffectInstance hurtFX;
 
-        public Enemy(Game1 game, Enemy.Enemies type, Vector2 location)
+        public BasicEnemy(Game1 game, Vector2 location, IEnemyState state)
         {
-            if (type == Enemy.Enemies.Bill)
-            {
-                state = new BanzaiBillState(game);
-            }
-            if (type == Enemy.Enemies.Dino)
-            {
-                state = new LeftTallDinoState(game);
-            }
-            if (type == Enemy.Enemies.Koopa)
-            {
-                state = new LeftWalkingShellessKS(game);
-            }
-            if (type == Enemy.Enemies.SmashedDino)
-            {
-                state = new LeftSmashedDinoState(game);
-            }
-            position = location;
             this.game = game;
+            position = location;
+            this.state = state;
             hurtFX = this.game.soundManager.enemyDamage.CreateInstance();
         }
         public void GoLeft()
         {
             state.GoLeft(this);
             left = true;
-            right = false;
         }
         public void GoRight()
         {
             state.GoRight(this);
             left = false;
-            right = true;
         }
         public void TakeDamage()
         {
@@ -75,9 +57,9 @@ namespace Sprint4
             }
             if (isDead)
             {
-                deathTimer--;
+                deathAnimationTimer--;
             }
-            if (deathTimer <= 0)
+            if (deathAnimationTimer <= 0)
             {
                 state = new NullEnemyState();
             }

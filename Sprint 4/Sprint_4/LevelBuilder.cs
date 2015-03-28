@@ -11,16 +11,18 @@ namespace Sprint4
     {
         public Dictionary<string, SpriteFactory.sprites> itemDictionary =  new Dictionary<string, SpriteFactory.sprites>();
         public Dictionary<string, BlockFactory.BlockType> blockDictionary = new Dictionary<string, BlockFactory.BlockType>();
-        public Dictionary<string, Enemy.Enemies> enemyDictionary = new Dictionary<string, Enemy.Enemies>();
+        public Dictionary<string, EnemyFactory.EnemyType> enemyDictionary = new Dictionary<string, EnemyFactory.EnemyType>();
         public Dictionary<string, SpriteFactory.sprites> backgroundDictionary = new Dictionary<string, SpriteFactory.sprites>();
         Game1 game;
         ISpriteFactory factory;
         BlockFactory blockFactory;
+        EnemyFactory enemyFactory;
 
         public LevelBuilder(Game1 game)
         {
             factory = new SpriteFactory();
             blockFactory = new BlockFactory(game);
+            enemyFactory = new EnemyFactory(game);
             itemDictionary.Add("F", SpriteFactory.sprites.fireFlower);
             itemDictionary.Add("C", SpriteFactory.sprites.coin);
             itemDictionary.Add("SM", SpriteFactory.sprites.superMushroom);
@@ -30,10 +32,10 @@ namespace Sprint4
             backgroundDictionary.Add("bush2", SpriteFactory.sprites.bush2);
             backgroundDictionary.Add("bush3", SpriteFactory.sprites.bush3);
             blockDictionary.Add("Pi", BlockFactory.BlockType.pipe);
-            enemyDictionary.Add("Koop", Enemy.Enemies.Koopa);
-            enemyDictionary.Add("Tdin", Enemy.Enemies.Dino);
-            enemyDictionary.Add("Bill", Enemy.Enemies.Bill);
-            enemyDictionary.Add("Sdin", Enemy.Enemies.SmashedDino);
+            enemyDictionary.Add("Koop", EnemyFactory.EnemyType.Koopa);
+            enemyDictionary.Add("Tdin", EnemyFactory.EnemyType.Dino);
+            enemyDictionary.Add("Bill", EnemyFactory.EnemyType.Bill);
+            enemyDictionary.Add("Sdin", EnemyFactory.EnemyType.SmashedDino);
             blockDictionary.Add("Wing", BlockFactory.BlockType.winged);
             blockDictionary.Add("X", BlockFactory.BlockType.used);
             blockDictionary.Add("?", BlockFactory.BlockType.question);
@@ -50,7 +52,7 @@ namespace Sprint4
             this.game = game;
         }
 
-        public void Build(string fileName, List<Enemy> levelEnemies, 
+        public void Build(string fileName, List<BasicEnemy> levelEnemies, 
             List<Block> levelBlocks, List<Item> levelItems,
             List<KeyValuePair<IAnimatedSprite, Vector2>> levelBackgrounds)
         {
@@ -85,7 +87,7 @@ namespace Sprint4
                     }
                     if (enemyDictionary.ContainsKey(words[i]))
                     {
-                       Enemy enemy = new Enemy(game, enemyDictionary[words[i]], new Vector2(xCoord, yCoord));
+                       BasicEnemy enemy = enemyFactory.build(enemyDictionary[words[i]], new Vector2(xCoord, yCoord));
                        levelEnemies.Add(enemy);
                     }
                     xCoord+=16;

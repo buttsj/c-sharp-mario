@@ -23,15 +23,15 @@ namespace Sprint4
             return sprite.GetBoundingBox(location);
         }
 
-        public void TakeDamage(Enemy enemy)
+        public void TakeDamage(BasicEnemy enemy)
         {
             // null
         }
-        public void GoLeft(Enemy enemy)
+        public void GoLeft(BasicEnemy enemy)
         {
             //null
         }
-        public void GoRight(Enemy enemy)
+        public void GoRight(BasicEnemy enemy)
         {
             //null
         }

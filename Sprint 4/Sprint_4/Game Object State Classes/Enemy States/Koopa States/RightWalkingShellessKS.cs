@@ -23,17 +23,17 @@ namespace Sprint4
             return sprite.GetBoundingBox(location);
         }
 
-        public void TakeDamage(Enemy enemy)
+        public void TakeDamage(BasicEnemy enemy)
         {
             enemy.state = new DeadShellessKS(game);
             enemy.isDead = true;
             enemy.position.Y += 8;
         }
-        public void GoLeft(Enemy enemy)
+        public void GoLeft(BasicEnemy enemy)
         {
             enemy.state = new LeftWalkingShellessKS(game);
         }
-        public void GoRight(Enemy enemy)
+        public void GoRight(BasicEnemy enemy)
         {
             enemy.position.X++;
         }

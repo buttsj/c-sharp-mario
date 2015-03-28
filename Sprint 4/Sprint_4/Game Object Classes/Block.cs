@@ -15,9 +15,11 @@ namespace Sprint4
         public Vector2 position = new Vector2(0, 0);
         Game1 game;
 
-        public Block(Game1 game, Vector2 location, Item prize)
+        public Block(Game1 game, Vector2 location, Item prize, IBlockState state)
         {
             this.game = game;
+            this.prize = prize;
+            this.state = state;
             position = location;
         }
 

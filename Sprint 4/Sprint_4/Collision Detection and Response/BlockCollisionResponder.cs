@@ -98,7 +98,7 @@ namespace Sprint4
             }
         }
 
-        public void EnemyBlockCollide(Enemy enemy, Block block)
+        public void EnemyBlockCollide(BasicEnemy enemy, Block block)
         {
             Rectangle enemyRect = enemy.GetBoundingBox();
             Rectangle blockRect = block.GetBoundingBox();
