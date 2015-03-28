@@ -12,7 +12,7 @@ namespace Sprint4
         Game1 game;
         public Song athletic, star, placeHolderSong;
         public SoundEffect coinCollect, brickBreak, grow, shrink, land, oneUp, enemyDamage, jump, itemSpawn,
-            pause, death;
+            pause, death, gameOver;
             
         public enum songs{athletic, star, death}
         public SoundManager(Game1 game){
@@ -31,6 +31,7 @@ namespace Sprint4
             pause = game.Content.Load<SoundEffect>("Sound/SFX/menu");
             enemyDamage = game.Content.Load<SoundEffect>("Sound/SFX/SFX Enemy damage");
             placeHolderSong = game.Content.Load<Song>("Sound/Music/Star BGM");
+            gameOver = game.Content.Load<SoundEffect>("Sound/Music/Game Over");
         }
         public void PlaySong(SoundManager.songs song)
         {

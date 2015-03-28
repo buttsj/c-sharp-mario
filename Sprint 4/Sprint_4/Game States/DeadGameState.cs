@@ -22,8 +22,6 @@ namespace Sprint4
 
         public void Update(GameTime gameTime)
         {
-            // Mario's death animation, followed by respawning into playState
-            // Nothing in the level moves but Mario
             if (pauseTimer > 0)
             {
                 pauseTimer--;
@@ -40,7 +38,14 @@ namespace Sprint4
             }
             if (downTimer <= 0)
             {
-                game.gameState = new LivesScreenGameState(game);
+                if (game.lives > 0)
+                {
+                    game.gameState = new LivesScreenGameState(game);
+                }
+                else
+                {
+                    game.gameState = new GameOverState(game);
+                }
             }
         }
 

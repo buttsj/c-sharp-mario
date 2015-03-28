@@ -26,8 +26,8 @@ namespace Sprint4
             timer--;
             if (timer <= 0)
             {
-                game.level = new Level(game, "/Maps/Map.csv");
-                game.gameState = new PlayGameState(game);
+               game.level = new Level(game, "/Maps/Map.csv");
+               game.gameState = new PlayGameState(game);
             }
             game.keyboardController.Update();
         }
