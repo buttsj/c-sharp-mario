@@ -35,8 +35,8 @@ namespace Sprint4
                 if (commandLibrary.ContainsKey(key))
                 {
                     currentCommand = commandLibrary[key];
-                }
-                    currentCommand.Execute();              
+                    currentCommand.Execute();    
+                }          
            }
         }
     }

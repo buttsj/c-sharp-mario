@@ -12,15 +12,13 @@ namespace Sprint4
         Game1 game;
         int timer = 200;
         SpriteFont font;
-        SpriteFactory factory;
-        IAnimatedSprite item;
 
         public LivesScreenGameState(Game1 game)
         {
             this.game = game;
+            game.lives--;
             font = game.Content.Load<SpriteFont>("SpriteFont1");
-            factory = new SpriteFactory();
-            item = factory.build(SpriteFactory.sprites.coin);
+            game.keyboardController = new PauseMenuKeyController(game);
         }
 
         public void Update(GameTime gameTime)
@@ -31,14 +29,14 @@ namespace Sprint4
                 game.level = new Level(game, "/Maps/Map.csv");
                 game.gameState = new PlayGameState(game);
             }
+            game.keyboardController.Update();
         }
 
         public void Draw(SpriteBatch spriteBatch)
         {
             game.GraphicsDevice.Clear(Color.Black);
-            game.gameCamera.LookAt(new Vector2(0, 0));
-            spriteBatch.DrawString(font, "Lives: ", game.gameCamera.Origin, Color.White);
-            //item.Draw(spriteBatch, game.gameCamera.Origin);
+            game.gameCamera.LookAt(game.gameCamera.Origin);
+            spriteBatch.DrawString(font, "Lives: " + game.lives, new Vector2(game.gameCamera.Origin.X-40, game.gameCamera.Origin.Y+110), Color.White);
         }
     }
 }
