@@ -10,63 +10,59 @@ namespace Sprint4
 {
     public class Fireball
     {
-        public IFireballState state;
+        IAnimatedSprite sprite;
+        ISpriteFactory factory;
         public bool left = true;
         public Vector2 position;
         public int fireballLifespan = 100;
-        
         Game1 game;        
 
-        public Fireball(Game1 game, Vector2 location)
-        {            
+        public Fireball(Game1 game, Vector2 location, bool left)
+        {
+            factory = new SpriteFactory();
+            sprite = factory.build(SpriteFactory.sprites.fireball);
             position = location;
+            this.left = left;
             this.game = game;
-            state = new FireballState(game);
         }
 
         public void GoLeft()
         {
-            state.GoLeft(this);
+            position.X -= (float)2;
             left = true;            
         }
         public void GoRight()
         {
-            state.GoRight(this);
+            position.X += (float)2;
             left = false;            
         }
         
         public void Update(GameTime gameTime)
         {
-            
-            state.Update(gameTime);
-            
+            sprite.Update(gameTime);
             if (fireballLifespan != 0)
             {
                 fireballLifespan--;
                 if (left)
                 {
-                    state.GoLeft(this);
+                    GoLeft();
                 }
                 else
                 {
-                    state.GoRight(this);
+                    GoRight();
                 }
             }
-                                 
-           position.Y = position.Y + 1;       
+            position.Y = position.Y + 1;     
         }
 
         public void Draw(SpriteBatch spriteBatch)
         {
-            if (fireballLifespan != 0)
-            {
-                state.Draw(spriteBatch, position);
-            }            
+            sprite.Draw(spriteBatch, position);        
         }
 
         public Rectangle GetBoundingBox()
         {
-            return state.GetBoundingBox(position);
+            return sprite.GetBoundingBox(position);
         }
     }
 }

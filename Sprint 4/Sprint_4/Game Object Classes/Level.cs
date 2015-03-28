@@ -78,8 +78,7 @@ namespace Sprint4
 
             foreach (Fireball fireball in deadFireballs)
             {
-                levelFireballs.Remove(fireball);
-                               
+                levelFireballs.Remove(fireball);              
             }
              
             collision.Detect(mario, levelFireballs, levelEnemies, levelBlocks, levelItems); 

@@ -11,7 +11,7 @@ namespace Sprint4
     {
         Game1 game;
         public Song athletic, star, placeHolderSong;
-        public SoundEffect coinCollect, brickBreak, grow, shrink, land, oneUp, enemyDamage, jump, itemSpawn,
+        public SoundEffect coinCollect, brickBreak, grow, shrink, blockHit, oneUp, enemyDamage, jump, itemSpawn,
             pause, death, gameOver;
             
         public enum songs{athletic, star, death}
@@ -26,7 +26,7 @@ namespace Sprint4
             itemSpawn = game.Content.Load<SoundEffect>("Sound/SFX/SFX item spawn");
             grow = game.Content.Load<SoundEffect>("Sound/SFX/SFX Grow");
             shrink = game.Content.Load<SoundEffect>("Sound/SFX/SFX shrink");
-            land = game.Content.Load<SoundEffect>("Sound/SFX/SFX land");
+            blockHit = game.Content.Load<SoundEffect>("Sound/SFX/SFX land");
             oneUp = game.Content.Load<SoundEffect>("Sound/SFX/SFX 1up");
             pause = game.Content.Load<SoundEffect>("Sound/SFX/menu");
             enemyDamage = game.Content.Load<SoundEffect>("Sound/SFX/SFX Enemy damage");

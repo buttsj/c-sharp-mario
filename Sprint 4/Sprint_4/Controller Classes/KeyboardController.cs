@@ -47,8 +47,8 @@ namespace Sprint4
                 if (commandLibrary.ContainsKey(key))
                 {
                     currentCommand = commandLibrary[key];
-                    currentCommand.Execute();    
-                }                       
+                    currentCommand.Execute();  
+                } 
            }
            if((game.level.mario.velocity.X < .2 && game.level.mario.velocity.X > -.2) && 
                (game.level.mario.velocity.Y < .1 && game.level.mario.velocity.Y > -.1) && !game.level.mario.physState.GetType().Equals((new FallingState(game)).GetType())){

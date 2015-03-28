@@ -30,11 +30,9 @@ namespace Sprint4
         {
             state = new RightIdleSmallMS(game);
             physState = new GroundState(this, game);
-            fireball = new Fireball(this.game, new Vector2(0, 0));
             this.game = game;
             this.position = position;
             jumpFX = game.soundManager.jump.CreateInstance();
-                        
         }
 
         public void Run()
@@ -60,8 +58,6 @@ namespace Sprint4
 
         public void Up()
         {
-            // Mario needs to have an initial velocity, which slows as he gets higher
-            // Max height is based on the time it takes for his velocity to reach 0
             if (velocity.Y > minVelocity.Y && physState.GetType() != (new FallingState(game)).GetType())
             {
                 physState = new JumpingState(game);
@@ -89,7 +85,6 @@ namespace Sprint4
                 velocity.X -= (float).3;
             }
             isLeft = true;
-            
         }
 
         public void GoRight()
@@ -146,13 +141,11 @@ namespace Sprint4
                 {
                     if (isLeft)
                     {
-                        fireball = new Fireball(this.game, new Vector2(position.X - 5, position.Y + 3));
-                        fireball.left = true;
+                        fireball = new Fireball(this.game, new Vector2(position.X - 5, position.Y + 3), true);
                     }
                     else
                     {
-                        fireball = new Fireball(this.game, new Vector2(position.X + 5, position.Y + 3));
-                        fireball.left = false;
+                        fireball = new Fireball(this.game, new Vector2(position.X + 5, position.Y + 3), false);
                     }
                     game.level.levelFireballs.Add(fireball);
                     fireballCount++;
@@ -178,8 +171,7 @@ namespace Sprint4
             if (position.Y > 500)
             {
                 state = new DeadMS(game);
-            }
-            fireball.Update(gameTime);            
+            }         
                         
             if (fireballTimer != 0 )
             {
@@ -196,10 +188,6 @@ namespace Sprint4
 
         public void Draw(SpriteBatch spriteBatch)
         {
-            if (fireball.fireballLifespan !=0 && fireballTimer == 0)
-            {
-                fireball.Draw(spriteBatch);
-            }
             if (marioIsStar && starTimer % 5 != 0)
             {
                 state.Draw(spriteBatch, position);
