@@ -22,7 +22,7 @@ namespace Sprint4
             this.game = game;
             commandLibrary = new Dictionary<Keys, ICommands>();
             commandLibrary.Add(Keys.Enter, currentCommand = new PauseCommand(this.game));
-            //commandLibrary.Add(Keys.Q, currentCommand = new TestQuitCommand(this.game));
+            commandLibrary.Add(Keys.Q, currentCommand = new TestQuitCommand(this.game));
         }
 
         public void Update()

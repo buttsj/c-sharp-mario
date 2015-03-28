@@ -10,7 +10,7 @@ namespace Sprint4
     {
         Game1 game;
         public Vector2 speedDecayRate = new Vector2((float)0.75, (float)0.80);
-        public static int maxJumpHeight = 100, jumpHeight = 0;
+        public static int maxJumpHeight = 120, jumpHeight = 0;
         public JumpingState(Game1 game)
         {
             this.game = game;
