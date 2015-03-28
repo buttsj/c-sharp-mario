@@ -10,9 +10,9 @@ namespace Sprint4
     public class SoundManager
     {
         Game1 game;
-        public Song athletic, star, death, placeHolderSong;
+        public Song athletic, star, placeHolderSong;
         public SoundEffect coinCollect, brickBreak, grow, shrink, land, oneUp, enemyDamage, jump, itemSpawn,
-            pause, placeHolderFX;
+            pause, death;
             
         public enum songs{athletic, star, death}
         public SoundManager(Game1 game){
@@ -20,7 +20,7 @@ namespace Sprint4
             jump = game.Content.Load<SoundEffect>("Sound/SFX/SFX Jump");
             athletic = game.Content.Load<Song>("Sound/Music/Map BGM");
             star = game.Content.Load<Song>("Sound/Music/Star BGM");
-            death = game.Content.Load<Song>("Sound/Music/Player Down");
+            death = game.Content.Load<SoundEffect>("Sound/SFX/Player Down");
             coinCollect = game.Content.Load<SoundEffect>("Sound/SFX/SFX coin collect");
             brickBreak = game.Content.Load<SoundEffect>("Sound/SFX/SFX Brick Break");
             itemSpawn = game.Content.Load<SoundEffect>("Sound/SFX/SFX item spawn");
@@ -30,7 +30,6 @@ namespace Sprint4
             oneUp = game.Content.Load<SoundEffect>("Sound/SFX/SFX 1up");
             pause = game.Content.Load<SoundEffect>("Sound/SFX/menu");
             enemyDamage = game.Content.Load<SoundEffect>("Sound/SFX/SFX Enemy damage");
-            placeHolderFX = game.Content.Load<SoundEffect>("Sound/SFX/SFX Enemy damage");
             placeHolderSong = game.Content.Load<Song>("Sound/Music/Star BGM");
         }
         public void PlaySong(SoundManager.songs song)
@@ -43,12 +42,12 @@ namespace Sprint4
             {
                 placeHolderSong = star;
             }
-            if (song == SoundManager.songs.death)
-            {
-                placeHolderSong = death;
-            }
             MediaPlayer.Play(placeHolderSong);
             MediaPlayer.IsRepeating = true;
+        }
+        public void StopMusic()
+        {
+            MediaPlayer.Stop();
         }
     }
 }

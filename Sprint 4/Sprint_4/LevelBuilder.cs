@@ -44,6 +44,7 @@ namespace Sprint4
             blockDictionary.Add("?C", Block.BlockType.quesCoin);
             blockDictionary.Add("?1U", Block.BlockType.ques1up);
             blockDictionary.Add("?*", Block.BlockType.quesStar);
+            blockDictionary.Add("?F", Block.BlockType.quesFlower);
             this.game = game;
         }
 

@@ -17,7 +17,7 @@ namespace Sprint4
         Game1 game;
 
         public enum BlockType { used, question, winged, exclamation, brick, pipe, ground, leftEdge, rightEdge, quesMush,
-        quesCoin, ques1up, quesStar}
+        quesCoin, ques1up, quesStar, quesFlower}
 
         public Block(Game1 game, Block.BlockType type, Vector2 location)
         {
@@ -82,6 +82,12 @@ namespace Sprint4
                 prize = new Item(game, factory.build(SpriteFactory.sprites.coin));
                 prize.position = location;
                 prize.isCoin = true;
+            }
+            if (type == BlockType.quesFlower)
+            {
+                state = new QuestionBlockState(game);
+                prize = new Item(game, factory.build(SpriteFactory.sprites.fireFlower));
+                prize.position = location;
             }
             position = location;
             this.game = game;

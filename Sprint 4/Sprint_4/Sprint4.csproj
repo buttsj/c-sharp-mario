@@ -105,6 +105,7 @@
     <Compile Include="Game Object State Classes\Fireball States\NullFireballState.cs" />
     <Compile Include="Game Object State Classes\Mario States\Fire Mario\LeftFireballFireMS.cs" />
     <Compile Include="Game Object State Classes\Mario States\Fire Mario\RightFireballFireMS.cs" />
+    <Compile Include="Game States\LivesScreenGameState.cs" />
     <Compile Include="Game States\PauseGameState.cs" />
     <Compile Include="Game States\TransitionGameState.cs" />
     <Compile Include="Game States\PlayGameState .cs" />

@@ -23,6 +23,7 @@ namespace Sprint4
         public SoundManager soundManager;
         public Camera gameCamera;
         public bool isPaused = false;
+        int coins = 0, lives = 3;
 
         public Game1()
         {
