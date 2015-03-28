@@ -39,6 +39,7 @@ namespace Sprint4
 
         public void Update()
         {
+            currentCommand = new NullCommand(game);
             GamePadState gamepadState = GamePad.GetState(PlayerIndex.One);
             keyboardState = Keyboard.GetState();
             foreach (Keys key in keyboardState.GetPressedKeys())
@@ -47,8 +48,7 @@ namespace Sprint4
                 {
                     currentCommand = commandLibrary[key];
                 }
-                    currentCommand.Execute();
-                              
+                    currentCommand.Execute();                             
            }
            if((game.level.mario.velocity.X < .2 && game.level.mario.velocity.X > -.2) && 
                (game.level.mario.velocity.Y < .1 && game.level.mario.velocity.Y > -.1) && !game.level.mario.physState.GetType().Equals((new FallingState(game)).GetType())){

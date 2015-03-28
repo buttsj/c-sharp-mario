@@ -27,6 +27,7 @@ namespace Sprint4
 
         public void Update()
         {
+            currentCommand = new NullCommand(game);
             GamePadState gamepadState = GamePad.GetState(PlayerIndex.One);
             keyboardState = Keyboard.GetState();
             foreach (Keys key in keyboardState.GetPressedKeys())
