@@ -22,6 +22,7 @@ namespace Sprint4
         public Level level;
         public SoundManager soundManager;
         public Camera gameCamera;
+        public bool isPaused = false;
 
         public Game1()
         {

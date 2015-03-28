@@ -11,10 +11,11 @@ namespace Sprint4
     {
         Game1 game;
         public Song athletic, star, death, placeHolderSong;
-        public SoundEffect coinCollect, brickBreak, grow, shrink, land, oneUp, enemyDamage, jump, itemSpawn, placeHolderFX;
+        public SoundEffect coinCollect, brickBreak, grow, shrink, land, oneUp, enemyDamage, jump, itemSpawn,
+            pause, placeHolderFX;
             
         public enum songs{athletic, star, death}
-        public enum sfx{coin, brick, grow, shrink, land, oneUp, enemyDamage, jump, itemSpawn}
+        public enum sfx{coin, brick, grow, shrink, land, oneUp, enemyDamage, jump, itemSpawn, pause}
         public SoundManager(Game1 game){
             this.game = game;
             jump = game.Content.Load<SoundEffect>("Sound/SFX/SFX Jump");
@@ -28,6 +29,7 @@ namespace Sprint4
             shrink = game.Content.Load<SoundEffect>("Sound/SFX/SFX shrink");
             land = game.Content.Load<SoundEffect>("Sound/SFX/SFX land");
             oneUp = game.Content.Load<SoundEffect>("Sound/SFX/SFX 1up");
+            pause = game.Content.Load<SoundEffect>("Sound/SFX/menu");
             enemyDamage = game.Content.Load<SoundEffect>("Sound/SFX/SFX Enemy damage");
             placeHolderFX = game.Content.Load<SoundEffect>("Sound/SFX/SFX Enemy damage");
             placeHolderSong = game.Content.Load<Song>("Sound/Music/Star BGM");
@@ -82,6 +84,10 @@ namespace Sprint4
             if (fx == SoundManager.sfx.itemSpawn)
             {
                 placeHolderFX = itemSpawn;
+            }
+            if (fx == SoundManager.sfx.pause)
+            {
+                placeHolderFX = pause;
             }
             placeHolderFX.Play();
         }

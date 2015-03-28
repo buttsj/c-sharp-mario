@@ -13,7 +13,7 @@ namespace Sprint4
         public IFireballState state;
         public bool left = true;
         public Vector2 position;
-        public int fireballLifespan = 200;
+        public int fireballLifespan = 100;
         
         Game1 game;        
 

@@ -482,9 +482,6 @@
       <Name>Map</Name>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <Compile Include="Maps\TestMap.csv">
-      <Name>TestMap</Name>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Sound\Music\Course Clear BGM.mp3">
@@ -627,6 +624,13 @@
       <Name>background2</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Sound\SFX\menu.mp3">
+      <Name>menu</Name>
+      <Importer>Mp3Importer</Importer>
+      <Processor>SoundEffectProcessor</Processor>
     </Compile>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\XNA Game Studio\$(XnaFrameworkVersion)\Microsoft.Xna.GameStudio.ContentPipeline.targets" />

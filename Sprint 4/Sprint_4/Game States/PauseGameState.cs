@@ -7,33 +7,32 @@ using System.Text;
 
 namespace Sprint4
 {
-    class PlayGameState :IGameState
+    class PauseGameState :IGameState
     {
         Game1 game;
-        int gameStateTransitionBuffer = 5;
+        int inputBuffer = 10;
 
-        public PlayGameState(Game1 game)
+        public PauseGameState(Game1 game)
         {
-            game.keyboardController = new KeyboardController(game);
+            game.isPaused = true;
             this.game = game;
+            game.keyboardController = new PauseMenuKeyController(game);
+            game.soundManager.pause.Play();
         }
+
         public void Update(GameTime gameTime)
         {
-            if (gameStateTransitionBuffer > 0)
-            {
-                gameStateTransitionBuffer--;
-            }
-            else
+            inputBuffer--;
+            if (inputBuffer <= 0)
             {
                 game.keyboardController.Update();
-                game.gamepadController.Update();
-                game.level.Update(gameTime);
             }
         }
 
         public void Draw(SpriteBatch spriteBatch)
-        {     
-            game.level.Draw(spriteBatch);   
+        {
+            game.level.Draw(spriteBatch);
+
         }
     }
 }

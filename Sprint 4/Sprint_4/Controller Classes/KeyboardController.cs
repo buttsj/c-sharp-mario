@@ -32,7 +32,7 @@ namespace Sprint4
             commandLibrary.Add(Keys.D, currentCommand = new RightCommand(this.game));
             commandLibrary.Add(Keys.Right, currentCommand = new RightCommand(this.game));
             commandLibrary.Add(Keys.B, currentCommand = new FireballCommand(this.game));
-            
+            commandLibrary.Add(Keys.Enter, currentCommand = new PauseCommand(this.game));
             commandLibrary.Add(Keys.Q, currentCommand = new TestQuitCommand(this.game));
             commandLibrary.Add(Keys.R, currentCommand = new ResetSceneCommand(this.game));
         }

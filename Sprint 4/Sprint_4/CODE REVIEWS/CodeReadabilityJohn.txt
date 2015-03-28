@@ -1,0 +1,7 @@
+•	Code Author   Review Author:	John H. Chumley
+•	Date of Review: 		25Mar2015
+•	File Name:			Camera.cs
+•	Sprite #:			4
+•	Code Author:			John (Jack) Butts
+•	Minutes for Review:		15
+•	Comment:	61 lines including white spaces can be viewed on single page, descriptive nomenclature, effective use of whitespaces.(VS code analyzer did not find any issues. “magic” operator is not entirely clear from the code. Line 51 is somewhat long to understand.

@@ -82,6 +82,7 @@
     <Compile Include="Collision Detection and Response\EnemyCollisionResponder.cs" />
     <Compile Include="Collision Detection and Response\FireballCollisionResponder.cs" />
     <Compile Include="Collision Detection and Response\ItemCollisionResponder.cs" />
+    <Compile Include="Command Classes\PauseCommand.cs" />
     <Compile Include="Command Classes\FireballCommand.cs" />
     <Compile Include="Command Classes\RunCommand.cs" />
     <Compile Include="Command Classes\DownCommand.cs" />
@@ -92,6 +93,7 @@
     <Compile Include="Command Classes\TestQuitCommand.cs" />
     <Compile Include="Command Classes\UpCommand.cs" />
     <Compile Include="Controller Classes\GamepadController.cs" />
+    <Compile Include="Controller Classes\PauseMenuKeyController.cs" />
     <Compile Include="Controller Classes\KeyboardController.cs" />
     <Compile Include="Game Object Classes\Fireball.cs" />
     <Compile Include="Game Object Sprite Classes\Item Sprites\FireballSprite.cs" />
@@ -102,6 +104,7 @@
     <Compile Include="Game Object State Classes\Fireball States\NullFireballState.cs" />
     <Compile Include="Game Object State Classes\Mario States\Fire Mario\LeftFireballFireMS.cs" />
     <Compile Include="Game Object State Classes\Mario States\Fire Mario\RightFireballFireMS.cs" />
+    <Compile Include="Game States\PauseGameState.cs" />
     <Compile Include="Game States\TransitionGameState.cs" />
     <Compile Include="Game States\PlayGameState .cs" />
     <Compile Include="Game States\DeadGameState.cs" />
@@ -231,6 +234,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="CODE REVIEWS\CodeReadabilityCaleb.txt" />
+    <Content Include="CODE REVIEWS\CodeReadabilityJohn.txt" />
     <Content Include="CODE REVIEWS\CodeReadabilityThomas.txt" />
     <Content Include="Game.ico" />
     <Content Include="GameThumbnail.png">
