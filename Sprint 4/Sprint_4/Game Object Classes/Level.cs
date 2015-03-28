@@ -96,7 +96,10 @@ namespace Sprint4
         {
 
             spriteBatch.Draw(background, new Rectangle(0, 55, 4096, 432), Color.White);
-
+            foreach (KeyValuePair<IAnimatedSprite, Vector2> backgroundObject in levelBackgrounds)
+            {
+                backgroundObject.Key.Draw(spriteBatch, backgroundObject.Value);
+            }
             foreach (Enemy enemy in levelEnemies)
             {
                 if (game.gameCamera.InCameraView(enemy.GetBoundingBox()))
@@ -111,19 +114,13 @@ namespace Sprint4
                     item.Draw(spriteBatch);
                 }
             }
-            foreach (KeyValuePair<IAnimatedSprite, Vector2> backgroundObject in levelBackgrounds)
-            {
-                backgroundObject.Key.Draw(spriteBatch, backgroundObject.Value);
-            }
             foreach (Block blockDrawer in levelBlocks)
             {
                 if (game.gameCamera.InCameraView(blockDrawer.GetBoundingBox()))
                 {
                     blockDrawer.Draw(spriteBatch, blockDrawer.position);
                 }
-            }
-
-            
+            }          
             foreach (Fireball fireball in levelFireballs)
             {
                 if (game.gameCamera.InCameraView(fireball.GetBoundingBox()))

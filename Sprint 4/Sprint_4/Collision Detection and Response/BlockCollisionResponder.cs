@@ -57,10 +57,11 @@ namespace Sprint4
                     block.Reaction();
                     mario.physState = new FallingState(game);
                     mario.marioHeight = 0;
+                    game.soundManager.land.Play();
                     if (block.state.GetType().Equals(new BrickBlockState(game).GetType()) && mario.marioIsBig)
                     {
                         destroyedBlocks.Add(block);
-                        game.soundManager.PlaySoundEffect(SoundManager.sfx.brick);
+                        game.soundManager.brickBreak.Play();
                     }
                 }
             }

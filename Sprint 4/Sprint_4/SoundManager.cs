@@ -15,7 +15,6 @@ namespace Sprint4
             pause, placeHolderFX;
             
         public enum songs{athletic, star, death}
-        public enum sfx{coin, brick, grow, shrink, land, oneUp, enemyDamage, jump, itemSpawn, pause}
         public SoundManager(Game1 game){
             this.game = game;
             jump = game.Content.Load<SoundEffect>("Sound/SFX/SFX Jump");
@@ -50,46 +49,6 @@ namespace Sprint4
             }
             MediaPlayer.Play(placeHolderSong);
             MediaPlayer.IsRepeating = true;
-        }
-        public void PlaySoundEffect(SoundManager.sfx fx)
-        {
-            if (fx == SoundManager.sfx.brick)
-            {
-                placeHolderFX = brickBreak;
-            }
-            if (fx == SoundManager.sfx.coin)
-            {
-                placeHolderFX = coinCollect;
-            }
-            if (fx == SoundManager.sfx.enemyDamage)
-            {
-                placeHolderFX = enemyDamage;
-            }
-            if (fx == SoundManager.sfx.grow)
-            {
-                placeHolderFX = grow;
-            }
-            if (fx == SoundManager.sfx.land)
-            {
-                placeHolderFX = land;
-            }
-            if (fx == SoundManager.sfx.oneUp)
-            {
-                placeHolderFX = oneUp;
-            }
-            if (fx == SoundManager.sfx.shrink)
-            {
-                placeHolderFX = shrink;
-            }
-            if (fx == SoundManager.sfx.itemSpawn)
-            {
-                placeHolderFX = itemSpawn;
-            }
-            if (fx == SoundManager.sfx.pause)
-            {
-                placeHolderFX = pause;
-            }
-            placeHolderFX.Play();
         }
     }
 }

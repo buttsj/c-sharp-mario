@@ -24,21 +24,21 @@ namespace Sprint4
             if (item.sprite.GetType().Equals((factory.build(SpriteFactory.sprites.superMushroom)).GetType()))
             {
                 mario.MakeBigMario();
-                game.soundManager.PlaySoundEffect(SoundManager.sfx.grow);
+                game.soundManager.grow.Play();
             }
             if (item.sprite.GetType().Equals((factory.build(SpriteFactory.sprites.fireFlower)).GetType()))
             {
                 mario.MakeFireMario();
-                game.soundManager.PlaySoundEffect(SoundManager.sfx.grow);
+                game.soundManager.grow.Play();
             }
             if (item.sprite.GetType().Equals((factory.build(SpriteFactory.sprites.coin)).GetType()))
             {
-                game.soundManager.PlaySoundEffect(SoundManager.sfx.coin);
+                game.soundManager.coinCollect.Play();
                 //coinCount++
             }
             if (item.sprite.GetType().Equals((factory.build(SpriteFactory.sprites.oneUpMushroom)).GetType()))
             {
-                game.soundManager.PlaySoundEffect(SoundManager.sfx.oneUp);
+                game.soundManager.oneUp.Play();
                 //lifeCount++
             }
         }
