@@ -7,20 +7,23 @@ using System.Text;
 
 namespace Sprint4
 {
-    public class Item
+    public class Item : ICollectable 
     {
-        public Vector2 position = new Vector2(0, 0);
-        bool left = true;
         Game1 game;
-        public IAnimatedSprite sprite;
-        public bool isSpawning = false;
-        int spawnTimer = 0;
-        public bool isCoin = false;
+        public IAnimatedSprite sprite { get; set; }
+        public bool isCoin { get; set; }
+        public bool isSpawning { get; set; }
+        private int spawnTimer = 0;
+        private bool left = true;
+        public Vector2 position;
 
-        public Item(Game1 game, IAnimatedSprite sprite)
+        public Item(Game1 game, IAnimatedSprite sprite, Vector2 location)
         {
             this.sprite = sprite;
             this.game = game;
+            position = location;
+            isCoin = false;
+            isSpawning = false;
         }
         public void Draw(SpriteBatch spriteBatch)
         {
@@ -61,6 +64,7 @@ namespace Sprint4
                 }
             }
         }
+
         public Rectangle GetBoundingBox()
         {
             return sprite.GetBoundingBox(position);

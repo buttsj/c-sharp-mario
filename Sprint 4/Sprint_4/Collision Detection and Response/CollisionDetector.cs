@@ -12,7 +12,7 @@ namespace Sprint4
         IAnimatedSprite starSprite;
         ISpriteFactory factory = new SpriteFactory();
         public List<Block> destroyedBlocks = new List<Block>();
-        public List<Item> obtainedItems = new List<Item>();
+        public List<ICollectable> obtainedItems = new List<ICollectable>();
         public ItemCollisionResponder itemResponder;
         public EnemyCollisionResponder enemyResponder;
         public BlockCollisionResponder blockResponder;
@@ -31,7 +31,7 @@ namespace Sprint4
         }
 
         public void Detect(Mario mario, List<Fireball> levelFireballs, List<BasicEnemy> levelEnemies,
-            List<Block> levelBlocks, List<Item> levelItems)
+            List<Block> levelBlocks, List<ICollectable> levelItems)
         {
             standingBlocks = new List<Block>();
             Rectangle marioRect = mario.state.GetBoundingBox(new Vector2(mario.position.X, mario.position.Y));
@@ -59,7 +59,7 @@ namespace Sprint4
               }               
               
             }
-            foreach (Item item in levelItems)
+            foreach (ICollectable item in levelItems)
             {
                 Rectangle itemRect = item.GetBoundingBox();
                 if (marioRect.Intersects(itemRect) && !item.isSpawning)
@@ -120,10 +120,9 @@ namespace Sprint4
                             enemyResponder.EnemyEnemyCollide(enemy, otherEnemy);
                         }
                     }
-                
             }
 
-            foreach (Item obtainedItem in obtainedItems)
+            foreach (ICollectable obtainedItem in obtainedItems)
             {
                 levelItems.Remove(obtainedItem);
             }

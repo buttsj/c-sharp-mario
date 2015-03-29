@@ -18,7 +18,7 @@ namespace Sprint4
         public LevelBuilder builder;
         public List<BasicEnemy> levelEnemies = new List<BasicEnemy>();
         public List<Block> levelBlocks = new List<Block>();
-        public List<Item> levelItems = new List<Item>();       
+        public List<ICollectable> levelItems = new List<ICollectable>();       
         public List<KeyValuePair<IAnimatedSprite, Vector2>> levelBackgrounds = new List<KeyValuePair<IAnimatedSprite, Vector2>>();
         public CollisionDetector collision;
         

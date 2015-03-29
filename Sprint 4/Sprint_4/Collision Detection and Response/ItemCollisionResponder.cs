@@ -14,7 +14,7 @@ namespace Sprint4
         {
             this.game = game;
         }
-        public void MarioItemCollide(Item item, Mario mario)
+        public void MarioItemCollide(ICollectable item, Mario mario)
         {
             if (item.sprite.GetType().Equals((factory.build(SpriteFactory.sprites.star)).GetType()))
             {

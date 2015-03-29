@@ -53,8 +53,8 @@ namespace Sprint4
         }
 
         public void Build(string fileName, List<BasicEnemy> levelEnemies, 
-            List<Block> levelBlocks, List<Item> levelItems,
-            List<KeyValuePair<IAnimatedSprite, Vector2>> levelBackgrounds)
+            List<Block> levelBlocks, List<ICollectable> levelItems,
+            List<KeyValuePair<IAnimatedSprite, Vector2>> levelBackgroundObjects)
         {
             float xCoord =0, yCoord = 0;
             StreamReader sr;
@@ -69,16 +69,14 @@ namespace Sprint4
                 { 
                     if(itemDictionary.ContainsKey(words[i]))
                     {
-                        Item item = new Item(game, factory.build(itemDictionary[words[i]]));
-                        item.position.X = xCoord;
-                        item.position.Y = yCoord;
+                        ICollectable item = new Item(game, factory.build(itemDictionary[words[i]]), new Vector2(xCoord, yCoord));
                         levelItems.Add(item);
                     }
                     if (backgroundDictionary.ContainsKey(words[i]))
                     {
                         KeyValuePair<IAnimatedSprite, Vector2> item = new KeyValuePair<IAnimatedSprite,
                             Vector2>(factory.build(backgroundDictionary[words[i]]), new Vector2(xCoord, yCoord));
-                        levelBackgrounds.Add(item);
+                        levelBackgroundObjects.Add(item);
                     }
                     if (blockDictionary.ContainsKey(words[i]))
                     {

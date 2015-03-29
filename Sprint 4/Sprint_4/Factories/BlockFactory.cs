@@ -68,33 +68,28 @@ namespace Sprint4
             if (type == BlockType.quesMush)
             {
                 state = new QuestionBlockState(game);
-                prize = new Item(game, factory.build(SpriteFactory.sprites.superMushroom));
-                prize.position = location;
+                prize = new Item(game, factory.build(SpriteFactory.sprites.superMushroom), location);
             }
             if (type == BlockType.quesStar)
             {
                 state = new QuestionBlockState(game);
-                prize = new Item(game, factory.build(SpriteFactory.sprites.star));
-                prize.position = location;
+                prize = new Item(game, factory.build(SpriteFactory.sprites.star), location);
             }
             if (type == BlockType.ques1up)
             {
                 state = new QuestionBlockState(game);
-                prize = new Item(game, factory.build(SpriteFactory.sprites.oneUpMushroom));
-                prize.position = location;
+                prize = new Item(game, factory.build(SpriteFactory.sprites.oneUpMushroom), location);
             }
             if (type == BlockType.quesCoin)
             {
                 state = new QuestionBlockState(game);
-                prize = new Item(game, factory.build(SpriteFactory.sprites.coin));
-                prize.position = location;
+                prize = new Item(game, factory.build(SpriteFactory.sprites.coin), location);
                 prize.isCoin = true;
             }
             if (type == BlockType.quesFlower)
             {
                 state = new QuestionBlockState(game);
-                prize = new Item(game, factory.build(SpriteFactory.sprites.fireFlower));
-                prize.position = location;
+                prize = new Item(game, factory.build(SpriteFactory.sprites.fireFlower), location);
             }
             Block product = new Block(game, location, prize, state);
             return product;
