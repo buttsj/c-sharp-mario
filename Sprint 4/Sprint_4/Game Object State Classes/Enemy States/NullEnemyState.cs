@@ -13,19 +13,19 @@ namespace Sprint4
         {
             return new Rectangle(0, 0, 0, 0);
         }
-        public void TakeDamage(BasicEnemy hurtEnemy)
+        public void TakeDamage(Enemy hurtEnemy)
         {
         }
-        public void GoLeft(BasicEnemy enemy)
+        public void GoLeft(Enemy enemy)
         {
             // null
         }
-        public void GoRight(BasicEnemy enemy)
+        public void GoRight(Enemy enemy)
         {
             // null
         }
 
-        public void Update(GameTime gameTime)
+        public void Update(Enemy enemy, GameTime gameTime)
         {
         }
         public void Draw(SpriteBatch spriteBatch, Vector2 location)

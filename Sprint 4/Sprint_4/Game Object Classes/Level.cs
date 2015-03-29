@@ -16,7 +16,7 @@ namespace Sprint4
         public List<Fireball> levelFireballs = new List<Fireball>();
         public List<Fireball> deadFireballs = new List<Fireball>();
         public LevelBuilder builder;
-        public List<BasicEnemy> levelEnemies = new List<BasicEnemy>();
+        public List<Enemy> levelEnemies = new List<Enemy>();
         public List<Block> levelBlocks = new List<Block>();
         public List<ICollectable> levelItems = new List<ICollectable>();
         public List<KeyValuePair<IAnimatedSprite, Vector2>> levelBackgrounds = new List<KeyValuePair<IAnimatedSprite, Vector2>>();
@@ -37,7 +37,7 @@ namespace Sprint4
 
         public void Update(GameTime gameTime)
         {
-            foreach (BasicEnemy enemy in levelEnemies)
+            foreach (Enemy enemy in levelEnemies)
             {
                 if (game.gameCamera.InCameraView(enemy.GetBoundingBox()))
                 {
@@ -95,7 +95,7 @@ namespace Sprint4
             {
                 backgroundObject.Key.Draw(spriteBatch, backgroundObject.Value);
             }
-            foreach (BasicEnemy enemy in levelEnemies)
+            foreach (Enemy enemy in levelEnemies)
             {
                 if (game.gameCamera.InCameraView(enemy.GetBoundingBox()))
                 {

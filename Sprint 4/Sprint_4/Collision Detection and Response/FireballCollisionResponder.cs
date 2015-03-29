@@ -15,7 +15,7 @@ namespace Sprint4
             this.game = game;
         }
         
-        public void EnemyFireballCollide(BasicEnemy enemy, Fireball fireball)
+        public void EnemyFireballCollide(Enemy enemy, Fireball fireball)
         {
             enemy.TakeDamage();
             game.level.deadFireballs.Add(fireball);

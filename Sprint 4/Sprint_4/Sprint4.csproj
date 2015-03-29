@@ -116,8 +116,11 @@
     <Compile Include="Game States\PlayGameState .cs" />
     <Compile Include="Game States\DeadGameState.cs" />
     <Compile Include="Interfaces\ICollectable.cs" />
+    <Compile Include="Interfaces\IEnemyPhysicsState.cs" />
     <Compile Include="Interfaces\IGameState.cs" />
     <Compile Include="Interfaces\ICollectablePhysicsState.cs" />
+    <Compile Include="Physics States\Enemy Physics\EnemyFallingState.cs" />
+    <Compile Include="Physics States\Enemy Physics\EnemyGroundState.cs" />
     <Compile Include="Physics States\Item Physics\ItemGroundState.cs" />
     <Compile Include="Physics States\Item Physics\ItemFallingState.cs" />
     <Compile Include="Physics States\Mario Physics\FallingState.cs" />

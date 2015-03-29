@@ -23,22 +23,26 @@ namespace Sprint4
             return sprite.GetBoundingBox(location);
         }
 
-        public void TakeDamage(BasicEnemy enemy)
+        public void TakeDamage(Enemy enemy)
         {
             // null
         }
-        public void GoLeft(BasicEnemy enemy)
+        public void GoLeft(Enemy enemy)
         {
             //null
         }
-        public void GoRight(BasicEnemy enemy)
+        public void GoRight(Enemy enemy)
         {
             //null
         }
 
-        public void Update(GameTime gameTime)
+        public void Update(Enemy enemy, GameTime gameTime)
         {
-            //null
+            enemy.deathAnimationTimer--;
+            if (enemy.deathAnimationTimer <= 0)
+            {
+                enemy.state = new NullEnemyState();
+            }
         }
         public void Draw(SpriteBatch spriteBatch, Vector2 location)
         {

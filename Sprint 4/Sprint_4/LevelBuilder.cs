@@ -55,7 +55,7 @@ namespace Sprint4
             this.game = game;
         }
 
-        public Mario Build(string fileName, List<BasicEnemy> levelEnemies, 
+        public Mario Build(string fileName, List<Enemy> levelEnemies, 
             List<Block> levelBlocks, List<ICollectable> levelItems,
             List<KeyValuePair<IAnimatedSprite, Vector2>> levelBackgroundObjects)
         {
@@ -92,7 +92,7 @@ namespace Sprint4
                     }
                     if (enemyDictionary.ContainsKey(words[i]))
                     {
-                       BasicEnemy enemy = enemyFactory.build(enemyDictionary[words[i]], new Vector2(xCoord, yCoord));
+                       Enemy enemy = enemyFactory.build(enemyDictionary[words[i]], new Vector2(xCoord, yCoord));
                        levelEnemies.Add(enemy);
                     }
                     xCoord+=16;

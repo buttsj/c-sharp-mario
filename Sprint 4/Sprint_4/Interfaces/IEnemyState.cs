@@ -9,11 +9,11 @@ namespace Sprint4
 {
     public interface IEnemyState
     {
-        void Update(GameTime gameTime);
+        void Update(Enemy enemy, GameTime gameTime);
         void Draw(SpriteBatch spriteBatch, Vector2 location);
         Rectangle GetBoundingBox(Vector2 location);
-        void TakeDamage(BasicEnemy enemy);
-        void GoLeft(BasicEnemy enemy);
-        void GoRight(BasicEnemy enemy);
+        void TakeDamage(Enemy enemy);
+        void GoLeft(Enemy enemy);
+        void GoRight(Enemy enemy);
     }
 }

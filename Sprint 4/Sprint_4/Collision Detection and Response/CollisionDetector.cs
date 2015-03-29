@@ -30,12 +30,12 @@ namespace Sprint4
             standingBlocks = new List<Block>();
         }
 
-        public void Detect(Mario mario, List<Fireball> levelFireballs, List<BasicEnemy> levelEnemies,
+        public void Detect(Mario mario, List<Fireball> levelFireballs, List<Enemy> levelEnemies,
             List<Block> levelBlocks, List<ICollectable> levelItems)
         {
             standingBlocks = new List<Block>();
             Rectangle marioRect = mario.state.GetBoundingBox(new Vector2(mario.position.X, mario.position.Y));
-            foreach (BasicEnemy enemy in levelEnemies)
+            foreach (Enemy enemy in levelEnemies)
             {
                 if (!enemy.isDead && mario.invicibilityFrames ==0)
                 {
@@ -100,7 +100,7 @@ namespace Sprint4
                 }
             }
 
-            foreach (BasicEnemy enemy in levelEnemies)
+            foreach (Enemy enemy in levelEnemies)
             {
                     Rectangle enemyRect = enemy.GetBoundingBox();
                     foreach (Block block in levelBlocks)
@@ -112,7 +112,7 @@ namespace Sprint4
                         }
                     }
 
-                    foreach (BasicEnemy otherEnemy in levelEnemies)
+                    foreach (Enemy otherEnemy in levelEnemies)
                     {
                         Rectangle otherEnemyRect = enemy.GetBoundingBox();
                         if (otherEnemy != enemy && enemyRect.Intersects(otherEnemyRect))

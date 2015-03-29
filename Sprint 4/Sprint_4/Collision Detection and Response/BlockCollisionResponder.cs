@@ -58,7 +58,7 @@ namespace Sprint4
                     mario.physState = new FallingState(game);
                     hitBlock.Play();
                     mario.marioHeight = 0;
-                    if (block.state.GetType().Equals(new BrickBlockState(game).GetType()) && mario.marioIsBig)
+                    if (block.state.GetType().Equals(new BrickBlockState(game).GetType()) && mario.isBig)
                     {
                         destroyedBlocks.Add(block);
                         game.soundManager.brickBreak.Play();
@@ -98,7 +98,7 @@ namespace Sprint4
             }
         }
 
-        public void EnemyBlockCollide(BasicEnemy enemy, Block block)
+        public void EnemyBlockCollide(Enemy enemy, Block block)
         {
             Rectangle enemyRect = enemy.GetBoundingBox();
             Rectangle blockRect = block.GetBoundingBox();

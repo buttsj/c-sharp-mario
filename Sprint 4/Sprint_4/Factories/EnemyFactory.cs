@@ -19,7 +19,7 @@ namespace Sprint4
             this.game = game;
         }
         
-        public BasicEnemy build(EnemyType type, Vector2 location)
+        public Enemy build(EnemyType type, Vector2 location)
         {
             if (type == EnemyFactory.EnemyType.Bill)
             {
@@ -37,7 +37,7 @@ namespace Sprint4
             {
                 state = new LeftSmashedDinoState(game);
             }
-            BasicEnemy product = new BasicEnemy(game, location, state);
+            Enemy product = new Enemy(game, location, state);
             return product;
         }
     }

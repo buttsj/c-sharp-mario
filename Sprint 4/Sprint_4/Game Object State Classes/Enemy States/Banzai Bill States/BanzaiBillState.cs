@@ -24,23 +24,22 @@ namespace Sprint4
             return sprite.GetBoundingBox(location);
         }
 
-        public void TakeDamage(BasicEnemy hurtEnemy)
+        public void TakeDamage(Enemy hurtEnemy)
         {
             sprite = factory.build(SpriteFactory.sprites.deadBanzaiBill);
             hurtEnemy.isDead = true;
         }
-        public void GoLeft(BasicEnemy enemy)
+        public void GoLeft(Enemy enemy)
         {
             // null
         }
-        public void GoRight(BasicEnemy enemy)
+        public void GoRight(Enemy enemy)
         {
             // null
         }
 
-        public void Update(GameTime gameTime)
+        public void Update(Enemy enemy, GameTime gameTime)
         {
-            sprite.Update(gameTime);
         }
         public void Draw(SpriteBatch spriteBatch, Vector2 location)
         {

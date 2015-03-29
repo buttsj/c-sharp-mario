@@ -22,24 +22,30 @@ namespace Sprint4
         {
             return sprite.GetBoundingBox(location);
         }
-
-        public void TakeDamage(BasicEnemy enemy)
+        public void TakeDamage(Enemy enemy)
         {
             enemy.state = new LeftSmashedDinoState(game);
             enemy.position.Y += 16;
         }
-        public void GoLeft(BasicEnemy enemy)
+        public void GoLeft(Enemy enemy)
         {
             enemy.position.X--;
         }
-        public void GoRight(BasicEnemy enemy)
+        public void GoRight(Enemy enemy)
         {
             enemy.state = new RightTallDinoState(game);
         }
-
-        public void Update(GameTime gameTime)
+        public void Update(Enemy enemy, GameTime gameTime)
         {
             sprite.Update(gameTime);
+            if (enemy.left)
+            {
+                enemy.GoLeft();
+            }
+            else
+            {
+                enemy.GoRight();
+            }
         }
         public void Draw(SpriteBatch spriteBatch, Vector2 location)
         {

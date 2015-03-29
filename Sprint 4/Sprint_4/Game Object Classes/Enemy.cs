@@ -8,22 +8,25 @@ using Microsoft.Xna.Framework.Audio;
 
 namespace Sprint4
 {
-    public class BasicEnemy
+    public class Enemy
     {
         public IEnemyState state;
+        public IEnemyPhysicsState physState;
         public bool isDead = false;
-        int deathAnimationTimer = 15;
+        public int deathAnimationTimer = 15;
         public bool left = true;
         public Vector2 position;
+        public Vector2 velocity;
         Game1 game;
         SoundEffectInstance hurtFX;
 
-        public BasicEnemy(Game1 game, Vector2 location, IEnemyState state)
+        public Enemy(Game1 game, Vector2 location, IEnemyState state)
         {
             this.game = game;
             position = location;
             this.state = state;
             hurtFX = this.game.soundManager.enemyDamage.CreateInstance();
+            physState = new EnemyGroundState(this, game);
         }
         public void GoLeft()
         {
@@ -46,23 +49,8 @@ namespace Sprint4
         public void Update(GameTime gameTime)
         {
             position.Y++;
-            state.Update(gameTime);
-            if (left)
-            {
-                state.GoLeft(this);
-            }
-            else
-            {
-                state.GoRight(this);
-            }
-            if (isDead)
-            {
-                deathAnimationTimer--;
-            }
-            if (deathAnimationTimer <= 0)
-            {
-                state = new NullEnemyState();
-            }
+            state.Update(this, gameTime);
+            physState.Update(this, gameTime);
         }
         public void Draw(SpriteBatch spriteBatch)
         {

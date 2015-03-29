@@ -14,7 +14,7 @@ namespace Sprint4
         public IMarioState state;
         public IMarioPhysicsState physState;
         public Fireball fireball;
-        public bool marioIsStar = false, marioIsBig = false, marioIsFire = false, 
+        public bool isStar = false, isBig = false, isFire = false, 
             isDead = false, isCrouch = false, isFireball = false, isLeft = false;
         private int starTimer = 1000;
         private int fireballTimer = 10;
@@ -53,8 +53,8 @@ namespace Sprint4
                 invicibilityFrames = 100;
             }
             isFireball = false;
-            marioIsBig = false;
-            marioIsFire = false;
+            isBig = false;
+            isFire = false;
         }
 
         public void Up()
@@ -111,24 +111,24 @@ namespace Sprint4
 
         public void MakeBigMario()
         {
-            if (!marioIsFire)
+            if (!isFire)
             {
                 state.MakeBigMario();
-                marioIsFire = false;
+                isFire = false;
             }
             else
             {
-                marioIsFire = true;
+                isFire = true;
             }            
-            marioIsBig = true;          
+            isBig = true;          
             isFireball = false;
         }
 
         public void MakeFireMario()
         {
             state.MakeFireMario();
-            marioIsBig = true;
-            marioIsFire = true;
+            isBig = true;
+            isFire = true;
             isFireball = false;
         }
 
@@ -136,7 +136,7 @@ namespace Sprint4
         {
             state.MakeFireballMario();
             isFireball = true;
-            if (fireballCount < 3 && marioIsFire)
+            if (fireballCount < 3 && isFire)
             {
                 if (fireballTimer == 0)
                 {
@@ -155,7 +155,7 @@ namespace Sprint4
         }
         public void Update(GameTime gameTime)
         {            
-            if (starTimer != 0 & marioIsStar)
+            if (starTimer != 0 & isStar)
             {
                 starTimer--;
             }
@@ -165,7 +165,7 @@ namespace Sprint4
             }
             if (starTimer == 0)
             {
-                marioIsStar = false;
+                isStar = false;
                 starTimer = 1000;
                 game.soundManager.PlaySong(SoundManager.songs.athletic);
             }
@@ -189,7 +189,7 @@ namespace Sprint4
 
         public void Draw(SpriteBatch spriteBatch)
         {
-            if (marioIsStar && starTimer % 5 != 0)
+            if (isStar && starTimer % 5 != 0)
             {
                 state.Draw(spriteBatch, position);
             }
@@ -197,7 +197,7 @@ namespace Sprint4
             {
                 state.Draw(spriteBatch, position);
             }
-            if (!marioIsStar && invicibilityFrames ==0)
+            if (!isStar && invicibilityFrames ==0)
             {
                 state.Draw(spriteBatch, position);
             }

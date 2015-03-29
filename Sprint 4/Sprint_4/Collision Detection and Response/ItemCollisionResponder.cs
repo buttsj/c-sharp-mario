@@ -18,7 +18,7 @@ namespace Sprint4
         {
             if (item.sprite.GetType().Equals((factory.build(SpriteFactory.sprites.star)).GetType()))
             {
-                mario.marioIsStar = true;
+                mario.isStar = true;
                 game.soundManager.PlaySong(SoundManager.songs.star);
             }
             if (item.sprite.GetType().Equals((factory.build(SpriteFactory.sprites.superMushroom)).GetType()))
