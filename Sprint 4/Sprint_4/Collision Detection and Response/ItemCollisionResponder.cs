@@ -34,12 +34,12 @@ namespace Sprint4
             if (item.sprite.GetType().Equals((factory.build(SpriteFactory.sprites.coin)).GetType()))
             {
                 game.soundManager.coinCollect.Play();
-                //coinCount++
+                game.coins++;
             }
             if (item.sprite.GetType().Equals((factory.build(SpriteFactory.sprites.oneUpMushroom)).GetType()))
             {
                 game.soundManager.oneUp.Play();
-                //lifeCount++
+                game.lives++;
             }
         }
     }

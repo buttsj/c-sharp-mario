@@ -24,7 +24,7 @@ namespace Sprint4
             factory = new SpriteFactory();
             blockFactory = new BlockFactory(game);
             enemyFactory = new EnemyFactory(game);
-            collectableFactory = new CollectableFactory();
+            collectableFactory = new CollectableFactory(game);
             itemDictionary.Add("F", CollectableFactory.CollectableType.fireFlower);
             itemDictionary.Add("C", CollectableFactory.CollectableType.coin);
             itemDictionary.Add("SM", CollectableFactory.CollectableType.superMushroom);

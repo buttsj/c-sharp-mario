@@ -13,6 +13,7 @@ namespace Sprint4
         public IAnimatedSprite sprite { get; set; }
         public bool isSpawning { get; set; }
         public Vector2 position { get; set; }
+        public Vector2 velocity { get; set; }
         ISpriteFactory factory = new SpriteFactory();
 
         public Coin(Game1 game, Vector2 location)

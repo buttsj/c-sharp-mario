@@ -52,6 +52,11 @@ namespace Sprint4
         {
             gameState.Update(gameTime);
             base.Update(gameTime);
+            if (coins > 99)
+            {
+                coins = coins-99;
+                lives++;
+            }
         }
 
         protected override void Draw(GameTime gameTime)

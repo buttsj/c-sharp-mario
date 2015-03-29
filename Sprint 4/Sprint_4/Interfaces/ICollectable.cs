@@ -18,5 +18,6 @@ namespace Sprint4
         bool isSpawning { get; set; }
         IAnimatedSprite sprite { get; set; }
         Vector2 position { get; set; }
+        Vector2 velocity { get; set; }
     }
 }

@@ -16,11 +16,11 @@ namespace Sprint4
         }
         SpriteFactory factory;
         Game1 game;
-        IAnimatedSprite sprite;
         ICollectable product;
 
-        public CollectableFactory()
+        public CollectableFactory(Game1 game)
         {
+            this.game = game;
         }
         
         public ICollectable build(CollectableType type, Vector2 location)

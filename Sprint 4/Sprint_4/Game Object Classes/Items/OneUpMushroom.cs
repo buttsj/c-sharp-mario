@@ -15,6 +15,7 @@ namespace Sprint4
         private int spawnTimer = 0;
         private bool left = true;
         public Vector2 position { get; set; }
+        public Vector2 velocity { get; set; }
         ISpriteFactory factory = new SpriteFactory();
 
         public OneUpMushroom(Game1 game, Vector2 location)

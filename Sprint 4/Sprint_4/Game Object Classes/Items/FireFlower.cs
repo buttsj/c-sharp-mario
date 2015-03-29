@@ -14,6 +14,7 @@ namespace Sprint4
         public bool isSpawning { get; set; }
         private int spawnTimer = 0;
         public Vector2 position { get; set; }
+        public Vector2 velocity { get; set; }
         ISpriteFactory factory = new SpriteFactory();
 
         public FireFlower(Game1 game, Vector2 location)
