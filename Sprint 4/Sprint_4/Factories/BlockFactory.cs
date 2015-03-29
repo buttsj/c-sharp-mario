@@ -77,7 +77,7 @@ namespace Sprint4
             }
             if (type == BlockType.ques1up)
             {
-                state = new QuestionBlockState(game);
+                state = new InvisibleBlockState(game);
                 prize = new OneUpMushroom(game, location);
             }
             if (type == BlockType.quesCoin)
