@@ -8,7 +8,6 @@ namespace Sprint4
 {
     public class FireballCollisionResponder
     {
-        ISpriteFactory factory = new SpriteFactory();
         Game1 game;
        
         public FireballCollisionResponder(Game1 game)
@@ -18,9 +17,6 @@ namespace Sprint4
         
         public void EnemyFireballCollide(BasicEnemy enemy, Fireball fireball)
         {
-            Rectangle enemyRect = enemy.GetBoundingBox();
-            Rectangle fireballRect = fireball.GetBoundingBox();
-            Rectangle intersection = Rectangle.Intersect(enemyRect, fireballRect);
             enemy.TakeDamage();
             game.level.deadFireballs.Add(fireball);
             game.level.mario.fireballCount--;

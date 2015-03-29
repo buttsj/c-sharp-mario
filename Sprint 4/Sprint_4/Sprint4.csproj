@@ -118,9 +118,9 @@
     <Compile Include="Interfaces\ICollectable.cs" />
     <Compile Include="Interfaces\IGameState.cs" />
     <Compile Include="Interfaces\ICollectablePhysicsState.cs" />
-    <Compile Include="Mario Physics States\ItemGroundState.cs" />
-    <Compile Include="Mario Physics States\ItemFallingState.cs" />
-    <Compile Include="Mario Physics States\FallingState.cs" />
+    <Compile Include="Physics States\Item Physics\ItemGroundState.cs" />
+    <Compile Include="Physics States\Item Physics\ItemFallingState.cs" />
+    <Compile Include="Physics States\Mario Physics\FallingState.cs" />
     <Compile Include="Game Object Classes\Block.cs" />
     <Compile Include="Game Object Classes\Enemy.cs" />
     <Compile Include="Game Object Classes\Items\SuperMushroom.cs" />
@@ -226,7 +226,7 @@
     <Compile Include="Game Object State Classes\Mario States\Small Mario\RightJumpingSmallMS.cs" />
     <Compile Include="Game Object State Classes\Mario States\Small Mario\RightMovingSmallMS.cs" />
     <Compile Include="Game1.cs" />
-    <Compile Include="Mario Physics States\GroundState.cs" />
+    <Compile Include="Physics States\Mario Physics\GroundState.cs" />
     <Compile Include="Interfaces\IMarioPhysicsState.cs" />
     <Compile Include="Interfaces\IAnimatedSprite.cs" />
     <Compile Include="Interfaces\IBlockState.cs" />
@@ -235,7 +235,7 @@
     <Compile Include="Interfaces\IEnemyState.cs" />
     <Compile Include="Interfaces\IMarioState.cs" />
     <Compile Include="Interfaces\ISpriteFactory.cs" />
-    <Compile Include="Mario Physics States\JumpingState.cs" />
+    <Compile Include="Physics States\Mario Physics\JumpingState.cs" />
     <Compile Include="LevelBuilder.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Program.cs" />
@@ -246,6 +246,7 @@
   <ItemGroup>
     <Content Include="CODE REVIEWS\CodeReadabilityCaleb.txt" />
     <Content Include="CODE REVIEWS\CodeReadabilityJohn.txt" />
+    <Content Include="CODE REVIEWS\CodeQualityThomas .txt" />
     <Content Include="CODE REVIEWS\CodeReadabilityThomas.txt" />
     <Content Include="Game.ico" />
     <Content Include="GameThumbnail.png">

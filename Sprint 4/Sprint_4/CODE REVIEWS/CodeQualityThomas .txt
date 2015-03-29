@@ -1,0 +1,27 @@
+﻿CODE QUALITY REVIEW
+
+
+Author: Thomas Kiener
+
+Date: 03/29/2015
+
+Sprint Number: Four
+
+Name of .cs File: FireballCollisionResponder.cs
+
+Author of .cs File: Caleb Underwood
+
+Number of minutes taken to review: 
+
+Comments: 
+(Some problems have been fixed in the submitted version)
+
+-Unused field "factory".
+
+-EnemyFireballCollide() code is calculating intersections between rectangles, then not using them. 
+
+-Short methods, <30 lines, short class, <100 lines.
+
+-Fairly limited coupling. The check to see if the block is a ground tile could be done a little better.
+
+-High cohesion. Everything works toward the collision response of fireballs and other objects.
