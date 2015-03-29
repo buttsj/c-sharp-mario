@@ -38,8 +38,8 @@ namespace Sprint4
             keyboardController = new KeyboardController(this);
             gamepadController = new GamepadController(this);
             soundManager = new SoundManager(this);
-            level = new Level(this, "/Maps/Map.csv");
             gameCamera = new Camera(GraphicsDevice.Viewport, this);
+            level = new Level(this, "/Maps/Map.csv");
             base.Initialize();
         }
 
@@ -63,7 +63,6 @@ namespace Sprint4
         {
             GraphicsDevice.Clear(Color.White);
             spriteBatch.Begin(SpriteSortMode.Deferred, null, null, null, null, null, gameCamera.GetViewMatrix());
-            
             gameState.Draw(spriteBatch);
             spriteBatch.End();
             base.Draw(gameTime);

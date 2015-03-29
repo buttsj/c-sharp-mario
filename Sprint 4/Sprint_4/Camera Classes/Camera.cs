@@ -17,6 +17,10 @@ namespace Sprint4
 
         private Game1 game;
         private Viewport viewport;
+        public Vector2 Position = new Vector2(0, 125.0f);
+        public Vector2 Origin { get; set; }
+        public float Zoom { get; set; }
+        public float Rotation { get; set; }
 
         public Camera(Viewport viewport, Game1 game)
         {
@@ -25,16 +29,10 @@ namespace Sprint4
             Origin = new Vector2(viewport.Width / 2.0f, viewport.Height / 2.0f);
             Zoom = 2.0f;
         }
-        
-        public Vector2 Position = new Vector2(0, 125.0f);
-        public Vector2 Origin { get; set; }
-        public float Zoom { get; set; }
-        public float Rotation { get; set; }
 
         public void LookAt(Vector2 position)
         {
             Position.X = position.X - viewport.Width / 2.0f;
-
             if (Position.X < -200)
                 Position.X = -200;
         }

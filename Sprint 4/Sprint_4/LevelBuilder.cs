@@ -18,6 +18,7 @@ namespace Sprint4
         BlockFactory blockFactory;
         EnemyFactory enemyFactory;
         CollectableFactory collectableFactory;
+        Mario mario;
 
         public LevelBuilder(Game1 game)
         {
@@ -54,7 +55,7 @@ namespace Sprint4
             this.game = game;
         }
 
-        public void Build(string fileName, List<BasicEnemy> levelEnemies, 
+        public Mario Build(string fileName, List<BasicEnemy> levelEnemies, 
             List<Block> levelBlocks, List<ICollectable> levelItems,
             List<KeyValuePair<IAnimatedSprite, Vector2>> levelBackgroundObjects)
         {
@@ -68,7 +69,11 @@ namespace Sprint4
                 xCoord = 0;
                 string[] words = line.Split(',');
                 for (int i = 0; i < words.Length; i++)
-                { 
+                {
+                    if (words[i] == "M")
+                    {
+                        mario = new Mario(game, new Vector2(xCoord, yCoord));
+                    }
                     if(itemDictionary.ContainsKey(words[i]))
                     {
                         ICollectable item = collectableFactory.build(itemDictionary[words[i]], new Vector2(xCoord, yCoord));
@@ -93,6 +98,7 @@ namespace Sprint4
                     xCoord+=16;
                 }
             }
+            return mario;
         }
 
     }

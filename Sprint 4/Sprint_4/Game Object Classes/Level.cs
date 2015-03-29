@@ -18,7 +18,7 @@ namespace Sprint4
         public LevelBuilder builder;
         public List<BasicEnemy> levelEnemies = new List<BasicEnemy>();
         public List<Block> levelBlocks = new List<Block>();
-        public List<ICollectable> levelItems = new List<ICollectable>();       
+        public List<ICollectable> levelItems = new List<ICollectable>();
         public List<KeyValuePair<IAnimatedSprite, Vector2>> levelBackgrounds = new List<KeyValuePair<IAnimatedSprite, Vector2>>();
         public CollisionDetector collision;
         
@@ -27,16 +27,12 @@ namespace Sprint4
         public Level(Game1 game, string fileName)
         {
             this.game = game;
-            mario = new Mario(this.game, new Vector2(250, (float)440));
-
-            
             builder = new LevelBuilder(game);
-            builder.Build(fileName, levelEnemies, levelBlocks, levelItems, levelBackgrounds);
+            mario=builder.Build(fileName, levelEnemies, levelBlocks, levelItems, levelBackgrounds);
+            game.gameCamera.LookAt(mario.position);
             collision = new CollisionDetector(game);
             game.soundManager.PlaySong(SoundManager.songs.athletic);
-
             background = game.Content.Load<Texture2D>("background2");
-
         }
 
         public void Update(GameTime gameTime)

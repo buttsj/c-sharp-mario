@@ -14,7 +14,8 @@ namespace Sprint4
         public IMarioState state;
         public IMarioPhysicsState physState;
         public Fireball fireball;
-        public bool marioIsStar = false, marioIsBig = false, marioIsFire = false, isDead = false, isCrouch = false, isFireball = false, isLeft = false;
+        public bool marioIsStar = false, marioIsBig = false, marioIsFire = false, 
+            isDead = false, isCrouch = false, isFireball = false, isLeft = false;
         private int starTimer = 1000;
         private int fireballTimer = 10;
         public int fireballCount = 0;
