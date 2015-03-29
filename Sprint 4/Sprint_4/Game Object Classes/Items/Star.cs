@@ -17,6 +17,7 @@ namespace Sprint4
         public Vector2 position { get; set; }
         public Vector2 velocity { get; set; }
         ISpriteFactory factory = new SpriteFactory();
+        public ICollectablePhysicsState physState { get; set; }
 
         public Star(Game1 game, Vector2 location)
         {
@@ -40,12 +41,12 @@ namespace Sprint4
             position = new Vector2(position.X + 1, position.Y);
             left = false;
         }
-        public void Update(GameTime gametime)
+        public void Update(GameTime gameTime)
         {
             if (!isSpawning)
             {
                 position = new Vector2(position.X, position.Y + 1);
-                sprite.Update(gametime);
+                sprite.Update(gameTime);
                 if (left)
                 {
                     GoLeft();

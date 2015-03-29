@@ -19,5 +19,6 @@ namespace Sprint4
         IAnimatedSprite sprite { get; set; }
         Vector2 position { get; set; }
         Vector2 velocity { get; set; }
+        ICollectablePhysicsState physState { get; set; }
     }
 }

@@ -14,6 +14,7 @@ namespace Sprint4
         public bool isSpawning { get; set; }
         public Vector2 position { get; set; }
         public Vector2 velocity { get; set; }
+        public ICollectablePhysicsState physState { get; set; }
         ISpriteFactory factory = new SpriteFactory();
 
         public Coin(Game1 game, Vector2 location)
@@ -34,9 +35,9 @@ namespace Sprint4
         public void GoRight()
         {
         }
-        public void Update(GameTime gametime)
+        public void Update(GameTime gameTime)
         {
-            sprite.Update(gametime);
+            sprite.Update(gameTime);
         }
 
         public Rectangle GetBoundingBox()

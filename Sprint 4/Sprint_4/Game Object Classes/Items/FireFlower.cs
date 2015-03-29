@@ -15,6 +15,7 @@ namespace Sprint4
         private int spawnTimer = 0;
         public Vector2 position { get; set; }
         public Vector2 velocity { get; set; }
+        public ICollectablePhysicsState physState { get; set; }
         ISpriteFactory factory = new SpriteFactory();
 
         public FireFlower(Game1 game, Vector2 location)
@@ -35,11 +36,11 @@ namespace Sprint4
         public void GoRight()
         {
         }
-        public void Update(GameTime gametime)
+        public void Update(GameTime gameTime)
         {
             if (!isSpawning)
             {
-                sprite.Update(gametime);
+                sprite.Update(gameTime);
             }
             else
             {

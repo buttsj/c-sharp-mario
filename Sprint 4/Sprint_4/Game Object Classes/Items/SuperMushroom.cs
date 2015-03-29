@@ -13,9 +13,10 @@ namespace Sprint4
         public IAnimatedSprite sprite { get; set; }
         public bool isSpawning { get; set; }
         private int spawnTimer = 0;
-        private bool left = true;
+        private bool left = false;
         public Vector2 position { get; set; }
         public Vector2 velocity { get; set; }
+        public ICollectablePhysicsState physState { get; set; }
         ISpriteFactory factory = new SpriteFactory();
 
         public SuperMushroom(Game1 game, Vector2 location)
@@ -25,6 +26,7 @@ namespace Sprint4
             position = location;
             isSpawning = false;
             sprite = factory.build(SpriteFactory.sprites.superMushroom);
+            physState = new ItemGroundState(this, game);
         }
         public void Draw(SpriteBatch spriteBatch)
         {
@@ -40,12 +42,13 @@ namespace Sprint4
             position = new Vector2(position.X + 1, position.Y);
             left = false;
         }
-        public void Update(GameTime gametime)
+        public void Update(GameTime gameTime)
         {
             if (!isSpawning)
             {
                 position = new Vector2(position.X, position.Y + 1);
-                sprite.Update(gametime);
+                sprite.Update(gameTime);
+                physState.Update(this, gameTime);
                 if (left)
                 {
                     GoLeft();
