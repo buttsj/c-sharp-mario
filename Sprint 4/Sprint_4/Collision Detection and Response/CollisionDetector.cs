@@ -90,7 +90,7 @@ namespace Sprint4
             foreach (Block block in levelBlocks)
             {
                 Rectangle blockRect = block.GetBoundingBox();
-                foreach (Item item in levelItems)
+                foreach (ICollectable item in levelItems)
                 {
                     Rectangle itemRect = item.GetBoundingBox();
                     if (blockRect.Intersects(itemRect) && !item.isSpawning)

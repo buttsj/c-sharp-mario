@@ -18,7 +18,7 @@ namespace Sprint4
         SpriteFactory factory;
         Game1 game;
         IBlockState state;
-        Item prize;
+        ICollectable prize;
 
         public BlockFactory(Game1 game)
         {
@@ -68,28 +68,27 @@ namespace Sprint4
             if (type == BlockType.quesMush)
             {
                 state = new QuestionBlockState(game);
-                prize = new Item(game, factory.build(SpriteFactory.sprites.superMushroom), location);
+                prize = new SuperMushroom(game, location);
             }
             if (type == BlockType.quesStar)
             {
                 state = new QuestionBlockState(game);
-                prize = new Item(game, factory.build(SpriteFactory.sprites.star), location);
+                prize = new Star(game, location);
             }
             if (type == BlockType.ques1up)
             {
                 state = new QuestionBlockState(game);
-                prize = new Item(game, factory.build(SpriteFactory.sprites.oneUpMushroom), location);
+                prize = new OneUpMushroom(game, location);
             }
             if (type == BlockType.quesCoin)
             {
                 state = new QuestionBlockState(game);
-                prize = new Item(game, factory.build(SpriteFactory.sprites.coin), location);
-                prize.isCoin = true;
+                prize = new Coin(game, location);
             }
             if (type == BlockType.quesFlower)
             {
                 state = new QuestionBlockState(game);
-                prize = new Item(game, factory.build(SpriteFactory.sprites.fireFlower), location);
+                prize = new FireFlower(game, location);
             }
             Block product = new Block(game, location, prize, state);
             return product;

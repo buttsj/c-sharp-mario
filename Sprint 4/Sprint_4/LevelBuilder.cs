@@ -9,7 +9,7 @@ namespace Sprint4
 {
     public class LevelBuilder
     {
-        public Dictionary<string, SpriteFactory.sprites> itemDictionary =  new Dictionary<string, SpriteFactory.sprites>();
+        public Dictionary<string, CollectableFactory.CollectableType> itemDictionary = new Dictionary<string, CollectableFactory.CollectableType>();
         public Dictionary<string, BlockFactory.BlockType> blockDictionary = new Dictionary<string, BlockFactory.BlockType>();
         public Dictionary<string, EnemyFactory.EnemyType> enemyDictionary = new Dictionary<string, EnemyFactory.EnemyType>();
         public Dictionary<string, SpriteFactory.sprites> backgroundDictionary = new Dictionary<string, SpriteFactory.sprites>();
@@ -17,17 +17,19 @@ namespace Sprint4
         ISpriteFactory factory;
         BlockFactory blockFactory;
         EnemyFactory enemyFactory;
+        CollectableFactory collectableFactory;
 
         public LevelBuilder(Game1 game)
         {
             factory = new SpriteFactory();
             blockFactory = new BlockFactory(game);
             enemyFactory = new EnemyFactory(game);
-            itemDictionary.Add("F", SpriteFactory.sprites.fireFlower);
-            itemDictionary.Add("C", SpriteFactory.sprites.coin);
-            itemDictionary.Add("SM", SpriteFactory.sprites.superMushroom);
-            itemDictionary.Add("1U", SpriteFactory.sprites.oneUpMushroom);
-            itemDictionary.Add("*", SpriteFactory.sprites.star);
+            collectableFactory = new CollectableFactory();
+            itemDictionary.Add("F", CollectableFactory.CollectableType.fireFlower);
+            itemDictionary.Add("C", CollectableFactory.CollectableType.coin);
+            itemDictionary.Add("SM", CollectableFactory.CollectableType.superMushroom);
+            itemDictionary.Add("1U", CollectableFactory.CollectableType.oneUp);
+            itemDictionary.Add("*", CollectableFactory.CollectableType.star);
             backgroundDictionary.Add("bush1", SpriteFactory.sprites.bush1);
             backgroundDictionary.Add("bush2", SpriteFactory.sprites.bush2);
             backgroundDictionary.Add("bush3", SpriteFactory.sprites.bush3);
@@ -69,7 +71,7 @@ namespace Sprint4
                 { 
                     if(itemDictionary.ContainsKey(words[i]))
                     {
-                        ICollectable item = new Item(game, factory.build(itemDictionary[words[i]]), new Vector2(xCoord, yCoord));
+                        ICollectable item = collectableFactory.build(itemDictionary[words[i]], new Vector2(xCoord, yCoord));
                         levelItems.Add(item);
                     }
                     if (backgroundDictionary.ContainsKey(words[i]))

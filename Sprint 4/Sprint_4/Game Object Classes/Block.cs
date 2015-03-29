@@ -10,12 +10,12 @@ namespace Sprint4
     public class Block
     {
         public IBlockState state;
-        public Item prize;
+        public ICollectable prize;
         bool prizeSpawned = false;
         public Vector2 position = new Vector2(0, 0);
         Game1 game;
 
-        public Block(Game1 game, Vector2 location, Item prize, IBlockState state)
+        public Block(Game1 game, Vector2 location, ICollectable prize, IBlockState state)
         {
             this.game = game;
             this.prize = prize;

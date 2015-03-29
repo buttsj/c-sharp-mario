@@ -7,23 +7,23 @@ using System.Text;
 
 namespace Sprint4
 {
-    public class Item : ICollectable 
+    public class OneUpMushroom : ICollectable 
     {
         Game1 game;
         public IAnimatedSprite sprite { get; set; }
-        public bool isCoin { get; set; }
         public bool isSpawning { get; set; }
         private int spawnTimer = 0;
         private bool left = true;
-        public Vector2 position;
+        public Vector2 position { get; set; }
+        ISpriteFactory factory = new SpriteFactory();
 
-        public Item(Game1 game, IAnimatedSprite sprite, Vector2 location)
+        public OneUpMushroom(Game1 game, Vector2 location)
         {
             this.sprite = sprite;
             this.game = game;
             position = location;
-            isCoin = false;
             isSpawning = false;
+            sprite = factory.build(SpriteFactory.sprites.oneUpMushroom);
         }
         public void Draw(SpriteBatch spriteBatch)
         {
@@ -31,19 +31,19 @@ namespace Sprint4
         }
         public void GoLeft()
         {
-            position.X--;
+            position = new Vector2(position.X - 1, position.Y);
             left = true;
         }
         public void GoRight()
         {
-            position.X++;
+            position = new Vector2(position.X + 1, position.Y);
             left = false;
         }
         public void Update(GameTime gametime)
         {
             if (!isSpawning)
             {
-                position.Y++;
+                position = new Vector2(position.X, position.Y + 1);
                 sprite.Update(gametime);
                 if (left)
                 {
@@ -56,7 +56,7 @@ namespace Sprint4
             }
             else
             {
-                position.Y-=(float).3;
+                position = new Vector2(position.X, position.Y - (float).3);
                 spawnTimer--;
                 if (spawnTimer == 0)
                 {
@@ -72,16 +72,9 @@ namespace Sprint4
 
         public void Spawn(){
             isSpawning = true;
-            if (!isCoin)
-            {
-                game.level.levelItems.Add(this);
-                spawnTimer = 50;
-                game.soundManager.itemSpawn.Play();
-            }
-            else
-            {
-                game.soundManager.coinCollect.Play();
-            }
+            game.level.levelItems.Add(this);
+            spawnTimer = 50;
+            game.soundManager.itemSpawn.Play();
         }
     }
 }

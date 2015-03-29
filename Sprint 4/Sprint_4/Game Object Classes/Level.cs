@@ -48,7 +48,7 @@ namespace Sprint4
                     enemy.Update(gameTime);
                 }
             }
-            foreach (Item item in levelItems)
+            foreach (ICollectable item in levelItems)
             {
                 if (game.gameCamera.InCameraView(item.GetBoundingBox()))
                 {
@@ -106,7 +106,7 @@ namespace Sprint4
                     enemy.Draw(spriteBatch);
                 }
             }
-            foreach (Item item in levelItems)
+            foreach (ICollectable item in levelItems)
             {
                 if (game.gameCamera.InCameraView(item.GetBoundingBox()))
                 {

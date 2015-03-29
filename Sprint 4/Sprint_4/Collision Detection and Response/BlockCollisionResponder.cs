@@ -67,7 +67,7 @@ namespace Sprint4
             }
         }
 
-        public void ItemBlockCollide(Item item, Block block)
+        public void ItemBlockCollide(ICollectable item, Block block)
         {
             Rectangle itemRect = item.GetBoundingBox();
             Rectangle blockRect = block.GetBoundingBox();
@@ -76,12 +76,12 @@ namespace Sprint4
             {
                 if (itemRect.Right > blockRect.Left && itemRect.Right < blockRect.Right)
                 {
-                    item.position.X= item.position.X - intersection.Width;
+                    item.position = new Vector2(item.position.X - intersection.Width, item.position.Y);
                     item.GoLeft();
                 }
                 else
                 {
-                    item.position.X = item.position.X + intersection.Width;
+                    item.position = new Vector2(item.position.X + intersection.Width, item.position.Y);
                     item.GoRight();
                 }
             }
@@ -89,11 +89,11 @@ namespace Sprint4
             {
                 if (itemRect.Bottom > blockRect.Top && itemRect.Bottom < blockRect.Bottom)
                 {
-                    item.position.Y = item.position.Y - intersection.Height;
+                    item.position = new Vector2(item.position.X, item.position.Y - intersection.Height);
                 }
                 else
                 {
-                    item.position.Y = item.position.Y + intersection.Height;
+                    item.position = new Vector2(item.position.X, item.position.Y + intersection.Height);
                 }
             }
         }

@@ -15,8 +15,8 @@ namespace Sprint4
         void GoLeft();
         void GoRight();
         void Spawn();
-        bool isCoin { get; set; }
         bool isSpawning { get; set; }
         IAnimatedSprite sprite { get; set; }
+        Vector2 position { get; set; }
     }
 }

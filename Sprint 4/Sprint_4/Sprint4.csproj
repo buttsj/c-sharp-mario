@@ -96,8 +96,13 @@
     <Compile Include="Controller Classes\GamepadController.cs" />
     <Compile Include="Controller Classes\PauseMenuKeyController.cs" />
     <Compile Include="Controller Classes\KeyboardController.cs" />
+    <Compile Include="Factories\CollectableFactory.cs" />
     <Compile Include="Factories\EnemyFactory.cs" />
     <Compile Include="Game Object Classes\Fireball.cs" />
+    <Compile Include="Game Object Classes\Items\Coin.cs" />
+    <Compile Include="Game Object Classes\Items\OneUpMushroom.cs" />
+    <Compile Include="Game Object Classes\Items\Star.cs" />
+    <Compile Include="Game Object Classes\Items\FireFlower.cs" />
     <Compile Include="Game Object Sprite Classes\Item Sprites\FireballSprite.cs" />
     <Compile Include="Game Object State Classes\Block States\RightEdgeBlockState.cs" />
     <Compile Include="Game Object State Classes\Block States\LeftEdgeBlockState.cs" />
@@ -115,7 +120,7 @@
     <Compile Include="Mario Physics States\FallingState.cs" />
     <Compile Include="Game Object Classes\Block.cs" />
     <Compile Include="Game Object Classes\Enemy.cs" />
-    <Compile Include="Game Object Classes\Item.cs" />
+    <Compile Include="Game Object Classes\Items\SuperMushroom.cs" />
     <Compile Include="Game Object Classes\Level.cs" />
     <Compile Include="Game Object Classes\Mario.cs" />
     <Compile Include="Game Object Sprite Classes\Block Sprites\ExclamationBlockSprite.cs" />
