@@ -10,7 +10,6 @@ namespace Sprint4
 {
     public class Mario
     {
-        Game1 game;
         public IMarioState state;
         public IMarioPhysicsState physState;
         public Fireball fireball;
@@ -27,11 +26,10 @@ namespace Sprint4
         public int marioHeight = 0;
         SoundEffectInstance jumpFX;
 
-        public Mario(Game1 game, Vector2 position)
+        public Mario(Vector2 position)
         {
             state = new RightIdleSmallMS(this);
             physState = new GroundState(this);
-            this.game = game;
             this.position = position;
             jumpFX = SoundManager.jump.CreateInstance();
         }
@@ -142,13 +140,13 @@ namespace Sprint4
                 {
                     if (isLeft)
                     {
-                        fireball = new Fireball(this.game, new Vector2(position.X - 5, position.Y + 3), true);
+                        fireball = new Fireball(new Vector2(position.X - 5, position.Y + 3), true);
                     }
                     else
                     {
-                        fireball = new Fireball(this.game, new Vector2(position.X + 5, position.Y + 3), false);
+                        fireball = new Fireball(new Vector2(position.X + 5, position.Y + 3), false);
                     }
-                    game.level.levelFireballs.Add(fireball);
+                    Game1.GetInstance().level.levelFireballs.Add(fireball);
                     fireballCount++;
                 }
             }           

@@ -70,7 +70,7 @@ namespace Sprint4
                 {
                     if (words[i] == "M")
                     {
-                        mario = new Mario(Game1.GetInstance(), new Vector2(xCoord, yCoord));
+                        mario = new Mario(new Vector2(xCoord, yCoord));
                     }
                     if(itemDictionary.ContainsKey(words[i]))
                     {

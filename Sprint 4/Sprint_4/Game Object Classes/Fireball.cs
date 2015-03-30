@@ -14,16 +14,14 @@ namespace Sprint4
         ISpriteFactory factory;
         public bool left = true;
         public Vector2 position;
-        public int fireballLifespan = 100;
-        Game1 game;        
+        public int fireballLifespan = 100;    
 
-        public Fireball(Game1 game, Vector2 location, bool left)
+        public Fireball(Vector2 location, bool left)
         {
             factory = new SpriteFactory();
             sprite = factory.build(SpriteFactory.sprites.fireball);
             position = location;
             this.left = left;
-            this.game = game;
             SoundManager.fireball.Play();
         }
 
@@ -37,7 +35,6 @@ namespace Sprint4
             position.X += (float)2;
             left = false;            
         }
-        
         public void Update(GameTime gameTime)
         {
             sprite.Update(gameTime);
@@ -55,12 +52,10 @@ namespace Sprint4
             }
             position.Y = position.Y + 1;     
         }
-
         public void Draw(SpriteBatch spriteBatch)
         {
             sprite.Draw(spriteBatch, position);        
         }
-
         public Rectangle GetBoundingBox()
         {
             return sprite.GetBoundingBox(position);
