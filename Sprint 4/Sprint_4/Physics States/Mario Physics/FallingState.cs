@@ -8,14 +8,12 @@ namespace Sprint4
 {
     class FallingState :IMarioPhysicsState
     {
-        Game1 game;
         Vector2 fallingVelocityDecayRate = new Vector2((float).90, 1);
         Vector2 fallingVelocity = new Vector2(0, (float)1.2);
         float positionDtAdjust = 50;
 
-        public FallingState(Game1 game)
+        public FallingState()
         {
-            this.game = game;
         }
         public void Update(Mario mario, GameTime gameTime)
         {
@@ -25,9 +23,9 @@ namespace Sprint4
             if (mario.velocity.Y > mario.maxVelocity.Y){
                 mario.velocity.Y = mario.maxVelocity.Y;
             }
-            if(game.level.collision.standingBlocks.Count > 0)
+            if(Game1.GetInstance().level.collision.standingBlocks.Count > 0)
             {
-                mario.physState = new GroundState(mario, game);
+                mario.physState = new GroundState(mario);
             }
         }
     }

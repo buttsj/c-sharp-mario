@@ -17,16 +17,14 @@ namespace Sprint4
         public bool left = true;
         public Vector2 position;
         public Vector2 velocity;
-        Game1 game;
         SoundEffectInstance hurtFX;
 
-        public Enemy(Game1 game, Vector2 location, IEnemyState state)
+        public Enemy(Vector2 location, IEnemyState state)
         {
-            this.game = game;
             position = location;
             this.state = state;
-            hurtFX = this.game.soundManager.enemyDamage.CreateInstance();
-            physState = new EnemyGroundState(this, game);
+            hurtFX = SoundManager.enemyDamage.CreateInstance();
+            physState = new EnemyGroundState(this);
         }
         public void GoLeft()
         {

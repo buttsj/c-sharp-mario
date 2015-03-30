@@ -9,13 +9,11 @@ namespace Sprint4
 {
     class InvisibleBlockState : IBlockState
     {
-        Game1 game;
         IAnimatedSprite sprite;
         ISpriteFactory factory;
 
-        public InvisibleBlockState(Game1 game)
+        public InvisibleBlockState()
         {
-            this.game = game;
             factory = new SpriteFactory();
             sprite = new NullSprite();
         }
@@ -31,7 +29,7 @@ namespace Sprint4
         }
         public void Reaction(Block block)
         {
-            block.state = new UsedBlockState(game);
+            block.state = new UsedBlockState();
         }
     }
 }

@@ -9,15 +9,13 @@ namespace Sprint4
 {
     class GroundBlockState : IBlockState
     {
-        Game1 game;
         IAnimatedSprite sprite;
         ISpriteFactory factory;
         
-        public GroundBlockState(Game1 game)
+        public GroundBlockState()
         {
             factory = new SpriteFactory();
             sprite = factory.build(SpriteFactory.sprites.ground);
-            this.game = game;
         }
 
         public Rectangle GetBoundingBox(Vector2 location)

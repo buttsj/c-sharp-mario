@@ -11,33 +11,31 @@ namespace Sprint4
     public class EnemyFactory
     {
         public enum EnemyType { Dino, Koopa, Bill, SmashedDino}
-        Game1 game;
         IEnemyState state;
 
-        public EnemyFactory(Game1 game)
+        public EnemyFactory()
         {
-            this.game = game;
         }
         
         public Enemy build(EnemyType type, Vector2 location)
         {
             if (type == EnemyFactory.EnemyType.Dino)
             {
-                state = new LeftTallDinoState(game);
+                state = new LeftTallDinoState();
             }
             if (type == EnemyFactory.EnemyType.Koopa)
             {
-                state = new LeftWalkingShellessKS(game);
+                state = new LeftWalkingShellessKS();
             }
             if (type == EnemyFactory.EnemyType.SmashedDino)
             {
-                state = new LeftSmashedDinoState(game);
+                state = new LeftSmashedDinoState();
             }
             if (type == EnemyFactory.EnemyType.Bill)
             {
-                state = new BanzaiBillState(game);
+                state = new BanzaiBillState();
             }
-            Enemy product = new Enemy(game, location, state);
+            Enemy product = new Enemy(location, state);
             return product;
         }
     }

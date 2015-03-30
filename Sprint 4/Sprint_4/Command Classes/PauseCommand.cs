@@ -7,21 +7,19 @@ namespace Sprint4
 {
     public class PauseCommand : ICommands
     {
-        Game1 game;
-        public PauseCommand(Game1 game)
+        public PauseCommand()
         {
-            this.game = game;
         }
         public void Execute()
         {
-            if (game.isPaused)
+            if (Game1.GetInstance().isPaused)
             {
-                game.gameState = new PlayGameState(game);
-                game.isPaused = false;
+                Game1.GetInstance().gameState = new PlayGameState();
+                Game1.GetInstance().isPaused = false;
             }
             else
             {
-                game.gameState = new PauseGameState(game);
+                Game1.GetInstance().gameState = new PauseGameState();
             }
         }
     }

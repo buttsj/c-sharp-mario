@@ -29,11 +29,11 @@ namespace Sprint4
 
         public Mario(Game1 game, Vector2 position)
         {
-            state = new RightIdleSmallMS(game);
-            physState = new GroundState(this, game);
+            state = new RightIdleSmallMS(this);
+            physState = new GroundState(this);
             this.game = game;
             this.position = position;
-            jumpFX = game.soundManager.jump.CreateInstance();
+            jumpFX = SoundManager.jump.CreateInstance();
         }
 
         public void Run()
@@ -49,7 +49,7 @@ namespace Sprint4
             state.TakeDamage();
             if (!isDead)
             {
-                game.soundManager.shrink.Play();
+                SoundManager.shrink.Play();
                 invicibilityFrames = 100;
             }
             isFireball = false;
@@ -59,9 +59,9 @@ namespace Sprint4
 
         public void Up()
         {
-            if (velocity.Y > minVelocity.Y && physState.GetType() != (new FallingState(game)).GetType())
+            if (velocity.Y > minVelocity.Y && physState.GetType() != (new FallingState()).GetType())
             {
-                physState = new JumpingState(game);
+                physState = new JumpingState();
                 velocity.Y -= (float)2;
                 if (jumpFX.State == SoundState.Stopped)
                 {
@@ -167,11 +167,11 @@ namespace Sprint4
             {
                 isStar = false;
                 starTimer = 1000;
-                game.soundManager.PlaySong(SoundManager.songs.athletic);
+                SoundManager.PlaySong(SoundManager.songs.athletic);
             }
             if (position.Y > 500)
             {
-                state = new DeadMS(game);
+                state = new DeadMS(this);
             }         
                         
             if (fireballTimer != 0 )

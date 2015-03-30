@@ -15,12 +15,10 @@ namespace Sprint4
             coin, star, oneUp, fireFlower, superMushroom
         }
         SpriteFactory factory;
-        Game1 game;
         ICollectable product;
 
-        public CollectableFactory(Game1 game)
+        public CollectableFactory()
         {
-            this.game = game;
         }
         
         public ICollectable build(CollectableType type, Vector2 location)
@@ -28,23 +26,23 @@ namespace Sprint4
             factory = new SpriteFactory();
             if (type == CollectableType.coin)
             {
-                product = new Coin(game, location);
+                product = new Coin(location);
             }
             if (type == CollectableType.star)
             {
-                product = new Star(game, location);
+                product = new Star(location);
             }
             if (type == CollectableType.oneUp)
             {
-                product = new OneUpMushroom(game, location);
+                product = new OneUpMushroom(location);
             }
             if (type == CollectableType.fireFlower)
             {
-                product = new FireFlower(game, location);
+                product = new FireFlower(location);
             }
             if (type == CollectableType.superMushroom)
             {
-                product = new SuperMushroom(game, location);
+                product = new SuperMushroom(location);
             }
             return product;
         }

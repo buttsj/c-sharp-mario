@@ -17,7 +17,7 @@ namespace Sprint4
         public BlockCollisionResponder(Game1 game)
         {
             this.game = game;
-            hitBlock = game.soundManager.blockHit.CreateInstance();
+            hitBlock = SoundManager.blockHit.CreateInstance();
         }
         
         public void MarioBlockCollide(Mario mario, Block block, List<Block> destroyedBlocks, List<Block> standingBlocks)
@@ -41,7 +41,7 @@ namespace Sprint4
             {
                 if (marioRect.Bottom > blockRect.Top && marioRect.Bottom < blockRect.Bottom)
                 {  
-                    if (!mario.physState.GetType().Equals((new JumpingState(game)).GetType()))
+                    if (!mario.physState.GetType().Equals((new JumpingState()).GetType()))
                     {
                         mario.velocity.Y = 0;
                     }
@@ -55,13 +55,13 @@ namespace Sprint4
                 {
                     mario.position.Y = mario.position.Y + intersection.Height;
                     block.Reaction();
-                    mario.physState = new FallingState(game);
+                    mario.physState = new FallingState();
                     hitBlock.Play();
                     mario.marioHeight = 0;
-                    if (block.state.GetType().Equals(new BrickBlockState(game).GetType()) && mario.isBig)
+                    if (block.state.GetType().Equals(new BrickBlockState().GetType()) && mario.isBig)
                     {
                         destroyedBlocks.Add(block);
-                        game.soundManager.brickBreak.Play();
+                        SoundManager.brickBreak.Play();
                     }
                 }
             }

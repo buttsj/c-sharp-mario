@@ -5,18 +5,16 @@ using System.Text;
 
 namespace Sprint4
 {
-    public class TestQuitCommand : ICommands
+    public class QuitCommand : ICommands
     {
-        Game1 game;
 
-        public TestQuitCommand(Game1 game)
+        public QuitCommand()
         {
-            this.game = game;
         }
 
         public void Execute()
         {
-            game.Exit();
+            Game1.GetInstance().Exit();
         }
     }
 }

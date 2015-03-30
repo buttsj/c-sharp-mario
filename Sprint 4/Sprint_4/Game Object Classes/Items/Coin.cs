@@ -9,7 +9,6 @@ namespace Sprint4
 {
     public class Coin : ICollectable 
     {
-        Game1 game;
         public IAnimatedSprite sprite { get; set; }
         public bool isSpawning { get; set; }
         public Vector2 position { get; set; }
@@ -17,10 +16,9 @@ namespace Sprint4
         public ICollectablePhysicsState physState { get; set; }
         ISpriteFactory factory = new SpriteFactory();
 
-        public Coin(Game1 game, Vector2 location)
+        public Coin(Vector2 location)
         {
             this.sprite = sprite;
-            this.game = game;
             position = location;
             isSpawning = false;
             sprite = factory.build(SpriteFactory.sprites.coin);
@@ -46,7 +44,7 @@ namespace Sprint4
         }
 
         public void Spawn(){
-            game.soundManager.coinCollect.Play();
+            SoundManager.coinCollect.Play();
         }
     }
 }

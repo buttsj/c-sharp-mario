@@ -12,22 +12,20 @@ namespace Sprint4
     class PauseMenuKeyController : IController
     {
         private KeyboardState keyboardState;
-        private Game1 game;
 
         ICommands currentCommand;
         Dictionary<Keys, ICommands> commandLibrary;
 
-        public PauseMenuKeyController(Game1 game)
+        public PauseMenuKeyController()
         {
-            this.game = game;
             commandLibrary = new Dictionary<Keys, ICommands>();
-            commandLibrary.Add(Keys.Enter, currentCommand = new PauseCommand(this.game));
-            commandLibrary.Add(Keys.Q, currentCommand = new TestQuitCommand(this.game));
+            commandLibrary.Add(Keys.Enter, currentCommand = new PauseCommand());
+            commandLibrary.Add(Keys.Q, currentCommand = new QuitCommand());
         }
 
         public void Update()
         {
-            currentCommand = new NullCommand(game);
+            currentCommand = new NullCommand();
             GamePadState gamepadState = GamePad.GetState(PlayerIndex.One);
             keyboardState = Keyboard.GetState();
             foreach (Keys key in keyboardState.GetPressedKeys())

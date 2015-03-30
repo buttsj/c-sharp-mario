@@ -9,15 +9,13 @@ namespace Sprint4
 {
     class PauseGameState :IGameState
     {
-        Game1 game;
         int inputBuffer = 10;
 
-        public PauseGameState(Game1 game)
+        public PauseGameState()
         {
-            game.isPaused = true;
-            this.game = game;
-            game.keyboardController = new PauseMenuKeyController(game);
-            game.soundManager.pause.Play();
+            Game1.GetInstance().isPaused = true;
+            Game1.GetInstance().keyboardController = new PauseMenuKeyController();
+            SoundManager.pause.Play();
         }
 
         public void Update(GameTime gameTime)
@@ -25,14 +23,13 @@ namespace Sprint4
             inputBuffer--;
             if (inputBuffer <= 0)
             {
-                game.keyboardController.Update();
+                Game1.GetInstance().keyboardController.Update();
             }
         }
 
         public void Draw(SpriteBatch spriteBatch)
         {
-            game.level.Draw(spriteBatch);
-
+            Game1.GetInstance().level.Draw(spriteBatch);
         }
     }
 }

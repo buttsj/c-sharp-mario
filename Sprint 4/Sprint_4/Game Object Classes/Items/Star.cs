@@ -9,7 +9,6 @@ namespace Sprint4
 {
     public class Star : ICollectable 
     {
-        Game1 game;
         public IAnimatedSprite sprite { get; set; }
         public bool isSpawning { get; set; }
         private int spawnTimer = 0;
@@ -19,10 +18,9 @@ namespace Sprint4
         ISpriteFactory factory = new SpriteFactory();
         public ICollectablePhysicsState physState { get; set; }
 
-        public Star(Game1 game, Vector2 location)
+        public Star(Vector2 location)
         {
             this.sprite = sprite;
-            this.game = game;
             position = location;
             isSpawning = false;
             sprite = factory.build(SpriteFactory.sprites.star);
@@ -74,9 +72,9 @@ namespace Sprint4
 
         public void Spawn(){
             isSpawning = true;
-            game.level.levelItems.Add(this);
+            Game1.GetInstance().level.levelItems.Add(this);
             spawnTimer = 50;
-            game.soundManager.itemSpawn.Play();
+            SoundManager.itemSpawn.Play();
         }
     }
 }

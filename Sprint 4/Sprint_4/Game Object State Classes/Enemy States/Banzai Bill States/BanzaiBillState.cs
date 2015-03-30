@@ -10,18 +10,16 @@ namespace Sprint4
 {
     class BanzaiBillState : IEnemyState
     {
-        Game1 game;
         IAnimatedSprite sprite;
         ISpriteFactory factory;
         SoundEffectInstance launch;
         bool sfxPlayed = false;
         
-        public BanzaiBillState(Game1 game)
+        public BanzaiBillState()
         {
             factory = new SpriteFactory();
             sprite = factory.build(SpriteFactory.sprites.banzaiBill);
-            this.game = game;
-            launch = game.soundManager.launch.CreateInstance();
+            launch = SoundManager.launch.CreateInstance();
         }
         public Rectangle GetBoundingBox(Vector2 location)
         {

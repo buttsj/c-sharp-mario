@@ -15,8 +15,8 @@ namespace Sprint4
         public DeadGameState(Game1 game)
         {
             this.game = game;
-            game.soundManager.StopMusic();
-            game.soundManager.death.Play();
+            SoundManager.StopMusic();
+            SoundManager.death.Play();
             game.level.mario.isDead = true;
         }
 
@@ -40,7 +40,7 @@ namespace Sprint4
             {
                 if (game.lives > 0)
                 {
-                    game.gameState = new LivesScreenGameState(game);
+                    game.gameState = new LivesScreenGameState();
                 }
                 else
                 {

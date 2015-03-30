@@ -9,14 +9,12 @@ namespace Sprint4
 {
     class LeftTallDinoState : IEnemyState
     {
-        Game1 game;
         IAnimatedSprite sprite;
         
-        public LeftTallDinoState(Game1 game)
+        public LeftTallDinoState()
         {
             ISpriteFactory factory = new SpriteFactory();
             sprite = factory.build(SpriteFactory.sprites.walkingLeftDino);
-            this.game = game;
         }
         public Rectangle GetBoundingBox(Vector2 location)
         {
@@ -24,7 +22,7 @@ namespace Sprint4
         }
         public void TakeDamage(Enemy enemy)
         {
-            enemy.state = new LeftSmashedDinoState(game);
+            enemy.state = new LeftSmashedDinoState();
             enemy.position.Y += 16;
         }
         public void GoLeft(Enemy enemy)
@@ -33,7 +31,7 @@ namespace Sprint4
         }
         public void GoRight(Enemy enemy)
         {
-            enemy.state = new RightTallDinoState(game);
+            enemy.state = new RightTallDinoState();
         }
         public void Update(Enemy enemy, GameTime gameTime)
         {

@@ -9,14 +9,12 @@ namespace Sprint4
 {
     class LeftWalkingShellessKS : IEnemyState
     {
-        Game1 game;
         IAnimatedSprite sprite;
         
-        public LeftWalkingShellessKS(Game1 game)
+        public LeftWalkingShellessKS()
         {
             ISpriteFactory factory = new SpriteFactory();
             sprite = factory.build(SpriteFactory.sprites.leftWalkShellessKoopa);
-            this.game = game;
         }
         public Rectangle GetBoundingBox(Vector2 location)
         {
@@ -25,7 +23,7 @@ namespace Sprint4
 
         public void TakeDamage(Enemy enemy)
         {
-            enemy.state = new DeadShellessKS(game);
+            enemy.state = new DeadShellessKS();
             enemy.isDead = true;
             enemy.position.Y += 8;
         }
@@ -35,7 +33,7 @@ namespace Sprint4
         }
         public void GoRight(Enemy enemy)
         {
-            enemy.state = new RightWalkingShellessKS(game);
+            enemy.state = new RightWalkingShellessKS();
         }
 
         public void Update(Enemy enemy, GameTime gameTime)

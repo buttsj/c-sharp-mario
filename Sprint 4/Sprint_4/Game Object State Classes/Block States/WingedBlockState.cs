@@ -9,15 +9,13 @@ namespace Sprint4
 {
     class WingedBlockState : IBlockState
     {
-        Game1 game;
         IAnimatedSprite sprite;
         ISpriteFactory factory;
 
-        public WingedBlockState(Game1 game)
+        public WingedBlockState()
         {
             factory = new SpriteFactory();
             sprite = factory.build(SpriteFactory.sprites.wingedBlock);
-            this.game = game;
         }
         public Rectangle GetBoundingBox(Vector2 location)
         {

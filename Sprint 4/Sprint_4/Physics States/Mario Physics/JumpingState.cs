@@ -8,16 +8,14 @@ namespace Sprint4
 {
     class JumpingState : IMarioPhysicsState
     {
-        Game1 game;
         public Vector2 speedDecayRate = new Vector2((float)0.75, (float)0.80);
         public static int maxJumpHeight = 125, jumpHeight = 0, heightIncrement = 7;
         double minJumpingVelocity = -.1;
         float positionXDtAdjust = 40;
         float positionYDtAdjust = 17;
 
-        public JumpingState(Game1 game)
+        public JumpingState()
         {
-            this.game = game;
         }
         public void Update(Mario mario, GameTime gameTime)
         {
@@ -30,7 +28,7 @@ namespace Sprint4
             }
             if (mario.velocity.Y > minJumpingVelocity || mario.marioHeight > maxJumpHeight)
             {
-                mario.physState = new FallingState(game);
+                mario.physState = new FallingState();
                 mario.marioHeight = 0;
             }
         }

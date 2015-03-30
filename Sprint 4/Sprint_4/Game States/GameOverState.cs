@@ -16,8 +16,8 @@ namespace Sprint4
         {
             font = game.Content.Load<SpriteFont>("SpriteFont1");
             this.game = game;
-            game.soundManager.StopMusic();
-            game.soundManager.gameOver.Play();
+            SoundManager.StopMusic();
+            SoundManager.gameOver.Play();
         }
 
         public void Update(GameTime gameTime)

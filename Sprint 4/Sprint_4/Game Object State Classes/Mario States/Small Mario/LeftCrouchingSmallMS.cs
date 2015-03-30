@@ -10,15 +10,15 @@ namespace Sprint4
     class LeftCrouchingSmallMS : IMarioState
     {
 
-        Game1 game;
+        Mario mario;
         IAnimatedSprite sprite;
        
 
-        public LeftCrouchingSmallMS(Game1 game)
+        public LeftCrouchingSmallMS(Mario mario)
         {
             ISpriteFactory factory = new SpriteFactory();
             sprite = factory.build(SpriteFactory.sprites.leftCrouchingMarioSmall);
-            this.game = game;
+            this.mario = mario;
         }
         public Rectangle GetBoundingBox(Vector2 location)
         {
@@ -27,26 +27,26 @@ namespace Sprint4
 
         public void TakeDamage()
         {
-            game.level.mario.state = new DeadMS(game);
+            mario.state = new DeadMS(mario);
         }
         public void Up()
         {
-            game.level.mario.state = new LeftIdleSmallMS(game);
+            mario.state = new LeftIdleSmallMS(mario);
         }
         public void Down()
         {
-            game.level.mario.position.Y++;
+            mario.position.Y++;
         }
         public void GoLeft()
         {
         }
         public void GoRight()
         {
-            game.level.mario.state = new RightCrouchingSmallMS(game);
+            mario.state = new RightCrouchingSmallMS(mario);
         }
         public void Idle()
         {
-            game.level.mario.state = new LeftIdleSmallMS(game);
+            mario.state = new LeftIdleSmallMS(mario);
         }
         public void Land()
         {
@@ -54,7 +54,7 @@ namespace Sprint4
         }
         public void MakeBigMario()
         {
-            game.gameState = new TransitionGameState(game, game.level.mario.state, new LeftCrouchingBigMS(game));
+            Game1.GetInstance().gameState = new TransitionGameState(mario.state, new LeftCrouchingBigMS(mario));
         }
         public void MakeSmallMario()
         {
@@ -62,7 +62,7 @@ namespace Sprint4
         }
         public void MakeFireMario()
         {
-            game.gameState = new TransitionGameState(game, game.level.mario.state, new LeftCrouchingFireMS(game));
+            Game1.GetInstance().gameState = new TransitionGameState(mario.state, new LeftCrouchingFireMS(mario));
         }
         public void MakeFireballMario()
         {
@@ -70,7 +70,7 @@ namespace Sprint4
         }
         public void MakeDeadMario()
         {
-            game.level.mario.state = new DeadMS(game);
+            mario.state = new DeadMS(mario);
         }
         public void Update(GameTime gameTime)
         {

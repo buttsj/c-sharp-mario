@@ -9,14 +9,12 @@ namespace Sprint4
 {
     class DeadShellessKS : IEnemyState
     {
-        Game1 game;
         IAnimatedSprite sprite;
         
-        public DeadShellessKS(Game1 game)
+        public DeadShellessKS()
         {
             ISpriteFactory factory = new SpriteFactory();
             sprite = factory.build(SpriteFactory.sprites.deadShellessKoopa);
-            this.game = game;
         }
         public Rectangle GetBoundingBox(Vector2 location)
         {

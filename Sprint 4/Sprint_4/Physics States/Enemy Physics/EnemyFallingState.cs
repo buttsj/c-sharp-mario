@@ -8,16 +8,14 @@ namespace Sprint4
 {
     class EnemyFallingState : IEnemyPhysicsState
     {
-        Game1 game;
         Vector2 fallingVelocityDecayRate = new Vector2((float).90, 1);
         Vector2 fallingVelocity = new Vector2(0, (float)1.2);
         float positionDtAdjust = 50;
         Vector2 oldPos;
         float maxVelocity = 15;
 
-        public EnemyFallingState(Enemy enemy, Game1 game)
+        public EnemyFallingState(Enemy enemy)
         {
-            this.game = game;
             oldPos = enemy.position;
         }
         public void Update(Enemy enemy, GameTime gameTime)
@@ -30,7 +28,7 @@ namespace Sprint4
             }
             if ((enemy.position.Y - oldPos.Y) < (float).5)
             {
-                enemy.physState = new EnemyGroundState(enemy, game);
+                enemy.physState = new EnemyGroundState(enemy);
             }
             oldPos = enemy.position;
         }

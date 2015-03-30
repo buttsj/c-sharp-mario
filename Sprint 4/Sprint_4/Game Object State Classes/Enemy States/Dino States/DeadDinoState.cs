@@ -9,14 +9,12 @@ namespace Sprint4
 {
     class DeadDinoState : IEnemyState
     {
-        Game1 game;
         IAnimatedSprite sprite;
         
-        public DeadDinoState(Game1 game)
+        public DeadDinoState()
         {
             ISpriteFactory factory = new SpriteFactory();
             sprite = factory.build(SpriteFactory.sprites.leftDeadDino);
-            this.game = game;
         }
         public Rectangle GetBoundingBox(Vector2 location)
         {

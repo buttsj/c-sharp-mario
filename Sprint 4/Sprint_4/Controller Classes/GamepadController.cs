@@ -12,13 +12,11 @@ namespace Sprint4
     class GamepadController : IController
     {
         private GamePadState gamepadState;
-        private Game1 game;
         ICommands currentCommand;
         public List<ICommands> commands;
 
-        public GamepadController(Game1 game)
+        public GamepadController()
         {
-            this.game = game;
         }
 
         public void Update()
@@ -29,44 +27,45 @@ namespace Sprint4
 
             if (gamepadState.DPad.Left.Equals(ButtonState.Pressed))
             {
-                commands.Add(new LeftCommand(this.game));
+                commands.Add(new LeftCommand());
             }
             if (gamepadState.DPad.Right.Equals(ButtonState.Pressed))
             {
-                commands.Add(new RightCommand(this.game));
+                commands.Add(new RightCommand());
             }
             if (gamepadState.DPad.Down.Equals(ButtonState.Pressed))
             {
-                commands.Add(new DownCommand(this.game));
+                commands.Add(new DownCommand());
             }
             if (gamepadState.Buttons.A.Equals(ButtonState.Pressed))
             {
-                commands.Add(new UpCommand(this.game));
+                commands.Add(new UpCommand());
             }
             if (gamepadState.Buttons.X.Equals(ButtonState.Pressed))
             {
-                commands.Add(new RunCommand(this.game));
+                commands.Add(new RunCommand());
             }
             if (gamepadState.Buttons.Back == ButtonState.Pressed)
             {
-                commands.Add(new ResetSceneCommand(this.game));
+                commands.Add(new ResetSceneCommand());
             }
             if (gamepadState.Buttons.Start == ButtonState.Pressed)
             {
-                commands.Add(new TestQuitCommand(this.game));
+                commands.Add(new QuitCommand());
             }
             if (gamepadState.Buttons.B.Equals(ButtonState.Pressed))
             {
-                commands.Add(new FireballCommand(this.game));                              
+                commands.Add(new FireballCommand());                              
             }
             foreach (ICommands command in commands)
             {
                 command.Execute();
             }
-            if ((game.level.mario.velocity.X < .1 && game.level.mario.velocity.X > -.1) &&
-               (game.level.mario.velocity.Y < .1 && game.level.mario.velocity.Y > -.1) && !game.level.mario.physState.GetType().Equals((new FallingState(game)).GetType()))
+            if ((Game1.GetInstance().level.mario.velocity.X < .1 && Game1.GetInstance().level.mario.velocity.X > -.1) &&
+               (Game1.GetInstance().level.mario.velocity.Y < .1 && Game1.GetInstance().level.mario.velocity.Y > -.1) && 
+               !Game1.GetInstance().level.mario.physState.GetType().Equals((new FallingState()).GetType()))
             {
-                currentCommand = new IdleCommand(this.game);
+                currentCommand = new IdleCommand();
                 currentCommand.Execute();
             }
         }

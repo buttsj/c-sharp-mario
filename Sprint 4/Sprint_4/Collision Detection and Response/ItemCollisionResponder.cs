@@ -19,26 +19,26 @@ namespace Sprint4
             if (item.sprite.GetType().Equals((factory.build(SpriteFactory.sprites.star)).GetType()))
             {
                 mario.isStar = true;
-                game.soundManager.PlaySong(SoundManager.songs.star);
+                SoundManager.PlaySong(SoundManager.songs.star);
             }
             if (item.sprite.GetType().Equals((factory.build(SpriteFactory.sprites.superMushroom)).GetType()))
             {
                 mario.MakeBigMario();
-                game.soundManager.grow.Play();
+                SoundManager.grow.Play();
             }
             if (item.sprite.GetType().Equals((factory.build(SpriteFactory.sprites.fireFlower)).GetType()))
             {
                 mario.MakeFireMario();
-                game.soundManager.grow.Play();
+                SoundManager.grow.Play();
             }
             if (item.sprite.GetType().Equals((factory.build(SpriteFactory.sprites.coin)).GetType()))
             {
-                game.soundManager.coinCollect.Play();
+                SoundManager.coinCollect.Play();
                 game.coins++;
             }
             if (item.sprite.GetType().Equals((factory.build(SpriteFactory.sprites.oneUpMushroom)).GetType()))
             {
-                game.soundManager.oneUp.Play();
+                SoundManager.oneUp.Play();
                 game.lives++;
             }
         }

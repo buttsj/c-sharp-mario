@@ -9,16 +9,14 @@ namespace Sprint4
 {
     class BrickBlockState : IBlockState
     {
-        Game1 game;
         IAnimatedSprite sprite;
         int bumpAnimTimer = 0;
         bool isBumped = false;
 
-        public BrickBlockState(Game1 game)
+        public BrickBlockState()
         {
             ISpriteFactory factory = new SpriteFactory();
             sprite = factory.build(SpriteFactory.sprites.brickBlock);
-            this.game = game;
         }
         public Rectangle GetBoundingBox(Vector2 location)
         {

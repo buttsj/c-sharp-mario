@@ -9,7 +9,6 @@ namespace Sprint4
 {
     public class OneUpMushroom : ICollectable 
     {
-        Game1 game;
         public IAnimatedSprite sprite { get; set; }
         public bool isSpawning { get; set; }
         private int spawnTimer = 0;
@@ -19,14 +18,13 @@ namespace Sprint4
         public ICollectablePhysicsState physState { get; set; }
         ISpriteFactory factory = new SpriteFactory();
 
-        public OneUpMushroom(Game1 game, Vector2 location)
+        public OneUpMushroom(Vector2 location)
         {
             this.sprite = sprite;
-            this.game = game;
             position = location;
             isSpawning = false;
             sprite = factory.build(SpriteFactory.sprites.oneUpMushroom);
-            physState = new ItemGroundState(this, game);
+            physState = new ItemGroundState(this);
         }
         public void Draw(SpriteBatch spriteBatch)
         {
@@ -76,9 +74,9 @@ namespace Sprint4
 
         public void Spawn(){
             isSpawning = true;
-            game.level.levelItems.Add(this);
+            Game1.GetInstance().level.levelItems.Add(this);
             spawnTimer = 50;
-            game.soundManager.itemSpawn.Play();
+            SoundManager.itemSpawn.Play();
         }
     }
 }

@@ -7,14 +7,12 @@ namespace Sprint4
 {
     public class DownCommand : ICommands
     {
-        Game1 game;
-        public DownCommand(Game1 game)
+        public DownCommand()
         {
-            this.game = game;
         }
         public void Execute()
         {
-            game.level.mario.Down();
+            Game1.GetInstance().level.mario.Down();
         }
     }
 }

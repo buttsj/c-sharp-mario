@@ -12,34 +12,31 @@ namespace Sprint4
     class KeyboardController : IController
     {
         private KeyboardState keyboardState;
-        private Game1 game;
 
         ICommands currentCommand;
         Dictionary<Keys, ICommands> commandLibrary;
 
-        public KeyboardController(Game1 game)
+        public KeyboardController()
         {
-            this.game = game;
-
             commandLibrary = new Dictionary<Keys, ICommands>();
-            commandLibrary.Add(Keys.W, currentCommand = new UpCommand(this.game));
-            commandLibrary.Add(Keys.X, currentCommand = new RunCommand(this.game));
-            commandLibrary.Add(Keys.Up, currentCommand = new UpCommand(this.game));
-            commandLibrary.Add(Keys.S, currentCommand = new DownCommand(this.game));
-            commandLibrary.Add(Keys.Down, currentCommand = new DownCommand(this.game));
-            commandLibrary.Add(Keys.A, currentCommand = new LeftCommand(this.game));
-            commandLibrary.Add(Keys.Left, currentCommand = new LeftCommand(this.game));
-            commandLibrary.Add(Keys.D, currentCommand = new RightCommand(this.game));
-            commandLibrary.Add(Keys.Right, currentCommand = new RightCommand(this.game));
-            commandLibrary.Add(Keys.B, currentCommand = new FireballCommand(this.game));
-            commandLibrary.Add(Keys.Enter, currentCommand = new PauseCommand(this.game));
-            commandLibrary.Add(Keys.Q, currentCommand = new TestQuitCommand(this.game));
-            commandLibrary.Add(Keys.R, currentCommand = new ResetSceneCommand(this.game));
+            commandLibrary.Add(Keys.W, currentCommand = new UpCommand());
+            commandLibrary.Add(Keys.X, currentCommand = new RunCommand());
+            commandLibrary.Add(Keys.Up, currentCommand = new UpCommand());
+            commandLibrary.Add(Keys.S, currentCommand = new DownCommand());
+            commandLibrary.Add(Keys.Down, currentCommand = new DownCommand());
+            commandLibrary.Add(Keys.A, currentCommand = new LeftCommand());
+            commandLibrary.Add(Keys.Left, currentCommand = new LeftCommand());
+            commandLibrary.Add(Keys.D, currentCommand = new RightCommand());
+            commandLibrary.Add(Keys.Right, currentCommand = new RightCommand());
+            commandLibrary.Add(Keys.B, currentCommand = new FireballCommand());
+            commandLibrary.Add(Keys.Enter, currentCommand = new PauseCommand());
+            commandLibrary.Add(Keys.Q, currentCommand = new QuitCommand());
+            commandLibrary.Add(Keys.R, currentCommand = new ResetSceneCommand());
         }
 
         public void Update()
         {
-            currentCommand = new NullCommand(game);
+            currentCommand = new NullCommand();
             GamePadState gamepadState = GamePad.GetState(PlayerIndex.One);
             keyboardState = Keyboard.GetState();
             foreach (Keys key in keyboardState.GetPressedKeys())
@@ -50,9 +47,11 @@ namespace Sprint4
                     currentCommand.Execute();  
                 } 
            }
-           if((game.level.mario.velocity.X < .2 && game.level.mario.velocity.X > -.2) && 
-               (game.level.mario.velocity.Y < .1 && game.level.mario.velocity.Y > -.1) && !game.level.mario.physState.GetType().Equals((new FallingState(game)).GetType())){
-               currentCommand = new IdleCommand(this.game);
+            if ((Game1.GetInstance().level.mario.velocity.X < .2 && Game1.GetInstance().level.mario.velocity.X > -.2) &&
+               (Game1.GetInstance().level.mario.velocity.Y < .1 && Game1.GetInstance().level.mario.velocity.Y > -.1) && 
+               !Game1.GetInstance().level.mario.physState.GetType().Equals((new FallingState()).GetType()))
+            {
+               currentCommand = new IdleCommand();
                currentCommand.Execute();
            }
         }

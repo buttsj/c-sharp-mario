@@ -8,16 +8,14 @@ namespace Sprint4
 {
     class ItemFallingState : ICollectablePhysicsState
     {
-        Game1 game;
         Vector2 fallingVelocityDecayRate = new Vector2((float).90, 1);
         Vector2 fallingVelocity = new Vector2(0, (float)1.2);
         float positionDtAdjust = 50;
         Vector2 oldPos;
         float maxVelocity = 15;
 
-        public ItemFallingState(ICollectable item, Game1 game)
+        public ItemFallingState(ICollectable item)
         {
-            this.game = game;
             oldPos = item.position;
         }
         public void Update(ICollectable item, GameTime gameTime)
@@ -30,7 +28,7 @@ namespace Sprint4
             }
             if ((item.position.Y - oldPos.Y) < (float).5)
             {
-                item.physState = new ItemGroundState(item, game);
+                item.physState = new ItemGroundState(item);
             }
             oldPos = item.position;
         }

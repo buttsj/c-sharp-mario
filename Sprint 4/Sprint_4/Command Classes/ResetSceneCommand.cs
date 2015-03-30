@@ -7,15 +7,13 @@ namespace Sprint4
 {
     public class ResetSceneCommand : ICommands
     {
-        Game1 game;
-        public ResetSceneCommand(Game1 game)
+        public ResetSceneCommand()
         {
-            this.game = game;
         }
 
         public void Execute()
         {
-            game.level = new Level(game, "/Maps/Map.csv");
+            Game1.GetInstance().level = new Level(Game1.GetInstance(), "/Maps/Map.csv");
         }
     }
 }

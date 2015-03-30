@@ -13,19 +13,18 @@ namespace Sprint4
         public Dictionary<string, BlockFactory.BlockType> blockDictionary = new Dictionary<string, BlockFactory.BlockType>();
         public Dictionary<string, EnemyFactory.EnemyType> enemyDictionary = new Dictionary<string, EnemyFactory.EnemyType>();
         public Dictionary<string, SpriteFactory.sprites> backgroundDictionary = new Dictionary<string, SpriteFactory.sprites>();
-        Game1 game;
         ISpriteFactory factory;
         BlockFactory blockFactory;
         EnemyFactory enemyFactory;
         CollectableFactory collectableFactory;
         Mario mario;
 
-        public LevelBuilder(Game1 game)
+        public LevelBuilder()
         {
             factory = new SpriteFactory();
-            blockFactory = new BlockFactory(game);
-            enemyFactory = new EnemyFactory(game);
-            collectableFactory = new CollectableFactory(game);
+            blockFactory = new BlockFactory();
+            enemyFactory = new EnemyFactory();
+            collectableFactory = new CollectableFactory();
             itemDictionary.Add("F", CollectableFactory.CollectableType.fireFlower);
             itemDictionary.Add("C", CollectableFactory.CollectableType.coin);
             itemDictionary.Add("SM", CollectableFactory.CollectableType.superMushroom);
@@ -52,7 +51,6 @@ namespace Sprint4
             blockDictionary.Add("?1U", BlockFactory.BlockType.ques1up);
             blockDictionary.Add("?*", BlockFactory.BlockType.quesStar);
             blockDictionary.Add("?F", BlockFactory.BlockType.quesFlower);
-            this.game = game;
         }
 
         public Mario Build(string fileName, List<Enemy> levelEnemies, 
@@ -61,7 +59,7 @@ namespace Sprint4
         {
             float xCoord =0, yCoord = 0;
             StreamReader sr;
-            sr = File.OpenText(game.Content.RootDirectory + fileName);
+            sr = File.OpenText(Game1.GetInstance().Content.RootDirectory + fileName);
             string line;
             while ((line = sr.ReadLine()) != null)
             {
@@ -72,7 +70,7 @@ namespace Sprint4
                 {
                     if (words[i] == "M")
                     {
-                        mario = new Mario(game, new Vector2(xCoord, yCoord));
+                        mario = new Mario(Game1.GetInstance(), new Vector2(xCoord, yCoord));
                     }
                     if(itemDictionary.ContainsKey(words[i]))
                     {

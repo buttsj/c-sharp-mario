@@ -1,4 +1,5 @@
 ﻿using Microsoft.Xna.Framework.Audio;
+using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Media;
 using System;
 using System.Collections.Generic;
@@ -10,8 +11,8 @@ namespace Sprint4
     public class SoundManager
     {
         Game1 game;
-        public Song athletic, star, placeHolderSong;
-        public SoundEffect coinCollect, brickBreak, grow, shrink, blockHit, oneUp, enemyDamage, jump, itemSpawn,
+        public static Song athletic, star, placeHolderSong;
+        public static SoundEffect coinCollect, brickBreak, grow, shrink, blockHit, oneUp, enemyDamage, jump, itemSpawn,
             pause, death, gameOver, fireball, launch;
             
         public enum songs{athletic, star, death}
@@ -35,7 +36,7 @@ namespace Sprint4
             fireball = game.Content.Load<SoundEffect>("Sound/SFX/fireball");
             launch = game.Content.Load<SoundEffect>("Sound/SFX/BillLaunch");
         }
-        public void PlaySong(SoundManager.songs song)
+        public static void PlaySong(SoundManager.songs song)
         {
             if (song == SoundManager.songs.athletic)
             {
@@ -48,7 +49,7 @@ namespace Sprint4
             MediaPlayer.Play(placeHolderSong);
             MediaPlayer.IsRepeating = true;
         }
-        public void StopMusic()
+        public static void StopMusic()
         {
             MediaPlayer.Stop();
         }

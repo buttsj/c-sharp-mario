@@ -24,7 +24,7 @@ namespace Sprint4
             position = location;
             this.left = left;
             this.game = game;
-            game.soundManager.fireball.Play();
+            SoundManager.fireball.Play();
         }
 
         public void GoLeft()

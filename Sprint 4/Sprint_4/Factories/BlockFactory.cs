@@ -16,13 +16,11 @@ namespace Sprint4
             quesCoin, ques1up, quesStar, quesFlower
         }
         SpriteFactory factory;
-        Game1 game;
         IBlockState state;
         ICollectable prize;
 
-        public BlockFactory(Game1 game)
+        public BlockFactory()
         {
-            this.game = game;
         }
         
         public Block build(BlockType type, Vector2 location)
@@ -31,66 +29,66 @@ namespace Sprint4
             factory = new SpriteFactory();
             if (type == BlockType.used)
             {
-                state = new UsedBlockState(game);
+                state = new UsedBlockState();
             }
             if (type == BlockType.question)
             {
-                state = new QuestionBlockState(game);
+                state = new QuestionBlockState();
             }
             if (type == BlockType.winged)
             {
-                state = new WingedBlockState(game);
+                state = new WingedBlockState();
             }
             if (type == BlockType.exclamation)
             {
-                state = new ExclamationBlockState(game);
+                state = new ExclamationBlockState();
             }
             if (type == BlockType.brick)
             {
-                state = new BrickBlockState(game);
+                state = new BrickBlockState();
             }
             if (type == BlockType.pipe)
             {
-                state = new PipeBlockState(game);
+                state = new PipeBlockState();
             }
             if (type == BlockType.ground)
             {
-                state = new GroundBlockState(game);
+                state = new GroundBlockState();
             }
             if (type == BlockType.leftEdge)
             {
-                state = new LeftEdgeBlockState(game);
+                state = new LeftEdgeBlockState();
             }
             if (type == BlockType.rightEdge)
             {
-                state = new RightEdgeBlockState(game);
+                state = new RightEdgeBlockState();
             }
             if (type == BlockType.quesMush)
             {
-                state = new QuestionBlockState(game);
-                prize = new SuperMushroom(game, location);
+                state = new QuestionBlockState();
+                prize = new SuperMushroom(location);
             }
             if (type == BlockType.quesStar)
             {
-                state = new QuestionBlockState(game);
-                prize = new Star(game, location);
+                state = new QuestionBlockState();
+                prize = new Star(location);
             }
             if (type == BlockType.ques1up)
             {
-                state = new InvisibleBlockState(game);
-                prize = new OneUpMushroom(game, location);
+                state = new InvisibleBlockState();
+                prize = new OneUpMushroom(location);
             }
             if (type == BlockType.quesCoin)
             {
-                state = new QuestionBlockState(game);
-                prize = new Coin(game, location);
+                state = new QuestionBlockState();
+                prize = new Coin(location);
             }
             if (type == BlockType.quesFlower)
             {
-                state = new QuestionBlockState(game);
-                prize = new FireFlower(game, location);
+                state = new QuestionBlockState();
+                prize = new FireFlower(location);
             }
-            Block product = new Block(game, location, prize, state);
+            Block product = new Block(location, prize, state);
             return product;
         }
     }

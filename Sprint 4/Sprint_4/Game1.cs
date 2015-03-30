@@ -11,7 +11,7 @@ using Microsoft.Xna.Framework.Media;
 
 namespace Sprint4
 {
-    public class Game1 : Microsoft.Xna.Framework.Game
+    public sealed class Game1 : Microsoft.Xna.Framework.Game
     {
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
@@ -20,12 +20,13 @@ namespace Sprint4
         public IController gamepadController;
         public IGameState gameState;
         public Level level;
-        public SoundManager soundManager;
+        public static SoundManager soundManager;
         public Camera gameCamera;
         public bool isPaused = false;
         public int coins = 0, lives = 3;
+        private static Game1 sInstance = new Game1();
 
-        public Game1()
+        private Game1()
         {
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
@@ -34,9 +35,9 @@ namespace Sprint4
 
         protected override void Initialize()
         {
-            gameState = new PlayGameState(this);
-            keyboardController = new KeyboardController(this);
-            gamepadController = new GamepadController(this);
+            gameState = new PlayGameState();
+            keyboardController = new KeyboardController();
+            gamepadController = new GamepadController();
             soundManager = new SoundManager(this);
             gameCamera = new Camera(GraphicsDevice.Viewport, this);
             level = new Level(this, "/Maps/Map.csv");
@@ -66,6 +67,11 @@ namespace Sprint4
             gameState.Draw(spriteBatch);
             spriteBatch.End();
             base.Draw(gameTime);
+        }
+
+        public static Game1 GetInstance()
+        {
+            return sInstance;
         }
     }
 }

@@ -9,15 +9,15 @@ namespace Sprint4
 {
     public class DeadMS : IMarioState
     {
-        Game1 game;
+        Mario mario;
         IAnimatedSprite sprite;
        
         
-        public DeadMS(Game1 game){
+        public DeadMS(Mario mario){
             ISpriteFactory factory = new SpriteFactory();
             sprite = factory.build(SpriteFactory.sprites.deadMario);
-            this.game = game;
-            game.gameState = new DeadGameState(game);
+            this.mario = mario;
+            Game1.GetInstance().gameState = new DeadGameState(Game1.GetInstance());
         }
         public Rectangle GetBoundingBox(Vector2 location)
         {
@@ -54,15 +54,15 @@ namespace Sprint4
         }
         public void MakeBigMario()
         {
-            game.level.mario.state = new RightIdleBigMS(game);
+            mario.state = new RightIdleBigMS(mario);
         }
         public void MakeSmallMario()
         {
-            game.level.mario.state = new RightIdleSmallMS(game);
+            mario.state = new RightIdleSmallMS(mario);
         }
         public void MakeFireMario()
         {
-            game.level.mario.state = new RightIdleFireMS(game);
+            mario.state = new RightIdleFireMS(mario);
         }
         public void MakeFireballMario()
         {

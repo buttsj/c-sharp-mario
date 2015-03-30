@@ -9,15 +9,13 @@ namespace Sprint4
 {
     class QuestionBlockState : IBlockState
     {
-        Game1 game;
         IAnimatedSprite sprite;
         ISpriteFactory factory;
 
-        public QuestionBlockState(Game1 game)
+        public QuestionBlockState()
         {
             factory = new SpriteFactory();
             sprite = factory.build(SpriteFactory.sprites.questionBlock);
-            this.game = game;
         }
         public Rectangle GetBoundingBox(Vector2 location)
         {
@@ -31,7 +29,6 @@ namespace Sprint4
         {
             sprite.Draw(spriteBatch, location);
         }
-
         public void Reaction(Block block)
         {
             sprite = factory.build(SpriteFactory.sprites.usedBlock);

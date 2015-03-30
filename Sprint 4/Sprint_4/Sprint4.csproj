@@ -91,7 +91,7 @@
     <Compile Include="Command Classes\LeftCommand.cs" />
     <Compile Include="Command Classes\ResetSceneCommand.cs" />
     <Compile Include="Command Classes\RightCommand.cs" />
-    <Compile Include="Command Classes\TestQuitCommand.cs" />
+    <Compile Include="Command Classes\QuitCommand.cs" />
     <Compile Include="Command Classes\UpCommand.cs" />
     <Compile Include="Controller Classes\GamepadController.cs" />
     <Compile Include="Controller Classes\PauseMenuKeyController.cs" />

@@ -9,15 +9,13 @@ namespace Sprint4
 {
     class PipeBlockState : IBlockState
     {
-        Game1 game;
         IAnimatedSprite sprite;
         ISpriteFactory factory;
         
-        public PipeBlockState(Game1 game)
+        public PipeBlockState()
         {
             factory = new SpriteFactory();
             sprite = factory.build(SpriteFactory.sprites.bluePipe);
-            this.game = game;
         }
 
         public Rectangle GetBoundingBox(Vector2 location)

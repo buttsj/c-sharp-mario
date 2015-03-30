@@ -7,14 +7,12 @@ namespace Sprint4
 {
     public class RunCommand : ICommands
     {
-        Game1 game;
-        public RunCommand(Game1 game)
+        public RunCommand()
         {
-            this.game = game;
         }
         public void Execute()
         {
-            game.level.mario.Run();
+            Game1.GetInstance().level.mario.Run();
         }
     }
 }

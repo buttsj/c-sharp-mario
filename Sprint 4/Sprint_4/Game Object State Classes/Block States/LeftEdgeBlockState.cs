@@ -9,15 +9,13 @@ namespace Sprint4
 {
     class LeftEdgeBlockState : IBlockState
     {
-        Game1 game;
         IAnimatedSprite sprite;
         ISpriteFactory factory;
         
-        public LeftEdgeBlockState(Game1 game)
+        public LeftEdgeBlockState()
         {
             factory = new SpriteFactory();
             sprite = factory.build(SpriteFactory.sprites.leftEdge);
-            this.game = game;
         }
 
         public Rectangle GetBoundingBox(Vector2 location)

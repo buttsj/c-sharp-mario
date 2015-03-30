@@ -9,15 +9,13 @@ namespace Sprint4
 {
     class ExclamationBlockState : IBlockState
     {
-        Game1 game;
         IAnimatedSprite sprite;
         ISpriteFactory factory;
         
-        public ExclamationBlockState(Game1 game)
+        public ExclamationBlockState()
         {
             factory = new SpriteFactory();
             sprite = factory.build(SpriteFactory.sprites.exclamationBlock);
-            this.game = game;
         }
 
         public Rectangle GetBoundingBox(Vector2 location)

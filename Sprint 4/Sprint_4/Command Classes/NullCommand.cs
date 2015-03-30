@@ -7,10 +7,8 @@ namespace Sprint4
 {
     public class NullCommand : ICommands
     {
-        Game1 game;
-        public NullCommand(Game1 game)
+        public NullCommand()
         {
-            this.game = game;
         }
         public void Execute()
         {
