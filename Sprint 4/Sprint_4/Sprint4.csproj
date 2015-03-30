@@ -249,6 +249,7 @@
     <Compile Include="Factories\SpriteFactory.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="CODE REVIEWS\CodeQualityCaleb.txt" />
     <Content Include="CODE REVIEWS\CodeReadabilityCaleb.txt" />
     <Content Include="CODE REVIEWS\CodeReadabilityJohn.txt" />
     <Content Include="CODE REVIEWS\CodeQualityThomas .txt" />

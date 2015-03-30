@@ -1,0 +1,30 @@
+CODE QUALITY REVIEW
+
+Name:			Caleb Underwood
+
+Date:			March 29, 2015
+	
+Sprint number:		Sprint 4
+
+Name of the .cs file:	JumpingState.cs
+
+Author of the .cs file:	Tom Kiener
+
+Time Taken to Review:	 7 minutes
+
+
+Specific comments on quality of code:
+
+- Appropriate amount of code. (around 38 lines)
+
+- Low branching. (Single level if statements)
+
+- High Cohesion: Mario's jumping logic is contained within the class, very maintainable
+  and reduced complexity since Mario's physic state in the air is contained within the class.
+
+- Minimal Coupling: JumpingState only depends on it's interface, IMarioPhysicsState.  It's Update
+  method takes in a Mario object, however this is necessary in order to retrieve Mario's X and Y
+  position, height, and velocity.
+
+- Overall, JumpingState.cs is written well. 
+
