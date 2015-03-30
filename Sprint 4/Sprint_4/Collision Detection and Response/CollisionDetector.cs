@@ -37,9 +37,10 @@ namespace Sprint4
             Rectangle marioRect = mario.state.GetBoundingBox(new Vector2(mario.position.X, mario.position.Y));
             foreach (Enemy enemy in levelEnemies)
             {
+                Rectangle enemyRect = enemy.GetBoundingBox();
                 if (!enemy.isDead && mario.invicibilityFrames ==0)
                 {
-                    Rectangle enemyRect = enemy.GetBoundingBox();
+                    
                     if (marioRect.Intersects(enemyRect))
                     {
                         enemyResponder.MarioEnemyCollide(mario, enemy);
@@ -49,16 +50,31 @@ namespace Sprint4
               {
                   if (!enemy.isDead)
                   {
-                      Rectangle enemyRect = enemy.GetBoundingBox();
                       Rectangle fireballRect = fireball.GetBoundingBox();
                       if (fireballRect.Intersects(enemyRect))
                       {
                           fireballResponder.EnemyFireballCollide(enemy, fireball);
                       }
                   }
-              }               
-              
-            }
+              }
+              foreach (Block block in levelBlocks)
+              {
+                  Rectangle blockRect = block.GetBoundingBox();
+                  if (blockRect.Intersects(enemyRect) && !enemy.isMagic)
+                  {
+                      blockResponder.EnemyBlockCollide(enemy, block);
+                  }
+              }
+              foreach (Enemy otherEnemy in levelEnemies)
+              {
+                  Rectangle otherEnemyRect = enemy.GetBoundingBox();
+                  if (otherEnemy != enemy && enemyRect.Intersects(otherEnemyRect) && !enemy.isMagic)
+                  {
+                      enemyResponder.EnemyEnemyCollide(enemy, otherEnemy);
+                  }
+              }
+          }
+
             foreach (ICollectable item in levelItems)
             {
                 Rectangle itemRect = item.GetBoundingBox();
@@ -84,12 +100,7 @@ namespace Sprint4
                     {
                         fireballResponder.BlockFireballCollide(block, fireball);
                     }
-                }               
-            }
-
-            foreach (Block block in levelBlocks)
-            {
-                Rectangle blockRect = block.GetBoundingBox();
+                }
                 foreach (ICollectable item in levelItems)
                 {
                     Rectangle itemRect = item.GetBoundingBox();
@@ -98,28 +109,6 @@ namespace Sprint4
                         blockResponder.ItemBlockCollide(item, block);
                     }
                 }
-            }
-
-            foreach (Enemy enemy in levelEnemies)
-            {
-                    Rectangle enemyRect = enemy.GetBoundingBox();
-                    foreach (Block block in levelBlocks)
-                    {
-                        Rectangle blockRect = block.GetBoundingBox();
-                        if (blockRect.Intersects(enemyRect))
-                        {
-                            blockResponder.EnemyBlockCollide(enemy, block);
-                        }
-                    }
-
-                    foreach (Enemy otherEnemy in levelEnemies)
-                    {
-                        Rectangle otherEnemyRect = enemy.GetBoundingBox();
-                        if (otherEnemy != enemy && enemyRect.Intersects(otherEnemyRect))
-                        {
-                            enemyResponder.EnemyEnemyCollide(enemy, otherEnemy);
-                        }
-                    }
             }
 
             foreach (ICollectable obtainedItem in obtainedItems)

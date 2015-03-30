@@ -37,6 +37,8 @@ namespace Sprint4
         }
         public void Update(Enemy enemy, GameTime gameTime)
         {
+            enemy.position.Y++;
+            enemy.physState.Update(enemy, gameTime);
             sprite.Update(gameTime);
             if (enemy.left)
             {

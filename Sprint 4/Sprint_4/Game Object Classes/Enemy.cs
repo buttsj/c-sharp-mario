@@ -12,7 +12,7 @@ namespace Sprint4
     {
         public IEnemyState state;
         public IEnemyPhysicsState physState;
-        public bool isDead = false;
+        public bool isDead = false, isMagic = false;
         public int deathAnimationTimer = 15;
         public bool left = true;
         public Vector2 position;
@@ -48,9 +48,7 @@ namespace Sprint4
         }
         public void Update(GameTime gameTime)
         {
-            position.Y++;
             state.Update(this, gameTime);
-            physState.Update(this, gameTime);
         }
         public void Draw(SpriteBatch spriteBatch)
         {

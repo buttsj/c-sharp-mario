@@ -21,10 +21,6 @@ namespace Sprint4
         
         public Enemy build(EnemyType type, Vector2 location)
         {
-            if (type == EnemyFactory.EnemyType.Bill)
-            {
-                state = new BanzaiBillState(game);
-            }
             if (type == EnemyFactory.EnemyType.Dino)
             {
                 state = new LeftTallDinoState(game);
@@ -36,6 +32,10 @@ namespace Sprint4
             if (type == EnemyFactory.EnemyType.SmashedDino)
             {
                 state = new LeftSmashedDinoState(game);
+            }
+            if (type == EnemyFactory.EnemyType.Bill)
+            {
+                state = new BanzaiBillState(game);
             }
             Enemy product = new Enemy(game, location, state);
             return product;
