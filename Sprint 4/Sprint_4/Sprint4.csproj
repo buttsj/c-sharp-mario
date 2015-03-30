@@ -259,6 +259,7 @@
       <XnaPlatformSpecific>true</XnaPlatformSpecific>
     </Content>
     <Content Include="CODE REVIEWS\JackCodeReadability.txt" />
+    <Content Include="CODE REVIEWS\JackCodeQuality.txt" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Sprint_4Content\Sprint4Content.contentproj">
