@@ -36,14 +36,14 @@ namespace Sprint4
         public void Draw(SpriteBatch spriteBatch)
         {
             game.GraphicsDevice.Clear(Color.Black);
-            game.gameCamera.LookAt(game.gameCamera.Origin);
-            spriteBatch.DrawString(font, "Lives: " + game.lives, new Vector2(game.gameCamera.Origin.X-40, game.gameCamera.Origin.Y+110), Color.White);
+            game.gameCamera.LookAt(game.gameCamera.CenterScreen);
+            spriteBatch.DrawString(font, "Lives: " + game.lives, new Vector2(game.gameCamera.CenterScreen.X-40, game.gameCamera.CenterScreen.Y+110), Color.White);
             if (game.lives < 2)
             {
-                spriteBatch.DrawString(font2, "What's wrong?", new Vector2(game.gameCamera.Origin.X - 100, game.gameCamera.Origin.Y + 30), Color.White);
-                spriteBatch.DrawString(font2, "Too ", new Vector2(game.gameCamera.Origin.X + 10, game.gameCamera.Origin.Y + 200), Color.White);
-                spriteBatch.DrawString(font2, "hard ", new Vector2(game.gameCamera.Origin.X + 45, game.gameCamera.Origin.Y + 200), Color.Red);
-                spriteBatch.DrawString(font2, "for you?", new Vector2(game.gameCamera.Origin.X + 90, game.gameCamera.Origin.Y + 200), Color.White);
+                spriteBatch.DrawString(font2, "What's wrong?", new Vector2(game.gameCamera.CenterScreen.X - 100, game.gameCamera.CenterScreen.Y + 30), Color.White);
+                spriteBatch.DrawString(font2, "Too ", new Vector2(game.gameCamera.CenterScreen.X + 10, game.gameCamera.CenterScreen.Y + 200), Color.White);
+                spriteBatch.DrawString(font2, "hard ", new Vector2(game.gameCamera.CenterScreen.X + 45, game.gameCamera.CenterScreen.Y + 200), Color.Red);
+                spriteBatch.DrawString(font2, "for you?", new Vector2(game.gameCamera.CenterScreen.X + 90, game.gameCamera.CenterScreen.Y + 200), Color.White);
             }
         }
     }

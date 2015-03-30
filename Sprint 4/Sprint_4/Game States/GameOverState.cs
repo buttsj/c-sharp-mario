@@ -28,8 +28,8 @@ namespace Sprint4
         public void Draw(SpriteBatch spriteBatch)
         {
             game.GraphicsDevice.Clear(Color.Black);
-            game.gameCamera.LookAt(game.gameCamera.Origin);
-            spriteBatch.DrawString(font, "Game Over", new Vector2(game.gameCamera.Origin.X - 40, game.gameCamera.Origin.Y + 110), Color.White);
+            game.gameCamera.LookAt(game.gameCamera.CenterScreen);
+            spriteBatch.DrawString(font, "Game Over", new Vector2(game.gameCamera.CenterScreen.X - 40, game.gameCamera.CenterScreen.Y + 110), Color.White);
         }
     }
 }
