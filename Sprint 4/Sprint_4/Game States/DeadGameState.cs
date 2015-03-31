@@ -10,14 +10,16 @@ namespace Sprint4
     class DeadGameState :IGameState
     {
         Game1 game;
+        Mario mario;
         int pauseTimer = 30, upTimer = 30, downTimer = 180;
 
-        public DeadGameState()
+        public DeadGameState(Mario mario)
         {
             game = Game1.GetInstance();
+            this.mario = mario;
             SoundManager.StopMusic();
             SoundManager.death.Play();
-            game.level.mario.isDead = true;
+            mario.isDead = true;
         }
 
         public void Update(GameTime gameTime)
@@ -29,11 +31,11 @@ namespace Sprint4
             if (pauseTimer <= 0 && upTimer > 0)
             {
                 upTimer--;
-                game.level.mario.position.Y-=5;
+                mario.position.Y-=5;
             }
             if (upTimer <= 0 && downTimer > 0)
             {
-                game.level.mario.position.Y+=5;
+                mario.position.Y+=5;
                 downTimer--;
             }
             if (downTimer <= 0)

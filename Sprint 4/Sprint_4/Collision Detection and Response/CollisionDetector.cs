@@ -19,14 +19,14 @@ namespace Sprint4
         public FireballCollisionResponder fireballResponder;
         public List<Block> standingBlocks;
 
-        public CollisionDetector(Game1 game)
+        public CollisionDetector(Mario mario, Game1 game)
         {
             this.game = game;
             starSprite = factory.build(SpriteFactory.sprites.star);
             itemResponder = new ItemCollisionResponder(game);
             blockResponder = new BlockCollisionResponder(game);
             enemyResponder = new EnemyCollisionResponder(game);
-            fireballResponder = new FireballCollisionResponder(game);
+            fireballResponder = new FireballCollisionResponder(mario, game);
             standingBlocks = new List<Block>();
         }
 

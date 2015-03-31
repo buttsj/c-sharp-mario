@@ -16,7 +16,7 @@ namespace Sprint4
             ISpriteFactory factory = new SpriteFactory();
             sprite = factory.build(SpriteFactory.sprites.deadMario);
             this.mario = mario;
-            Game1.GetInstance().gameState = new DeadGameState();
+            Game1.GetInstance().gameState = new DeadGameState(mario);
         }
         public Rectangle GetBoundingBox(Vector2 location)
         {

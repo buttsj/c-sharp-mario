@@ -203,7 +203,7 @@ namespace Sprint4
 
         public void TransitionState(IMarioState prevState, IMarioState newState)
         {
-            Game1.GetInstance().gameState = new TransitionGameState(prevState, newState);
+            Game1.GetInstance().gameState = new TransitionGameState(this, prevState, newState);
         }
        }
     }

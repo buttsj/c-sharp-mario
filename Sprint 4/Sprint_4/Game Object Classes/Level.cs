@@ -28,9 +28,9 @@ namespace Sprint4
         {
             this.game = game;
             builder = new LevelBuilder();
-            mario=builder.Build(fileName, levelEnemies, levelBlocks, levelItems, levelBackgrounds);
+            mario = builder.Build(fileName, levelEnemies, levelBlocks, levelItems, levelBackgrounds);
             game.gameCamera.LookAt(mario.position);
-            collision = new CollisionDetector(game);
+            collision = new CollisionDetector(mario, game);
             SoundManager.PlaySong(SoundManager.songs.athletic);
             background = game.Content.Load<Texture2D>("background2");
         }

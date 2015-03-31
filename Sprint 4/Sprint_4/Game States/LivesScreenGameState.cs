@@ -38,7 +38,7 @@ namespace Sprint4
             game.GraphicsDevice.Clear(Color.Black);
             game.gameCamera.LookAt(game.gameCamera.CenterScreen);
             spriteBatch.DrawString(font, "Lives: " + game.lives, new Vector2(game.gameCamera.CenterScreen.X - 40, game.gameCamera.CenterScreen.Y + 110), Color.White);
-            if (game.lives < 2)
+            if (game.lives < 1)
             {
                 spriteBatch.DrawString(font2, "What's wrong?", new Vector2(game.gameCamera.CenterScreen.X - 100, game.gameCamera.CenterScreen.Y + 30), Color.White);
                 spriteBatch.DrawString(font2, "Too ", new Vector2(game.gameCamera.CenterScreen.X + 10, game.gameCamera.CenterScreen.Y + 200), Color.White);

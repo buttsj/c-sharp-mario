@@ -13,10 +13,10 @@ namespace Sprint4
         Mario mario;
         int timer = 50;
         IMarioState prevState, newState, currentState;
-        public TransitionGameState(IMarioState prevState, IMarioState newState)
+        public TransitionGameState(Mario mario, IMarioState prevState, IMarioState newState)
         {
             game = Game1.GetInstance();
-            mario = game.level.mario;
+            this.mario = mario;
             this.prevState = prevState;
             this.newState = newState;
             currentState = prevState;

@@ -9,17 +9,19 @@ namespace Sprint4
     public class FireballCollisionResponder
     {
         Game1 game;
+        Mario mario;
        
-        public FireballCollisionResponder(Game1 game)
+        public FireballCollisionResponder(Mario mario, Game1 game)
         {
             this.game = game;
+            this.mario = mario;
         }
         
         public void EnemyFireballCollide(Enemy enemy, Fireball fireball)
         {
             enemy.TakeDamage();
             game.level.deadFireballs.Add(fireball);
-            game.level.mario.fireballCount--;
+            mario.fireballCount--;
         }
 
         public void BlockFireballCollide(Block block, Fireball fireball)
@@ -34,7 +36,7 @@ namespace Sprint4
             if (!block.state.GetType().Equals((new GroundBlockState().GetType())))
             {
                 game.level.deadFireballs.Add(fireball);
-                game.level.mario.fireballCount--;
+                mario.fireballCount--;
             }
         }        
     }

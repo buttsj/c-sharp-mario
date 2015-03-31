@@ -14,15 +14,18 @@ namespace Sprint4
 
         public GameOverState()
         {
-            font = game.Content.Load<SpriteFont>("SpriteFont1");
             game = Game1.GetInstance();
+            font = game.Content.Load<SpriteFont>("SpriteFont1");
             SoundManager.StopMusic();
             SoundManager.gameOver.Play();
+            game.keyboardController = new PauseMenuKeyController();
+            game.gamepadController = new PauseMenuGamepadController();
         }
 
         public void Update(GameTime gameTime)
         {
-            //have a selection to try again
+            game.keyboardController.Update();
+            game.gamepadController.Update();
         }
 
         public void Draw(SpriteBatch spriteBatch)
