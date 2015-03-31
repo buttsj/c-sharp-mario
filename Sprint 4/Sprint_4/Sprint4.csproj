@@ -93,6 +93,7 @@
     <Compile Include="Command Classes\RightCommand.cs" />
     <Compile Include="Command Classes\QuitCommand.cs" />
     <Compile Include="Command Classes\UpCommand.cs" />
+    <Compile Include="Controller Classes\PauseMenuGamepadController.cs" />
     <Compile Include="Controller Classes\GamepadController.cs" />
     <Compile Include="Controller Classes\PauseMenuKeyController.cs" />
     <Compile Include="Controller Classes\KeyboardController.cs" />

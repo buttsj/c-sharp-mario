@@ -51,11 +51,15 @@ namespace Sprint4
             }
             if (gamepadState.Buttons.Start == ButtonState.Pressed)
             {
-                commands.Add(new QuitCommand());
+                commands.Add(new PauseCommand());
             }
             if (gamepadState.Buttons.B.Equals(ButtonState.Pressed))
             {
                 commands.Add(new FireballCommand());                              
+            }
+            if (gamepadState.Buttons.LeftShoulder.Equals(ButtonState.Pressed))
+            {
+                commands.Add(new QuitCommand());
             }
             foreach (ICommands command in commands)
             {

@@ -16,6 +16,7 @@ namespace Sprint4
         {
             game = Game1.GetInstance();
             game.keyboardController = new KeyboardController();
+            game.gamepadController = new GamepadController();
         }
         public void Update(GameTime gameTime)
         {

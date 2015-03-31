@@ -17,6 +17,7 @@ namespace Sprint4
             game = Game1.GetInstance();
             game.isPaused = true;
             game.keyboardController = new PauseMenuKeyController();
+            game.gamepadController = new PauseMenuGamepadController();
             SoundManager.pause.Play();
         }
 
@@ -26,6 +27,7 @@ namespace Sprint4
             if (inputBuffer <= 0)
             {
                 game.keyboardController.Update();
+                game.gamepadController.Update();
             }
         }
 
