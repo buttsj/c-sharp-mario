@@ -25,7 +25,7 @@ namespace Sprint4
 
         public void TakeDamage()
         {
-            Game1.GetInstance().gameState = new TransitionGameState(mario.state, new LeftMovingSmallMS(mario));
+            mario.TransitionState(mario.state, new LeftMovingSmallMS(mario));
         }
         public void Up()
         {

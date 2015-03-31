@@ -53,15 +53,14 @@ namespace Sprint4
         }
         public void MakeBigMario()
         {
-            Game1.GetInstance().gameState = new TransitionGameState(mario.state, new RightMovingBigMS(mario));
+            mario.TransitionState(mario.state, new RightMovingBigMS(mario));
         }
         public void MakeSmallMario()
         {
-            // no-op
         }
         public void MakeFireMario()
         {
-            Game1.GetInstance().gameState = new TransitionGameState(mario.state, new RightMovingFireMS(mario));
+            mario.TransitionState(mario.state, new RightMovingFireMS(mario));
         }
         public void MakeFireballMario()
         {

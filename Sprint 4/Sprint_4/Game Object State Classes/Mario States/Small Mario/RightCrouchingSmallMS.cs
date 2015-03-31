@@ -22,7 +22,6 @@ namespace Sprint4
         {
             return sprite.GetBoundingBox(location);
         }
-
         public void TakeDamage()
         {
             mario.state = new DeadMS(mario);
@@ -52,7 +51,7 @@ namespace Sprint4
         }
         public void MakeBigMario()
         {
-            Game1.GetInstance().gameState = new TransitionGameState(mario.state, new RightCrouchingBigMS(mario));
+            mario.TransitionState(mario.state, new RightCrouchingBigMS(mario));
         }
         public void MakeSmallMario()
         {
@@ -60,7 +59,7 @@ namespace Sprint4
         }
         public void MakeFireMario()
         {
-            Game1.GetInstance().gameState = new TransitionGameState(mario.state, new RightCrouchingFireMS(mario));
+            mario.TransitionState(mario.state, new RightCrouchingFireMS(mario));
         }
         public void MakeFireballMario()
         {

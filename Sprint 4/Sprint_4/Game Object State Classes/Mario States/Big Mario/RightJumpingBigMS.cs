@@ -24,7 +24,7 @@ namespace Sprint4
         }
         public void TakeDamage()
         {
-            Game1.GetInstance().gameState = new TransitionGameState(mario.state, new RightJumpingSmallMS(mario));
+            mario.TransitionState(mario.state, new RightJumpingSmallMS(mario));
         }
         public void Up()
         {
@@ -56,11 +56,11 @@ namespace Sprint4
         }
         public void MakeSmallMario()
         {
-            Game1.GetInstance().gameState = new TransitionGameState(mario.state, new RightJumpingSmallMS(mario));
+            mario.TransitionState(mario.state, new RightJumpingSmallMS(mario));
         }
         public void MakeFireMario()
         {
-            Game1.GetInstance().gameState = new TransitionGameState(mario.state, new RightJumpingFireMS(mario));
+            mario.TransitionState(mario.state, new RightJumpingFireMS(mario));
         }
         public void MakeFireballMario()
         {

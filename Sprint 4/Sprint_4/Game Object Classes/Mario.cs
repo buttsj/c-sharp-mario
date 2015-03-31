@@ -200,6 +200,11 @@ namespace Sprint4
                 state.Draw(spriteBatch, position);
             }
          }
+
+        public void TransitionState(IMarioState prevState, IMarioState newState)
+        {
+            Game1.GetInstance().gameState = new TransitionGameState(prevState, newState);
+        }
        }
     }
 
