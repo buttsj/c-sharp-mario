@@ -14,9 +14,11 @@ namespace Sprint4
         private GamePadState gamepadState;
         ICommands currentCommand;
         public List<ICommands> commands;
+        Mario mario;
 
-        public GamepadController()
+        public GamepadController(Mario mario)
         {
+            this.mario = mario;
         }
 
         public void Update()
@@ -27,23 +29,23 @@ namespace Sprint4
 
             if (gamepadState.DPad.Left.Equals(ButtonState.Pressed))
             {
-                commands.Add(new LeftCommand());
+                commands.Add(new LeftCommand(mario));
             }
             if (gamepadState.DPad.Right.Equals(ButtonState.Pressed))
             {
-                commands.Add(new RightCommand());
+                commands.Add(new RightCommand(mario));
             }
             if (gamepadState.DPad.Down.Equals(ButtonState.Pressed))
             {
-                commands.Add(new DownCommand());
+                commands.Add(new DownCommand(mario));
             }
             if (gamepadState.Buttons.A.Equals(ButtonState.Pressed))
             {
-                commands.Add(new UpCommand());
+                commands.Add(new UpCommand(mario));
             }
             if (gamepadState.Buttons.X.Equals(ButtonState.Pressed))
             {
-                commands.Add(new RunCommand());
+                commands.Add(new RunCommand(mario));
             }
             if (gamepadState.Buttons.Back == ButtonState.Pressed)
             {
@@ -55,7 +57,7 @@ namespace Sprint4
             }
             if (gamepadState.Buttons.B.Equals(ButtonState.Pressed))
             {
-                commands.Add(new FireballCommand());                              
+                commands.Add(new FireballCommand(mario));                              
             }
             if (gamepadState.Buttons.LeftShoulder.Equals(ButtonState.Pressed))
             {
@@ -65,11 +67,11 @@ namespace Sprint4
             {
                 command.Execute();
             }
-            if ((Game1.GetInstance().level.mario.velocity.X < .1 && Game1.GetInstance().level.mario.velocity.X > -.1) &&
-               (Game1.GetInstance().level.mario.velocity.Y < .1 && Game1.GetInstance().level.mario.velocity.Y > -.1) && 
-               !Game1.GetInstance().level.mario.physState.GetType().Equals((new FallingState()).GetType()))
+            if ((mario.velocity.X < .1 && mario.velocity.X > -.1) &&
+               (mario.velocity.Y < .1 && mario.velocity.Y > -.1) && 
+               !mario.physState.GetType().Equals((new FallingState()).GetType()))
             {
-                currentCommand = new IdleCommand();
+                currentCommand = new IdleCommand(mario);
                 currentCommand.Execute();
             }
         }

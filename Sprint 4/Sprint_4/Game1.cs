@@ -35,12 +35,12 @@ namespace Sprint4
 
         protected override void Initialize()
         {
-            gameState = new PlayGameState();
-            keyboardController = new KeyboardController();
-            gamepadController = new GamepadController();
             soundManager = new SoundManager(this);
             gameCamera = new Camera(GraphicsDevice.Viewport, this);
             level = new Level(this, "/Maps/Map.csv");
+            gameState = new PlayGameState();
+            keyboardController = new KeyboardController(level.mario);
+            gamepadController = new GamepadController(level.mario);
             base.Initialize();
         }
 

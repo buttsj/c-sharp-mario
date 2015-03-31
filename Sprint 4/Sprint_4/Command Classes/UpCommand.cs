@@ -7,12 +7,14 @@ namespace Sprint4
 {
     public class UpCommand : ICommands
     {
-        public UpCommand()
+        Mario mario;
+        public UpCommand(Mario mario)
         {
+            this.mario = mario;
         }
         public void Execute()
         {
-            Game1.GetInstance().level.mario.Up();
+            mario.Up();
         }
     }
 }

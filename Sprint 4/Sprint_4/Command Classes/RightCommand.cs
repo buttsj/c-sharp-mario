@@ -7,13 +7,15 @@ namespace Sprint4
 {
     public class RightCommand : ICommands
     {
-        public RightCommand()
+        Mario mario;
+        public RightCommand(Mario mario)
         {
+            this.mario = mario;
         }
 
         public void Execute()
         {
-            Game1.GetInstance().level.mario.GoRight();
+            mario.GoRight();
         }
     }
 }

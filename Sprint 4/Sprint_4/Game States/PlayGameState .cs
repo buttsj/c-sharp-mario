@@ -15,8 +15,8 @@ namespace Sprint4
         public PlayGameState()
         {
             game = Game1.GetInstance();
-            game.keyboardController = new KeyboardController();
-            game.gamepadController = new GamepadController();
+            game.keyboardController = new KeyboardController(game.level.mario);
+            game.gamepadController = new GamepadController(game.level.mario);
         }
         public void Update(GameTime gameTime)
         {

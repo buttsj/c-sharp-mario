@@ -12,23 +12,24 @@ namespace Sprint4
     class KeyboardController : IController
     {
         private KeyboardState keyboardState;
-
+        Mario mario;
         ICommands currentCommand;
         Dictionary<Keys, ICommands> commandLibrary;
 
-        public KeyboardController()
+        public KeyboardController(Mario mario)
         {
+            this.mario = mario;
             commandLibrary = new Dictionary<Keys, ICommands>();
-            commandLibrary.Add(Keys.W, currentCommand = new UpCommand());
-            commandLibrary.Add(Keys.X, currentCommand = new RunCommand());
-            commandLibrary.Add(Keys.Up, currentCommand = new UpCommand());
-            commandLibrary.Add(Keys.S, currentCommand = new DownCommand());
-            commandLibrary.Add(Keys.Down, currentCommand = new DownCommand());
-            commandLibrary.Add(Keys.A, currentCommand = new LeftCommand());
-            commandLibrary.Add(Keys.Left, currentCommand = new LeftCommand());
-            commandLibrary.Add(Keys.D, currentCommand = new RightCommand());
-            commandLibrary.Add(Keys.Right, currentCommand = new RightCommand());
-            commandLibrary.Add(Keys.B, currentCommand = new FireballCommand());
+            commandLibrary.Add(Keys.W, currentCommand = new UpCommand(mario));
+            commandLibrary.Add(Keys.X, currentCommand = new RunCommand(mario));
+            commandLibrary.Add(Keys.Up, currentCommand = new UpCommand(mario));
+            commandLibrary.Add(Keys.S, currentCommand = new DownCommand(mario));
+            commandLibrary.Add(Keys.Down, currentCommand = new DownCommand(mario));
+            commandLibrary.Add(Keys.A, currentCommand = new LeftCommand(mario));
+            commandLibrary.Add(Keys.Left, currentCommand = new LeftCommand(mario));
+            commandLibrary.Add(Keys.D, currentCommand = new RightCommand(mario));
+            commandLibrary.Add(Keys.Right, currentCommand = new RightCommand(mario));
+            commandLibrary.Add(Keys.B, currentCommand = new FireballCommand(mario));
             commandLibrary.Add(Keys.Enter, currentCommand = new PauseCommand());
             commandLibrary.Add(Keys.Q, currentCommand = new QuitCommand());
             commandLibrary.Add(Keys.R, currentCommand = new ResetSceneCommand());
@@ -47,11 +48,11 @@ namespace Sprint4
                     currentCommand.Execute();  
                 } 
            }
-            if ((Game1.GetInstance().level.mario.velocity.X < .2 && Game1.GetInstance().level.mario.velocity.X > -.2) &&
-               (Game1.GetInstance().level.mario.velocity.Y < .1 && Game1.GetInstance().level.mario.velocity.Y > -.1) && 
-               !Game1.GetInstance().level.mario.physState.GetType().Equals((new FallingState()).GetType()))
+            if ((mario.velocity.X < .2 && mario.velocity.X > -.2) &&
+               (mario.velocity.Y < .1 && mario.velocity.Y > -.1) && 
+               !mario.physState.GetType().Equals((new FallingState()).GetType()))
             {
-               currentCommand = new IdleCommand();
+               currentCommand = new IdleCommand(mario);
                currentCommand.Execute();
            }
         }

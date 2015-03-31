@@ -7,13 +7,15 @@ namespace Sprint4
 {
     public class FireballCommand : ICommands
     {
-        public FireballCommand()
+        Mario mario;
+        public FireballCommand(Mario mario)
         {
+            this.mario = mario;
         }
 
         public void Execute()
         {
-            Game1.GetInstance().level.mario.MakeFireballMario();
+            mario.MakeFireballMario();
         }
     }
 }

@@ -7,12 +7,14 @@ namespace Sprint4
 {
     public class IdleCommand : ICommands
     {
-        public IdleCommand()
+        Mario mario;
+        public IdleCommand(Mario mario)
         {
+            this.mario = mario;
         }
         public void Execute()
         {
-            Game1.GetInstance().level.mario.Idle();
+            mario.Idle();
         }
     }
 }
