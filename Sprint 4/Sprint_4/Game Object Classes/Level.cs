@@ -32,11 +32,14 @@ namespace Sprint4
             game.gameCamera.LookAt(mario.position);
             collision = new CollisionDetector(mario, game);
             SoundManager.PlaySong(SoundManager.songs.athletic);
-            background = game.Content.Load<Texture2D>("background2");
         }
 
         public void Update(GameTime gameTime)
         {
+            foreach (KeyValuePair<IAnimatedSprite, Vector2> backgroundObject in levelBackgrounds)
+            {
+                backgroundObject.Key.Update(gameTime);
+            }
             foreach (Enemy enemy in levelEnemies)
             {
                 if (game.gameCamera.InCameraView(enemy.GetBoundingBox()))
@@ -89,7 +92,6 @@ namespace Sprint4
 
         public void Draw(SpriteBatch spriteBatch)
         {
-            spriteBatch.Draw(background, new Rectangle(0, 55, 4096, 432), Color.White);
             foreach (KeyValuePair<IAnimatedSprite, Vector2> backgroundObject in levelBackgrounds)
             {
                 backgroundObject.Key.Draw(spriteBatch, backgroundObject.Value);
