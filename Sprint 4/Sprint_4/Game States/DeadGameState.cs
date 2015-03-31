@@ -12,9 +12,9 @@ namespace Sprint4
         Game1 game;
         int pauseTimer = 30, upTimer = 30, downTimer = 180;
 
-        public DeadGameState(Game1 game)
+        public DeadGameState()
         {
-            this.game = game;
+            game = Game1.GetInstance();
             SoundManager.StopMusic();
             SoundManager.death.Play();
             game.level.mario.isDead = true;
@@ -44,7 +44,7 @@ namespace Sprint4
                 }
                 else
                 {
-                    game.gameState = new GameOverState(game);
+                    game.gameState = new GameOverState();
                 }
             }
         }

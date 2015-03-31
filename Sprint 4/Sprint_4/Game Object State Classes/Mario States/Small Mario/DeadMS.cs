@@ -12,12 +12,11 @@ namespace Sprint4
         Mario mario;
         IAnimatedSprite sprite;
        
-        
         public DeadMS(Mario mario){
             ISpriteFactory factory = new SpriteFactory();
             sprite = factory.build(SpriteFactory.sprites.deadMario);
             this.mario = mario;
-            Game1.GetInstance().gameState = new DeadGameState(Game1.GetInstance());
+            Game1.GetInstance().gameState = new DeadGameState();
         }
         public Rectangle GetBoundingBox(Vector2 location)
         {

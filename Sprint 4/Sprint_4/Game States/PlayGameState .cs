@@ -10,10 +10,12 @@ namespace Sprint4
     class PlayGameState :IGameState
     {
         int gameStateTransitionBuffer = 5;
+        Game1 game;
 
         public PlayGameState()
         {
-            Game1.GetInstance().keyboardController = new KeyboardController();
+            game = Game1.GetInstance();
+            game.keyboardController = new KeyboardController();
         }
         public void Update(GameTime gameTime)
         {
@@ -23,15 +25,15 @@ namespace Sprint4
             }
             else
             {
-                Game1.GetInstance().keyboardController.Update();
-                Game1.GetInstance().gamepadController.Update();
-                Game1.GetInstance().level.Update(gameTime);
+                game.keyboardController.Update();
+                game.gamepadController.Update();
+                game.level.Update(gameTime);
             }
         }
 
         public void Draw(SpriteBatch spriteBatch)
         {
-            Game1.GetInstance().level.Draw(spriteBatch);   
+            game.level.Draw(spriteBatch);   
         }
     }
 }

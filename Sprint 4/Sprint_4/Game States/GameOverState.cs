@@ -12,10 +12,10 @@ namespace Sprint4
         Game1 game;
         SpriteFont font;
 
-        public GameOverState(Game1 game)
+        public GameOverState()
         {
             font = game.Content.Load<SpriteFont>("SpriteFont1");
-            this.game = game;
+            game = Game1.GetInstance();
             SoundManager.StopMusic();
             SoundManager.gameOver.Play();
         }
