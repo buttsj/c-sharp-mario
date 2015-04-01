@@ -20,8 +20,8 @@ namespace Sprint4
         public HUD(Game1 game)
         {
             this.game = game;
-            Coins = 0;
-            Lives = 3;
+            Coins = game.coins;
+            Lives = game.lives;
             Time = 999;
         }
 
@@ -34,6 +34,8 @@ namespace Sprint4
 
         public void Update(GameTime gameTime)
         {
+            Lives = game.lives;
+            Coins = game.coins;
             int currentTime = (int)gameTime.ElapsedGameTime.TotalSeconds;
             int nextTime = (int)gameTime.ElapsedGameTime.TotalSeconds;
 
