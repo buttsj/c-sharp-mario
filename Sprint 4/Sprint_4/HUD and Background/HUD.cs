@@ -12,9 +12,12 @@ namespace Sprint4
         public int Coins { get; set; }
         public int Lives { get; set; }
         public int Time { get; set; }
+        public int Score { get; set; }
         public SpriteFont CoinsFont { get; set; }
+        public Texture2D CoinSprite { get; set; }
         public SpriteFont LivesFont { get; set; }
         public SpriteFont TimeFont { get; set; }
+        public SpriteFont ScoreFont { get; set; }
 
         public float countDuration = 1f;
         public float currentTime = 0f;
@@ -25,14 +28,17 @@ namespace Sprint4
             this.game = game;
             Coins = game.coins;
             Lives = game.lives;
+            Score = 0;
             Time = 999;
         }
 
         public void LoadContent()
         {
-            CoinsFont = game.Content.Load<SpriteFont>("CoinsFont");
-            LivesFont = game.Content.Load<SpriteFont>("LivesFont");
-            TimeFont = game.Content.Load<SpriteFont>("TimeFont");
+            CoinSprite = game.Content.Load<Texture2D>("HUD Sprites/HUDCoinSprite");
+            CoinsFont = game.Content.Load<SpriteFont>("HUD Fonts/CoinsFont");
+            LivesFont = game.Content.Load<SpriteFont>("HUD Fonts/LivesFont");
+            TimeFont = game.Content.Load<SpriteFont>("HUD Fonts/TimeFont");
+            ScoreFont = game.Content.Load<SpriteFont>("HUD Fonts/ScoreFont");
         }
 
         public void Update(GameTime gameTime)
@@ -63,9 +69,11 @@ namespace Sprint4
 
         public void Draw(SpriteBatch spriteBatch)
         {
-            spriteBatch.DrawString(CoinsFont, "Coins: " + Coins, new Vector2(680, 30), Color.Black);
-            spriteBatch.DrawString(LivesFont, "Lives: " + Lives, new Vector2(15, 30), Color.Black);
-            spriteBatch.DrawString(TimeFont, "Timer: " + Time, new Vector2(550, 30), Color.Black);
+            spriteBatch.Draw(CoinSprite, new Rectangle(650, 30, 53, 25), Color.White);
+            spriteBatch.DrawString(CoinsFont, "" + Coins, new Vector2(750, 26), Color.Black);
+            spriteBatch.DrawString(LivesFont, "Mario\nX  " + Lives, new Vector2(30, 30), Color.Black);
+            spriteBatch.DrawString(TimeFont, "Time\n " + Time, new Vector2(550, 30), Color.Black);
+            spriteBatch.DrawString(ScoreFont, "" + Score, new Vector2(650, 55), Color.Black);
         }
     }
 }

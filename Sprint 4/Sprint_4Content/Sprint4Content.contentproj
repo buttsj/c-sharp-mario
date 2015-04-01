@@ -460,7 +460,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CoinsFont.spritefont">
+    <Compile Include="HUD Fonts\CoinsFont.spritefont">
       <Name>CoinsFont</Name>
       <Importer>FontDescriptionImporter</Importer>
       <Processor>FontDescriptionProcessor</Processor>
@@ -468,7 +468,7 @@
     <None Include="Documentation\CollisionDetection.vsd">
       <Name>CollisionDetection</Name>
     </None>
-    <Compile Include="LivesFont.spritefont">
+    <Compile Include="HUD Fonts\LivesFont.spritefont">
       <Name>LivesFont</Name>
       <Importer>FontDescriptionImporter</Importer>
       <Processor>FontDescriptionProcessor</Processor>
@@ -487,8 +487,13 @@
       <Importer>FontDescriptionImporter</Importer>
       <Processor>FontDescriptionProcessor</Processor>
     </Compile>
-    <Compile Include="TimeFont.spritefont">
+    <Compile Include="HUD Fonts\TimeFont.spritefont">
       <Name>TimeFont</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+    </Compile>
+    <Compile Include="HUD Fonts\ScoreFont.spritefont">
+      <Name>ScoreFont</Name>
       <Importer>FontDescriptionImporter</Importer>
       <Processor>FontDescriptionProcessor</Processor>
     </Compile>
@@ -717,6 +722,13 @@
   <ItemGroup>
     <Compile Include="Items\leftFacingPipe.png">
       <Name>leftFacingPipe</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="HUD Sprites\HUDCoinSprite.png">
+      <Name>HUDCoinSprite</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
