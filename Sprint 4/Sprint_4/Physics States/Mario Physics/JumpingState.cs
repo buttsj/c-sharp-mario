@@ -32,5 +32,6 @@ namespace Sprint4
                 mario.marioHeight = 0;
             }
         }
+        public void Run() { }
     }
 }

@@ -9,5 +9,6 @@ namespace Sprint4
     public interface IMarioPhysicsState
     {
         void Update(Mario mario, GameTime gameTime);
+        void Run();
     }
 }

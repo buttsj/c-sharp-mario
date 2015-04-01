@@ -36,10 +36,7 @@ namespace Sprint4
 
         public void Run()
         {
-            if (velocity.X > minVelocity.X && velocity.X < maxVelocity.X)
-            {
-                velocity.X *= (float)1.3;
-            }
+            physState.Run();
         }
 
         public void TakeDamage()

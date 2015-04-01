@@ -10,11 +10,13 @@ namespace Sprint4
     {
         public Vector2 speedDecayRate = new Vector2((float)0.73, (float)0.70);
         float positionDtAdjust = 40;
+        Mario mario;
 
         public GroundState(Mario mario)
         {
             mario.Land();
-            mario.velocity.Y = 0; 
+            mario.velocity.Y = 0;
+            this.mario = mario;
         }
         public void Update(Mario mario, GameTime gameTime)
         {
@@ -26,6 +28,13 @@ namespace Sprint4
             {
                 mario.physState = new FallingState();
             } 
+        }
+        public void Run()
+        {
+            if (mario.velocity.X > mario.minVelocity.X && mario.velocity.X < mario.maxVelocity.X)
+            {
+                mario.velocity.X *= (float)1.3;
+            }
         }
     }
 }

@@ -28,5 +28,6 @@ namespace Sprint4
                 mario.physState = new GroundState(mario);
             }
         }
+        public void Run() { }
     }
 }
