@@ -257,7 +257,7 @@ namespace Sprint4
             if (sprite == sprites.leftMovingMarioSmall)
             {
                 Texture2D leftMovingMarioSmall = Game1.gameContent.Load<Texture2D>("Mario Sprites/Small Mario/leftMovingMarioSmall");
-                return new LeftMovingMarioSmallSprite(leftMovingMarioSmall, 1, 2);
+                return new MarioMovingSprite(leftMovingMarioSmall, 1, 2);
             }
             if (sprite == sprites.rightCrouchingMarioSmall)
             {
@@ -277,7 +277,7 @@ namespace Sprint4
             if (sprite == sprites.rightMovingMarioSmall)
             {
                 Texture2D rightMovingMarioSmall = Game1.gameContent.Load<Texture2D>("Mario Sprites/Small Mario/rightMovingMarioSmall");
-                return new RightMovingMarioSmallSprite(rightMovingMarioSmall, 1, 2);
+                return new MarioMovingSprite(rightMovingMarioSmall, 1, 2);
             }
 
             //BIG MARIO
@@ -299,7 +299,7 @@ namespace Sprint4
             if (sprite == sprites.leftMovingMarioBig)
             {
                 Texture2D leftMovingMarioBig = Game1.gameContent.Load<Texture2D>("Mario Sprites/Big Mario/leftMovingMarioBig");
-                return new LeftMovingMarioBigSprite(leftMovingMarioBig, 1, 3);
+                return new MarioMovingSprite(leftMovingMarioBig, 1, 3);
             }
             if (sprite == sprites.rightCrouchingMarioBig)
             {
@@ -319,7 +319,7 @@ namespace Sprint4
             if (sprite == sprites.rightMovingMarioBig)
             {
                 Texture2D rightMovingMarioBig = Game1.gameContent.Load<Texture2D>("Mario Sprites/Big Mario/rightMovingMarioBig");
-                return new RightMovingMarioBigSprite(rightMovingMarioBig, 1, 3);
+                return new MarioMovingSprite(rightMovingMarioBig, 1, 3);
             }
             if (sprite == sprites.victoryMarioBig)
             {
@@ -347,7 +347,7 @@ namespace Sprint4
             if (sprite == sprites.leftMovingMarioFire)
             {
                 Texture2D leftMovingMarioFire = Game1.gameContent.Load<Texture2D>("Mario Sprites/Fire Mario/movingLeftMarioFire");
-                return new LeftMovingMarioFireSprite(leftMovingMarioFire, 1, 3);
+                return new MarioMovingSprite(leftMovingMarioFire, 1, 3);
             }
             if (sprite == sprites.rightCrouchingMarioFire)
             {
@@ -366,8 +366,8 @@ namespace Sprint4
             }
             if (sprite == sprites.rightMovingMarioFire)
             {
-                Texture2D rightMovingMarioFire = Game1.gameContent.Load<Texture2D>("Mario Sprites/Fire Mario/movingRightMarioFire");    
-                return new RightMovingMarioFireSprite(rightMovingMarioFire, 1, 3);
+                Texture2D rightMovingMarioFire = Game1.gameContent.Load<Texture2D>("Mario Sprites/Fire Mario/movingRightMarioFire");
+                return new MarioMovingSprite(rightMovingMarioFire, 1, 3);
             }
             if (sprite == sprites.victoryMarioFire)
             {

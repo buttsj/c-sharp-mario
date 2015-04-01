@@ -7,7 +7,7 @@ using Microsoft.Xna.Framework;
 
 namespace Sprint4
 {
-    class RightMovingMarioFireSprite : IAnimatedSprite
+    class MarioMovingSprite : IAnimatedSprite
     {
         public Texture2D Texture { get; set; }
         public int Rows { get; set; }
@@ -16,8 +16,9 @@ namespace Sprint4
         private int totalFrames;
         int animTimer;
         public int UpdateSpeed { get; set; }
+        int speedClamp = 50;
 
-        public RightMovingMarioFireSprite(Texture2D texture, int rows, int columns)
+        public MarioMovingSprite(Texture2D texture, int rows, int columns)
         {
             Texture = texture;
             Rows = rows;
@@ -34,6 +35,10 @@ namespace Sprint4
         }
         public void Update(GameTime gametime)
         {
+            if (UpdateSpeed < speedClamp)
+            {
+                UpdateSpeed = speedClamp;
+            }
             animTimer += gametime.ElapsedGameTime.Milliseconds;
             if (animTimer > UpdateSpeed)
             {

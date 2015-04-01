@@ -76,6 +76,7 @@
     <Reference Include="System.Net" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Game Object Sprite Classes\MarioMovingSprite.cs" />
     <Compile Include="Game Object Sprite Classes\StaticSprite.cs" />
     <Compile Include="HUD and Background\BackgroundHolder.cs" />
     <Compile Include="Camera Class\Camera.cs" />
@@ -148,12 +149,6 @@
     <Compile Include="Game Object Sprite Classes\Enemy Sprites\Shell-Less Koopa\RightWalkingShellessKoopa.cs" />
     <Compile Include="Game Object Sprite Classes\Item Sprites\CoinSprite.cs" />
     <Compile Include="Game Object Sprite Classes\Item Sprites\FireFlowerSprite.cs" />
-    <Compile Include="Game Object Sprite Classes\Mario Sprites\Big Mario\LeftMovingMarioBigSprite.cs" />
-    <Compile Include="Game Object Sprite Classes\Mario Sprites\Big Mario\RightMovingMarioBigSprite.cs" />
-    <Compile Include="Game Object Sprite Classes\Mario Sprites\Fire Mario\LeftMovingMarioFireSprite.cs" />
-    <Compile Include="Game Object Sprite Classes\Mario Sprites\Fire Mario\RightMovingMarioFireSprite.cs" />
-    <Compile Include="Game Object Sprite Classes\Mario Sprites\Small Mario\LeftMovingMarioSmallSprite.cs" />
-    <Compile Include="Game Object Sprite Classes\Mario Sprites\Small Mario\RightMovingMarioSmallSprite.cs" />
     <Compile Include="Game Object State Classes\Block States\ExclamationBlockState.cs" />
     <Compile Include="Game Object State Classes\Block States\GroundBlockState.cs" />
     <Compile Include="Game Object State Classes\Block States\PipeBlockState.cs" />
