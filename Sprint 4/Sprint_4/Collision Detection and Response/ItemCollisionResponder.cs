@@ -16,27 +16,27 @@ namespace Sprint4
         }
         public void MarioItemCollide(ICollectable item, Mario mario)
         {
-            if (item.sprite.GetType().Equals((factory.build(SpriteFactory.sprites.star)).GetType()))
+            if (item.GetType().Equals(new Star(item.position).GetType()))
             {
                 mario.isStar = true;
                 SoundManager.PlaySong(SoundManager.songs.star);
             }
-            if (item.sprite.GetType().Equals((factory.build(SpriteFactory.sprites.superMushroom)).GetType()))
+            if (item.GetType().Equals(new SuperMushroom(item.position).GetType()))
             {
                 mario.MakeBigMario();
                 SoundManager.grow.Play();
             }
-            if (item.sprite.GetType().Equals((factory.build(SpriteFactory.sprites.fireFlower)).GetType()))
+            if (item.GetType().Equals(new FireFlower(item.position).GetType()))
             {
                 mario.MakeFireMario();
                 SoundManager.grow.Play();
             }
-            if (item.sprite.GetType().Equals((factory.build(SpriteFactory.sprites.coin)).GetType()))
+            if (item.GetType().Equals(new Coin(item.position).GetType()))
             {
                 SoundManager.coinCollect.Play();
                 game.coins++;
             }
-            if (item.sprite.GetType().Equals((factory.build(SpriteFactory.sprites.oneUpMushroom)).GetType()))
+            if (item.GetType().Equals(new OneUpMushroom(item.position).GetType()))
             {
                 SoundManager.oneUp.Play();
                 game.lives++;

@@ -14,9 +14,9 @@ namespace Sprint4
             // Enemies
             leftDeadDino, rightDeadDino, walkingLeftDino, walkingRightDino,
             walkingRightSquishedDino, walkingLeftSquishedDino, deadShellessKoopa, leftWalkShellessKoopa, rightWalkShellessKoopa,
-            banzaiBill, deadBanzaiBill, piranhaPlant, 
+            banzaiBill, deadBanzaiBill,
             // Items
-            oneUpMushroom, fireFlower, superMushroom, coin, redShell, star, fireball,
+            oneUpMushroom, fireFlower, superMushroom, coin, star, fireball,
             // Blocks
             questionBlock, brickBlock, usedBlock, wingedBlock, exclamationBlock, 
             // Background items
@@ -50,7 +50,12 @@ namespace Sprint4
             if (sprite == sprites.banzaiBill)
             {
                 Texture2D banzaiBill = Game1.gameContent.Load<Texture2D>("Enemies/banzaiBill");
-                return new BanzaiBillSprite(banzaiBill, 1, 1);
+                return new StaticSprite(banzaiBill);
+            }
+            if (sprite == sprites.deadBanzaiBill)
+            {
+                Texture2D deadBanzaiBill = Game1.gameContent.Load<Texture2D>("Enemies/deadBanzaiBill");
+                return new StaticSprite(deadBanzaiBill);
             }
             if (sprite == sprites.walkingLeftDino)
             {
@@ -60,7 +65,7 @@ namespace Sprint4
             if (sprite == sprites.leftDeadDino)
             {
                 Texture2D leftDeadDino = Game1.gameContent.Load<Texture2D>("Enemies/Dino/leftDeadDino");
-                return new DeadDino(leftDeadDino, 1, 1);
+                return new StaticSprite(leftDeadDino);
             }
             if (sprite == sprites.walkingLeftSquishedDino)
             {
@@ -77,15 +82,10 @@ namespace Sprint4
                 Texture2D rightSquishedDino = Game1.gameContent.Load<Texture2D>("Enemies/Dino/walkingRightSquishedDino");
                 return new RightSmashedDino(rightSquishedDino, 1, 2);
             }
-            if (sprite == sprites.piranhaPlant)
-            {
-                Texture2D piranhaPlant = Game1.gameContent.Load<Texture2D>("Enemies/piranhaPlant");
-                return new PiranhaPlant(piranhaPlant, 1, 4);
-            }
             if (sprite == sprites.deadShellessKoopa)
             {
                 Texture2D deadShellessKoopa = Game1.gameContent.Load<Texture2D>("Enemies/Shell-Less Koopa/deadShellessKoopa");
-                return new DeadShellessKoopa(deadShellessKoopa, 1, 1);
+                return new StaticSprite(deadShellessKoopa);
             }
             if (sprite == sprites.leftWalkShellessKoopa)
             {
@@ -97,22 +97,17 @@ namespace Sprint4
                 Texture2D rightShellessKoopa = Game1.gameContent.Load<Texture2D>("Enemies/Shell-Less Koopa/rightWalkShellessKoopa");
                 return new RightWalkingShellessKoopa(rightShellessKoopa, 1, 2);
             }
-            if (sprite == sprites.deadBanzaiBill)
-            {
-                Texture2D deadBanzaiBill = Game1.gameContent.Load<Texture2D>("Enemies/deadBanzaiBill");
-                return new RightWalkingShellessKoopa(deadBanzaiBill, 1, 1);
-            }
 
             //ITEMS
             if (sprite == sprites.oneUpMushroom)
             {
                 Texture2D oneUpMushroom = Game1.gameContent.Load<Texture2D>("Items/1upMushroom");
-                return new OneUpMushroomSprite(oneUpMushroom, 1, 1);
+                return new StaticSprite(oneUpMushroom);
             }
             if (sprite == sprites.superMushroom)
             {
                 Texture2D superMushroom = Game1.gameContent.Load<Texture2D>("Items/SuperMushroom");
-                return new SuperMushroomSprite(superMushroom, 1, 1);
+                return new StaticSprite(superMushroom);
             }
             if (sprite == sprites.fireFlower)
             {
@@ -124,60 +119,55 @@ namespace Sprint4
                 Texture2D coin = Game1.gameContent.Load<Texture2D>("Items/spinningCoin");
                 return new CoinSprite(coin, 1, 4);
             }
-            if (sprite == sprites.redShell)
-            {
-                Texture2D redShell = Game1.gameContent.Load<Texture2D>("Items/ShellRed");
-                return new RedShellSprite(redShell, 1, 1);
-            }
             if (sprite == sprites.bluePipe)
             {
                 Texture2D bluePipe = Game1.gameContent.Load<Texture2D>("Items/bluePipe");
-                return new BluePipeSprite(bluePipe, 1, 1);
+                return new StaticSprite(bluePipe);
             }
             if (sprite == sprites.leftPipe)
             {
                 Texture2D leftPipe = Game1.gameContent.Load<Texture2D>("Items/leftFacingPipe");
-                return new LeftPipeSprite(leftPipe, 1, 1);
+                return new StaticSprite(leftPipe);
             }
             if (sprite == sprites.downPipe)
             {
                 Texture2D downPipe = Game1.gameContent.Load<Texture2D>("Items/downFacingPipe");
-                return new DownPipeSprite(downPipe, 1, 1);
+                return new StaticSprite(downPipe);
             }
             if (sprite == sprites.yellowPipe)
             {
                 Texture2D yellowPipe = Game1.gameContent.Load<Texture2D>("Items/yellowPipe");
-                return new YellowPipeSprite(yellowPipe, 1, 1);
+                return new StaticSprite(yellowPipe);
             }
             if (sprite == sprites.whitePipe)
             {
                 Texture2D whitePipe = Game1.gameContent.Load<Texture2D>("Items/whitePipe");
-                return new WhitePipeSprite(whitePipe, 1, 1);
+                return new StaticSprite(whitePipe);
             }
             if (sprite == sprites.exitSign)
             {
                 Texture2D exitSign = Game1.gameContent.Load<Texture2D>("Items/exitarrow");
-                return new ExitSignSprite(exitSign, 1, 1);
+                return new StaticSprite(exitSign);
             }
             if (sprite == sprites.star)
             {
                 Texture2D star = Game1.gameContent.Load<Texture2D>("Items/star");
-                return new StarSprite(star, 1, 1);
+                return new StaticSprite(star);
             }
             if (sprite == sprites.bush1)
             {
                 Texture2D bush1 = Game1.gameContent.Load<Texture2D>("Items/bush1");
-                return new Bush1Sprite(bush1, 1, 1);
+                return new StaticSprite(bush1);
             }
             if (sprite == sprites.bush2)
             {
                 Texture2D bush2 = Game1.gameContent.Load<Texture2D>("Items/bush2");
-                return new Bush2Sprite(bush2, 1, 1);
+                return new StaticSprite(bush2);
             }
             if (sprite == sprites.bush3)
             {
                 Texture2D bush3 = Game1.gameContent.Load<Texture2D>("Items/bush3");
-                return new Bush3Sprite(bush3, 1, 1);
+                return new StaticSprite(bush3);
             }
             if (sprite == sprites.undergroundBackground)
             {
@@ -204,12 +194,12 @@ namespace Sprint4
             if (sprite == sprites.usedBlock)
             {
                 Texture2D usedBlock = Game1.gameContent.Load<Texture2D>("Items/usedBlock");
-                return new UsedBlockSprite(usedBlock, 1, 1);
+                return new StaticSprite(usedBlock);
             }
             if (sprite == sprites.brickBlock)
             {
                 Texture2D stoneBlock = Game1.gameContent.Load<Texture2D>("Items/stoneBlock");
-                return new StoneBlockSprite(stoneBlock, 1, 1);
+                return new StaticSprite(stoneBlock);
             }
             if (sprite == sprites.wingedBlock)
             {
@@ -219,7 +209,7 @@ namespace Sprint4
             if (sprite == sprites.exclamationBlock)
             {
                 Texture2D exclamationBlock = Game1.gameContent.Load<Texture2D>("Items/exclamationBlock");
-                return new ExclamationBlockSprite(exclamationBlock, 1, 1);
+                return new StaticSprite(exclamationBlock);
             }
             if (sprite == sprites.questionBlock)
             {
@@ -229,17 +219,17 @@ namespace Sprint4
             if (sprite == sprites.ground)
             {
                 Texture2D ground = Game1.gameContent.Load<Texture2D>("ground tile");
-                return new GroundBlockSprite(ground, 1, 1);
+                return new StaticSprite(ground);
             }
             if (sprite == sprites.leftEdge)
             {
                 Texture2D leftEdge = Game1.gameContent.Load<Texture2D>("Items/leftGroundEdge");
-                return new GroundBlockSprite(leftEdge, 1, 1);
+                return new StaticSprite(leftEdge);
             }
             if (sprite == sprites.rightEdge)
             {
                 Texture2D rightEdge = Game1.gameContent.Load<Texture2D>("Items/rightGroundEdge");
-                return new GroundBlockSprite(rightEdge, 1, 1);
+                return new StaticSprite(rightEdge);
             }
 
 
@@ -247,22 +237,22 @@ namespace Sprint4
             if (sprite == sprites.deadMario)
             {
                 Texture2D deadMario = Game1.gameContent.Load<Texture2D>("Mario Sprites/Small Mario/deadMario");
-                return new DeadMarioSprite(deadMario, 1, 1);
+                return new StaticSprite(deadMario);
             }
             if (sprite == sprites.leftCrouchingMarioSmall)
             {
                 Texture2D leftCrouchingMarioSmall = Game1.gameContent.Load<Texture2D>("Mario Sprites/Small Mario/leftCrouchingMarioSmall");
-                return new LeftCrouchingMarioSmallSprite(leftCrouchingMarioSmall, 1, 1);
+                return new StaticSprite(leftCrouchingMarioSmall);
             }
             if (sprite == sprites.leftIdleMarioSmall)
             {
                 Texture2D leftIdleMarioSmall = Game1.gameContent.Load<Texture2D>("Mario Sprites/Small Mario/leftIdleMarioSmall");
-                return new LeftIdleMarioSmallSprite(leftIdleMarioSmall, 1, 1);
+                return new StaticSprite(leftIdleMarioSmall);
             }
             if (sprite == sprites.leftJumpingMarioSmall)
             {
                 Texture2D leftJumpingMarioSmall = Game1.gameContent.Load<Texture2D>("Mario Sprites/Small Mario/leftJumpingMarioSmall");
-                return new LeftJumpingMarioSmallSprite(leftJumpingMarioSmall, 1, 1);
+                return new StaticSprite(leftJumpingMarioSmall);
             }
             if (sprite == sprites.leftMovingMarioSmall)
             {
@@ -272,17 +262,17 @@ namespace Sprint4
             if (sprite == sprites.rightCrouchingMarioSmall)
             {
                 Texture2D rightCrouchingMarioSmall = Game1.gameContent.Load<Texture2D>("Mario Sprites/Small Mario/rightCrouchingMarioSmall");
-                return new RightCrouchingMarioSmallSprite(rightCrouchingMarioSmall, 1, 1);
+                return new StaticSprite(rightCrouchingMarioSmall);
             }
             if (sprite == sprites.rightIdleMarioSmall)
             {
                 Texture2D rightIdleMarioSmall = Game1.gameContent.Load<Texture2D>("Mario Sprites/Small Mario/rightIdleMarioSmall");
-                return new RightIdleMarioSmallSprite(rightIdleMarioSmall, 1, 1);
+                return new StaticSprite(rightIdleMarioSmall);
             }
             if (sprite == sprites.rightJumpingMarioSmall)
             {
                 Texture2D rightJumpingMarioSmall = Game1.gameContent.Load<Texture2D>("Mario Sprites/Small Mario/rightJumpingMarioSmall");
-                return new RightJumpingMarioSmallSprite(rightJumpingMarioSmall, 1, 1);
+                return new StaticSprite(rightJumpingMarioSmall);
             }
             if (sprite == sprites.rightMovingMarioSmall)
             {
@@ -294,18 +284,17 @@ namespace Sprint4
             if (sprite == sprites.leftCrouchingMarioBig)
             {
                 Texture2D leftCrouchingMarioBig = Game1.gameContent.Load<Texture2D>("Mario Sprites/Big Mario/leftCrouchingMarioBig");
-                return new LeftCrouchingMarioBigSprite(leftCrouchingMarioBig, 1, 1);
+                return new StaticSprite(leftCrouchingMarioBig);
             }
-
             if (sprite == sprites.leftIdleMarioBig)
             {
                 Texture2D leftIdleMarioBig = Game1.gameContent.Load<Texture2D>("Mario Sprites/Big Mario/leftIdleMarioBig");
-                return new LeftIdleMarioBigSprite(leftIdleMarioBig, 1, 1);
+                return new StaticSprite(leftIdleMarioBig);
             }
             if (sprite == sprites.leftJumpingMarioBig)
             {
                 Texture2D leftJumpingMarioBig = Game1.gameContent.Load<Texture2D>("Mario Sprites/Big Mario/leftJumpingMarioBig");
-                return new LeftJumpingMarioBigSprite(leftJumpingMarioBig, 1, 1);
+                return new StaticSprite(leftJumpingMarioBig);
             }
             if (sprite == sprites.leftMovingMarioBig)
             {
@@ -315,17 +304,17 @@ namespace Sprint4
             if (sprite == sprites.rightCrouchingMarioBig)
             {
                 Texture2D rightCrouchingMarioBig = Game1.gameContent.Load<Texture2D>("Mario Sprites/Big Mario/rightCrouchingMarioBig");
-                return new RightCrouchingMarioBigSprite(rightCrouchingMarioBig, 1, 1);
+                return new StaticSprite(rightCrouchingMarioBig);
             }
             if (sprite == sprites.rightIdleMarioBig)
             {
                 Texture2D rightIdleMarioBig = Game1.gameContent.Load<Texture2D>("Mario Sprites/Big Mario/rightIdleMarioBig");
-                return new RightIdleMarioBigSprite(rightIdleMarioBig, 1, 1);
+                return new StaticSprite(rightIdleMarioBig);
             }
             if (sprite == sprites.rightJumpingMarioBig)
             {
                 Texture2D rightJumpingMarioBig = Game1.gameContent.Load<Texture2D>("Mario Sprites/Big Mario/rightJumpingMarioBig");
-                return new RightJumpingMarioBigSprite(rightJumpingMarioBig, 1, 1);
+                return new StaticSprite(rightJumpingMarioBig);
             }
             if (sprite == sprites.rightMovingMarioBig)
             {
@@ -335,7 +324,7 @@ namespace Sprint4
             if (sprite == sprites.victoryMarioBig)
             {
                 Texture2D victoryMarioBig = Game1.gameContent.Load<Texture2D>("Mario Sprites/Big Mario/victoryMarioBig");
-                return new VictoryMarioBigSprite(victoryMarioBig, 1, 1);
+                return new StaticSprite(victoryMarioBig);
             }
 
 
@@ -343,17 +332,17 @@ namespace Sprint4
             if (sprite == sprites.leftCrouchingMarioFire)
             {
                 Texture2D leftCrouchingMarioFire = Game1.gameContent.Load<Texture2D>("Mario Sprites/Fire Mario/leftFacingCrouchingMarioFire");
-                return new LeftCrouchingMarioFireSprite(leftCrouchingMarioFire, 1, 1);
+                return new StaticSprite(leftCrouchingMarioFire);
             }
             if (sprite == sprites.leftIdleMarioFire)
             {
                 Texture2D leftIdleMarioFire = Game1.gameContent.Load<Texture2D>("Mario Sprites/Fire Mario/leftFacingIdleMarioFire");
-                return new LeftIdleMarioFireSprite(leftIdleMarioFire, 1, 1);
+                return new StaticSprite(leftIdleMarioFire);
             }
             if (sprite == sprites.leftJumpingMarioFire)
             {
                 Texture2D leftJumpingMarioFire = Game1.gameContent.Load<Texture2D>("Mario Sprites/Fire Mario/leftFacingJumpingMarioFire");
-                return new LeftJumpingMarioFireSprite(leftJumpingMarioFire, 1, 1);
+                return new StaticSprite(leftJumpingMarioFire);
             }
             if (sprite == sprites.leftMovingMarioFire)
             {
@@ -363,17 +352,17 @@ namespace Sprint4
             if (sprite == sprites.rightCrouchingMarioFire)
             {
                 Texture2D rightCrouchingMarioFire = Game1.gameContent.Load<Texture2D>("Mario Sprites/Fire Mario/rightFacingCrouchingMarioFire");
-                return new RightCrouchingMarioFireSprite(rightCrouchingMarioFire, 1, 1);
+                return new StaticSprite(rightCrouchingMarioFire);
             }
             if (sprite == sprites.rightIdleMarioFire)
             {
                 Texture2D rightIdleMarioFire = Game1.gameContent.Load<Texture2D>("Mario Sprites/Fire Mario/rightidlemariofire");
-                return new RightIdleMarioFireSprite(rightIdleMarioFire, 1, 1);
+                return new StaticSprite(rightIdleMarioFire);
             }
             if (sprite == sprites.rightJumpingMarioFire)
             {
                 Texture2D rightJumpingMarioFire = Game1.gameContent.Load<Texture2D>("Mario Sprites/Fire Mario/rightFacingJumpingMarioFire");
-                return new RightJumpingMarioFireSprite(rightJumpingMarioFire, 1, 1);
+                return new StaticSprite(rightJumpingMarioFire);
             }
             if (sprite == sprites.rightMovingMarioFire)
             {
@@ -383,17 +372,17 @@ namespace Sprint4
             if (sprite == sprites.victoryMarioFire)
             {
                 Texture2D victoryMarioFire = Game1.gameContent.Load<Texture2D>("Mario Sprites/Fire Mario/victoryMarioFire");
-                return new VictoryMarioFireSprite(victoryMarioFire, 1, 1);
+                return new StaticSprite(victoryMarioFire);
             }
             if (sprite == sprites.leftFireballMarioFire)
             {
                 Texture2D leftFireballMarioFire = Game1.gameContent.Load<Texture2D>("Mario Sprites/Fire Mario/leftFireballMarioFire");
-                return new LeftFireballMarioFireSprite(leftFireballMarioFire, 1, 1);
+                return new StaticSprite(leftFireballMarioFire);
             }
             if (sprite == sprites.rightFireballMarioFire)
             {
                 Texture2D rightFireballMarioFire = Game1.gameContent.Load<Texture2D>("Mario Sprites/Fire Mario/rightFireballMarioFire");
-                return new RightFireballMarioFireSprite(rightFireballMarioFire, 1, 1);
+                return new StaticSprite(rightFireballMarioFire);
             }
 
             return product;
