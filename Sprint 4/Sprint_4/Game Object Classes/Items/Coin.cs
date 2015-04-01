@@ -45,6 +45,7 @@ namespace Sprint4
 
         public void Spawn(){
             SoundManager.coinCollect.Play();
+            Game1.GetInstance().coins++;
         }
     }
 }
