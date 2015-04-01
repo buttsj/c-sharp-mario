@@ -12,6 +12,8 @@ namespace Sprint4
         public Texture2D Texture { get; set; }
         public int Rows { get; set; }
         public int Columns { get; set; }
+        public int UpdateSpeed { get; set; }
+
         public StaticSprite(Texture2D texture)
         {
             Texture = texture;

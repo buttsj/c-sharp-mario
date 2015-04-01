@@ -15,6 +15,8 @@ namespace Sprint4
         private int currentFrame;
         private int totalFrames;
         int animTimer = 0;
+        public int UpdateSpeed { get; set; }
+
         public LeftSmashedDino(Texture2D texture, int rows, int columns)
         {
             Texture = texture;

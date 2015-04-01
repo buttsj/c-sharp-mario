@@ -10,17 +10,17 @@ namespace Sprint4
     class RightCrouchingFireMS : IMarioState
     {
         Mario mario;
-        IAnimatedSprite sprite;
+        public IAnimatedSprite Sprite { get; set; }
         
         public RightCrouchingFireMS(Mario mario)
         {
             ISpriteFactory factory = new SpriteFactory();
-            sprite = factory.build(SpriteFactory.sprites.rightCrouchingMarioFire);
+            Sprite = factory.build(SpriteFactory.sprites.rightCrouchingMarioFire);
             this.mario = mario;
         }
         public Rectangle GetBoundingBox(Vector2 location)
         {
-            return sprite.GetBoundingBox(location);
+            return Sprite.GetBoundingBox(location);
         }
 
         public void TakeDamage()
@@ -72,11 +72,11 @@ namespace Sprint4
         }
         public void Update(GameTime gameTime)
         {
-            sprite.Update(gameTime);
+            Sprite.Update(gameTime);
         }
         public void Draw(SpriteBatch spriteBatch, Vector2 location)
         {
-            sprite.Draw(spriteBatch, location);
+            Sprite.Draw(spriteBatch, location);
         }
     }
 }

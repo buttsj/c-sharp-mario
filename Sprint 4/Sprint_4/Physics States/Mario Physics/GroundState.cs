@@ -34,6 +34,7 @@ namespace Sprint4
             if (mario.velocity.X > mario.minVelocity.X && mario.velocity.X < mario.maxVelocity.X)
             {
                 mario.velocity.X *= (float)1.3;
+                mario.state.Sprite.UpdateSpeed--;
             }
         }
     }

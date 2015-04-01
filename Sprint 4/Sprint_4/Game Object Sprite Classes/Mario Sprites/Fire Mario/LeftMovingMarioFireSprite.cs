@@ -15,6 +15,8 @@ namespace Sprint4
         private int currentFrame;
         private int totalFrames;
         int animTimer;
+        public int UpdateSpeed { get; set; }
+
         public LeftMovingMarioFireSprite(Texture2D texture, int rows, int columns)
         {
             Texture = texture;
@@ -22,6 +24,7 @@ namespace Sprint4
             Columns = columns;
             currentFrame = 0;
             totalFrames = Rows * Columns;
+            UpdateSpeed = 90;
         }
         public Rectangle GetBoundingBox(Vector2 location)
         {
@@ -29,11 +32,12 @@ namespace Sprint4
             int height = Texture.Height / Rows;
             return new Rectangle((int)location.X, (int)location.Y, width, height);
         }
-        public void Update(GameTime gametime) {
+        public void Update(GameTime gametime)
+        {
             animTimer += gametime.ElapsedGameTime.Milliseconds;
-            if (animTimer > 90)
+            if (animTimer > UpdateSpeed)
             {
-                animTimer -= 90;
+                animTimer -= UpdateSpeed;
 
                 currentFrame = (currentFrame + 1) % totalFrames;
                 if (currentFrame == totalFrames)

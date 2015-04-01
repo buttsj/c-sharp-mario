@@ -9,6 +9,7 @@ namespace Sprint4
 {
     public interface IAnimatedSprite
     {
+        int UpdateSpeed { get; set; }
         Rectangle GetBoundingBox(Vector2 location);
         void Update(GameTime gameTime);
         void Draw(SpriteBatch spriteBatch, Vector2 location);

@@ -13,6 +13,8 @@ namespace Sprint4
         public int Rows { get; set; }
         public int Columns { get; set; }
         public float xpos = 0, ypos = 0;
+        public int UpdateSpeed { get; set; }
+
         public OverworldBackgroundSprite(Texture2D texture, int rows, int columns)
         {
             Texture = texture;

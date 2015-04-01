@@ -16,6 +16,8 @@ namespace Sprint4
         private int totalFrames;
         public float xpos = 0, ypos = 0;
         int animTimer;
+        public int UpdateSpeed { get; set; }
+
         public CoinSprite(Texture2D texture, int rows, int columns)
         {
             Texture = texture;

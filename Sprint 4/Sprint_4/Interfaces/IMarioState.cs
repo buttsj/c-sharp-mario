@@ -9,9 +9,9 @@ namespace Sprint4
 {
     public interface IMarioState
     {
+        IAnimatedSprite Sprite { get; set; }
         void Update(GameTime gameTime);
         void Draw(SpriteBatch spriteBatch, Vector2 location);
-
         void TakeDamage();
         void Up();
         void Down();
@@ -24,8 +24,6 @@ namespace Sprint4
         void MakeFireMario();
         void MakeFireballMario();
         void MakeDeadMario();
-        
-
         Rectangle GetBoundingBox(Vector2 location);
     }
 }
