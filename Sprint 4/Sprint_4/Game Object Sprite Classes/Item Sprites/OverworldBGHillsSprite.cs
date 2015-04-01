@@ -7,13 +7,13 @@ using Microsoft.Xna.Framework;
 
 namespace Sprint4
 {
-    class OverworldBackgroundSprite : IAnimatedSprite
+    class OverworldBGHillsSprite : IAnimatedSprite
     {
         public Texture2D Texture { get; set; }
         public int Rows { get; set; }
         public int Columns { get; set; }
         public float xpos = 0, ypos = 0;
-        public OverworldBackgroundSprite(Texture2D texture, int rows, int columns)
+        public OverworldBGHillsSprite(Texture2D texture, int rows, int columns)
         {
             Texture = texture;
             Rows = rows;

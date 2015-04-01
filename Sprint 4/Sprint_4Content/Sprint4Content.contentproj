@@ -475,9 +475,19 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CoinsFont.spritefont">
+      <Name>CoinsFont</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+    </Compile>
     <None Include="Documentation\CollisionDetection.vsd">
       <Name>CollisionDetection</Name>
     </None>
+    <Compile Include="LivesFont.spritefont">
+      <Name>LivesFont</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+    </Compile>
     <None Include="Maps\Map.csv">
       <Name>Map</Name>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
@@ -489,6 +499,11 @@
     </Compile>
     <Compile Include="SpriteFont2.spritefont">
       <Name>SpriteFont2</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+    </Compile>
+    <Compile Include="TimeFont.spritefont">
+      <Name>TimeFont</Name>
       <Importer>FontDescriptionImporter</Importer>
       <Processor>FontDescriptionProcessor</Processor>
     </Compile>

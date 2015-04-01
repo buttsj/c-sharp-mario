@@ -30,8 +30,6 @@ namespace Sprint4
             itemDictionary.Add("SM", CollectableFactory.CollectableType.superMushroom);
             itemDictionary.Add("1U", CollectableFactory.CollectableType.oneUp);
             itemDictionary.Add("*", CollectableFactory.CollectableType.star);
-            backgroundDictionary.Add("underBG", SpriteFactory.sprites.undergroundBackground);
-            backgroundDictionary.Add("overBG", SpriteFactory.sprites.overworldBackground);
             backgroundDictionary.Add("bush1", SpriteFactory.sprites.bush1);
             backgroundDictionary.Add("bush2", SpriteFactory.sprites.bush2);
             backgroundDictionary.Add("bush3", SpriteFactory.sprites.bush3);

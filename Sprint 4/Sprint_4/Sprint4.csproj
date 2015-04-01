@@ -76,6 +76,7 @@
     <Reference Include="System.Net" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="HUD and Background\BackgroundHolder.cs" />
     <Compile Include="Camera Class\Camera.cs" />
     <Compile Include="Collision Detection and Response\BlockCollisionResponder.cs" />
     <Compile Include="Collision Detection and Response\CollisionDetector.cs" />
@@ -104,6 +105,7 @@
     <Compile Include="Game Object Classes\Items\OneUpMushroom.cs" />
     <Compile Include="Game Object Classes\Items\Star.cs" />
     <Compile Include="Game Object Classes\Items\FireFlower.cs" />
+    <Compile Include="Game Object Sprite Classes\Item Sprites\OverworldBGHillsSprite.cs" />
     <Compile Include="Game Object Sprite Classes\Item Sprites\OverworldBackgroundSprite.cs" />
     <Compile Include="Game Object Sprite Classes\Item Sprites\UndergroundBackgroundSprite.cs" />
     <Compile Include="Game Object Sprite Classes\NullSprite.cs" />
@@ -120,6 +122,7 @@
     <Compile Include="Game States\TransitionGameState.cs" />
     <Compile Include="Game States\PlayGameState .cs" />
     <Compile Include="Game States\DeadGameState.cs" />
+    <Compile Include="HUD and Background\HUD.cs" />
     <Compile Include="Interfaces\ICollectable.cs" />
     <Compile Include="Interfaces\IEnemyPhysicsState.cs" />
     <Compile Include="Interfaces\IGameState.cs" />

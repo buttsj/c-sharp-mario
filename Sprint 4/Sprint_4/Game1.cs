@@ -25,6 +25,9 @@ namespace Sprint4
         public bool isPaused = false;
         public int coins = 0, lives = 3;
         private static Game1 sInstance = new Game1();
+        public BackgroundHolder background;
+
+        public HUD gameHUD;
 
         private Game1()
         {
@@ -41,31 +44,37 @@ namespace Sprint4
             gameState = new PlayGameState();
             keyboardController = new KeyboardController(level.mario);
             gamepadController = new GamepadController(level.mario);
+            gameHUD = new HUD(this);
+            background = new BackgroundHolder();
             base.Initialize();
         }
 
         protected override void LoadContent()
         {
             spriteBatch = new SpriteBatch(GraphicsDevice);
+            gameHUD.LoadContent();
         }
 
         protected override void Update(GameTime gameTime)
         {
             gameState.Update(gameTime);
+            gameHUD.Update(gameTime);
             base.Update(gameTime);
-            if (coins > 99)
-            {
-                coins = coins-99;
-                lives++;
-            }
         }
 
         protected override void Draw(GameTime gameTime)
         {
             GraphicsDevice.Clear(Color.White);
+
+            spriteBatch.Begin();
+            background.Draw(spriteBatch);
+            gameHUD.Draw(spriteBatch);
+            spriteBatch.End();
+
             spriteBatch.Begin(SpriteSortMode.Deferred, null, null, null, null, null, gameCamera.GetViewMatrix());
             gameState.Draw(spriteBatch);
             spriteBatch.End();
+
             base.Draw(gameTime);
         }
 

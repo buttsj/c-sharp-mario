@@ -22,8 +22,6 @@ namespace Sprint4
         public List<KeyValuePair<IAnimatedSprite, Vector2>> levelBackgrounds = new List<KeyValuePair<IAnimatedSprite, Vector2>>();
         public CollisionDetector collision;
         
-        public Texture2D background;
-        
         public Level(Game1 game, string fileName)
         {
             this.game = game;
