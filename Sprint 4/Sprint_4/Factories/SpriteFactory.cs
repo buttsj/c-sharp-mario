@@ -20,7 +20,7 @@ namespace Sprint4
             // Blocks
             questionBlock, brickBlock, usedBlock, wingedBlock, exclamationBlock, 
             // Background items
-            bluePipe, bush1, bush2, bush3, launcherPiper, launcherPipeSupport, yellowPipe, whitePipe, exitSign,
+            bluePipe, bush1, bush2, bush3, launcherPiper, launcherPipeSupport, yellowPipe, whitePipe, leftPipe, downPipe, exitSign,
             ground, rightEdge, leftEdge, undergroundBackground, overworldBackground, overworldHillsBackground,
             // Mario big
             leftCrouchingMarioBig,  leftIdleMarioBig, leftJumpingMarioBig,  
@@ -133,6 +133,16 @@ namespace Sprint4
             {
                 Texture2D bluePipe = Game1.gameContent.Load<Texture2D>("Items/bluePipe");
                 return new BluePipeSprite(bluePipe, 1, 1);
+            }
+            if (sprite == sprites.leftPipe)
+            {
+                Texture2D leftPipe = Game1.gameContent.Load<Texture2D>("Items/leftFacingPipe");
+                return new LeftPipeSprite(leftPipe, 1, 1);
+            }
+            if (sprite == sprites.downPipe)
+            {
+                Texture2D downPipe = Game1.gameContent.Load<Texture2D>("Items/downFacingPipe");
+                return new DownPipeSprite(downPipe, 1, 1);
             }
             if (sprite == sprites.yellowPipe)
             {

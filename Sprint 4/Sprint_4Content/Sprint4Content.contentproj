@@ -79,21 +79,6 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-    <Compile Include="Items\gameLogo.png">
-      <Name>gameLogo</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-    <Compile Include="Items\launcherPipe.png">
-      <Name>launcherPipe</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-    <Compile Include="Items\launcherPipeSupport.png">
-      <Name>launcherPipeSupport</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
     <Compile Include="Items\marioFireball.png">
       <Name>marioFireball</Name>
       <Importer>TextureImporter</Importer>
@@ -718,6 +703,20 @@
   <ItemGroup>
     <Compile Include="Underground sprites\undergroundBackground.png">
       <Name>undergroundBackground</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Items\downFacingPipe.png">
+      <Name>downFacingPipe</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Items\leftFacingPipe.png">
+      <Name>leftFacingPipe</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>

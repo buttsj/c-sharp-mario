@@ -76,6 +76,8 @@
     <Reference Include="System.Net" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Game Object Sprite Classes\Block Sprites\DownPipeSprite.cs" />
+    <Compile Include="Game Object Sprite Classes\Block Sprites\LeftPipeSprite.cs" />
     <Compile Include="HUD and Background\BackgroundHolder.cs" />
     <Compile Include="Camera Class\Camera.cs" />
     <Compile Include="Collision Detection and Response\BlockCollisionResponder.cs" />
@@ -105,9 +107,9 @@
     <Compile Include="Game Object Classes\Items\OneUpMushroom.cs" />
     <Compile Include="Game Object Classes\Items\Star.cs" />
     <Compile Include="Game Object Classes\Items\FireFlower.cs" />
-    <Compile Include="Game Object Sprite Classes\Item Sprites\OverworldBGHillsSprite.cs" />
-    <Compile Include="Game Object Sprite Classes\Item Sprites\OverworldBackgroundSprite.cs" />
-    <Compile Include="Game Object Sprite Classes\Item Sprites\UndergroundBackgroundSprite.cs" />
+    <Compile Include="Game Object Sprite Classes\Background Sprites\OverworldBGHillsSprite.cs" />
+    <Compile Include="Game Object Sprite Classes\Background Sprites\OverworldBackgroundSprite.cs" />
+    <Compile Include="Game Object Sprite Classes\Background Sprites\UndergroundBackgroundSprite.cs" />
     <Compile Include="Game Object Sprite Classes\NullSprite.cs" />
     <Compile Include="Game Object Sprite Classes\Item Sprites\FireballSprite.cs" />
     <Compile Include="Game Object State Classes\Block States\InvisibleBlockState.cs" />
@@ -153,19 +155,19 @@
     <Compile Include="Game Object Sprite Classes\Enemy Sprites\Shell-Less Koopa\DeadShellessKoopa.cs" />
     <Compile Include="Game Object Sprite Classes\Enemy Sprites\Shell-Less Koopa\LeftWalkingShellessKoopa.cs" />
     <Compile Include="Game Object Sprite Classes\Enemy Sprites\Shell-Less Koopa\RightWalkingShellessKoopa.cs" />
-    <Compile Include="Game Object Sprite Classes\Item Sprites\BluePipeSprite.cs" />
-    <Compile Include="Game Object Sprite Classes\Item Sprites\Bush1Sprite.cs" />
-    <Compile Include="Game Object Sprite Classes\Item Sprites\Bush2Sprite.cs" />
-    <Compile Include="Game Object Sprite Classes\Item Sprites\Bush3Sprite.cs" />
+    <Compile Include="Game Object Sprite Classes\Block Sprites\BluePipeSprite.cs" />
+    <Compile Include="Game Object Sprite Classes\Background Sprites\Bush1Sprite.cs" />
+    <Compile Include="Game Object Sprite Classes\Background Sprites\Bush2Sprite.cs" />
+    <Compile Include="Game Object Sprite Classes\Background Sprites\Bush3Sprite.cs" />
     <Compile Include="Game Object Sprite Classes\Item Sprites\CoinSprite.cs" />
-    <Compile Include="Game Object Sprite Classes\Item Sprites\ExitSignSprite.cs" />
+    <Compile Include="Game Object Sprite Classes\Background Sprites\ExitSignSprite.cs" />
     <Compile Include="Game Object Sprite Classes\Item Sprites\FireFlowerSprite.cs" />
     <Compile Include="Game Object Sprite Classes\Item Sprites\OneUpMushroomSprite.cs" />
     <Compile Include="Game Object Sprite Classes\Item Sprites\RedShellSprite.cs" />
     <Compile Include="Game Object Sprite Classes\Item Sprites\StarSprite.cs" />
     <Compile Include="Game Object Sprite Classes\Item Sprites\SuperMushroomSprite.cs" />
-    <Compile Include="Game Object Sprite Classes\Item Sprites\WhitePipeSprite.cs" />
-    <Compile Include="Game Object Sprite Classes\Item Sprites\YellowPipeSprite.cs" />
+    <Compile Include="Game Object Sprite Classes\Block Sprites\WhitePipeSprite.cs" />
+    <Compile Include="Game Object Sprite Classes\Block Sprites\YellowPipeSprite.cs" />
     <Compile Include="Game Object Sprite Classes\Mario Sprites\Big Mario\LeftCrouchingMarioBigSprite.cs" />
     <Compile Include="Game Object Sprite Classes\Mario Sprites\Big Mario\LeftIdleMarioBigSprite.cs" />
     <Compile Include="Game Object Sprite Classes\Mario Sprites\Big Mario\LeftJumpingMarioBigSprite.cs" />
