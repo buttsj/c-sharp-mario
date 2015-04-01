@@ -15,6 +15,9 @@ namespace Sprint4
         public SpriteFont CoinsFont { get; set; }
         public SpriteFont LivesFont { get; set; }
         public SpriteFont TimeFont { get; set; }
+
+        public float countDuration = 1f;
+        public float currentTime = 0f;
         public Game1 game;
 
         public HUD(Game1 game)
@@ -36,19 +39,26 @@ namespace Sprint4
         {
             Lives = game.lives;
             Coins = game.coins;
-            int currentTime = (int)gameTime.ElapsedGameTime.TotalSeconds;
-            int nextTime = (int)gameTime.ElapsedGameTime.TotalSeconds;
-
-            if (currentTime != nextTime)
-            {
-                Time--;
-            }
-
             if (Coins > 99)
             {
                 Coins -= 99;
                 Lives++;
             }
+            currentTime += (float)gameTime.ElapsedGameTime.TotalSeconds;
+            if (currentTime >= countDuration)
+            {
+                Time--;
+                currentTime -= countDuration;
+            }
+            if (Time == 100)
+            {
+                // Play fast paced music
+            }
+            if (Time == 0)
+            {
+                // Kill Mario
+            }
+
         }
 
         public void Draw(SpriteBatch spriteBatch)
