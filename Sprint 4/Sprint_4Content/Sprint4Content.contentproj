@@ -473,20 +473,20 @@
       <Importer>FontDescriptionImporter</Importer>
       <Processor>FontDescriptionProcessor</Processor>
     </Compile>
-    <None Include="Maps\Map.csv">
-      <Name>Map</Name>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <Compile Include="SpriteFont1.spritefont">
+    <Compile Include="Fonts\SpriteFont1.spritefont">
       <Name>SpriteFont1</Name>
       <Importer>FontDescriptionImporter</Importer>
       <Processor>FontDescriptionProcessor</Processor>
     </Compile>
-    <Compile Include="SpriteFont2.spritefont">
+    <Compile Include="Fonts\SpriteFont2.spritefont">
       <Name>SpriteFont2</Name>
       <Importer>FontDescriptionImporter</Importer>
       <Processor>FontDescriptionProcessor</Processor>
     </Compile>
+    <None Include="Maps\Map.csv">
+      <Name>Map</Name>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <Compile Include="HUD Fonts\TimeFont.spritefont">
       <Name>TimeFont</Name>
       <Importer>FontDescriptionImporter</Importer>

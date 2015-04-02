@@ -15,7 +15,7 @@ namespace Sprint4
         public GameOverState()
         {
             game = Game1.GetInstance();
-            font = game.Content.Load<SpriteFont>("SpriteFont1");
+            font = game.Content.Load<SpriteFont>("Fonts/SpriteFont1");
             SoundManager.StopMusic();
             SoundManager.gameOver.Play();
             game.keyboardController = new PauseMenuKeyController();

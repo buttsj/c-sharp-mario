@@ -17,8 +17,8 @@ namespace Sprint4
         {
             game = Game1.GetInstance();
             Game1.GetInstance().lives--;
-            font = game.Content.Load<SpriteFont>("SpriteFont1");
-            font2 = game.Content.Load<SpriteFont>("SpriteFont2");
+            font = game.Content.Load<SpriteFont>("Fonts/SpriteFont1");
+            font2 = game.Content.Load<SpriteFont>("Fonts/SpriteFont2");
             game.keyboardController = new PauseMenuKeyController();
         }
 
