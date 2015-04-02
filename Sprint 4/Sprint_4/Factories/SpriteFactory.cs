@@ -23,7 +23,7 @@ namespace Sprint4
             bluePipe, bush1, bush2, bush3, launcherPiper, launcherPipeSupport, yellowPipe, whitePipe, leftPipe, downPipe, exitSign,
             ground, rightEdge, leftEdge, undergroundBackground, overworldBackground, overworldHillsBackground,undergroundFloor,
             undergroundLeftBottomCorner, undergroundRightBottomCorner, undergroundRightTopCorner, undergroundLeftTopCorner,
-            undergroundRightWall, undergroundLeftWall, undergroundRoof,
+            undergroundRightWall, undergroundLeftWall, undergroundRoof, exit,
             // Mario big
             leftCrouchingMarioBig,  leftIdleMarioBig, leftJumpingMarioBig,  
             leftMovingMarioBig, leftQuickturnMarioBig, leftShellKickMarioBig, leftSlidingMarioBig, rightCrouchingMarioBig,
@@ -150,6 +150,11 @@ namespace Sprint4
             {
                 Texture2D exitSign = Game1.gameContent.Load<Texture2D>("Items/exitarrow");
                 return new StaticSprite(exitSign);
+            }
+            if (sprite == sprites.exit)
+            {
+                Texture2D exit = Game1.gameContent.Load<Texture2D>("Items/gate");
+                return new StaticSprite(exit);
             }
             if (sprite == sprites.star)
             {
