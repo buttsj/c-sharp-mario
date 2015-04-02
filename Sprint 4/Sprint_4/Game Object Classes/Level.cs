@@ -29,7 +29,7 @@ namespace Sprint4
             mario = builder.Build(fileName, levelEnemies, levelBlocks, levelItems, levelBackgrounds);
             game.gameCamera.LookAt(mario.position);
             collision = new CollisionDetector(mario, game);
-            SoundManager.PlaySong(SoundManager.songs.athletic);
+            SoundManager.PlaySong(SoundManager.songs.overworld);
         }
 
         public void Update(GameTime gameTime)
