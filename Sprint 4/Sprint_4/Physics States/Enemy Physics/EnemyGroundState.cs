@@ -9,6 +9,7 @@ namespace Sprint4
     public class EnemyGroundState :IEnemyPhysicsState
     {
         Vector2 oldPos;
+        double positionDifference = .5;
 
         public EnemyGroundState(Enemy item)
         {
@@ -17,7 +18,7 @@ namespace Sprint4
         }
         public void Update(Enemy enemy, GameTime gameTime)
         {
-            if ((enemy.position.Y - oldPos.Y) > (float).5) { 
+            if ((enemy.position.Y - oldPos.Y) > (float)positionDifference) { 
                 enemy.physState = new EnemyFallingState(enemy);
             }
             oldPos = enemy.position;

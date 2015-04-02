@@ -11,7 +11,7 @@ namespace Sprint4
     {
         Game1 game;
         Mario mario;
-        int timer = 50;
+        int timer = 50, timeMod = 5;
         IMarioState prevState, newState, currentState;
         public TransitionGameState(Mario mario, IMarioState prevState, IMarioState newState)
         {
@@ -26,13 +26,13 @@ namespace Sprint4
             Rectangle prevRect = prevState.GetBoundingBox(mario.position);
             Rectangle newRect = newState.GetBoundingBox(mario.position);
             timer--;
-            if (currentState == prevState && timer % 5 == 0)
+            if (currentState == prevState && timer % timeMod == 0)
             {
                 currentState = newState;
                 mario.state = newState;
                 mario.position.Y -= (newRect.Height - prevRect.Height);
             }
-            else if(timer %5 == 0 && currentState == newState)
+            else if(timer % timeMod == 0 && currentState == newState)
             { 
                 currentState = prevState;
                 mario.state = prevState;

@@ -207,6 +207,7 @@
     <Compile Include="SoundManager.cs" />
     <Compile Include="Factories\BlockFactory.cs" />
     <Compile Include="Factories\SpriteFactory.cs" />
+    <Compile Include="Utility Classes\ValueHolder.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="CODE REVIEWS\CodeQualityCaleb.txt" />

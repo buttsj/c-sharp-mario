@@ -9,6 +9,7 @@ namespace Sprint4
     public class ItemGroundState :ICollectablePhysicsState
     {
         Vector2 oldPos;
+        double positionDifference = .5;
 
         public ItemGroundState(ICollectable item)
         {
@@ -17,7 +18,7 @@ namespace Sprint4
         }
         public void Update(ICollectable item, GameTime gameTime)
         {
-            if ((item.position.Y - oldPos.Y) > (float).5) { 
+            if ((item.position.Y - oldPos.Y) > (float)positionDifference) { 
                 item.physState = new ItemFallingState(item);
             }
             oldPos = item.position;

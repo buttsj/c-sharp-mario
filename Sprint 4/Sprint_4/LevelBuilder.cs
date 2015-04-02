@@ -18,6 +18,7 @@ namespace Sprint4
         EnemyFactory enemyFactory;
         CollectableFactory collectableFactory;
         Mario mario;
+        int spacingIncrement = 16;
 
         public LevelBuilder()
         {
@@ -63,7 +64,7 @@ namespace Sprint4
             string line;
             while ((line = sr.ReadLine()) != null)
             {
-                yCoord+=16;
+                yCoord+=spacingIncrement;
                 xCoord = 0;
                 string[] words = line.Split(',');
                 for (int i = 0; i < words.Length; i++)
@@ -93,7 +94,7 @@ namespace Sprint4
                        Enemy enemy = enemyFactory.build(enemyDictionary[words[i]], new Vector2(xCoord, yCoord));
                        levelEnemies.Add(enemy);
                     }
-                    xCoord+=16;
+                    xCoord+=spacingIncrement;
                 }
             }
             return mario;

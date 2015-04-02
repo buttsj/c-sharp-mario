@@ -12,6 +12,7 @@ namespace Sprint4
         Game1 game;
         Mario mario;
         int pauseTimer = 30, upTimer = 30, downTimer = 180;
+        int positionChange = 5;
 
         public DeadGameState(Mario mario)
         {
@@ -31,11 +32,11 @@ namespace Sprint4
             if (pauseTimer <= 0 && upTimer > 0)
             {
                 upTimer--;
-                mario.position.Y-=5;
+                mario.position.Y-=positionChange;
             }
             if (upTimer <= 0 && downTimer > 0)
             {
-                mario.position.Y+=5;
+                mario.position.Y+=positionChange;
                 downTimer--;
             }
             if (downTimer <= 0)

@@ -11,6 +11,7 @@ namespace Sprint4
         public Vector2 speedDecayRate = new Vector2((float)0.73, (float)0.70);
         float positionDtAdjust = 40;
         Mario mario;
+        double runMultiplier = 1.3;
 
         public GroundState(Mario mario)
         {
@@ -33,7 +34,7 @@ namespace Sprint4
         {
             if (mario.velocity.X > mario.minVelocity.X && mario.velocity.X < mario.maxVelocity.X)
             {
-                mario.velocity.X *= (float)1.3;
+                mario.velocity.X *= (float)runMultiplier;
                 mario.state.Sprite.UpdateSpeed--;
             }
         }

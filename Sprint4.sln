@@ -12,13 +12,13 @@ Global
 		SccNumberOfProjects = 3
 		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
 		SccTeamFoundationServer = https://butts102.visualstudio.com/defaultcollection
-		SccProjectUniqueName0 = Sprint\u00204\\Sprint_4\\Sprint4.csproj
-		SccProjectName0 = Sprint\u00204/Sprint_4
-		SccLocalPath0 = Sprint\u00204\\Sprint_4
-		SccProjectUniqueName1 = Sprint\u00204\\Sprint_4Content\\Sprint4Content.contentproj
-		SccProjectName1 = Sprint\u00204/Sprint_4Content
-		SccLocalPath1 = Sprint\u00204\\Sprint_4Content
-		SccLocalPath2 = .
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = Sprint\u00204\\Sprint_4\\Sprint4.csproj
+		SccProjectName1 = Sprint\u00204/Sprint_4
+		SccLocalPath1 = Sprint\u00204\\Sprint_4
+		SccProjectUniqueName2 = Sprint\u00204\\Sprint_4Content\\Sprint4Content.contentproj
+		SccProjectName2 = Sprint\u00204/Sprint_4Content
+		SccLocalPath2 = Sprint\u00204\\Sprint_4Content
 	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x86 = Debug|x86

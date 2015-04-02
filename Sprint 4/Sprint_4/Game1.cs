@@ -21,6 +21,7 @@ namespace Sprint4
         public IGameState gameState;
         public Level level;
         public static SoundManager soundManager;
+        public static ValueHolder valueHolder;
         public Camera gameCamera;
         public bool isPaused = false;
         public int coins = 0, lives = 3;
@@ -39,6 +40,7 @@ namespace Sprint4
         protected override void Initialize()
         {
             soundManager = new SoundManager(this);
+            valueHolder = new ValueHolder();
             gameCamera = new Camera(GraphicsDevice.Viewport, this);
             level = new Level(this, "/Maps/Map.csv");
             gameState = new PlayGameState();

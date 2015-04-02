@@ -13,6 +13,7 @@ namespace Sprint4
         double minJumpingVelocity = -.1;
         float positionXDtAdjust = 40;
         float positionYDtAdjust = 17;
+        double maxJumpVelocity = -1.5;
 
         public JumpingState()
         {
@@ -23,7 +24,7 @@ namespace Sprint4
             mario.position.X += mario.velocity.X * ((float)gameTime.ElapsedGameTime.Milliseconds / positionXDtAdjust);
             mario.velocity *= speedDecayRate;
             mario.marioHeight += heightIncrement;
-            if (mario.velocity.Y > -1.5) { 
+            if (mario.velocity.Y > maxJumpVelocity) { 
                 mario.velocity.Y =0; 
             }
             if (mario.velocity.Y > minJumpingVelocity || mario.marioHeight > maxJumpHeight)
