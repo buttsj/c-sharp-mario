@@ -566,7 +566,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="background.png">
+    <Compile Include="Overworld Sprites\background.png">
       <Name>background</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
@@ -635,7 +635,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="background2.png">
+    <Compile Include="Overworld Sprites\background2.png">
       <Name>background2</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
@@ -677,36 +677,36 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Underground sprites\undergroundLeftBottomCorner.png">
+    <Compile Include="Underground Sprites\undergroundLeftBottomCorner.png">
       <Name>undergroundLeftBottomCorner</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-    <Compile Include="Underground sprites\undergroundLeftTopCorner.png">
+    <Compile Include="Underground Sprites\undergroundLeftTopCorner.png">
       <Name>undergroundLeftTopCorner</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-    <Compile Include="Underground sprites\undergroundRightBottomCorner.png">
+    <Compile Include="Underground Sprites\undergroundRightBottomCorner.png">
       <Name>undergroundRightBottomCorner</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-    <Compile Include="Underground sprites\undergroundRightTopCorner.png">
+    <Compile Include="Underground Sprites\undergroundRightTopCorner.png">
       <Name>undergroundRightTopCorner</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Underground sprites\undergroundFloor.png">
+    <Compile Include="Underground Sprites\undergroundFloor.png">
       <Name>undergroundFloor</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Underground sprites\undergroundBackground.png">
+    <Compile Include="Underground Sprites\undergroundBackground.png">
       <Name>undergroundBackground</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
@@ -736,6 +736,13 @@
   <ItemGroup>
     <Compile Include="HUD Sprites\HUDMario.png">
       <Name>HUDMario</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="HUD Sprites\TimeSprite.png">
+      <Name>TimeSprite</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>

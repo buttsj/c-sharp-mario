@@ -171,17 +171,17 @@ namespace Sprint4
             }
             if (sprite == sprites.undergroundBackground)
             {
-                Texture2D undergroundBackground = Game1.gameContent.Load<Texture2D>("Underground sprites/undergroundBackground");
+                Texture2D undergroundBackground = Game1.gameContent.Load<Texture2D>("Underground Sprites/undergroundBackground");
                 return new UndergroundBackgroundSprite(undergroundBackground, 1, 3);
             }
             if (sprite == sprites.overworldBackground)
             {
-                Texture2D overworldBackground = Game1.gameContent.Load<Texture2D>("background");
+                Texture2D overworldBackground = Game1.gameContent.Load<Texture2D>("Overworld Sprites/background");
                 return new OverworldBackgroundSprite(overworldBackground, 1, 1);
             }
             if (sprite == sprites.overworldHillsBackground)
             {
-                Texture2D overworldHillsBackground = Game1.gameContent.Load<Texture2D>("background2");
+                Texture2D overworldHillsBackground = Game1.gameContent.Load<Texture2D>("Overworld Sprites/background2");
                 return new OverworldBGHillsSprite(overworldHillsBackground, 1, 1);
             }
             if (sprite == sprites.fireball)

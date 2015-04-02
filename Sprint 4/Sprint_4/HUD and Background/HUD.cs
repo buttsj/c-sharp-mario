@@ -13,9 +13,10 @@ namespace Sprint4
         public int Lives { get; set; }
         public int Time { get; set; }
         public int Score { get; set; }
-        public SpriteFont CoinsFont { get; set; }
         public Texture2D LivesSprite { get; set; }
         public Texture2D CoinSprite { get; set; }
+        public Texture2D TimeSprite { get; set; }
+        public SpriteFont CoinsFont { get; set; }
         public SpriteFont LivesFont { get; set; }
         public SpriteFont TimeFont { get; set; }
         public SpriteFont ScoreFont { get; set; }
@@ -39,6 +40,7 @@ namespace Sprint4
             CoinsFont = game.Content.Load<SpriteFont>("HUD Fonts/CoinsFont");
             LivesSprite = game.Content.Load<Texture2D>("HUD Sprites/HUDMario");
             LivesFont = game.Content.Load<SpriteFont>("HUD Fonts/LivesFont");
+            TimeSprite = game.Content.Load<Texture2D>("HUD Sprites/TimeSprite");
             TimeFont = game.Content.Load<SpriteFont>("HUD Fonts/TimeFont");
             ScoreFont = game.Content.Load<SpriteFont>("HUD Fonts/ScoreFont");
         }
@@ -75,7 +77,8 @@ namespace Sprint4
             spriteBatch.DrawString(CoinsFont, "" + Coins, new Vector2(750, 26), Color.Black);
             spriteBatch.Draw(LivesSprite, new Rectangle(30, 30, 132, 29), Color.White);
             spriteBatch.DrawString(LivesFont, "X    " + Lives, new Vector2(60, 55), Color.Black);
-            spriteBatch.DrawString(TimeFont, "Time\n " + Time, new Vector2(550, 30), Color.Black);
+            spriteBatch.Draw(TimeSprite, new Rectangle(500, 30, 82, 25), Color.White);
+            spriteBatch.DrawString(TimeFont, "" + Time, new Vector2(530, 55), Color.Black);
             spriteBatch.DrawString(ScoreFont, "" + Score, new Vector2(650, 55), Color.Black);
         }
     }
