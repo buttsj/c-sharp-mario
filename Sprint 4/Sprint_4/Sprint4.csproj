@@ -210,18 +210,10 @@
     <Compile Include="Utility Classes\ValueHolder.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="CODE REVIEWS\CodeQualityCaleb.txt" />
-    <Content Include="CODE REVIEWS\CodeReadabilityCaleb.txt" />
-    <Content Include="CODE REVIEWS\CodeReadabilityJohn.txt" />
-    <Content Include="CODE REVIEWS\CodeQualityThomas .txt" />
-    <Content Include="CODE REVIEWS\CodeReadabilityThomas.txt" />
-    <Content Include="CODE REVIEWS\JohnCodeQuality.txt" />
     <Content Include="Game.ico" />
     <Content Include="GameThumbnail.png">
       <XnaPlatformSpecific>true</XnaPlatformSpecific>
     </Content>
-    <Content Include="CODE REVIEWS\JackCodeReadability.txt" />
-    <Content Include="CODE REVIEWS\JackCodeQuality.txt" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Sprint_4Content\Sprint4Content.contentproj">
@@ -252,7 +244,9 @@
       <Install>true</Install>
     </BootstrapperPackage>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="CODE REVIEWS\" />
+  </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\XNA Game Studio\Microsoft.Xna.GameStudio.targets" />
   <!--
