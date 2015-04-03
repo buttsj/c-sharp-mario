@@ -19,9 +19,11 @@ namespace Sprint4
         CollectableFactory collectableFactory;
         Mario mario;
         int spacingIncrement = 16;
+        Level level;
 
-        public LevelBuilder()
+        public LevelBuilder(Level level)
         {
+            this.level = level;
             factory = new SpriteFactory();
             blockFactory = new BlockFactory();
             enemyFactory = new EnemyFactory();
@@ -55,9 +57,7 @@ namespace Sprint4
             blockDictionary.Add("?F", BlockFactory.BlockType.quesFlower);
         }
 
-        public Mario Build(string fileName, List<Enemy> levelEnemies, 
-            List<Block> levelBlocks, List<ICollectable> levelItems,
-            List<KeyValuePair<IAnimatedSprite, Vector2>> levelBackgroundObjects)
+        public Mario Build(string fileName)
         {
             float xCoord =0, yCoord = 0;
             StreamReader sr;
@@ -77,23 +77,27 @@ namespace Sprint4
                     if(itemDictionary.ContainsKey(words[i]))
                     {
                         ICollectable item = collectableFactory.build(itemDictionary[words[i]], new Vector2(xCoord, yCoord));
-                        levelItems.Add(item);
+                        level.levelItems.Add(item);
                     }
                     if (backgroundDictionary.ContainsKey(words[i]))
                     {
+                        if (words[i] == "exit")
+                        {
+                            level.exitPosition = new Vector2(xCoord, yCoord);
+                        }
                         KeyValuePair<IAnimatedSprite, Vector2> item = new KeyValuePair<IAnimatedSprite,
                             Vector2>(factory.build(backgroundDictionary[words[i]]), new Vector2(xCoord, yCoord));
-                        levelBackgroundObjects.Add(item);
+                        level.levelBackgroundObjects.Add(item);
                     }
                     if (blockDictionary.ContainsKey(words[i]))
                     {
                         Block block = blockFactory.build(blockDictionary[words[i]], new Vector2(xCoord, yCoord));
-                        levelBlocks.Add(block);
+                        level.levelBlocks.Add(block);
                     }
                     if (enemyDictionary.ContainsKey(words[i]))
                     {
                        Enemy enemy = enemyFactory.build(enemyDictionary[words[i]], new Vector2(xCoord, yCoord));
-                       levelEnemies.Add(enemy);
+                       level.levelEnemies.Add(enemy);
                     }
                     xCoord+=spacingIncrement;
                 }

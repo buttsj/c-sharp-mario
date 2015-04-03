@@ -19,14 +19,16 @@ namespace Sprint4
         public List<Enemy> levelEnemies = new List<Enemy>();
         public List<Block> levelBlocks = new List<Block>();
         public List<ICollectable> levelItems = new List<ICollectable>();
-        public List<KeyValuePair<IAnimatedSprite, Vector2>> levelBackgrounds = new List<KeyValuePair<IAnimatedSprite, Vector2>>();
+        public List<KeyValuePair<IAnimatedSprite, Vector2>> levelBackgroundObjects = new List<KeyValuePair<IAnimatedSprite, Vector2>>();
         public CollisionDetector collision;
+        public Vector2 exitPosition;
+        bool isVictory = false;
         
         public Level(Game1 game, string fileName)
         {
             this.game = game;
-            builder = new LevelBuilder();
-            mario = builder.Build(fileName, levelEnemies, levelBlocks, levelItems, levelBackgrounds);
+            builder = new LevelBuilder(this);
+            mario = builder.Build(fileName);
             game.gameCamera.LookAt(mario.position);
             collision = new CollisionDetector(mario, game);
             SoundManager.PlaySong(SoundManager.songs.overworld);
@@ -34,7 +36,7 @@ namespace Sprint4
 
         public void Update(GameTime gameTime)
         {
-            foreach (KeyValuePair<IAnimatedSprite, Vector2> backgroundObject in levelBackgrounds)
+            foreach (KeyValuePair<IAnimatedSprite, Vector2> backgroundObject in levelBackgroundObjects)
             {
                 backgroundObject.Key.Update(gameTime);
             }
@@ -85,12 +87,17 @@ namespace Sprint4
             {
                 mario.position.X = 0;
             }
+            if (mario.position.X > exitPosition.X && !isVictory)
+            {
+                game.gameState = new VictoryGameState();
+                isVictory = true;
+            }
             game.gameCamera.LookAt(mario.position);
         }
 
         public void Draw(SpriteBatch spriteBatch)
         {
-            foreach (KeyValuePair<IAnimatedSprite, Vector2> backgroundObject in levelBackgrounds)
+            foreach (KeyValuePair<IAnimatedSprite, Vector2> backgroundObject in levelBackgroundObjects)
             {
                 backgroundObject.Key.Draw(spriteBatch, backgroundObject.Value);
             }

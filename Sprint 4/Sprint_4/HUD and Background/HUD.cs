@@ -55,7 +55,7 @@ namespace Sprint4
                 game.lives++;
             }
             currentTime += (float)gameTime.ElapsedGameTime.TotalSeconds;
-            if (currentTime >= countDuration)
+            if (currentTime >= countDuration && !game.isVictory)
             {
                 Time--;
                 currentTime -= countDuration;

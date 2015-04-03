@@ -503,11 +503,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Sound\Music\Course Clear BGM.mp3">
-      <Name>Course Clear BGM</Name>
-      <Importer>Mp3Importer</Importer>
-      <Processor>SongProcessor</Processor>
-    </Compile>
     <Compile Include="Sound\Music\Map BGM.mp3">
       <Name>Map BGM</Name>
       <Importer>Mp3Importer</Importer>
@@ -819,7 +814,7 @@
     <Compile Include="Sound\Music\Course Clear Fanfare.mp3">
       <Name>Course Clear Fanfare</Name>
       <Importer>Mp3Importer</Importer>
-      <Processor>SongProcessor</Processor>
+      <Processor>SoundEffectProcessor</Processor>
     </Compile>
   </ItemGroup>
   <ItemGroup>

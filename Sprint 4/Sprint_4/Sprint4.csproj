@@ -78,6 +78,7 @@
   <ItemGroup>
     <Compile Include="Game Object Sprite Classes\MarioMovingSprite.cs" />
     <Compile Include="Game Object Sprite Classes\StaticSprite.cs" />
+    <Compile Include="Game States\VictoryGameState.cs" />
     <Compile Include="HUD and Background\BackgroundHolder.cs" />
     <Compile Include="Game Object Classes\Camera.cs" />
     <Compile Include="Collision Detection and Response\BlockCollisionResponder.cs" />
