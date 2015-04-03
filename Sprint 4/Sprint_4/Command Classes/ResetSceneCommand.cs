@@ -13,7 +13,7 @@ namespace Sprint4
 
         public void Execute()
         {
-            Game1.GetInstance().level = new Level(Game1.GetInstance(), "/Maps/Map.csv");
+            Game1.GetInstance().level = new Level(Game1.GetInstance(), "/Maps/MapCleaned.csv");
         }
     }
 }
