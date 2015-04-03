@@ -27,7 +27,7 @@ namespace Sprint4
             timer--;
             if (timer <= 0)
             {
-                game.level = new Level(game, "/Maps/MapOld.csv");
+                game.level = new Level(game, "/Maps/MapCleaned.csv");
                 game.gameState = new PlayGameState();
                 game.gameHUD.Time = 600;
             }
