@@ -79,7 +79,7 @@
     <Compile Include="Game Object Sprite Classes\MarioMovingSprite.cs" />
     <Compile Include="Game Object Sprite Classes\StaticSprite.cs" />
     <Compile Include="HUD and Background\BackgroundHolder.cs" />
-    <Compile Include="Camera Class\Camera.cs" />
+    <Compile Include="Game Object Classes\Camera.cs" />
     <Compile Include="Collision Detection and Response\BlockCollisionResponder.cs" />
     <Compile Include="Collision Detection and Response\CollisionDetector.cs" />
     <Compile Include="Collision Detection and Response\EnemyCollisionResponder.cs" />
@@ -245,6 +245,7 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Camera Class\" />
     <Folder Include="CODE REVIEWS\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
