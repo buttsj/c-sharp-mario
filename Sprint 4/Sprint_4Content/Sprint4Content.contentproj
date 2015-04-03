@@ -483,8 +483,12 @@
       <Importer>FontDescriptionImporter</Importer>
       <Processor>FontDescriptionProcessor</Processor>
     </Compile>
-    <None Include="Maps\Map.csv">
-      <Name>Map</Name>
+    <None Include="Maps\MapCleaned.csv">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <Name>MapCleaned</Name>
+    </None>
+    <None Include="Maps\MapOld.csv">
+      <Name>MapOld</Name>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <Compile Include="HUD Fonts\TimeFont.spritefont">

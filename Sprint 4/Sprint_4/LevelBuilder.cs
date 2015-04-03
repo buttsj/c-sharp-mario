@@ -34,6 +34,7 @@ namespace Sprint4
             backgroundDictionary.Add("bush1", SpriteFactory.sprites.bush1);
             backgroundDictionary.Add("bush2", SpriteFactory.sprites.bush2);
             backgroundDictionary.Add("bush3", SpriteFactory.sprites.bush3);
+            backgroundDictionary.Add("exit", SpriteFactory.sprites.exit);
             blockDictionary.Add("Pi", BlockFactory.BlockType.pipe);
             enemyDictionary.Add("Koop", EnemyFactory.EnemyType.Koopa);
             enemyDictionary.Add("Tdin", EnemyFactory.EnemyType.Dino);

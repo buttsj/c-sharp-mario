@@ -42,7 +42,7 @@ namespace Sprint4
             soundManager = new SoundManager(this);
             valueHolder = new ValueHolder();
             gameCamera = new Camera(GraphicsDevice.Viewport, this);
-            level = new Level(this, "/Maps/Map.csv");
+            level = new Level(this, "/Maps/MapOld.csv");
             gameState = new PlayGameState();
             keyboardController = new KeyboardController(level.mario);
             gamepadController = new GamepadController(level.mario);
