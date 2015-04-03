@@ -31,18 +31,18 @@ namespace Sprint4
             Coins = game.coins;
             Lives = game.lives;
             Score = 0;
-            Time = 999;
+            Time = 600;
         }
 
         public void LoadContent()
         {
-            CoinSprite = game.Content.Load<Texture2D>("HUD Sprites/HUDCoinSprite");
-            CoinsFont = game.Content.Load<SpriteFont>("HUD Fonts/CoinsFont");
-            LivesSprite = game.Content.Load<Texture2D>("HUD Sprites/HUDMario");
-            LivesFont = game.Content.Load<SpriteFont>("HUD Fonts/LivesFont");
-            TimeSprite = game.Content.Load<Texture2D>("HUD Sprites/TimeSprite");
-            TimeFont = game.Content.Load<SpriteFont>("HUD Fonts/TimeFont");
-            ScoreFont = game.Content.Load<SpriteFont>("HUD Fonts/ScoreFont");
+            CoinSprite = Game1.gameContent.Load<Texture2D>("HUD Sprites/HUDCoinSprite");
+            CoinsFont = Game1.gameContent.Load<SpriteFont>("HUD Fonts/CoinsFont");
+            LivesSprite = Game1.gameContent.Load<Texture2D>("HUD Sprites/HUDMario");
+            LivesFont = Game1.gameContent.Load<SpriteFont>("HUD Fonts/LivesFont");
+            TimeSprite = Game1.gameContent.Load<Texture2D>("HUD Sprites/TimeSprite");
+            TimeFont = Game1.gameContent.Load<SpriteFont>("HUD Fonts/TimeFont");
+            ScoreFont = Game1.gameContent.Load<SpriteFont>("HUD Fonts/ScoreFont");
         }
 
         public void Update(GameTime gameTime)
@@ -51,8 +51,8 @@ namespace Sprint4
             Coins = game.coins;
             if (Coins > 99)
             {
-                Coins -= 99;
-                Lives++;
+                game.coins -= 99;
+                game.lives++;
             }
             currentTime += (float)gameTime.ElapsedGameTime.TotalSeconds;
             if (currentTime >= countDuration)
