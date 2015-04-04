@@ -19,26 +19,32 @@ namespace Sprint4
             if (item.GetType().Equals(new Star(item.position).GetType()))
             {
                 mario.isStar = true;
+                game.gameHUD.Score += 1000;
                 SoundManager.PlaySong(SoundManager.songs.star);
             }
             if (item.GetType().Equals(new SuperMushroom(item.position).GetType()))
             {
                 mario.MakeBigMario();
+                game.gameHUD.Score += 1000;
                 SoundManager.grow.Play();
             }
             if (item.GetType().Equals(new FireFlower(item.position).GetType()))
             {
                 mario.MakeFireMario();
+                game.gameHUD.Score += 1000;
                 SoundManager.grow.Play();
             }
             if (item.GetType().Equals(new Coin(item.position).GetType()))
             {
                 SoundManager.coinCollect.Play();
+                game.gameHUD.Coins++;
+                game.gameHUD.Score += 200;
                 game.coins++;
             }
             if (item.GetType().Equals(new OneUpMushroom(item.position).GetType()))
             {
                 SoundManager.oneUp.Play();
+                game.gameHUD.Lives++;
                 game.lives++;
             }
         }

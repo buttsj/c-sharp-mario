@@ -35,7 +35,7 @@ namespace Sprint4
                 else
                 {
                     mario.position.X += intersection.Width;
-                }
+                }               
             }
             else if (intersection.Height < intersection.Width)
             {
@@ -61,6 +61,7 @@ namespace Sprint4
                     if (block.state.GetType().Equals(new BrickBlockState().GetType()) && mario.isBig)
                     {
                         destroyedBlocks.Add(block);
+                        game.gameHUD.Score += 50;
                         SoundManager.brickBreak.Play();
                     }
                 }

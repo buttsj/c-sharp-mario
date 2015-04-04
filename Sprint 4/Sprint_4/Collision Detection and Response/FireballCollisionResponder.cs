@@ -22,6 +22,7 @@ namespace Sprint4
             enemy.TakeDamage();
             game.level.deadFireballs.Add(fireball);
             mario.fireballCount--;
+            game.gameHUD.Score += 100;
         }
 
         public void BlockFireballCollide(Block block, Fireball fireball)
