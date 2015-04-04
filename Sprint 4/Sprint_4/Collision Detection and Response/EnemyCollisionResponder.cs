@@ -36,6 +36,7 @@ namespace Sprint4
                 if (marioRect.Bottom > enemyRect.Top && marioRect.Bottom < enemyRect.Bottom)
                 {
                     enemy.TakeDamage();
+                    game.gameHUD.Score += 100;
                     mario.velocity.Y = -10;
                 }
                 else
@@ -47,6 +48,7 @@ namespace Sprint4
                     else
                     {
                         enemy.TakeDamage();
+                        game.gameHUD.Score += 100;
                     }
                 }
             }
