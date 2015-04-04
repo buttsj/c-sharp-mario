@@ -7,22 +7,25 @@ using System.Text;
 
 namespace Sprint4
 {
-    class UsedBlockState : IBlockState
+    class GroundBlockState : IBlockState
     {
         IAnimatedSprite sprite;
+        ISpriteFactory factory;
         
-        public UsedBlockState()
+        public GroundBlockState()
         {
-            ISpriteFactory factory = new SpriteFactory();
-            sprite = factory.build(SpriteFactory.sprites.usedBlock);
+            factory = new SpriteFactory();
+            this.sprite = factory.build(SpriteFactory.sprites.ground);
         }
+
         public Rectangle GetBoundingBox(Vector2 location)
         {
             return sprite.GetBoundingBox(location);
         }
+
         public void Update(GameTime gameTime, Block block)
         {
-            sprite.Update(gameTime);
+            //null
         }
         public void Draw(SpriteBatch spriteBatch, Vector2 location)
         {
@@ -30,7 +33,7 @@ namespace Sprint4
         }
         public void Reaction(Block block)
         {
-            // null 
+            //null
         }
     }
 }

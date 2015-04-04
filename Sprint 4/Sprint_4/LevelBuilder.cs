@@ -48,6 +48,16 @@ namespace Sprint4
             blockDictionary.Add("!", BlockFactory.BlockType.exclamation);
             blockDictionary.Add("B", BlockFactory.BlockType.brick);
             blockDictionary.Add("g", BlockFactory.BlockType.ground);
+            blockDictionary.Add("ug", BlockFactory.BlockType.undergroundFloor);
+            blockDictionary.Add("ur", BlockFactory.BlockType.undergroundRoof);
+            blockDictionary.Add("ul", BlockFactory.BlockType.undergroundLeftWall);
+            blockDictionary.Add("ult", BlockFactory.BlockType.undergroundLeftTop);
+            blockDictionary.Add("ulb", BlockFactory.BlockType.undergroundLeftBottom);
+            blockDictionary.Add("uri", BlockFactory.BlockType.undergroundRightWall);
+            blockDictionary.Add("urt", BlockFactory.BlockType.undergroundRightTop);
+            blockDictionary.Add("urb", BlockFactory.BlockType.undergroundRightBottom);
+            blockDictionary.Add("lpi", BlockFactory.BlockType.leftPipe);
+            blockDictionary.Add("dpi", BlockFactory.BlockType.downPipe);
             blockDictionary.Add("l", BlockFactory.BlockType.leftEdge);
             blockDictionary.Add("r", BlockFactory.BlockType.rightEdge);
             blockDictionary.Add("?SM", BlockFactory.BlockType.quesMush);

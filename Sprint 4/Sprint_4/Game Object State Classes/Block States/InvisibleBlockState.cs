@@ -29,7 +29,7 @@ namespace Sprint4
         }
         public void Reaction(Block block)
         {
-            block.state = new UsedBlockState();
+            block.state = new GenericBlockState(SpriteFactory.sprites.usedBlock);
         }
     }
 }

@@ -7,15 +7,15 @@ using System.Text;
 
 namespace Sprint4
 {
-    class RightEdgeBlockState : IBlockState
+    class GenericBlockState : IBlockState
     {
         IAnimatedSprite sprite;
         ISpriteFactory factory;
         
-        public RightEdgeBlockState()
+        public GenericBlockState(SpriteFactory.sprites sprite)
         {
             factory = new SpriteFactory();
-            sprite = factory.build(SpriteFactory.sprites.rightEdge);
+            this.sprite = factory.build(sprite);
         }
 
         public Rectangle GetBoundingBox(Vector2 location)

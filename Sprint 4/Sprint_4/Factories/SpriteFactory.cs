@@ -283,7 +283,7 @@ namespace Sprint4
             if (sprite == sprites.deadMario)
             {
                 Texture2D deadMario = Game1.gameContent.Load<Texture2D>("Mario Sprites/Small Mario/deadMario");
-                return new StaticSprite(deadMario);
+                return new MarioMovingSprite(deadMario, 1, 2);
             }
             if (sprite == sprites.leftCrouchingMarioSmall)
             {
