@@ -40,6 +40,12 @@ namespace Sprint4
                 game.level.mario.MakeVictoryMario();
             }
             walkTimer--;
+
+            if (game.gameHUD.Time > 0)
+            {
+                game.gameHUD.Time--;
+                game.gameHUD.Score += 50;
+            }            
         }
 
         public void Draw(SpriteBatch spriteBatch)

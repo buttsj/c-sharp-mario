@@ -29,6 +29,7 @@ namespace Sprint4
                 else
                 {
                     enemy.TakeDamage();
+                    game.gameHUD.Score += 100;
                 }
             }
             else
