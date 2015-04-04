@@ -37,7 +37,7 @@ namespace Sprint4
             // Mario small
             deadMario, leftCrouchingMarioSmall, leftIdleMarioSmall, leftJumpingMarioSmall, 
             leftMovingMarioSmall, rightCrouchingMarioSmall, rightIdleMarioSmall, rightJumpingMarioSmall, 
-            rightMovingMarioSmall, leftSprintMarioSmall, rightSprintMarioSmall
+            rightMovingMarioSmall, leftSprintMarioSmall, rightSprintMarioSmall, victoryMarioSmall
         }
 
         public SpriteFactory()
@@ -334,6 +334,11 @@ namespace Sprint4
             {
                 Texture2D leftSprintMarioSmall = Game1.gameContent.Load<Texture2D>("Mario Sprites/Small Mario/smallMarioLeftSprint");
                 return new MarioMovingSprite(leftSprintMarioSmall, 1, 3);
+            }
+            if (sprite == sprites.victoryMarioSmall)
+            {
+                Texture2D victoryMarioSmall = Game1.gameContent.Load<Texture2D>("Mario Sprites/Small Mario/smallMarioVictory");
+                return new StaticSprite(victoryMarioSmall);
             }
 
             //BIG MARIO

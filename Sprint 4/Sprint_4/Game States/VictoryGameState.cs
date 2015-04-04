@@ -13,16 +13,13 @@ namespace Sprint4
         int walkTimer = 433;
         int slowMo = 3;
         RightCommand right;
-        SpriteFactory factory;
 
         public VictoryGameState()
         {
-            factory = new SpriteFactory();
             game = Game1.GetInstance();
             game.isVictory = true;
             SoundManager.StopMusic();
             SoundManager.clear.Play();
-            game.level.mario.MakeBigMario();
             right = new RightCommand(game.level.mario);
         }
 
@@ -40,7 +37,7 @@ namespace Sprint4
             }
             else
             {
-                game.level.mario.state.Sprite = factory.build(SpriteFactory.sprites.victoryMarioBig);
+                game.level.mario.MakeVictoryMario();
             }
             walkTimer--;
         }

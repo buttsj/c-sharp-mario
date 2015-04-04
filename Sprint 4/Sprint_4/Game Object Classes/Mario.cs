@@ -25,6 +25,7 @@ namespace Sprint4
         public Vector2 minVelocity = new Vector2((float) -6, (float)-3.5);
         public int marioHeight = 0;
         SoundEffectInstance jumpFX;
+        SpriteFactory factory;
 
         public Mario(Vector2 position)
         {
@@ -32,6 +33,7 @@ namespace Sprint4
             physState = new GroundState(this);
             this.position = position;
             jumpFX = SoundManager.jump.CreateInstance();
+            factory = new SpriteFactory();
         }
 
         public void Run()
@@ -125,6 +127,22 @@ namespace Sprint4
             isBig = true;
             isFire = true;
             isFireball = false;
+        }
+
+        public void MakeVictoryMario()
+        {
+            if (isFire)
+            {
+                state.Sprite = factory.build(SpriteFactory.sprites.victoryMarioFire);
+            }
+            else if (isBig)
+            {
+                state.Sprite = factory.build(SpriteFactory.sprites.victoryMarioBig);
+            }
+            else
+            {
+                state.Sprite = factory.build(SpriteFactory.sprites.victoryMarioSmall);
+            }
         }
 
         public void MakeFireballMario()
