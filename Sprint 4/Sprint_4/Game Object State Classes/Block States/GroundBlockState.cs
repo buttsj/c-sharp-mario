@@ -11,7 +11,7 @@ namespace Sprint4
     {
         IAnimatedSprite sprite;
         ISpriteFactory factory;
-        
+
         public GroundBlockState()
         {
             factory = new SpriteFactory();

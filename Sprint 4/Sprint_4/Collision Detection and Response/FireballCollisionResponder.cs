@@ -34,7 +34,7 @@ namespace Sprint4
             {
                 fireball.position.Y = fireball.position.Y - intersection.Height;
             }
-            if (!block.state.GetType().Equals((new GroundBlockState().GetType())))
+            if (!block.state.GetType().Equals((new GenericBlockState(SpriteFactory.sprites.ground).GetType())))
             {
                 game.level.deadFireballs.Add(fireball);
                 mario.fireballCount--;
