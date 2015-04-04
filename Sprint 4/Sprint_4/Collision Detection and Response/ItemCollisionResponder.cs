@@ -38,6 +38,12 @@ namespace Sprint4
             {
                 SoundManager.coinCollect.Play();
                 game.gameHUD.Coins++;
+                if (game.gameHUD.Coins == 100)
+                {
+                    game.gameHUD.Coins = 0;
+                    game.gameHUD.Lives++;
+                    game.lives++;
+                }
                 game.gameHUD.Score += 200;
                 game.coins++;
             }
