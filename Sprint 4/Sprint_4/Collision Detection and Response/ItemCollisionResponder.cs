@@ -38,20 +38,12 @@ namespace Sprint4
             {
                 SoundManager.coinCollect.Play();
                 game.gameHUD.Coins++;
-                if (game.gameHUD.Coins == 100)
-                {
-                    game.gameHUD.Coins = 0;
-                    game.gameHUD.Lives++;
-                    game.lives++;
-                }
                 game.gameHUD.Score += 200;
-                game.coins++;
             }
             if (item.GetType().Equals(new OneUpMushroom(item.position).GetType()))
             {
                 SoundManager.oneUp.Play();
                 game.gameHUD.Lives++;
-                game.lives++;
             }
         }
     }

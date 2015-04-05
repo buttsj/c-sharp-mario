@@ -24,7 +24,6 @@ namespace Sprint4
         public static ValueHolder valueHolder;
         public Camera gameCamera;
         public bool isPaused = false, isVictory = false;
-        public int coins = 0, lives = 3;
         private static Game1 sInstance = new Game1();
         public BackgroundHolder background;
 

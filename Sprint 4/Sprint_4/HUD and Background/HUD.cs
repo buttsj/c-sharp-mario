@@ -28,8 +28,8 @@ namespace Sprint4
         public HUD(Game1 game)
         {
             this.game = game;
-            Coins = game.coins;
-            Lives = game.lives;
+            Coins = 0;
+            Lives = 3;
             Score = 0;
             Time = 600;
         }
@@ -47,12 +47,10 @@ namespace Sprint4
 
         public void Update(GameTime gameTime)
         {
-            Lives = game.lives;
-            Coins = game.coins;
-            if (Coins > 99)
+            if (Coins == 100)
             {
-                game.coins -= 99;
-                game.lives++;
+                Coins = 0;
+                Lives++;
             }
             currentTime += (float)gameTime.ElapsedGameTime.TotalSeconds;
             if (currentTime >= countDuration && !game.isVictory)

@@ -41,7 +41,7 @@ namespace Sprint4
             }
             if (downTimer <= 0)
             {
-                if (game.lives > 0)
+                if (game.gameHUD.Lives > 0)
                 {
                     game.gameState = new LivesScreenGameState();
                 }

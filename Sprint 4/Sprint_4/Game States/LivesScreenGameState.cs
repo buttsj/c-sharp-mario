@@ -17,7 +17,7 @@ namespace Sprint4
         public LivesScreenGameState()
         {
             game = Game1.GetInstance();
-            Game1.GetInstance().lives--;
+            Game1.GetInstance().gameHUD.Lives--;
             font = game.Content.Load<SpriteFont>("Fonts/SpriteFont1");
             game.keyboardController = new PauseMenuKeyController();
         }
@@ -38,7 +38,7 @@ namespace Sprint4
         {
             game.GraphicsDevice.Clear(Color.Black);
             game.gameCamera.LookAt(game.gameCamera.CenterScreen);
-            spriteBatch.DrawString(font, "Lives: " + game.lives, game.gameCamera.CenterScreen + textPosition, Color.White);
+            spriteBatch.DrawString(font, "Lives: " + game.gameHUD.Lives, game.gameCamera.CenterScreen + textPosition, Color.White);
         }
     }
 }
