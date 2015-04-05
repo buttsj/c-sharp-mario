@@ -23,7 +23,8 @@ namespace Sprint4
             if (mario.velocity.Y > mario.maxVelocity.Y){
                 mario.velocity.Y = mario.maxVelocity.Y;
             }
-            if(Game1.GetInstance().level.collision.standingBlocks.Count > 0)
+            if(Game1.GetInstance().level.collision.standingBlocks.Count > 0 ||
+                Game1.GetInstance().level.collision.standingPipes.Count > 0)
             {
                 mario.physState = new GroundState(mario);
             }

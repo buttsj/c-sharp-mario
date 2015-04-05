@@ -17,7 +17,9 @@ namespace Sprint4
         public EnemyCollisionResponder enemyResponder;
         public BlockCollisionResponder blockResponder;
         public FireballCollisionResponder fireballResponder;
+        public PipeCollisionResponder pipeResponder;
         public List<Block> standingBlocks;
+        public List<Pipe> standingPipes;
 
         public CollisionDetector(Mario mario, Game1 game)
         {
@@ -27,13 +29,16 @@ namespace Sprint4
             blockResponder = new BlockCollisionResponder(game);
             enemyResponder = new EnemyCollisionResponder(game);
             fireballResponder = new FireballCollisionResponder(mario, game);
+            pipeResponder = new PipeCollisionResponder(game);
             standingBlocks = new List<Block>();
+            standingPipes = new List<Pipe>();
         }
 
         public void Detect(Mario mario, List<Fireball> levelFireballs, List<Enemy> levelEnemies,
-            List<Block> levelBlocks, List<ICollectable> levelItems)
+            List<Block> levelBlocks, List<ICollectable> levelItems, List<Pipe> levelPipes)
         {
             standingBlocks = new List<Block>();
+            standingPipes = new List<Pipe>();
             Rectangle marioRect = mario.state.GetBoundingBox(new Vector2(mario.position.X, mario.position.Y));
             foreach (Enemy enemy in levelEnemies)
             {
@@ -73,7 +78,24 @@ namespace Sprint4
                       enemyResponder.EnemyEnemyCollide(enemy, otherEnemy);
                   }
               }
+              foreach (Pipe pipe in levelPipes)
+              {
+                  Rectangle pipeRect = pipe.GetBoundingBox();
+                  if (pipeRect.Intersects(enemyRect))
+                  {
+                      pipeResponder.PipeEnemyCollide(enemy, pipe);
+                  }
+              }
           }
+
+            foreach (Pipe pipe in levelPipes)
+            {
+                Rectangle pipeRect = pipe.GetBoundingBox();
+                if (pipeRect.Intersects(marioRect))
+                {
+                    pipeResponder.PipeMarioCollide(mario, pipe, standingPipes);
+                }
+            }
 
             foreach (ICollectable item in levelItems)
             {
@@ -82,6 +104,14 @@ namespace Sprint4
                 {
                     obtainedItems.Add(item);
                     itemResponder.MarioItemCollide(item, mario);
+                }
+                foreach (Pipe pipe in levelPipes)
+                {
+                    Rectangle pipeRect = pipe.GetBoundingBox();
+                    if (pipeRect.Intersects(itemRect))
+                    {
+                        pipeResponder.PipeItemCollide(item, pipe);
+                    }
                 }
             }
 

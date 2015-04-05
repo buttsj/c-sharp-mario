@@ -11,7 +11,7 @@ namespace Sprint4
         public Vector2 speedDecayRate = new Vector2((float)0.73, (float)0.70);
         float positionDtAdjust = 40;
         Mario mario;
-        double runMultiplier = 1.3;
+        double runMultiplier = 1.4;
 
         public GroundState(Mario mario)
         {
@@ -25,7 +25,8 @@ namespace Sprint4
             mario.position += mario.velocity * ((float)gameTime.ElapsedGameTime.Milliseconds / positionDtAdjust);
 
             mario.velocity *= speedDecayRate;
-            if (Game1.GetInstance().level.collision.standingBlocks.Count == 0)
+            if (Game1.GetInstance().level.collision.standingBlocks.Count == 0 ||
+                Game1.GetInstance().level.collision.standingPipes.Count == 0)
             {
                 mario.physState = new FallingState();
             } 
@@ -35,7 +36,7 @@ namespace Sprint4
             if (mario.velocity.X > mario.minVelocity.X && mario.velocity.X < mario.maxVelocity.X)
             {
                 mario.velocity.X *= (float)runMultiplier;
-                mario.state.Sprite.UpdateSpeed--;
+                mario.state.Sprite.UpdateSpeed-=2;
             }
         }
     }

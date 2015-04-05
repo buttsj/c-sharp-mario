@@ -13,7 +13,9 @@ namespace Sprint4
         public Dictionary<string, BlockFactory.BlockType> blockDictionary = new Dictionary<string, BlockFactory.BlockType>();
         public Dictionary<string, EnemyFactory.EnemyType> enemyDictionary = new Dictionary<string, EnemyFactory.EnemyType>();
         public Dictionary<string, SpriteFactory.sprites> backgroundDictionary = new Dictionary<string, SpriteFactory.sprites>();
+        public Dictionary<string, PipeFactory.PipeFacing> pipeDictionary = new Dictionary<string, PipeFactory.PipeFacing>();
         ISpriteFactory factory;
+        PipeFactory pipeFactory;
         BlockFactory blockFactory;
         EnemyFactory enemyFactory;
         CollectableFactory collectableFactory;
@@ -27,6 +29,7 @@ namespace Sprint4
             factory = new SpriteFactory();
             blockFactory = new BlockFactory();
             enemyFactory = new EnemyFactory();
+            pipeFactory = new PipeFactory();
             collectableFactory = new CollectableFactory();
             itemDictionary.Add("F", CollectableFactory.CollectableType.fireFlower);
             itemDictionary.Add("C", CollectableFactory.CollectableType.coin);
@@ -37,7 +40,9 @@ namespace Sprint4
             backgroundDictionary.Add("bush2", SpriteFactory.sprites.bush2);
             backgroundDictionary.Add("bush3", SpriteFactory.sprites.bush3);
             backgroundDictionary.Add("exit", SpriteFactory.sprites.exit);
-            blockDictionary.Add("Pi", BlockFactory.BlockType.pipe);
+            pipeDictionary.Add("Pi", PipeFactory.PipeFacing.up);
+            pipeDictionary.Add("lpi", PipeFactory.PipeFacing.left);
+            pipeDictionary.Add("dpi", PipeFactory.PipeFacing.down);
             enemyDictionary.Add("K", EnemyFactory.EnemyType.Koopa);
             enemyDictionary.Add("Tdin", EnemyFactory.EnemyType.Dino);
             enemyDictionary.Add("Bill", EnemyFactory.EnemyType.Bill);
@@ -56,8 +61,6 @@ namespace Sprint4
             blockDictionary.Add("uri", BlockFactory.BlockType.undergroundRightWall);
             blockDictionary.Add("urt", BlockFactory.BlockType.undergroundRightTop);
             blockDictionary.Add("urb", BlockFactory.BlockType.undergroundRightBottom);
-            blockDictionary.Add("lpi", BlockFactory.BlockType.leftPipe);
-            blockDictionary.Add("dpi", BlockFactory.BlockType.downPipe);
             blockDictionary.Add("l", BlockFactory.BlockType.leftEdge);
             blockDictionary.Add("r", BlockFactory.BlockType.rightEdge);
             blockDictionary.Add("?SM", BlockFactory.BlockType.quesMush);
@@ -108,6 +111,11 @@ namespace Sprint4
                     {
                        Enemy enemy = enemyFactory.build(enemyDictionary[words[i]], new Vector2(xCoord, yCoord));
                        level.levelEnemies.Add(enemy);
+                    }
+                    if (pipeDictionary.ContainsKey(words[i]))
+                    {
+                        Pipe pipe = pipeFactory.build(pipeDictionary[words[i]], new Vector2(xCoord, yCoord));
+                        level.levelPipes.Add(pipe);
                     }
                     xCoord+=spacingIncrement;
                 }

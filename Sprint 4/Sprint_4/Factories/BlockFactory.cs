@@ -12,9 +12,9 @@ namespace Sprint4
     {
         public enum BlockType
         {
-            used, question, winged, exclamation, brick, pipe, ground, leftEdge, rightEdge, quesMush,
+            used, question, winged, exclamation, brick, ground, leftEdge, rightEdge, quesMush,
             quesCoin, ques1up, quesStar, quesFlower, undergroundRoof, undergroundFloor, undergroundLeftWall, undergroundRightWall,
-            undergroundLeftTop, undergroundRightTop, undergroundRightBottom, undergroundLeftBottom, leftPipe, downPipe
+            undergroundLeftTop, undergroundRightTop, undergroundRightBottom, undergroundLeftBottom,
         }
         SpriteFactory factory;
         IBlockState state;
@@ -47,18 +47,6 @@ namespace Sprint4
             if (type == BlockType.brick)
             {
                 state = new BrickBlockState();
-            }
-            if (type == BlockType.pipe)
-            {
-                state = new PipeBlockState();
-            }
-            if (type == BlockType.leftPipe)
-            {
-                state = new PipeBlockState();
-            }
-            if (type == BlockType.downPipe)
-            {
-                state = new PipeBlockState();
             }
             if (type == BlockType.ground)
             {

@@ -76,9 +76,15 @@
     <Reference Include="System.Net" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Collision Detection and Response\PipeCollisionResponder.cs" />
+    <Compile Include="Factories\PipeFactory.cs" />
+    <Compile Include="Game Object Classes\Pipe.cs" />
     <Compile Include="Game Object Sprite Classes\MarioMovingSprite.cs" />
     <Compile Include="Game Object Sprite Classes\StaticSprite.cs" />
     <Compile Include="Game Object State Classes\Block States\GroundBlockState.cs" />
+    <Compile Include="Game Object State Classes\PipeStates\LeftPipeState.cs" />
+    <Compile Include="Game Object State Classes\PipeStates\UpPipeState.cs" />
+    <Compile Include="Game Object State Classes\PipeStates\DownPipeState.cs" />
     <Compile Include="Game States\PipeTransitionGameState.cs" />
     <Compile Include="Game States\VictoryGameState.cs" />
     <Compile Include="HUD and Background\BackgroundHolder.cs" />
@@ -127,6 +133,7 @@
     <Compile Include="Game States\PlayGameState .cs" />
     <Compile Include="Game States\DeadGameState.cs" />
     <Compile Include="HUD and Background\HUD.cs" />
+    <Compile Include="Interfaces\IPipeState.cs" />
     <Compile Include="Interfaces\ICollectable.cs" />
     <Compile Include="Interfaces\IEnemyPhysicsState.cs" />
     <Compile Include="Interfaces\IGameState.cs" />
