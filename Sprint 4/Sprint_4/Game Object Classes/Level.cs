@@ -108,13 +108,6 @@ namespace Sprint4
                     item.Draw(spriteBatch);
                 }
             }
-            foreach (Block blockDrawer in levelBlocks)
-            {
-                if (game.gameCamera.InCameraView(blockDrawer.GetBoundingBox()))
-                {
-                    blockDrawer.Draw(spriteBatch, blockDrawer.position);
-                }
-            }
             foreach (Enemy enemy in levelEnemies)
             {
                 if (game.gameCamera.InCameraView(enemy.GetBoundingBox()))
@@ -127,6 +120,13 @@ namespace Sprint4
                 if (game.gameCamera.InCameraView(fireball.GetBoundingBox()))
                 {                   
                     fireball.Draw(spriteBatch);                     
+                }
+            }
+            foreach (Block blockDrawer in levelBlocks)
+            {
+                if (game.gameCamera.InCameraView(blockDrawer.GetBoundingBox()))
+                {
+                    blockDrawer.Draw(spriteBatch, blockDrawer.position);
                 }
             }
             mario.Draw(spriteBatch);

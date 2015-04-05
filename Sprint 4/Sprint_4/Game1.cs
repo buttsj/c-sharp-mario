@@ -42,7 +42,7 @@ namespace Sprint4
             soundManager = new SoundManager(this);
             valueHolder = new ValueHolder();
             gameCamera = new Camera(GraphicsDevice.Viewport, this);
-            level = new Level(this, "/Maps/MapCleaned.csv");
+            level = new Level(this, "/Maps/MapUnderground.csv");
             gameState = new PlayGameState();
             keyboardController = new KeyboardController(level.mario);
             gamepadController = new GamepadController(level.mario);
@@ -70,11 +70,14 @@ namespace Sprint4
 
             spriteBatch.Begin();
             background.Draw(spriteBatch);
-            gameHUD.Draw(spriteBatch);
             spriteBatch.End();
 
             spriteBatch.Begin(SpriteSortMode.Deferred, null, null, null, null, null, gameCamera.GetViewMatrix());
             gameState.Draw(spriteBatch);
+            spriteBatch.End();
+
+            spriteBatch.Begin();
+            gameHUD.Draw(spriteBatch);
             spriteBatch.End();
 
             base.Draw(gameTime);
