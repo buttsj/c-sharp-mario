@@ -26,7 +26,6 @@ namespace Sprint4
         public bool isPaused = false, isVictory = false;
         private static Game1 sInstance = new Game1();
         public BackgroundHolder background;
-
         public HUD gameHUD;
 
         private Game1()
@@ -69,15 +68,13 @@ namespace Sprint4
 
             spriteBatch.Begin();
             background.Draw(spriteBatch);
+            gameHUD.Draw(spriteBatch);
             spriteBatch.End();
 
             spriteBatch.Begin(SpriteSortMode.Deferred, null, null, null, null, null, gameCamera.GetViewMatrix());
             gameState.Draw(spriteBatch);
             spriteBatch.End();
 
-            spriteBatch.Begin();
-            gameHUD.Draw(spriteBatch);
-            spriteBatch.End();
 
             base.Draw(gameTime);
         }

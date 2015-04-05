@@ -10,6 +10,7 @@ namespace Sprint4
     {
         ISpriteFactory factory = new SpriteFactory();
         Game1 game;
+        int bounce = -10;
         
         public EnemyCollisionResponder(Game1 game)
         {
@@ -29,7 +30,7 @@ namespace Sprint4
                 else
                 {
                     enemy.TakeDamage();
-                    game.gameHUD.Score += 100;
+                    game.gameHUD.Score += ValueHolder.enemyHurtPoints;
                 }
             }
             else
@@ -37,8 +38,8 @@ namespace Sprint4
                 if (marioRect.Bottom > enemyRect.Top && marioRect.Bottom < enemyRect.Bottom)
                 {
                     enemy.TakeDamage();
-                    game.gameHUD.Score += 100;
-                    mario.velocity.Y = -10;
+                    game.gameHUD.Score += ValueHolder.enemyHurtPoints;
+                    mario.velocity.Y = bounce;
                 }
                 else
                 {
@@ -49,7 +50,7 @@ namespace Sprint4
                     else
                     {
                         enemy.TakeDamage();
-                        game.gameHUD.Score += 100;
+                        game.gameHUD.Score += ValueHolder.enemyHurtPoints;
                     }
                 }
             }

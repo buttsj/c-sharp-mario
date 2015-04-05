@@ -14,7 +14,8 @@ namespace Sprint4
         ISpriteFactory factory;
         public bool left = true;
         public Vector2 position;
-        public int fireballLifespan = 100;    
+        public int fireballLifespan = 100;
+        int moveRate = 2;
 
         public Fireball(Vector2 location, bool left)
         {
@@ -27,12 +28,12 @@ namespace Sprint4
 
         public void GoLeft()
         {
-            position.X -= (float)2;
+            position.X -= moveRate;
             left = true;            
         }
         public void GoRight()
         {
-            position.X += (float)2;
+            position.X += moveRate;
             left = false;            
         }
         public void Update(GameTime gameTime)

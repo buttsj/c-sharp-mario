@@ -12,7 +12,6 @@ namespace Sprint4
         int timer = 150;
         SpriteFont font;
         Game1 game;
-        Vector2 textPosition = new Vector2(-40, 110);
 
         public LivesScreenGameState()
         {
@@ -29,7 +28,7 @@ namespace Sprint4
             {
                 game.level = new Level(game, "/Maps/MapCleaned.csv");
                 game.gameState = new PlayGameState();
-                game.gameHUD.Time = 600;
+                game.gameHUD.Time = ValueHolder.timerStart;
             }
             game.keyboardController.Update();
         }
@@ -38,7 +37,7 @@ namespace Sprint4
         {
             game.GraphicsDevice.Clear(Color.Black);
             game.gameCamera.LookAt(game.gameCamera.CenterScreen);
-            spriteBatch.DrawString(font, "Lives: " + game.gameHUD.Lives, game.gameCamera.CenterScreen + textPosition, Color.White);
+            spriteBatch.DrawString(font, "Lives: " + game.gameHUD.Lives, game.gameCamera.CenterScreen + ValueHolder.textPosition, Color.White);
         }
     }
 }

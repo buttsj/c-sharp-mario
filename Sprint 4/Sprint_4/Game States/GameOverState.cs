@@ -32,7 +32,7 @@ namespace Sprint4
         {
             game.GraphicsDevice.Clear(Color.Black);
             game.gameCamera.LookAt(game.gameCamera.CenterScreen);
-            spriteBatch.DrawString(font, "Game Over", new Vector2(game.gameCamera.CenterScreen.X - 40, game.gameCamera.CenterScreen.Y + 110), Color.White);
+            spriteBatch.DrawString(font, "Game Over", game.gameCamera.CenterScreen + ValueHolder.textPosition, Color.White);
         }
     }
 }

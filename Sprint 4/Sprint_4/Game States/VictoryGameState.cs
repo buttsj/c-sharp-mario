@@ -11,7 +11,7 @@ namespace Sprint4
     {
         Game1 game;
         int walkTimer = 433;
-        int slowMo = 3;
+        int slowFrames = 3;
         RightCommand right;
 
         public VictoryGameState()
@@ -27,13 +27,13 @@ namespace Sprint4
         {
             if (walkTimer > 0)
             {
-                if (slowMo == 3)
+                if (slowFrames == ValueHolder.slowdownRate)
                 {
                     right.Execute();
                     game.level.Update(gameTime);
-                    slowMo = 0;
+                    slowFrames = 0;
                 }
-                slowMo++;
+                slowFrames++;
             }
             else
             {
@@ -44,7 +44,7 @@ namespace Sprint4
             if (game.gameHUD.Time > 0)
             {
                 game.gameHUD.Time--;
-                game.gameHUD.Score += 50;
+                game.gameHUD.Score += ValueHolder.remainingTimePoints;
             }            
         }
 

@@ -11,10 +11,10 @@ namespace Sprint4
     {
         int pipeTimer = 100;
         Game1 game;
-        public enum direction {goDown, riseOut, enterLeft, enterRight, fallOut}
+        public enum direction {goIn, comeOut}
         direction mode;
 
-        public PipeTransitionGameState(direction direction)
+        public PipeTransitionGameState(direction direction, Pipe pipe)
         {
             game = Game1.GetInstance();
             game.isPaused = true;
@@ -23,10 +23,6 @@ namespace Sprint4
 
         public void Update(GameTime gameTime)
         {
-            if (mode == direction.goDown)
-            {
-                game.level.mario.position.Y++;
-            }
         }
 
         public void Draw(SpriteBatch spriteBatch)

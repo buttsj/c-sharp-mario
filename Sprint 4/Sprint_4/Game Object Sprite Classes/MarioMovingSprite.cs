@@ -25,7 +25,7 @@ namespace Sprint4
             Columns = columns;
             currentFrame = 0;
             totalFrames = Rows * Columns;
-            UpdateSpeed = 90;
+            UpdateSpeed = ValueHolder.normalAnimationTimer;
         }
         public Rectangle GetBoundingBox(Vector2 location)
         {

@@ -10,6 +10,7 @@ namespace Sprint4
     {
         ISpriteFactory factory = new SpriteFactory();
         Game1 game;
+
         public ItemCollisionResponder(Game1 game)
         {
             this.game = game;
@@ -19,19 +20,19 @@ namespace Sprint4
             if (item.GetType().Equals(new Star(item.position).GetType()))
             {
                 mario.isStar = true;
-                game.gameHUD.Score += 1000;
+                game.gameHUD.Score += ValueHolder.itemCollectPoints;
                 SoundManager.PlaySong(SoundManager.songs.star);
             }
             if (item.GetType().Equals(new SuperMushroom(item.position).GetType()))
             {
                 mario.MakeBigMario();
-                game.gameHUD.Score += 1000;
+                game.gameHUD.Score += ValueHolder.itemCollectPoints;
                 SoundManager.grow.Play();
             }
             if (item.GetType().Equals(new FireFlower(item.position).GetType()))
             {
                 mario.MakeFireMario();
-                game.gameHUD.Score += 1000;
+                game.gameHUD.Score += ValueHolder.itemCollectPoints;
                 SoundManager.grow.Play();
             }
             if (item.GetType().Equals(new Coin(item.position).GetType()))

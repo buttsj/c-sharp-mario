@@ -43,7 +43,7 @@ namespace Sprint4
             foreach (Enemy enemy in levelEnemies)
             {
                 Rectangle enemyRect = enemy.GetBoundingBox();
-                if (!enemy.isDead && mario.invicibilityFrames ==0)
+                if (!enemy.isDead && mario.invicibilityFrames == 0)
                 {
                     
                     if (marioRect.Intersects(enemyRect))

@@ -58,7 +58,7 @@ namespace Sprint4
             }
             else
             {
-                position = new Vector2(position.X, position.Y - (float).3);
+                position = new Vector2(position.X, position.Y - (float)ValueHolder.itemSpawnRate);
                 spawnTimer--;
                 if (spawnTimer == 0)
                 {
@@ -75,7 +75,7 @@ namespace Sprint4
         public void Spawn(){
             isSpawning = true;
             Game1.GetInstance().level.levelItems.Add(this);
-            spawnTimer = 50;
+            spawnTimer = ValueHolder.itemSpawnTimer;
             SoundManager.itemSpawn.Play();
         }
     }

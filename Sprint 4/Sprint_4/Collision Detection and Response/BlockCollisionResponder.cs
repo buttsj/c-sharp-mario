@@ -12,6 +12,7 @@ namespace Sprint4
         ISpriteFactory factory = new SpriteFactory();
         Game1 game;
         SoundEffectInstance hitBlock;
+        int brickBreakPoints = 50;
 
 
         public BlockCollisionResponder(Game1 game)
@@ -61,7 +62,7 @@ namespace Sprint4
                     if (block.state.GetType().Equals(new BrickBlockState().GetType()) && mario.isBig)
                     {
                         destroyedBlocks.Add(block);
-                        game.gameHUD.Score += 50;
+                        game.gameHUD.Score += brickBreakPoints;
                         SoundManager.brickBreak.Play();
                     }
                 }

@@ -25,6 +25,7 @@ namespace Sprint4
             Columns = columns;
             currentFrame = 0;
             totalFrames = Rows * Columns;
+            UpdateSpeed = 12;
         }
         public Rectangle GetBoundingBox(Vector2 location)
         {
@@ -35,10 +36,9 @@ namespace Sprint4
         public void Update(GameTime gameTime)
         {
             animTimer++;
-            if (animTimer ==12)
+            if (animTimer == UpdateSpeed)
             {
-                animTimer =0;
-
+                animTimer = 0;
                 currentFrame = (currentFrame + 1) % totalFrames;
                 if (currentFrame == totalFrames)
                 { currentFrame = 0; }

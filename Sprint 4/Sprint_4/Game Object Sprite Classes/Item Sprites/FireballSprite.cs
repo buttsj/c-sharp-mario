@@ -33,9 +33,9 @@ namespace Sprint4
         }
         public void Update(GameTime gameTime) {
             animTimer += gameTime.ElapsedGameTime.Milliseconds;
-            if (animTimer > 90)
+            if (animTimer > ValueHolder.normalAnimationTimer)
             {
-                animTimer -= 90;
+                animTimer -= ValueHolder.normalAnimationTimer;
 
                 currentFrame = (currentFrame + 1) % totalFrames;
                 if (currentFrame == totalFrames)
