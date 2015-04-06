@@ -28,5 +28,6 @@ namespace Sprint4
         public static Vector2 textPosition = new Vector2(-40, 110);
         public static int timerStart = 600;
         public static float walkingVelocity = (float)0.3;
+        public static int startingTime = 600;
     }
 }

@@ -23,6 +23,8 @@ namespace Sprint4
 
         public void Update(GameTime gameTime)
         {
+            game.level = new Level(game, "/Maps/MapCleaned.csv");
+            game.gameState = new PlayGameState();
         }
 
         public void Draw(SpriteBatch spriteBatch)

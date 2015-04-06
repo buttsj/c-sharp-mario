@@ -40,11 +40,11 @@ namespace Sprint4
             soundManager = new SoundManager(this);
             valueHolder = new ValueHolder();
             gameCamera = new Camera(GraphicsDevice.Viewport, this);
+            gameHUD = new HUD(this);
             level = new Level(this, "/Maps/MapCleaned.csv");
             gameState = new PlayGameState();
             keyboardController = new KeyboardController(level.mario);
             gamepadController = new GamepadController(level.mario);
-            gameHUD = new HUD(this);
             background = new BackgroundHolder();
             base.Initialize();
         }

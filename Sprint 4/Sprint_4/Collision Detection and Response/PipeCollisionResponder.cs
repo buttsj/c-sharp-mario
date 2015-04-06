@@ -28,6 +28,9 @@ namespace Sprint4
                 if (marioRect.Right > pipeRect.Left && marioRect.Right < pipeRect.Right)
                 {
                     mario.position.X -= intersection.Width;
+                    if(pipe.state.GetType().Equals(new LeftPipeState().GetType())){
+                        pipe.Eat(mario);
+                    }
                 }
                 else
                 {
@@ -47,6 +50,10 @@ namespace Sprint4
                         mario.position.Y -= intersection.Height;
                     }
                     standingPipes.Add(pipe);
+                    if (pipe.state.GetType().Equals(new DownPipeState().GetType()) && mario.isCrouch)
+                    {
+                        pipe.Eat(mario);
+                    }
                 }
                 else
                 {

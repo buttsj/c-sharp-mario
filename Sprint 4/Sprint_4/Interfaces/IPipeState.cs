@@ -11,8 +11,8 @@ namespace Sprint4
     {
         void Update(GameTime gameTime);
         void Draw(SpriteBatch spriteBatch, Vector2 location);
-        void Eat();
-        void Puke();
+        void Eat(Mario mario, Pipe pipe);
+        void Puke(Mario mario, Pipe pipe);
         Rectangle GetBoundingBox(Vector2 location);
     }
 }

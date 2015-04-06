@@ -26,19 +26,18 @@ namespace Sprint4
 
         public void Update(GameTime gameTime)
         {
-            //null
         }
         public void Draw(SpriteBatch spriteBatch, Vector2 location)
         {
             sprite.Draw(spriteBatch, location);
         }
-        public void Eat()
+        public void Eat(Mario mario, Pipe pipe)
         {
-            //null
+            Game1.GetInstance().gameState = new PipeTransitionGameState(PipeTransitionGameState.direction.goIn, pipe);
         }
-        public void Puke()
+        public void Puke(Mario mario, Pipe pipe)
         {
-
+            Game1.GetInstance().gameState = new PipeTransitionGameState(PipeTransitionGameState.direction.comeOut, pipe);
         }
     }
 }

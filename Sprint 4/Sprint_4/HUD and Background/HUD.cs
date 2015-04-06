@@ -31,7 +31,7 @@ namespace Sprint4
             Coins = 0;
             Lives = 3;
             Score = 0;
-            Time = 600;
+            Time = ValueHolder.startingTime;
         }
 
         public void LoadContent()

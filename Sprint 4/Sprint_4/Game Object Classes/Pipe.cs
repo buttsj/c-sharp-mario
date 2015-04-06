@@ -10,7 +10,7 @@ namespace Sprint4
     public class Pipe
     {
         public Vector2 position;
-        IPipeState state;
+        public IPipeState state { get; set; }
 
         public Pipe(IPipeState state, Vector2 location)
         {
@@ -25,13 +25,13 @@ namespace Sprint4
         {
             state.Draw(spriteBatch, location);
         }
-        public void Eat()
+        public void Eat(Mario mario)
         {
-            state.Eat();
+            state.Eat(mario, this);
         }
-        public void Puke()
+        public void Puke(Mario mario)
         {
-            state.Puke();
+            state.Puke(mario, this);
         }
         public Rectangle GetBoundingBox()
         {

@@ -16,7 +16,7 @@ namespace Sprint4
         public LivesScreenGameState()
         {
             game = Game1.GetInstance();
-            Game1.GetInstance().gameHUD.Lives--;
+            game.gameHUD.Lives--;
             font = game.Content.Load<SpriteFont>("Fonts/SpriteFont1");
             game.keyboardController = new PauseMenuKeyController();
         }
