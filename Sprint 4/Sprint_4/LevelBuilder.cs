@@ -40,6 +40,7 @@ namespace Sprint4
             backgroundDictionary.Add("bush2", SpriteFactory.sprites.bush2);
             backgroundDictionary.Add("bush3", SpriteFactory.sprites.bush3);
             backgroundDictionary.Add("exit", SpriteFactory.sprites.exit);
+            backgroundDictionary.Add("ca", SpriteFactory.sprites.castle);
             pipeDictionary.Add("Pi", PipeFactory.PipeFacing.up);
             pipeDictionary.Add("lpi", PipeFactory.PipeFacing.left);
             pipeDictionary.Add("dpi", PipeFactory.PipeFacing.down);
