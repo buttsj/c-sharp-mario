@@ -22,8 +22,8 @@ namespace Sprint4
         public List<ICollectable> levelItems = new List<ICollectable>();
         public List<KeyValuePair<IAnimatedSprite, Vector2>> levelBackgroundObjects = new List<KeyValuePair<IAnimatedSprite, Vector2>>();
         public CollisionDetector collision;
-        public Vector2 exitPosition;
         bool isVictory = false;
+        public Vector2 exitPosition { get; set; }
         
         public Level(Game1 game, string fileName)
         {

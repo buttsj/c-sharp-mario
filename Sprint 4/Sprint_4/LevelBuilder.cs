@@ -99,9 +99,12 @@ namespace Sprint4
                         {
                             level.exitPosition = new Vector2(xCoord, yCoord);
                         }
-                        KeyValuePair<IAnimatedSprite, Vector2> item = new KeyValuePair<IAnimatedSprite,
+                        else
+                        {
+                            KeyValuePair<IAnimatedSprite, Vector2> item = new KeyValuePair<IAnimatedSprite,
                             Vector2>(factory.build(backgroundDictionary[words[i]]), new Vector2(xCoord, yCoord));
-                        level.levelBackgroundObjects.Add(item);
+                            level.levelBackgroundObjects.Add(item);
+                        }
                     }
                     if (blockDictionary.ContainsKey(words[i]))
                     {
