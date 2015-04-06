@@ -21,6 +21,7 @@ namespace Sprint4
             game.isPaused = true;
             mode = direction;
             this.pipe = pipe;
+            SoundManager.shrink.Play();
         }
 
         public void Update(GameTime gameTime)
