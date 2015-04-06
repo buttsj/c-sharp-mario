@@ -13,7 +13,6 @@ namespace Sprint4
         int walkTimer = 433;
         int slowFrames = 3;
         RightCommand right;
-        Texture2D brokenGate;
 
         public VictoryGameState()
         {
@@ -22,7 +21,6 @@ namespace Sprint4
             SoundManager.StopMusic();
             SoundManager.clear.Play();
             right = new RightCommand(game.level.mario);
-            brokenGate = Game1.gameContent.Load<Texture2D>("Items/gateBroken");
         }
 
         public void Update(GameTime gameTime)
@@ -53,7 +51,6 @@ namespace Sprint4
         public void Draw(SpriteBatch spriteBatch)
         {
             game.level.Draw(spriteBatch);
-            spriteBatch.Draw(brokenGate, new Rectangle((int)game.level.exitPosition.X, (int)game.level.exitPosition.Y, 48, 145), Color.White);
         }
     }
 }

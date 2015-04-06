@@ -24,6 +24,7 @@ namespace Sprint4
         public CollisionDetector collision;
         bool isVictory = false;
         public Vector2 exitPosition { get; set; }
+        public Texture2D exitPole { get; set; }
         
         public Level(Game1 game, string fileName)
         {
@@ -33,6 +34,7 @@ namespace Sprint4
             game.gameCamera.LookAt(mario.position);
             collision = new CollisionDetector(mario, game);
             SoundManager.PlaySong(SoundManager.songs.overworld);
+            exitPole = Game1.gameContent.Load<Texture2D>("Items/gate");
         }
 
         public void Update(GameTime gameTime)
@@ -98,6 +100,7 @@ namespace Sprint4
             if (mario.position.X > exitPosition.X && !isVictory)
             {
                 game.gameState = new VictoryGameState();
+                exitPole = Game1.gameContent.Load<Texture2D>("Items/gateBroken");
                 isVictory = true;
             }
             game.gameCamera.LookAt(mario.position);
@@ -138,6 +141,7 @@ namespace Sprint4
                 }
             }
             mario.Draw(spriteBatch);
+            spriteBatch.Draw(exitPole, new Rectangle((int)exitPosition.X, (int)exitPosition.Y, 48, 145), Color.White);
             foreach (Pipe pipeDrawer in levelPipes)
             {
                 if (game.gameCamera.InCameraView(pipeDrawer.GetBoundingBox()))
