@@ -50,7 +50,7 @@ namespace Sprint4
                         mario.position.Y -= intersection.Height;
                     }
                     standingPipes.Add(pipe);
-                    if (pipe.state.GetType().Equals(new DownPipeState().GetType()) && mario.isCrouch)
+                    if (pipe.state.GetType().Equals(new UpPipeState().GetType()) && mario.isCrouch)
                     {
                         pipe.Eat(mario);
                     }

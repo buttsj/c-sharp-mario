@@ -33,6 +33,14 @@ namespace Sprint4
         {
             state.Puke(mario, this);
         }
+        public void Chew()
+        {
+            state.Chew();
+        }
+        public void Gag()
+        {
+            state.Gag();
+        }
         public Rectangle GetBoundingBox()
         {
             return state.GetBoundingBox(position);

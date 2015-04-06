@@ -11,6 +11,7 @@ namespace Sprint4
     {
         IAnimatedSprite sprite;
         ISpriteFactory factory;
+        Mario mario;
         int animTimer = 100;
         
         public LeftPipeState()
@@ -34,10 +35,21 @@ namespace Sprint4
         public void Eat(Mario mario, Pipe pipe)
         {
             Game1.GetInstance().gameState = new PipeTransitionGameState(PipeTransitionGameState.direction.goIn, pipe);
+            this.mario = mario;
         }
         public void Puke(Mario mario, Pipe pipe)
         {
             Game1.GetInstance().gameState = new PipeTransitionGameState(PipeTransitionGameState.direction.comeOut, pipe);
+            this.mario = mario;
         }
+        public void Chew()
+        {
+            mario.position.X++;
+        }
+        public void Gag()
+        {
+            mario.position.X--;
+        }
+
     }
 }

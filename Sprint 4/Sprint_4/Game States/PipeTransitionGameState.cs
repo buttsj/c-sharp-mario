@@ -9,7 +9,8 @@ namespace Sprint4
 {
     class PipeTransitionGameState :IGameState
     {
-        int pipeTimer = 100;
+        int pipeTimer = 30;
+        Pipe pipe;
         Game1 game;
         public enum direction {goIn, comeOut}
         direction mode;
@@ -19,12 +20,25 @@ namespace Sprint4
             game = Game1.GetInstance();
             game.isPaused = true;
             mode = direction;
+            this.pipe = pipe;
         }
 
         public void Update(GameTime gameTime)
         {
-            game.level = new Level(game, "/Maps/MapCleaned.csv");
-            game.gameState = new PlayGameState();
+            if (pipeTimer > 0 && mode == direction.goIn)
+            {
+                pipe.Chew();
+            }
+            else if (pipeTimer > 0 && mode == direction.comeOut)
+            {
+                pipe.Gag();
+            }
+            else
+            {
+                game.level = new Level(game, "/Maps/MapCleaned.csv");
+                game.gameState = new PlayGameState();
+            }
+            pipeTimer--;
         }
 
         public void Draw(SpriteBatch spriteBatch)
