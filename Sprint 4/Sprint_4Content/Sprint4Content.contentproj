@@ -844,8 +844,8 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Items\gateFramed.png">
-      <Name>gateFramed</Name>
+    <Compile Include="Items\gateFramed2.png">
+      <Name>gateFramed2</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
