@@ -34,7 +34,7 @@ namespace Sprint4
             game.gameCamera.LookAt(mario.position);
             collision = new CollisionDetector(mario, game);
             SoundManager.PlaySong(SoundManager.songs.overworld);
-            exitPole = new GateSprite(Game1.gameContent.Load<Texture2D>("Items/gateFramed2"), 2, 23);
+            exitPole = new GateSprite(Game1.gameContent.Load<Texture2D>("Items/gateFramedFinal"), 2, 23);
         }
 
         public void Update(GameTime gameTime)
