@@ -87,6 +87,7 @@
     <Compile Include="Game Object State Classes\PipeStates\DownPipeState.cs" />
     <Compile Include="Game States\PipeTransitionGameState.cs" />
     <Compile Include="Game States\VictoryGameState.cs" />
+    <Compile Include="Game Object Sprite Classes\GateSprite.cs" />
     <Compile Include="HUD and Background\BackgroundHolder.cs" />
     <Compile Include="Game Object Classes\Camera.cs" />
     <Compile Include="Collision Detection and Response\BlockCollisionResponder.cs" />
