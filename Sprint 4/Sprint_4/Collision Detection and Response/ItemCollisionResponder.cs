@@ -39,7 +39,7 @@ namespace Sprint4
             {
                 SoundManager.coinCollect.Play();
                 game.gameHUD.Coins++;
-                game.gameHUD.Score += 200;
+                game.gameHUD.Score += ValueHolder.coinCollectPoints;
             }
             if (item.GetType().Equals(new OneUpMushroom(item.position).GetType()))
             {

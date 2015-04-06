@@ -15,8 +15,8 @@ namespace Sprint4
         public Fireball fireball;
         public bool isStar = false, isBig = false, isFire = false, 
             isDead = false, isCrouch = false, isFireball = false, isLeft = false;
-        private int starTimer = 1000;
-        private int fireballTimer = 10;
+        private int starTimer = ValueHolder.maxStarTime;
+        private int fireballTimer = ValueHolder.fireballDelay;
         public int fireballCount = 0;
         public int invicibilityFrames = 0;
         public Vector2 position;
@@ -47,7 +47,7 @@ namespace Sprint4
             if (!isDead)
             {
                 SoundManager.shrink.Play();
-                invicibilityFrames = 100;
+                invicibilityFrames = ValueHolder.maxInvinciblityTime;
             }
             isFireball = false;
             isBig = false;
@@ -59,7 +59,7 @@ namespace Sprint4
             if (velocity.Y > minVelocity.Y && physState.GetType() != (new FallingState()).GetType())
             {
                 physState = new JumpingState();
-                velocity.Y -= (float)2;
+                velocity.Y -= ValueHolder.initialJumpingVelocity;
                 if (jumpFX.State == SoundState.Stopped)
                 {
                     jumpFX.Play();
@@ -80,7 +80,7 @@ namespace Sprint4
             state.GoLeft();
             if (velocity.X > minVelocity.X && !isCrouch)
             {
-                velocity.X -= (float).3;
+                velocity.X -= ValueHolder.walkingVelocity;
             }
             isLeft = true;
         }
@@ -90,7 +90,7 @@ namespace Sprint4
             state.GoRight();
             if (velocity.X < maxVelocity.X && !isCrouch)
             {
-                velocity.X += (float).3;
+                velocity.X += ValueHolder.walkingVelocity;
             }
             isLeft = false;
         }
@@ -149,7 +149,7 @@ namespace Sprint4
         {
             state.MakeFireballMario();
             isFireball = true;
-            if (fireballCount < 3 && isFire)
+            if (fireballCount < ValueHolder.maxFireballs && isFire)
             {
                 if (fireballTimer == 0)
                 {
@@ -179,10 +179,10 @@ namespace Sprint4
             if (starTimer == 0)
             {
                 isStar = false;
-                starTimer = 1000;
+                starTimer = ValueHolder.maxStarTime;
                 SoundManager.PlaySong(SoundManager.songs.athletic);
             }
-            if (position.Y > 500)
+            if (position.Y > ValueHolder.fallingMarioBoundary)
             {
                 state = new DeadMS(this);
             }         
@@ -194,7 +194,7 @@ namespace Sprint4
             }
             else
             {
-                fireballTimer = 10;                
+                fireballTimer = ValueHolder.fireballDelay;                
             }           
             state.Update(gameTime);
             physState.Update(this, gameTime);
