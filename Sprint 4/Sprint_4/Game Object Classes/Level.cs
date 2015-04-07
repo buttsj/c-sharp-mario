@@ -23,6 +23,7 @@ namespace Sprint4
         public List<KeyValuePair<IAnimatedSprite, Vector2>> levelBackgroundObjects = new List<KeyValuePair<IAnimatedSprite, Vector2>>();
         public CollisionDetector collision;
         bool isVictory = false;
+        public bool isUnderground = false;
         public Vector2 exitPosition { get; set; }
         public IAnimatedSprite exitPole { get; set; }
         
@@ -102,7 +103,7 @@ namespace Sprint4
             {
                 mario.position.X = 0;
             }
-            if (mario.position.X > exitPosition.X && !isVictory)
+            if (mario.position.X > exitPosition.X && !isVictory && !isUnderground)
             {
                 game.gameState = new VictoryGameState();
                 exitPole = new GateSprite(Game1.gameContent.Load<Texture2D>("Items/gateBroken"), 1, 1);

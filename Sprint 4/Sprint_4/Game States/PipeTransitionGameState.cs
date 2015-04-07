@@ -44,6 +44,7 @@ namespace Sprint4
             else if (pipeTimer < 0 && mode == direction.comeOut)
             {
                 game.gameState = new PlayGameState();
+                game.level.isUnderground = !game.level.isUnderground;
             }
             pipeTimer--;
         }
