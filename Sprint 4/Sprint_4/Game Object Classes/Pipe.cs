@@ -12,6 +12,7 @@ namespace Sprint4
         public Vector2 position;
         public IPipeState state { get; set; }
         public Pipe exitPipe { get; set; }
+        bool puked = false;
 
         public Pipe(IPipeState state, Vector2 location)
         {
@@ -28,7 +29,10 @@ namespace Sprint4
         }
         public void Eat(Mario mario)
         {
-            state.Eat(mario, this);
+            if (!puked)
+            {
+                state.Eat(mario, this);
+            }
         }
         public void Puke(Mario mario)
         {
@@ -41,6 +45,7 @@ namespace Sprint4
         public void Gag(Mario mario)
         {
             state.Gag(mario);
+            puked = true;
         }
         public Rectangle GetBoundingBox()
         {
