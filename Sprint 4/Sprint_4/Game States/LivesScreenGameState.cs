@@ -20,6 +20,7 @@ namespace Sprint4
             font = game.Content.Load<SpriteFont>("Fonts/SpriteFont1");
             game.keyboardController = new PauseMenuKeyController();
             game.gameHUD.Time = ValueHolder.startingTime;
+            game.gameHUD.textColor = ValueHolder.blackScreenText;
         }
 
         public void Update(GameTime gameTime)
@@ -29,6 +30,7 @@ namespace Sprint4
             {
                 game.level = new Level(game, "/Maps/MapCleaned.csv");
                 game.gameState = new PlayGameState();
+                game.gameHUD.textColor = ValueHolder.normalScreenText;
             }
             game.keyboardController.Update();
         }

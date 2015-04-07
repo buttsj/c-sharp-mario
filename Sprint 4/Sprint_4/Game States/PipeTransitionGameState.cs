@@ -45,12 +45,14 @@ namespace Sprint4
                     game.background.CurrentSprite = game.background.UndergroundSprite;
                     SoundManager.StopMusic();
                     SoundManager.PlaySong(SoundManager.songs.underground);
+                    game.gameHUD.textColor = ValueHolder.blackScreenText;
                 }
                 else
                 {
                     game.background.CurrentSprite = game.background.OverworldSprite;
                     SoundManager.StopMusic();
                     SoundManager.PlaySong(SoundManager.songs.overworld);
+                    game.gameHUD.textColor = ValueHolder.normalScreenText;
                 }
                 game.gameState = new PipeTransitionGameState(direction.comeOut, pipe.exitPipe);
             }

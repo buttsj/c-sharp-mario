@@ -46,6 +46,8 @@ namespace Sprint4
         public static Rectangle timeSpritePos = new Rectangle(500, 30, 82, 25);
         public static Vector2 timeTextPos = new Vector2(530, 55);
         public static Vector2 scoreTextPos = new Vector2(650, 55);
+        public static Color blackScreenText = Color.White;
+        public static Color normalScreenText = Color.Black;
 
         //fireball
         public static int fireballXSpawn = 5;
@@ -56,5 +58,6 @@ namespace Sprint4
 
         //BG
         public static Rectangle undergroundBGPos = new Rectangle(0, 0, 1000, 600);
+
     }
 }

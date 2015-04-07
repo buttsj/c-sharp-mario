@@ -24,6 +24,7 @@ namespace Sprint4
         public float countDuration = 1f;
         public float currentTime = 0f;
         public Game1 game;
+        public Color textColor = Color.Black;
 
         public HUD(Game1 game)
         {
@@ -72,12 +73,12 @@ namespace Sprint4
         public void Draw(SpriteBatch spriteBatch)
         {
             spriteBatch.Draw(CoinSprite, ValueHolder.coinSpritePos, Color.White);
-            spriteBatch.DrawString(CoinsFont, "" + Coins, ValueHolder.coinTextPos, Color.White);
+            spriteBatch.DrawString(CoinsFont, "" + Coins, ValueHolder.coinTextPos, textColor);
             spriteBatch.Draw(LivesSprite, ValueHolder.livesSpritePos, Color.White);
-            spriteBatch.DrawString(LivesFont, "X    " + Lives, ValueHolder.livesTextPos, Color.White);
+            spriteBatch.DrawString(LivesFont, "X    " + Lives, ValueHolder.livesTextPos, textColor);
             spriteBatch.Draw(TimeSprite, ValueHolder.timeSpritePos, Color.White);
-            spriteBatch.DrawString(TimeFont, "" + Time, ValueHolder.timeTextPos, Color.White);
-            spriteBatch.DrawString(ScoreFont, "" + Score, ValueHolder.scoreTextPos, Color.White);
+            spriteBatch.DrawString(TimeFont, "" + Time, ValueHolder.timeTextPos, textColor);
+            spriteBatch.DrawString(ScoreFont, "" + Score, ValueHolder.scoreTextPos, textColor);
         }
     }
 }
