@@ -69,7 +69,8 @@ namespace Sprint4
             }
             if (Time == 0)
             {
-                // Kill Mario
+                game.level.mario.state.MakeDeadMario();
+                Game1.GetInstance().gameState = new DeadGameState(game.level.mario);
             }
 
         }

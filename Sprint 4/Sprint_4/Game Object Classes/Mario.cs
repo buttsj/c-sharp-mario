@@ -183,7 +183,7 @@ namespace Sprint4
             {
                 isStar = false;
                 starTimer = ValueHolder.maxStarTime;
-                SoundManager.PlaySong(SoundManager.songs.athletic);
+                SoundManager.PlaySong(SoundManager.songs.overworld);
             }
             if (position.Y > ValueHolder.fallingMarioBoundary)
             {

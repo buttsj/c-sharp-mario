@@ -35,8 +35,6 @@ namespace Sprint4
         public static int normalAnimationTimer = 90;
         public static int slowdownRate = 3;
         public static Vector2 textPosition = new Vector2(-40, 110);
-        public static int startingTime = 600;
-        public static int hurryTime = 100;
 
         //HUD
         public static Rectangle coinSpritePos = new Rectangle(650, 30, 53, 25);
@@ -48,6 +46,8 @@ namespace Sprint4
         public static Vector2 scoreTextPos = new Vector2(650, 55);
         public static Color blackScreenText = Color.White;
         public static Color normalScreenText = Color.Black;
+        public static int startingTime = 600;
+        public static int hurryTime = 100;
 
         //fireball
         public static int fireballXSpawn = 5;
