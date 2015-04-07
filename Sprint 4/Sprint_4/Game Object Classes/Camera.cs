@@ -21,20 +21,23 @@ namespace Sprint4
         public Vector2 CenterScreen { get; set; }
         public float Zoom { get; set; }
         public float Rotation { get; set; }
+        int valOneAdjust = 200;
+        int valTwo = 250;
+        int valThreeAdjust = 30;
 
         public Camera(Viewport viewport, Game1 game)
         {
             this.viewport = viewport;
             this.game = game;
-            CenterScreen = new Vector2(viewport.Width / 2.0f, viewport.Height / 2.0f);
             Zoom = 2.0f;
+            CenterScreen = new Vector2(viewport.Width / Zoom, viewport.Height / Zoom);
         }
 
         public void LookAt(Vector2 position)
         {
-            CameraPosition.X = position.X - viewport.Width / 2.0f;
-            if (CameraPosition.X < -200)
-                CameraPosition.X = -200;
+            CameraPosition.X = position.X - viewport.Width / Zoom;
+            if (CameraPosition.X < ValueHolder.camClamp)
+                CameraPosition.X = ValueHolder.camClamp;
         }
 
         public Matrix GetViewMatrix()
@@ -48,7 +51,8 @@ namespace Sprint4
 
         public bool InCameraView(Rectangle obj)
         {
-            if (new Rectangle((int)(CameraPosition.X + 200), 250, ((int)(viewport.Width / 2.0f)) + 30, (int)(viewport.Height / 2.0f)).Intersects(obj))
+            if (new Rectangle((int)(CameraPosition.X + valOneAdjust), valTwo, ((int)(viewport.Width / Zoom)) + 
+                valThreeAdjust, (int)(viewport.Height / Zoom)).Intersects(obj))
             {
                 return true;
             }

@@ -28,7 +28,7 @@ namespace Sprint4
             {
                 game.level = new Level(game, "/Maps/MapCleaned.csv");
                 game.gameState = new PlayGameState();
-                game.gameHUD.Time = ValueHolder.timerStart;
+                game.gameHUD.Time = ValueHolder.startingTime;
             }
             game.keyboardController.Update();
         }

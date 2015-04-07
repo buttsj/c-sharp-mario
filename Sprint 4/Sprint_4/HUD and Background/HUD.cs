@@ -47,7 +47,7 @@ namespace Sprint4
 
         public void Update(GameTime gameTime)
         {
-            if (Coins == 100)
+            if (Coins == ValueHolder.maxCoins)
             {
                 Coins = 0;
                 Lives++;
@@ -58,7 +58,7 @@ namespace Sprint4
                 Time--;
                 currentTime -= countDuration;
             }
-            if (Time == 100)
+            if (Time == ValueHolder.hurryTime)
             {
                 // Play fast paced music
             }
@@ -71,13 +71,13 @@ namespace Sprint4
 
         public void Draw(SpriteBatch spriteBatch)
         {
-            spriteBatch.Draw(CoinSprite, new Rectangle(650, 30, 53, 25), Color.White);
-            spriteBatch.DrawString(CoinsFont, "" + Coins, new Vector2(750, 26), Color.Black);
-            spriteBatch.Draw(LivesSprite, new Rectangle(30, 30, 132, 29), Color.White);
-            spriteBatch.DrawString(LivesFont, "X    " + Lives, new Vector2(60, 55), Color.Black);
-            spriteBatch.Draw(TimeSprite, new Rectangle(500, 30, 82, 25), Color.White);
-            spriteBatch.DrawString(TimeFont, "" + Time, new Vector2(530, 55), Color.Black);
-            spriteBatch.DrawString(ScoreFont, "" + Score, new Vector2(650, 55), Color.Black);
+            spriteBatch.Draw(CoinSprite, ValueHolder.coinSpritePos, Color.White);
+            spriteBatch.DrawString(CoinsFont, "" + Coins, ValueHolder.coinTextPos, Color.Black);
+            spriteBatch.Draw(LivesSprite, ValueHolder.livesSpritePos, Color.White);
+            spriteBatch.DrawString(LivesFont, "X    " + Lives, ValueHolder.livesTextPos, Color.Black);
+            spriteBatch.Draw(TimeSprite, ValueHolder.timeSpritePos, Color.White);
+            spriteBatch.DrawString(TimeFont, "" + Time, ValueHolder.timeTextPos, Color.Black);
+            spriteBatch.DrawString(ScoreFont, "" + Score, ValueHolder.scoreTextPos, Color.Black);
         }
     }
 }

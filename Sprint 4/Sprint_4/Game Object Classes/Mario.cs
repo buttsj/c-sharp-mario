@@ -26,6 +26,7 @@ namespace Sprint4
         public int marioHeight = 0;
         SoundEffectInstance jumpFX;
         SpriteFactory factory;
+        int modVal = 5;
 
         public Mario(Vector2 position)
         {
@@ -155,11 +156,13 @@ namespace Sprint4
                 {
                     if (isLeft)
                     {
-                        fireball = new Fireball(new Vector2(position.X - 5, position.Y + 3), true);
+                        fireball = new Fireball(new Vector2(position.X - ValueHolder.fireballXSpawn, position.Y +
+                            ValueHolder.fireballYSpawn), true);
                     }
                     else
                     {
-                        fireball = new Fireball(new Vector2(position.X + 5, position.Y + 3), false);
+                        fireball = new Fireball(new Vector2(position.X + ValueHolder.fireballXSpawn, position.Y +
+                            ValueHolder.fireballYSpawn), false);
                     }
                     Game1.GetInstance().level.levelFireballs.Add(fireball);
                     fireballCount++;
@@ -202,15 +205,15 @@ namespace Sprint4
 
         public void Draw(SpriteBatch spriteBatch)
         {
-            if (isStar && starTimer % 5 != 0)
+            if (isStar && starTimer % modVal != 0)
             {
                 state.Draw(spriteBatch, position);
             }
-            if (invicibilityFrames % 5 != 0)
+            if (invicibilityFrames % modVal != 0)
             {
                 state.Draw(spriteBatch, position);
             }
-            if (!isStar && invicibilityFrames ==0)
+            if (!isStar && invicibilityFrames == 0)
             {
                 state.Draw(spriteBatch, position);
             }
