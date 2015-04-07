@@ -43,11 +43,11 @@ namespace Sprint4
             Game1.GetInstance().gameState = new PipeTransitionGameState(PipeTransitionGameState.direction.comeOut, pipe);
             this.mario = mario;
         }
-        public void Chew()
+        public void Chew(Mario mario)
         {
             mario.position.Y++;
         }
-        public void Gag()
+        public void Gag(Mario mario)
         {
             mario.position.Y--;
         }

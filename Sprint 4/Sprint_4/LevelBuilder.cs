@@ -41,7 +41,7 @@ namespace Sprint4
             backgroundDictionary.Add("bush3", SpriteFactory.sprites.bush3);
             backgroundDictionary.Add("exit", SpriteFactory.sprites.exit);
             backgroundDictionary.Add("ca", SpriteFactory.sprites.castle);
-            pipeDictionary.Add("Pi", PipeFactory.PipeFacing.up);
+            pipeDictionary.Add("upi", PipeFactory.PipeFacing.up);
             pipeDictionary.Add("lpi", PipeFactory.PipeFacing.left);
             pipeDictionary.Add("dpi", PipeFactory.PipeFacing.down);
             enemyDictionary.Add("K", EnemyFactory.EnemyType.Koopa);
@@ -54,6 +54,7 @@ namespace Sprint4
             blockDictionary.Add("!", BlockFactory.BlockType.exclamation);
             blockDictionary.Add("B", BlockFactory.BlockType.brick);
             blockDictionary.Add("g", BlockFactory.BlockType.ground);
+            blockDictionary.Add("Pi", BlockFactory.BlockType.brokenPipe);
             blockDictionary.Add("ug", BlockFactory.BlockType.undergroundFloor);
             blockDictionary.Add("ur", BlockFactory.BlockType.undergroundRoof);
             blockDictionary.Add("ul", BlockFactory.BlockType.undergroundLeftWall);
@@ -84,6 +85,7 @@ namespace Sprint4
                 string[] words = line.Split(',');
                 for (int i = 0; i < words.Length; i++)
                 {
+                    int events = 1;
                     if (words[i] == "M")
                     {
                         mario = new Mario(new Vector2(xCoord, yCoord));
@@ -119,9 +121,18 @@ namespace Sprint4
                     if (pipeDictionary.ContainsKey(words[i]))
                     {
                         Pipe pipe = pipeFactory.build(pipeDictionary[words[i]], new Vector2(xCoord, yCoord));
+                        i++;
+                        int exitPiX = int.Parse(words[i]);
+                        i++;
+                        int exitPiY = int.Parse(words[i]);
+                        i++;
+                        Pipe exitPipe = pipeFactory.build(pipeDictionary[words[i]], new Vector2((float)exitPiX, (float)exitPiY));
+                        pipe.exitPipe = exitPipe;
                         level.levelPipes.Add(pipe);
+                        level.levelPipes.Add(exitPipe);
+                        events = 4;
                     }
-                    xCoord+=spacingIncrement;
+                    xCoord+=spacingIncrement * events;
                 }
             }
             return mario;

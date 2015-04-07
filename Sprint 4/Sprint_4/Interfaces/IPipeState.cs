@@ -13,8 +13,8 @@ namespace Sprint4
         void Draw(SpriteBatch spriteBatch, Vector2 location);
         void Eat(Mario mario, Pipe pipe);
         void Puke(Mario mario, Pipe pipe);
-        void Chew();
-        void Gag();
+        void Chew(Mario mario);
+        void Gag(Mario mario);
         Rectangle GetBoundingBox(Vector2 location);
     }
 }

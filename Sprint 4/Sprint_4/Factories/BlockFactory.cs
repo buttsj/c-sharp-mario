@@ -14,7 +14,7 @@ namespace Sprint4
         {
             used, question, winged, exclamation, brick, ground, leftEdge, rightEdge, quesMush,
             quesCoin, ques1up, quesStar, quesFlower, undergroundRoof, undergroundFloor, undergroundLeftWall, undergroundRightWall,
-            undergroundLeftTop, undergroundRightTop, undergroundRightBottom, undergroundLeftBottom,
+            undergroundLeftTop, undergroundRightTop, undergroundRightBottom, undergroundLeftBottom, brokenPipe
         }
         SpriteFactory factory;
         IBlockState state;
@@ -116,6 +116,10 @@ namespace Sprint4
             if (type == BlockType.undergroundRightWall)
             {
                 state = new GenericBlockState(SpriteFactory.sprites.undergroundRightWall);
+            }
+            if (type == BlockType.brokenPipe)
+            {
+                state = new GenericBlockState(SpriteFactory.sprites.bluePipe);
             }
             Block product = new Block(location, prize, state);
             return product;

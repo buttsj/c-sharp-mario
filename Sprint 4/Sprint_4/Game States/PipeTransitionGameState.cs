@@ -28,15 +28,21 @@ namespace Sprint4
         {
             if (pipeTimer > 0 && mode == direction.goIn)
             {
-                pipe.Chew();
+                pipe.Chew(game.level.mario);
             }
             else if (pipeTimer > 0 && mode == direction.comeOut)
             {
-                pipe.Gag();
+                pipe.Gag(game.level.mario);
             }
-            else
+            else if(pipeTimer < 0 && mode == direction.goIn)
             {
-                game.level = new Level(game, "/Maps/MapCleaned.csv");
+                //game.background.CurrentSprite = game.background.UndergroundSprite;
+                game.level.mario.position = pipe.exitPipe.position;
+                game.gameCamera.LookAt(game.level.mario.position);
+                game.gameState = new PipeTransitionGameState(direction.comeOut, pipe.exitPipe);
+            }
+            else if (pipeTimer < 0 && mode == direction.comeOut)
+            {
                 game.gameState = new PlayGameState();
             }
             pipeTimer--;
