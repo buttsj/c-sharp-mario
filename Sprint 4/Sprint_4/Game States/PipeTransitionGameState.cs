@@ -36,15 +36,26 @@ namespace Sprint4
             }
             else if(pipeTimer < 0 && mode == direction.goIn)
             {
-                //game.background.CurrentSprite = game.background.UndergroundSprite;
                 game.level.mario.position = pipe.exitPipe.position;
                 game.gameCamera.LookAt(game.level.mario.position);
+                game.level.isUnderground = !game.level.isUnderground;
+                if (game.level.isUnderground)
+                {
+                    game.background.CurrentSprite = game.background.UndergroundSprite;
+                    SoundManager.StopMusic();
+                    SoundManager.PlaySong(SoundManager.songs.underground);
+                }
+                else
+                {
+                    game.background.CurrentSprite = game.background.OverworldSprite;
+                    SoundManager.StopMusic();
+                    SoundManager.PlaySong(SoundManager.songs.overworld);
+                }
                 game.gameState = new PipeTransitionGameState(direction.comeOut, pipe.exitPipe);
             }
             else if (pipeTimer < 0 && mode == direction.comeOut)
             {
                 game.gameState = new PlayGameState();
-                game.level.isUnderground = !game.level.isUnderground;
             }
             pipeTimer--;
         }
