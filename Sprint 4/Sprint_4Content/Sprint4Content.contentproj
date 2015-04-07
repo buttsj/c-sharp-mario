@@ -839,6 +839,11 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="HUD Fonts\PauseFont.spritefont">
+      <Name>PauseFont</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+    </Compile>
     <None Include="README.txt">
       <Name>README</Name>
     </None>

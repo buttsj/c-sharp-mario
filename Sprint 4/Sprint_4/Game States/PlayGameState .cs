@@ -17,6 +17,7 @@ namespace Sprint4
             game = Game1.GetInstance();
             game.keyboardController = new KeyboardController(game.level.mario);
             game.gamepadController = new GamepadController(game.level.mario);
+            game.gameHUD.PausedCheck = false;
         }
         public void Update(GameTime gameTime)
         {

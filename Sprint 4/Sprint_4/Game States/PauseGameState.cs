@@ -19,6 +19,7 @@ namespace Sprint4
             game.keyboardController = new PauseMenuKeyController();
             game.gamepadController = new PauseMenuGamepadController();
             SoundManager.pause.Play();
+            game.gameHUD.PausedCheck = true;
         }
 
         public void Update(GameTime gameTime)

@@ -25,6 +25,8 @@ namespace Sprint4
         public float currentTime = 0f;
         public Game1 game;
         public Color textColor = Color.Black;
+        public bool PausedCheck = false;
+        public SpriteFont Paused;
 
         public HUD(Game1 game)
         {
@@ -44,6 +46,7 @@ namespace Sprint4
             TimeSprite = Game1.gameContent.Load<Texture2D>("HUD Sprites/TimeSprite");
             TimeFont = Game1.gameContent.Load<SpriteFont>("HUD Fonts/TimeFont");
             ScoreFont = Game1.gameContent.Load<SpriteFont>("HUD Fonts/ScoreFont");
+            Paused = Game1.gameContent.Load<SpriteFont>("HUD Fonts/PauseFont");
         }
 
         public void Update(GameTime gameTime)
@@ -79,6 +82,11 @@ namespace Sprint4
             spriteBatch.Draw(TimeSprite, ValueHolder.timeSpritePos, Color.White);
             spriteBatch.DrawString(TimeFont, "" + Time, ValueHolder.timeTextPos, textColor);
             spriteBatch.DrawString(ScoreFont, "" + Score, ValueHolder.scoreTextPos, textColor);
+            if (PausedCheck)
+            {
+                spriteBatch.DrawString(Paused, "PAUSED", game.gameCamera.CenterScreen + ValueHolder.textPosition, Color.Black);
+            }
+
         }
     }
 }
