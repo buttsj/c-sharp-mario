@@ -29,6 +29,7 @@ namespace Sprint4
         public SpriteFont Paused;
         public int pointMultiplier = 1;
         bool changedMusic = false;
+        public bool gameEnded = false;
 
         public HUD(Game1 game)
         {
@@ -64,13 +65,13 @@ namespace Sprint4
                 Time--;
                 currentTime -= countDuration;
             }
-            if (Time == ValueHolder.hurryTime && !changedMusic)
+            if (Time == ValueHolder.hurryTime && !changedMusic && !gameEnded)
             {
                 changedMusic = true;
                 SoundManager.StopMusic();
                 SoundManager.PlaySong(SoundManager.songs.overworldFast);
             }
-            if (Time == 0)
+            if (Time == 0 && !gameEnded)
             {
                 game.level.mario.state.MakeDeadMario();
                 Game1.GetInstance().gameState = new DeadGameState(game.level.mario);

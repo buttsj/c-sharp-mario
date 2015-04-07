@@ -21,6 +21,7 @@ namespace Sprint4
             SoundManager.StopMusic();
             SoundManager.clear.Play();
             right = new RightCommand(game.level.mario);
+            game.gameHUD.gameEnded = true;
         }
 
         public void Update(GameTime gameTime)
