@@ -23,6 +23,7 @@ namespace Sprint4
         }
         public void Update(GameTime gameTime)
         {
+            game.gameHUD.Update(gameTime);
             Rectangle prevRect = prevState.GetBoundingBox(mario.position);
             Rectangle newRect = newState.GetBoundingBox(mario.position);
             timer--;

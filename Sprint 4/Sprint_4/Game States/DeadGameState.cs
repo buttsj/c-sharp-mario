@@ -55,6 +55,7 @@ namespace Sprint4
         public void Draw(SpriteBatch spriteBatch)
         {
             game.level.Draw(spriteBatch);
+            game.gameHUD.Draw(spriteBatch);
         }
     }
 }

@@ -25,6 +25,7 @@ namespace Sprint4
 
         public void Update(GameTime gameTime)
         {
+            game.gameHUD.Update(gameTime);
             if (walkTimer > 0)
             {
                 if (slowFrames == ValueHolder.slowdownRate)

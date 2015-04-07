@@ -72,12 +72,12 @@ namespace Sprint4
         public void Draw(SpriteBatch spriteBatch)
         {
             spriteBatch.Draw(CoinSprite, ValueHolder.coinSpritePos, Color.White);
-            spriteBatch.DrawString(CoinsFont, "" + Coins, ValueHolder.coinTextPos, Color.Black);
+            spriteBatch.DrawString(CoinsFont, "" + Coins, ValueHolder.coinTextPos, Color.White);
             spriteBatch.Draw(LivesSprite, ValueHolder.livesSpritePos, Color.White);
-            spriteBatch.DrawString(LivesFont, "X    " + Lives, ValueHolder.livesTextPos, Color.Black);
+            spriteBatch.DrawString(LivesFont, "X    " + Lives, ValueHolder.livesTextPos, Color.White);
             spriteBatch.Draw(TimeSprite, ValueHolder.timeSpritePos, Color.White);
-            spriteBatch.DrawString(TimeFont, "" + Time, ValueHolder.timeTextPos, Color.Black);
-            spriteBatch.DrawString(ScoreFont, "" + Score, ValueHolder.scoreTextPos, Color.Black);
+            spriteBatch.DrawString(TimeFont, "" + Time, ValueHolder.timeTextPos, Color.White);
+            spriteBatch.DrawString(ScoreFont, "" + Score, ValueHolder.scoreTextPos, Color.White);
         }
     }
 }

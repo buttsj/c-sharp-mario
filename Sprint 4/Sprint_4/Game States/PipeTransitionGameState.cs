@@ -26,6 +26,7 @@ namespace Sprint4
 
         public void Update(GameTime gameTime)
         {
+            game.gameHUD.Update(gameTime);
             if (pipeTimer > 0 && mode == direction.goIn)
             {
                 pipe.Chew(game.level.mario);

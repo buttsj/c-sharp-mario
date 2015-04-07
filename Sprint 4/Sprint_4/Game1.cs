@@ -23,7 +23,7 @@ namespace Sprint4
         public static SoundManager soundManager;
         public static ValueHolder valueHolder;
         public Camera gameCamera;
-        public bool isPaused = false, isVictory = false;
+        public bool isPaused = false, isVictory = false, isGameOver = false;
         private static Game1 sInstance = new Game1();
         public BackgroundHolder background;
         public HUD gameHUD;
@@ -58,7 +58,6 @@ namespace Sprint4
         protected override void Update(GameTime gameTime)
         {
             gameState.Update(gameTime);
-            gameHUD.Update(gameTime);
             base.Update(gameTime);
         }
 
@@ -68,13 +67,15 @@ namespace Sprint4
 
             spriteBatch.Begin();
             background.Draw(spriteBatch);
-            gameHUD.Draw(spriteBatch);
             spriteBatch.End();
 
             spriteBatch.Begin(SpriteSortMode.Deferred, null, null, null, null, null, gameCamera.GetViewMatrix());
             gameState.Draw(spriteBatch);
             spriteBatch.End();
 
+            spriteBatch.Begin();
+            gameHUD.Draw(spriteBatch);
+            spriteBatch.End();
 
             base.Draw(gameTime);
         }
