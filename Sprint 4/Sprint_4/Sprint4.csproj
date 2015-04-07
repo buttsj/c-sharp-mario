@@ -219,6 +219,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="CODE REVIEWS\CodeReadabilityThomas.txt" />
+    <Content Include="CODE REVIEWS\CodeReadabilityJack.txt" />
     <Content Include="Game.ico" />
     <Content Include="GameThumbnail.png">
       <XnaPlatformSpecific>true</XnaPlatformSpecific>

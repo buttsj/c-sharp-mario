@@ -1,0 +1,17 @@
+Code Readability Review
+
+Author: John (Jack) Butts
+Date: 04/07/2015
+Sprint: Five
+Class Reviewed: EnemyCollisionResponder.cs
+Class Author: Caleb Underwood
+Time taken for review: 7 minutes
+
+Comments:
+- Contains a magic number (int bounce = -10;)
+
+- On a collision it adds a set value (contained in another class) to the HUD's score
+
+- Easy to understand, simple to read
+
+- Bounce's purpose makes sense in this class (use it after hitting an enemy)
