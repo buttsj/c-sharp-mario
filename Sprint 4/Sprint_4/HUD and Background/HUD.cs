@@ -27,6 +27,7 @@ namespace Sprint4
         public Color textColor = Color.Black;
         public bool PausedCheck = false;
         public SpriteFont Paused;
+        public int pointMultiplier = 1;
 
         public HUD(Game1 game)
         {

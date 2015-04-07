@@ -18,6 +18,7 @@ namespace Sprint4
             mario.Land();
             mario.velocity.Y = 0;
             this.mario = mario;
+            Game1.GetInstance().gameHUD.pointMultiplier = 1;
         }
         public void Update(Mario mario, GameTime gameTime)
         {
@@ -25,7 +26,7 @@ namespace Sprint4
             mario.position += mario.velocity * ((float)gameTime.ElapsedGameTime.Milliseconds / positionDtAdjust);
 
             mario.velocity *= speedDecayRate;
-            if (Game1.GetInstance().level.collision.standingBlocks.Count == 0 ||
+            if (Game1.GetInstance().level.collision.standingBlocks.Count == 0 &&
                 Game1.GetInstance().level.collision.standingPipes.Count == 0)
             {
                 mario.physState = new FallingState();
