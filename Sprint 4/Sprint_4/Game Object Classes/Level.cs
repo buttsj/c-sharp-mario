@@ -41,6 +41,7 @@ namespace Sprint4
 
         public void Update(GameTime gameTime)
         {
+            game.background.CurrentSprite.Update(gameTime);
             foreach (KeyValuePair<IAnimatedSprite, Vector2> backgroundObject in levelBackgroundObjects)
             {
                 backgroundObject.Key.Update(gameTime);

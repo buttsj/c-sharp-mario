@@ -53,5 +53,8 @@ namespace Sprint4
 
         //camera
         public static int camClamp = -200;
+
+        //BG
+        public static Rectangle undergroundBGPos = new Rectangle(0, 0, 1000, 600);
     }
 }

@@ -54,7 +54,7 @@ namespace Sprint4
             Rectangle sourceRectangle = new Rectangle(width * column, height * row, width, height);
             Rectangle destinationRectangle = new Rectangle((int)location.X, (int)location.Y, width, height);
 
-            spriteBatch.Draw(Texture, destinationRectangle, sourceRectangle, Color.White);
+            spriteBatch.Draw(Texture, ValueHolder.undergroundBGPos, sourceRectangle, Color.White);
         }
     }
 }
