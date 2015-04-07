@@ -65,7 +65,7 @@ namespace Sprint4
             }
             if (Time == ValueHolder.hurryTime)
             {
-                // Play fast paced music
+                SoundManager.PlaySong(SoundManager.songs.overworldFast);
             }
             if (Time == 0)
             {

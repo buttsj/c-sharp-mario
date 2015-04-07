@@ -11,11 +11,11 @@ namespace Sprint4
     public class SoundManager
     {
         Game1 game;
-        public static Song athletic, star, overworld, underground, placeHolderSong;
+        public static Song athletic, star, overworld, underground, placeHolderSong, overworldFast;
         public static SoundEffect coinCollect, brickBreak, grow, shrink, blockHit, oneUp, enemyDamage, jump, itemSpawn,
             pause, death, gameOver, fireball, launch, clear;
             
-        public enum songs{athletic, star, overworld, underground}
+        public enum songs{athletic, star, overworld, underground, overworldFast}
         public SoundManager(Game1 game){
             this.game = game;
             jump = game.Content.Load<SoundEffect>("Sound/SFX/SFX Jump");
@@ -38,6 +38,7 @@ namespace Sprint4
             overworld = game.Content.Load<Song>("Sound/Music/Overworld BGM");
             underground = game.Content.Load<Song>("Sound/Music/Underground BGM");
             clear = game.Content.Load<SoundEffect>("Sound/Music/Course Clear Fanfare");
+            overworldFast = game.Content.Load<Song>("Sound/Music/OverworldTimeRunningOut");
         }
         public static void PlaySong(SoundManager.songs song)
         {
@@ -56,6 +57,10 @@ namespace Sprint4
             if (song == SoundManager.songs.underground)
             {
                 placeHolderSong = underground;
+            }
+            if (song == SoundManager.songs.overworldFast)
+            {
+                placeHolderSong = overworldFast;
             }
             MediaPlayer.Play(placeHolderSong);
             MediaPlayer.IsRepeating = true;
