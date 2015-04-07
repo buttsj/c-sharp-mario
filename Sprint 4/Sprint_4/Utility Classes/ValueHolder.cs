@@ -46,7 +46,7 @@ namespace Sprint4
         public static Vector2 scoreTextPos = new Vector2(650, 55);
         public static Color blackScreenText = Color.White;
         public static Color normalScreenText = Color.Black;
-        public static int startingTime = 110;
+        public static int startingTime = 300;
         public static int hurryTime = 100;
 
         //fireball

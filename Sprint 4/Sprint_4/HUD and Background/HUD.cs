@@ -28,6 +28,7 @@ namespace Sprint4
         public bool PausedCheck = false;
         public SpriteFont Paused;
         public int pointMultiplier = 1;
+        bool changedMusic = false;
 
         public HUD(Game1 game)
         {
@@ -63,8 +64,10 @@ namespace Sprint4
                 Time--;
                 currentTime -= countDuration;
             }
-            if (Time == ValueHolder.hurryTime)
+            if (Time == ValueHolder.hurryTime && !changedMusic)
             {
+                changedMusic = true;
+                SoundManager.StopMusic();
                 SoundManager.PlaySong(SoundManager.songs.overworldFast);
             }
             if (Time == 0)
