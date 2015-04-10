@@ -24,6 +24,7 @@ namespace Sprint4
         void MakeFireMario();
         void MakeFireballMario();
         void MakeDeadMario();
+        void Flip();
         Rectangle GetBoundingBox(Vector2 location);
     }
 }

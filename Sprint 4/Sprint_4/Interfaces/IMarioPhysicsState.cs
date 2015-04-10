@@ -10,5 +10,6 @@ namespace Sprint4
     {
         void Update(Mario mario, GameTime gameTime);
         void Run();
+        void Flip();
     }
 }

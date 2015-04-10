@@ -34,5 +34,6 @@ namespace Sprint4
             }
         }
         public void Run() { }
+        public void Flip() { }
     }
 }

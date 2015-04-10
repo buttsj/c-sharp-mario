@@ -59,6 +59,7 @@ namespace Sprint4
         public void MakeDeadMario()
         {
         }
+        public void Flip() { }
         public void Update(GameTime gameTime)
         {
             Sprite.Update(gameTime);

@@ -223,6 +223,12 @@ namespace Sprint4
         {
             Game1.GetInstance().gameState = new TransitionGameState(this, prevState, newState);
         }
+
+        public void Flip()
+        {
+            state.Flip();
+            physState.Flip();
+        }
        }
     }
 

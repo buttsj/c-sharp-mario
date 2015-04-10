@@ -40,5 +40,6 @@ namespace Sprint4
                 mario.state.Sprite.UpdateSpeed-=2;
             }
         }
+        public void Flip() { }
     }
 }

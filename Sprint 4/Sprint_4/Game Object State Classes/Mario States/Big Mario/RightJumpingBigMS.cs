@@ -70,6 +70,7 @@ namespace Sprint4
         {
             mario.state = new DeadMS(mario);
         }
+        public void Flip() { }
         public void Update(GameTime gameTime)
         {
             Sprite.Update(gameTime);

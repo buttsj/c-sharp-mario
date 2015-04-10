@@ -77,6 +77,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Collision Detection and Response\PipeCollisionResponder.cs" />
+    <Compile Include="Command Classes\FlipCommand.cs" />
+    <Compile Include="Controller Classes\VVVVVVPadController.cs" />
+    <Compile Include="Controller Classes\VVVVVVKeyController.cs" />
     <Compile Include="Factories\PipeFactory.cs" />
     <Compile Include="Game Object Classes\Pipe.cs" />
     <Compile Include="Game Object Sprite Classes\MarioMovingSprite.cs" />
@@ -86,6 +89,7 @@
     <Compile Include="Game Object State Classes\PipeStates\UpPipeState.cs" />
     <Compile Include="Game Object State Classes\PipeStates\DownPipeState.cs" />
     <Compile Include="Game States\PipeTransitionGameState.cs" />
+    <Compile Include="Game States\VVVVVVGameState.cs" />
     <Compile Include="Game States\VictoryGameState.cs" />
     <Compile Include="Game Object Sprite Classes\GateSprite.cs" />
     <Compile Include="HUD and Background\BackgroundHolder.cs" />
@@ -143,6 +147,7 @@
     <Compile Include="Physics States\Enemy Physics\EnemyGroundState.cs" />
     <Compile Include="Physics States\Item Physics\ItemGroundState.cs" />
     <Compile Include="Physics States\Item Physics\ItemFallingState.cs" />
+    <Compile Include="Physics States\Mario Physics\VVVVVVPhysState.cs" />
     <Compile Include="Physics States\Mario Physics\FallingState.cs" />
     <Compile Include="Game Object Classes\Block.cs" />
     <Compile Include="Game Object Classes\Enemy.cs" />
