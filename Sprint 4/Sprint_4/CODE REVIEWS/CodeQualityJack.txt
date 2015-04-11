@@ -1,0 +1,19 @@
+CODE QUALITY
+
+Author: John (Jack) Butts
+Date: 4/11/2015
+Sprint: Five
+Name of .cs file: EnemyCollisionResponder.cs
+Author of .cs file: Caleb Underwood
+
+Comments:
+- Class contains two methods:
+	- One for Mario colliding with Enemies
+	- One for Enemies colliding with Enemies
+
+- Coupling is low, making reference only to the object given (enemy or mario)
+
+- Overall an effective collision detection class
+
+Possible Change(s):
+- Rename the methods to MarioCollidesEnemy and EnemyCollidesEnemy

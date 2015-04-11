@@ -8,7 +8,6 @@ namespace Sprint4
 {
     public class EnemyCollisionResponder
     {
-        ISpriteFactory factory = new SpriteFactory();
         Game1 game;
         int bounce = -10;
         
