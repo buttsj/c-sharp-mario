@@ -9,7 +9,6 @@ namespace Sprint4
 {
     public class BlockCollisionResponder
     {
-        ISpriteFactory factory = new SpriteFactory();
         Game1 game;
         SoundEffectInstance hitBlock;
         int brickBreakPoints = 50;

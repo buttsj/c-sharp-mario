@@ -9,7 +9,6 @@ namespace Sprint4
 {
     public class PipeCollisionResponder
     {
-        ISpriteFactory factory = new SpriteFactory();
         Game1 game;
 
         public PipeCollisionResponder(Game1 game)

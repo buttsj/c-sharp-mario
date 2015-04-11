@@ -8,7 +8,6 @@ namespace Sprint4
 {
     public class ItemCollisionResponder
     {
-        ISpriteFactory factory = new SpriteFactory();
         Game1 game;
 
         public ItemCollisionResponder(Game1 game)
