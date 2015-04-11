@@ -58,6 +58,5 @@ namespace Sprint4
 
         //BG
         public static Rectangle undergroundBGPos = new Rectangle(0, 0, 1000, 600);
-
     }
 }

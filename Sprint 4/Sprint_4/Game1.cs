@@ -21,7 +21,6 @@ namespace Sprint4
         public IGameState gameState;
         public Level level;
         public static SoundManager soundManager;
-        public static ValueHolder valueHolder;
         public Camera gameCamera;
         public bool isPaused = false, isVictory = false, isGameOver = false;
         private static Game1 sInstance = new Game1();
@@ -38,10 +37,9 @@ namespace Sprint4
         protected override void Initialize()
         {
             soundManager = new SoundManager(this);
-            valueHolder = new ValueHolder();
             gameCamera = new Camera(GraphicsDevice.Viewport, this);
             gameHUD = new HUD(this);
-            level = new Level(this, "/Maps/MapCleaned.csv");
+            level = new Level(this, StringHolder.levelOne);
             gameState = new PlayGameState();
             keyboardController = new KeyboardController(level.mario);
             gamepadController = new GamepadController(level.mario);

@@ -17,7 +17,7 @@ namespace Sprint4
         {
             game = Game1.GetInstance();
             game.gameHUD.Lives--;
-            font = game.Content.Load<SpriteFont>("Fonts/SpriteFont1");
+            font = game.Content.Load<SpriteFont>(StringHolder.bigTextFont);
             game.keyboardController = new PauseMenuKeyController();
             game.gameHUD.Time = ValueHolder.startingTime;
             game.gameHUD.textColor = ValueHolder.blackScreenText;
@@ -28,7 +28,7 @@ namespace Sprint4
             timer--;
             if (timer <= 0)
             {
-                game.level = new Level(game, "/Maps/MapCleaned.csv");
+                game.level = new Level(game, StringHolder.levelOne);
                 game.gameState = new PlayGameState();
                 game.gameHUD.textColor = ValueHolder.normalScreenText;
             }
@@ -39,7 +39,8 @@ namespace Sprint4
         {
             game.GraphicsDevice.Clear(Color.Black);
             game.gameCamera.LookAt(game.gameCamera.CenterScreen);
-            spriteBatch.DrawString(font, "Lives: " + game.gameHUD.Lives, game.gameCamera.CenterScreen + ValueHolder.textPosition, Color.White);
+            spriteBatch.DrawString(font, StringHolder.livesText + game.gameHUD.Lives, game.gameCamera.CenterScreen + 
+                ValueHolder.textPosition, Color.White);
         }
     }
 }

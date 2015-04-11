@@ -16,7 +16,7 @@ namespace Sprint4
         {
             game = Game1.GetInstance();
             game.isGameOver = true;
-            font = game.Content.Load<SpriteFont>("Fonts/SpriteFont1");
+            font = game.Content.Load<SpriteFont>(StringHolder.bigTextFont);
             SoundManager.StopMusic();
             SoundManager.gameOver.Play();
             game.keyboardController = new PauseMenuKeyController();
@@ -33,7 +33,8 @@ namespace Sprint4
         {
             game.GraphicsDevice.Clear(Color.Black);
             game.gameCamera.LookAt(game.gameCamera.CenterScreen);
-            spriteBatch.DrawString(font, "Game Over", game.gameCamera.CenterScreen + ValueHolder.textPosition, Color.White);
+            spriteBatch.DrawString(font, StringHolder.gameOverMessage, game.gameCamera.CenterScreen + ValueHolder.textPosition, 
+                Color.White);
         }
     }
 }
