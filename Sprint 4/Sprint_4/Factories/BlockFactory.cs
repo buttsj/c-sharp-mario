@@ -12,7 +12,7 @@ namespace Sprint4
     {
         public enum BlockType
         {
-            used, question, winged, exclamation, brick, ground, leftEdge, rightEdge, quesMush,
+            used, question, exclamation, brick, ground, leftEdge, rightEdge, quesMush,
             quesCoin, ques1up, quesStar, quesFlower, undergroundRoof, undergroundFloor, undergroundLeftWall, undergroundRightWall,
             undergroundLeftTop, undergroundRightTop, undergroundRightBottom, undergroundLeftBottom, brokenPipe
         }
@@ -35,10 +35,6 @@ namespace Sprint4
             if (type == BlockType.question)
             {
                 state = new QuestionBlockState();
-            }
-            if (type == BlockType.winged)
-            {
-                state = new WingedBlockState();
             }
             if (type == BlockType.exclamation)
             {

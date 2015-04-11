@@ -18,7 +18,7 @@ namespace Sprint4
             // Items
             oneUpMushroom, fireFlower, superMushroom, coin, star, fireball,
             // Blocks
-            questionBlock, brickBlock, usedBlock, wingedBlock, exclamationBlock, 
+            questionBlock, brickBlock, usedBlock, exclamationBlock, 
             // Background items
             bluePipe, bush1, bush2, bush3, launcherPiper, launcherPipeSupport, yellowPipe, whitePipe, leftPipe, downPipe, exitSign,
             ground, rightEdge, leftEdge, undergroundBackground, overworldBackground, overworldHillsBackground,undergroundFloor,
@@ -217,11 +217,6 @@ namespace Sprint4
             {
                 Texture2D stoneBlock = Game1.gameContent.Load<Texture2D>("Items/stoneBlock");
                 return new StaticSprite(stoneBlock);
-            }
-            if (sprite == sprites.wingedBlock)
-            {
-                Texture2D wingedBlock = Game1.gameContent.Load<Texture2D>("Items/wingedBlock");
-                return new WingedBlockSprite(wingedBlock, 1, 2);
             }
             if (sprite == sprites.exclamationBlock)
             {

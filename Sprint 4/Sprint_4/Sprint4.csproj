@@ -168,7 +168,6 @@
     <Compile Include="Game Object State Classes\Block States\PipeBlockState.cs" />
     <Compile Include="Game Object State Classes\Block States\QuestionBlockState.cs" />
     <Compile Include="Game Object State Classes\Block States\StoneBlockState.cs" />
-    <Compile Include="Game Object State Classes\Block States\WingedBlockState.cs" />
     <Compile Include="Game Object State Classes\Enemy States\Banzai Bill States\BanzaiBillState.cs" />
     <Compile Include="Game Object State Classes\Enemy States\Dino States\DeadDinoState.cs" />
     <Compile Include="Game Object State Classes\Enemy States\Dino States\LeftSmashedDinoState.cs" />

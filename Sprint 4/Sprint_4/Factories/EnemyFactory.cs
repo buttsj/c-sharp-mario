@@ -10,7 +10,7 @@ namespace Sprint4
 {
     public class EnemyFactory
     {
-        public enum EnemyType { Dino, Koopa, Bill, SmashedDino}
+        public enum EnemyType { Dino, Koopa, Bill}
         IEnemyState state;
 
         public EnemyFactory()
@@ -26,10 +26,6 @@ namespace Sprint4
             if (type == EnemyFactory.EnemyType.Koopa)
             {
                 state = new LeftWalkingShellessKS();
-            }
-            if (type == EnemyFactory.EnemyType.SmashedDino)
-            {
-                state = new LeftSmashedDinoState();
             }
             if (type == EnemyFactory.EnemyType.Bill)
             {

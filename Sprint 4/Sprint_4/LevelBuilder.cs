@@ -47,8 +47,6 @@ namespace Sprint4
             enemyDictionary.Add("K", EnemyFactory.EnemyType.Koopa);
             enemyDictionary.Add("Tdin", EnemyFactory.EnemyType.Dino);
             enemyDictionary.Add("Bill", EnemyFactory.EnemyType.Bill);
-            enemyDictionary.Add("Sdin", EnemyFactory.EnemyType.SmashedDino);
-            blockDictionary.Add("Wing", BlockFactory.BlockType.winged);
             blockDictionary.Add("X", BlockFactory.BlockType.used);
             blockDictionary.Add("?", BlockFactory.BlockType.question);
             blockDictionary.Add("!", BlockFactory.BlockType.exclamation);
