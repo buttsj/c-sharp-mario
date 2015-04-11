@@ -14,7 +14,6 @@ namespace Sprint4
         {
             up, down, left, right
         }
-        SpriteFactory factory;
         IPipeState state;
 
         public PipeFactory()

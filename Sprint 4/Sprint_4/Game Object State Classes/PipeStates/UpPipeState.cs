@@ -12,7 +12,6 @@ namespace Sprint4
         IAnimatedSprite sprite;
         ISpriteFactory factory;
         Mario mario;
-        int animTimer = 100;
         
         public UpPipeState()
         {
@@ -27,7 +26,6 @@ namespace Sprint4
 
         public void Update(GameTime gameTime)
         {
-            //null
         }
         public void Draw(SpriteBatch spriteBatch, Vector2 location)
         {

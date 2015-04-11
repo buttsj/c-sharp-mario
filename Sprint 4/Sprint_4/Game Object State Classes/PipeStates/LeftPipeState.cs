@@ -12,7 +12,6 @@ namespace Sprint4
         IAnimatedSprite sprite;
         ISpriteFactory factory;
         Mario mario;
-        int animTimer = 100;
         
         public LeftPipeState()
         {
