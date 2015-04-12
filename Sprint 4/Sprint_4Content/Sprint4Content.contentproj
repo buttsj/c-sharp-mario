@@ -483,6 +483,10 @@
       <Importer>FontDescriptionImporter</Importer>
       <Processor>FontDescriptionProcessor</Processor>
     </Compile>
+    <None Include="Maps\VVVVVVTestMap.csv">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <Name>VVVVVVTestMap</Name>
+    </None>
     <None Include="Maps\MapCleaned.csv">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <Name>MapCleaned</Name>
@@ -904,6 +908,34 @@
       <Name>AchievementUnlocked</Name>
       <Importer>Mp3Importer</Importer>
       <Processor>SongProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Mario Sprites\Small Mario\leftIdleMarioSmallFlip.png">
+      <Name>leftIdleMarioSmallFlip</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Mario Sprites\Small Mario\leftMovingMarioSmallFlip.png">
+      <Name>leftMovingMarioSmallFlip</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Mario Sprites\Small Mario\rightMovingMarioSmallFlip.png">
+      <Name>rightMovingMarioSmallFlip</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Mario Sprites\Small Mario\rightIdleMarioSmallFlip.png">
+      <Name>rightIdleMarioSmallFlip</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
     </Compile>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\XNA Game Studio\$(XnaFrameworkVersion)\Microsoft.Xna.GameStudio.ContentPipeline.targets" />

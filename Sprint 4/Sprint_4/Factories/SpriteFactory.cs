@@ -37,7 +37,9 @@ namespace Sprint4
             // Mario small
             deadMario, leftCrouchingMarioSmall, leftIdleMarioSmall, leftJumpingMarioSmall, 
             leftMovingMarioSmall, rightCrouchingMarioSmall, rightIdleMarioSmall, rightJumpingMarioSmall, 
-            rightMovingMarioSmall, leftSprintMarioSmall, rightSprintMarioSmall, victoryMarioSmall
+            rightMovingMarioSmall, leftSprintMarioSmall, rightSprintMarioSmall, victoryMarioSmall,
+            // Mario flip
+            leftIdleMarioFlip, rightIdleMarioFlip, leftMovingMarioFlip, rightMovingMarioFlip
         }
 
         public SpriteFactory()
@@ -459,6 +461,28 @@ namespace Sprint4
             {
                 Texture2D rightFireballMarioFire = Game1.gameContent.Load<Texture2D>("Mario Sprites/Fire Mario/rightFireballMarioFire");
                 return new StaticSprite(rightFireballMarioFire);
+            }
+
+            // FLIP MARIO
+            if (sprite == sprites.leftIdleMarioFlip)
+            {
+                Texture2D leftIdleMarioFlip = Game1.gameContent.Load<Texture2D>("Mario Sprites/Small Mario/leftIdleMarioSmallFlip");
+                return new StaticSprite(leftIdleMarioFlip);
+            }
+            if (sprite == sprites.rightIdleMarioFlip)
+            {
+                Texture2D rightIdleMarioFlip = Game1.gameContent.Load<Texture2D>("Mario Sprites/Small Mario/rightIdleMarioSmallFlip");
+                return new StaticSprite(rightIdleMarioFlip);
+            }
+            if (sprite == sprites.leftMovingMarioFlip)
+            {
+                Texture2D leftMovingMarioFlip = Game1.gameContent.Load<Texture2D>("Mario Sprites/Small Mario/leftMovingMarioSmallFlip");
+                return new MarioMovingSprite(leftMovingMarioFlip, 1, 2);
+            }
+            if (sprite == sprites.rightMovingMarioFlip)
+            {
+                Texture2D rightMovingMarioFlip = Game1.gameContent.Load<Texture2D>("Mario Sprites/Small Mario/rightMovingMarioSmallFlip");
+                return new MarioMovingSprite(rightMovingMarioFlip, 1, 2);
             }
 
             return product;

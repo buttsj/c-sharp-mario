@@ -11,25 +11,18 @@ namespace Sprint4
         Vector2 fallingVelocityDecayRate = new Vector2((float).90, 1);
         Vector2 fallingVelocity = new Vector2(0, (float)1.2);
         float positionDtAdjust = 50;
+        int gravity = 1;
 
         public VVVVVVPhysState()
         {
         }
         public void Update(Mario mario, GameTime gameTime)
         {
-            mario.position += mario.velocity * ((float)gameTime.ElapsedGameTime.Milliseconds / positionDtAdjust);
-            mario.velocity += fallingVelocity;
-            mario.velocity *= fallingVelocityDecayRate;
-            if (mario.velocity.Y > mario.maxVelocity.Y){
-                mario.velocity.Y = mario.maxVelocity.Y;
-            }
-            if(Game1.GetInstance().level.collision.standingBlocks.Count > 0 ||
-                Game1.GetInstance().level.collision.standingPipes.Count > 0)
-            {
-                mario.physState = new GroundState(mario);
-            }
+            mario.position.Y += gravity;
         }
         public void Run() { }
-        public void Flip() { }
+        public void Flip() { 
+            gravity = -gravity;
+        }
     }
 }

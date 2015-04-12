@@ -19,6 +19,7 @@ namespace Sprint4
             game.gamepadController = new VVVVVVPadController(game.level.mario);
             game.gameHUD.PausedCheck = false;
             game.gameHUD.gameEnded = false;
+            game.isVVVVVV = true;
         }
         public void Update(GameTime gameTime)
         {

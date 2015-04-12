@@ -53,16 +53,23 @@ namespace Sprint4
                 }
                 else
                 {
-                    mario.position.Y = mario.position.Y + intersection.Height;
-                    block.Reaction();
-                    mario.physState = new FallingState();
-                    hitBlock.Play();
-                    mario.marioHeight = 0;
-                    if (block.state.GetType().Equals(new BrickBlockState().GetType()) && mario.isBig)
+                    if (!game.isVVVVVV)
                     {
-                        destroyedBlocks.Add(block);
-                        game.gameHUD.Score += brickBreakPoints;
-                        SoundManager.brickBreak.Play();
+                        mario.position.Y = mario.position.Y + intersection.Height;
+                        block.Reaction();
+                        mario.physState = new FallingState();
+                        hitBlock.Play();
+                        mario.marioHeight = 0;
+                        if (block.state.GetType().Equals(new BrickBlockState().GetType()) && mario.isBig)
+                        {
+                            destroyedBlocks.Add(block);
+                            game.gameHUD.Score += brickBreakPoints;
+                            SoundManager.brickBreak.Play();
+                        }
+                    }
+                    else
+                    {
+                        mario.position.Y = mario.position.Y + intersection.Height;
                     }
                 }
             }

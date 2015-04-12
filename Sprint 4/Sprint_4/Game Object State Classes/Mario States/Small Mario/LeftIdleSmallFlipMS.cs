@@ -7,15 +7,15 @@ using System.Text;
 
 namespace Sprint4
 {
-    class LeftMovingSmallMS : IMarioState
+    class LeftIdleSmallFlipMS : IMarioState
     {
-        Mario mario;
         public IAnimatedSprite Sprite { get; set; }
+        Mario mario;
 
-        public LeftMovingSmallMS(Mario mario)
+        public LeftIdleSmallFlipMS(Mario mario)
         {
             ISpriteFactory factory = new SpriteFactory();
-            Sprite = factory.build(SpriteFactory.sprites.leftMovingMarioSmall);
+            Sprite = factory.build(SpriteFactory.sprites.leftIdleMarioFlip);
             this.mario = mario;
         }
         public Rectangle GetBoundingBox(Vector2 location)
@@ -29,23 +29,23 @@ namespace Sprint4
         }
         public void Up()
         {
-            mario.state = new LeftJumpingSmallMS(mario);
+            mario.state = new LeftJumpingSmallMS(mario);         
         }
         public void Down()
         {
-            mario.state = new LeftCrouchingSmallMS(mario);
+            mario.state = new LeftCrouchingSmallMS(mario);          
         }
         public void GoLeft()
         {
-            mario.position.X--;
+            mario.state = new LeftMovingSmallFlipMS(mario);            
         }
         public void GoRight()
         {
-            mario.state = new RightMovingSmallMS(mario);
+            mario.state = new RightMovingSmallFlipMS(mario);            
         }
         public void Idle()
         {
-            mario.state = new LeftIdleSmallMS(mario);
+
         }
         public void Land()
         {
@@ -53,15 +53,15 @@ namespace Sprint4
         }
         public void MakeBigMario()
         {
-            mario.TransitionState(mario.state, new LeftMovingBigMS(mario));
+            mario.TransitionState(mario.state, new LeftIdleBigMS(mario));            
         }
         public void MakeSmallMario()
         {
-            // no-op
+            // null
         }
         public void MakeFireMario()
         {
-            mario.TransitionState(mario.state, new LeftMovingFireMS(mario));
+            mario.TransitionState(mario.state, new LeftIdleFireMS(mario));            
         }
         public void MakeFireballMario()
         {
@@ -73,7 +73,7 @@ namespace Sprint4
         }
         public void Flip() 
         {
-            mario.state = new LeftMovingSmallFlipMS(mario);
+            mario.state = new LeftIdleSmallMS(mario);
         }
         public void Update(GameTime gameTime)
         {

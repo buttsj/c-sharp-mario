@@ -7,15 +7,15 @@ using System.Text;
 
 namespace Sprint4
 {
-    class LeftMovingSmallMS : IMarioState
+    class RightMovingSmallFlipMS : IMarioState
     {
         Mario mario;
         public IAnimatedSprite Sprite { get; set; }
 
-        public LeftMovingSmallMS(Mario mario)
+        public RightMovingSmallFlipMS(Mario mario)
         {
             ISpriteFactory factory = new SpriteFactory();
-            Sprite = factory.build(SpriteFactory.sprites.leftMovingMarioSmall);
+            Sprite = factory.build(SpriteFactory.sprites.rightMovingMarioFlip);
             this.mario = mario;
         }
         public Rectangle GetBoundingBox(Vector2 location)
@@ -37,15 +37,15 @@ namespace Sprint4
         }
         public void GoLeft()
         {
-            mario.position.X--;
+            mario.state = new LeftMovingSmallFlipMS(mario);
         }
         public void GoRight()
         {
-            mario.state = new RightMovingSmallMS(mario);
+            mario.position.X++;
         }
         public void Idle()
         {
-            mario.state = new LeftIdleSmallMS(mario);
+            mario.state = new RightIdleSmallFlipMS(mario);
         }
         public void Land()
         {
@@ -73,7 +73,7 @@ namespace Sprint4
         }
         public void Flip() 
         {
-            mario.state = new LeftMovingSmallFlipMS(mario);
+            mario.state = new RightMovingSmallMS(mario);
         }
         public void Update(GameTime gameTime)
         {

@@ -22,7 +22,7 @@ namespace Sprint4
         public Level level;
         public static SoundManager soundManager;
         public Camera gameCamera;
-        public bool isPaused = false, isVictory = false, isGameOver = false;
+        public bool isPaused = false, isVictory = false, isGameOver = false, isVVVVVV = false;
         private static Game1 sInstance = new Game1();
         public BackgroundHolder background;
         public HUD gameHUD;
