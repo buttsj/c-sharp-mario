@@ -42,14 +42,14 @@ namespace Sprint4
 
         public void LoadContent()
         {
-            CoinSprite = Game1.gameContent.Load<Texture2D>("HUD Sprites/HUDCoinSprite");
-            CoinsFont = Game1.gameContent.Load<SpriteFont>("HUD Fonts/CoinsFont");
-            LivesSprite = Game1.gameContent.Load<Texture2D>("HUD Sprites/HUDMario");
-            LivesFont = Game1.gameContent.Load<SpriteFont>("HUD Fonts/LivesFont");
-            TimeSprite = Game1.gameContent.Load<Texture2D>("HUD Sprites/TimeSprite");
-            TimeFont = Game1.gameContent.Load<SpriteFont>("HUD Fonts/TimeFont");
-            ScoreFont = Game1.gameContent.Load<SpriteFont>("HUD Fonts/ScoreFont");
-            Paused = Game1.gameContent.Load<SpriteFont>("HUD Fonts/PauseFont");
+            CoinSprite = Game1.gameContent.Load<Texture2D>(StringHolder.hudCoinSprite);
+            CoinsFont = Game1.gameContent.Load<SpriteFont>(StringHolder.hudCoinFont);
+            LivesSprite = Game1.gameContent.Load<Texture2D>(StringHolder.hudLivesSprite);
+            LivesFont = Game1.gameContent.Load<SpriteFont>(StringHolder.hudLivesFont);
+            TimeSprite = Game1.gameContent.Load<Texture2D>(StringHolder.hudTimeSprite);
+            TimeFont = Game1.gameContent.Load<SpriteFont>(StringHolder.hudTimeFont);
+            ScoreFont = Game1.gameContent.Load<SpriteFont>(StringHolder.hudScoreFont);
+            Paused = Game1.gameContent.Load<SpriteFont>(StringHolder.hudPauseFont);
         }
 
         public void Update(GameTime gameTime)
@@ -90,7 +90,8 @@ namespace Sprint4
             spriteBatch.DrawString(ScoreFont, "" + Score, ValueHolder.scoreTextPos, textColor);
             if (PausedCheck)
             {
-                spriteBatch.DrawString(Paused, "PAUSED", game.gameCamera.CenterScreen + ValueHolder.textPosition, Color.Black);
+                spriteBatch.DrawString(Paused, StringHolder.pausedMessaged, game.gameCamera.CenterScreen + 
+                    ValueHolder.textPosition, Color.Black);
             }
 
         }
