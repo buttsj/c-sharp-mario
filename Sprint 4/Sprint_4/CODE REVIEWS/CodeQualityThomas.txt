@@ -1,0 +1,24 @@
+CODE QUALITY
+
+Author: Thomas Kiener
+Date: 4/12/2015
+Sprint: Five
+Name of .cs file: HUD.cs
+Author of .cs file: Thomas Kiener
+
+Comments:
+-The class contains many properties and fields. Maybe this can be refactored
+
+-At 100 lines, the class is near the limit in terms of size.
+
+-Methods are within size.
+
+-Identifiers make sense
+
+-HUD knows about ValueHolder, StringHolder, Game, and SoundManager. Fairly limited coupling, as these are 
+all part of the game's foundation
+
+-LoadContent might be hurting cohesion.
+
+Possible Change(s):
+-Load the content in the constructor, and use the SpriteFactory to make the needed sprites.

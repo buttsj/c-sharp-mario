@@ -227,6 +227,7 @@
     <Compile Include="Utility Classes\ValueHolder.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="CODE REVIEWS\CodeQualityThomas.txt" />
     <Content Include="CODE REVIEWS\CodeReadabilityCaleb.txt" />
     <Content Include="CODE REVIEWS\CodeReadabilityThomas.txt" />
     <Content Include="CODE REVIEWS\CodeReadabilityJack.txt" />
