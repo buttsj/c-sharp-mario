@@ -26,6 +26,7 @@ namespace Sprint4
         private static Game1 sInstance = new Game1();
         public BackgroundHolder background;
         public HUD gameHUD;
+        public AchievementsManager ach;
 
         private Game1()
         {
@@ -44,6 +45,7 @@ namespace Sprint4
             gamepadController = new GamepadController(level.mario);
             gameState = new PlayGameState();
             background = new BackgroundHolder();
+            ach = new AchievementsManager(this);
             base.Initialize();
         }
 
@@ -56,6 +58,7 @@ namespace Sprint4
         protected override void Update(GameTime gameTime)
         {
             gameState.Update(gameTime);
+            ach.Update(gameTime);
             base.Update(gameTime);
         }
 

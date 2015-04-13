@@ -20,6 +20,7 @@ namespace Sprint4
         public void EnemyFireballCollide(Enemy enemy, Fireball fireball)
         {
             enemy.TakeDamage();
+            game.ach.AchievementAdjustment(AchievementsManager.AchievementType.Fireball);
             game.level.deadFireballs.Add(fireball);
             mario.fireballCount--;
             game.gameHUD.Score += ValueHolder.enemyHurtPoints;

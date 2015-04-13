@@ -13,6 +13,7 @@ namespace Sprint4
         public int Lives { get; set; }
         public int Time { get; set; }
         public int Score { get; set; }
+        public Texture2D Achievement { get; set; }
         public Texture2D LivesSprite { get; set; }
         public Texture2D CoinSprite { get; set; }
         public Texture2D TimeSprite { get; set; }
@@ -30,6 +31,7 @@ namespace Sprint4
         public int pointMultiplier = 1;
         bool changedMusic = false;
         public bool gameEnded = false;
+        public bool hideAch = true;
 
         public HUD(Game1 game)
         {
@@ -93,7 +95,10 @@ namespace Sprint4
                 spriteBatch.DrawString(Paused, StringHolder.pausedMessaged, game.gameCamera.CenterScreen + 
                     ValueHolder.textPosition, Color.Black);
             }
-
+            if (!hideAch)
+            {
+                spriteBatch.Draw(Achievement, new Rectangle(200, 50, 400, 50), Color.White);
+            }
         }
     }
 }

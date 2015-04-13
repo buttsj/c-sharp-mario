@@ -7,9 +7,11 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace Sprint4
 {
-    class Achievement
+    public class Achievement
     {
         public bool isUnlocked { get; set; }
         public Texture2D image { get; set; }
+        public int unlockCheck { get; set; }
+        public int unlockMark { get; set; }
     }
 }

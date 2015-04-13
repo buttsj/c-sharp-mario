@@ -892,8 +892,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-    <Compile Include="Achievements\achievementKoopa.png">
-      <Name>achievementKoopa</Name>
+    <Compile Include="Achievements\achievementEnemy.png">
+      <Name>achievementEnemy</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
@@ -907,7 +907,7 @@
     <Compile Include="Achievements\AchievementUnlocked.mp3">
       <Name>AchievementUnlocked</Name>
       <Importer>Mp3Importer</Importer>
-      <Processor>SongProcessor</Processor>
+      <Processor>SoundEffectProcessor</Processor>
     </Compile>
   </ItemGroup>
   <ItemGroup>

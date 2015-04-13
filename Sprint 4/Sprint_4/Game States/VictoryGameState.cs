@@ -22,6 +22,7 @@ namespace Sprint4
             SoundManager.clear.Play();
             right = new RightCommand(game.level.mario);
             game.gameHUD.gameEnded = true;
+            game.ach.AchievementAdjustment(AchievementsManager.AchievementType.Level);
         }
 
         public void Update(GameTime gameTime)

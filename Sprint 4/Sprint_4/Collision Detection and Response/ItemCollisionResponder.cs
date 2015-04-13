@@ -27,6 +27,7 @@ namespace Sprint4
                 mario.MakeBigMario();
                 game.gameHUD.Score += ValueHolder.itemCollectPoints;
                 SoundManager.grow.Play();
+                game.ach.AchievementAdjustment(AchievementsManager.AchievementType.Mushroom);
             }
             if (item.GetType().Equals(new FireFlower(item.position).GetType()))
             {
@@ -39,11 +40,13 @@ namespace Sprint4
                 SoundManager.coinCollect.Play();
                 game.gameHUD.Coins++;
                 game.gameHUD.Score += ValueHolder.coinCollectPoints;
+                game.ach.AchievementAdjustment(AchievementsManager.AchievementType.Coins);
             }
             if (item.GetType().Equals(new OneUpMushroom(item.position).GetType()))
             {
                 SoundManager.oneUp.Play();
                 game.gameHUD.Lives++;
+                game.ach.AchievementAdjustment(AchievementsManager.AchievementType.Life);
             }
         }
     }

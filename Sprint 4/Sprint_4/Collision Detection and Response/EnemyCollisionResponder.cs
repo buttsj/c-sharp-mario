@@ -37,6 +37,7 @@ namespace Sprint4
                 if (marioRect.Bottom > enemyRect.Top && marioRect.Bottom < enemyRect.Bottom)
                 {
                     enemy.TakeDamage();
+                    game.ach.AchievementAdjustment(AchievementsManager.AchievementType.Enemy);
                     game.gameHUD.Score += ValueHolder.enemyHurtPoints * game.gameHUD.pointMultiplier;
                     mario.velocity.Y = bounce;
                     game.gameHUD.pointMultiplier++;

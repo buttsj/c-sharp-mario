@@ -99,7 +99,7 @@ namespace Sprint4
              
             collision.Detect(mario, levelFireballs, levelEnemies, levelBlocks, levelItems, levelPipes); 
 
-            mario.Update(gameTime);
+            mario.Update(gameTime, game);
             if (mario.position.X < 0)
             {
                 mario.position.X = 0;

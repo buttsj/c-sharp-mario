@@ -169,7 +169,7 @@ namespace Sprint4
                 }
             }           
         }
-        public void Update(GameTime gameTime)
+        public void Update(GameTime gameTime, Game1 game)
         {            
             if (starTimer != 0 & isStar)
             {
@@ -188,6 +188,7 @@ namespace Sprint4
             if (position.Y > ValueHolder.fallingMarioBoundary)
             {
                 state = new DeadMS(this);
+                game.ach.AchievementAdjustment(AchievementsManager.AchievementType.Death);
             }         
                         
             if (fireballTimer != 0 )

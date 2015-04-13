@@ -13,7 +13,7 @@ namespace Sprint4
         Game1 game;
         public static Song athletic, star, overworld, underground, placeHolderSong, overworldFast, vmusic;
         public static SoundEffect coinCollect, brickBreak, grow, shrink, blockHit, oneUp, enemyDamage, jump, itemSpawn,
-            pause, death, gameOver, fireball, launch, clear;
+            pause, death, gameOver, fireball, launch, clear, achUnlocked;
             
         public enum songs{athletic, star, overworld, underground, overworldFast, vmusic}
         public SoundManager(Game1 game){
@@ -40,6 +40,7 @@ namespace Sprint4
             underground = game.Content.Load<Song>("Sound/Music/Underground BGM");
             clear = game.Content.Load<SoundEffect>("Sound/Music/Course Clear Fanfare");
             overworldFast = game.Content.Load<Song>("Sound/Music/OverworldTimeRunningOut");
+            achUnlocked = game.Content.Load<SoundEffect>("Achievements/AchievementUnlocked");
         }
         public static void PlaySong(SoundManager.songs song)
         {
