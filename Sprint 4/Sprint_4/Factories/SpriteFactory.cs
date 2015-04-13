@@ -14,7 +14,7 @@ namespace Sprint4
             // Enemies
             leftDeadDino, rightDeadDino, walkingLeftDino, walkingRightDino,
             walkingRightSquishedDino, walkingLeftSquishedDino, deadShellessKoopa, leftWalkShellessKoopa, rightWalkShellessKoopa,
-            banzaiBill, deadBanzaiBill,
+            banzaiBill, deadBanzaiBill, upSpike, downSpike,
             // Items
             oneUpMushroom, fireFlower, superMushroom, coin, star, fireball,
             // Blocks
@@ -100,6 +100,16 @@ namespace Sprint4
             {
                 Texture2D rightShellessKoopa = Game1.gameContent.Load<Texture2D>("Enemies/Shell-Less Koopa/rightWalkShellessKoopa");
                 return new RightWalkingShellessKoopa(rightShellessKoopa, 1, 2);
+            }
+            if (sprite == sprites.upSpike)
+            {
+                Texture2D upSpike = Game1.gameContent.Load<Texture2D>("Enemies/upSpike");
+                return new StaticSprite(upSpike);
+            }
+            if (sprite == sprites.downSpike)
+            {
+                Texture2D downSpike = Game1.gameContent.Load<Texture2D>("Enemies/downSpike");
+                return new StaticSprite(downSpike);
             }
 
             //ITEMS
