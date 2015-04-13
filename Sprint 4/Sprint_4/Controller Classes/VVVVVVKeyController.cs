@@ -15,9 +15,13 @@ namespace Sprint4
         Mario mario;
         ICommands currentCommand;
         Dictionary<Keys, ICommands> commandLibrary;
+        int flipPatience = 15;
+        int flipBuffer = 0;
+        ICommands flip;
 
         public VVVVVVKeyController(Mario mario)
         {
+            flip = new FlipCommand(mario);
             this.mario = mario;
             commandLibrary = new Dictionary<Keys, ICommands>();
             commandLibrary.Add(Keys.W, currentCommand = new FlipCommand(mario));
@@ -35,6 +39,7 @@ namespace Sprint4
 
         public void Update()
         {
+            flipBuffer++;
             currentCommand = new NullCommand();
             GamePadState gamepadState = GamePad.GetState(PlayerIndex.One);
             keyboardState = Keyboard.GetState();
@@ -43,7 +48,18 @@ namespace Sprint4
                 if (commandLibrary.ContainsKey(key))
                 {
                     currentCommand = commandLibrary[key];
-                    currentCommand.Execute();  
+                    if (currentCommand.GetType() == flip.GetType())
+                    {
+                        if (flipBuffer >= flipPatience)
+                        {
+                            currentCommand.Execute();
+                            flipBuffer = 0;
+                        }
+                    }
+                    else
+                    {
+                        currentCommand.Execute();
+                    }
                 } 
            }
             if (currentCommand.GetType() == new NullCommand().GetType())

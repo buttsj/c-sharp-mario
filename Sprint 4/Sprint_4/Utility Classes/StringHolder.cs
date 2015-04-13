@@ -10,6 +10,7 @@ namespace Sprint4
     {
         //level strings
         public static String levelOne = "/Maps/MapCleaned.csv";
+        public static String levelTwo = "/Maps/VVVVVVMap.csv";
         public static String bigTextFont = "Fonts/SpriteFont1";
         public static String gameOverMessage = "Game Over";
         public static String livesText = "Lives :";

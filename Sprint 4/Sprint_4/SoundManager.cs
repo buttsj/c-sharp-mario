@@ -11,11 +11,11 @@ namespace Sprint4
     public class SoundManager
     {
         Game1 game;
-        public static Song athletic, star, overworld, underground, placeHolderSong, overworldFast;
+        public static Song athletic, star, overworld, underground, placeHolderSong, overworldFast, vmusic;
         public static SoundEffect coinCollect, brickBreak, grow, shrink, blockHit, oneUp, enemyDamage, jump, itemSpawn,
             pause, death, gameOver, fireball, launch, clear;
             
-        public enum songs{athletic, star, overworld, underground, overworldFast}
+        public enum songs{athletic, star, overworld, underground, overworldFast, vmusic}
         public SoundManager(Game1 game){
             this.game = game;
             jump = game.Content.Load<SoundEffect>("Sound/SFX/SFX Jump");
@@ -36,31 +36,36 @@ namespace Sprint4
             fireball = game.Content.Load<SoundEffect>("Sound/SFX/fireball");
             launch = game.Content.Load<SoundEffect>("Sound/SFX/BillLaunch");
             overworld = game.Content.Load<Song>("Sound/Music/Overworld BGM");
+            vmusic = game.Content.Load<Song>("Sound/Music/Potential For Anything");
             underground = game.Content.Load<Song>("Sound/Music/Underground BGM");
             clear = game.Content.Load<SoundEffect>("Sound/Music/Course Clear Fanfare");
             overworldFast = game.Content.Load<Song>("Sound/Music/OverworldTimeRunningOut");
         }
         public static void PlaySong(SoundManager.songs song)
         {
-            if (song == SoundManager.songs.athletic)
+            if (song == songs.athletic)
             {
                 placeHolderSong = athletic;
             }
-            if (song == SoundManager.songs.star)
+            if (song == songs.star)
             {
                 placeHolderSong = star;
             }
-            if (song == SoundManager.songs.overworld)
+            if (song == songs.overworld)
             {
                 placeHolderSong = overworld;
             }
-            if (song == SoundManager.songs.underground)
+            if (song == songs.underground)
             {
                 placeHolderSong = underground;
             }
-            if (song == SoundManager.songs.overworldFast)
+            if (song == songs.overworldFast)
             {
                 placeHolderSong = overworldFast;
+            }
+            if (song == songs.vmusic)
+            {
+                placeHolderSong = vmusic;
             }
             MediaPlayer.Play(placeHolderSong);
             MediaPlayer.IsRepeating = true;

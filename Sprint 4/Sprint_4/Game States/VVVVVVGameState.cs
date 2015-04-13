@@ -10,11 +10,12 @@ namespace Sprint4
     class VVVVVVGameState :IGameState
     {
         Game1 game;
+        int inputBuffer = 10,  i = 0;
 
         public VVVVVVGameState()
         {
             game = Game1.GetInstance();
-            game.level.mario.physState = new VVVVVVPhysState();
+            game.level.mario.physState = new VVVVVVGroundState(game.level.mario, 1);
             game.keyboardController = new VVVVVVKeyController(game.level.mario);
             game.gamepadController = new VVVVVVPadController(game.level.mario);
             game.gameHUD.PausedCheck = false;

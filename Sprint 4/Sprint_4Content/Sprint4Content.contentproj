@@ -483,9 +483,9 @@
       <Importer>FontDescriptionImporter</Importer>
       <Processor>FontDescriptionProcessor</Processor>
     </Compile>
-    <None Include="Maps\VVVVVVTestMap.csv">
+    <None Include="Maps\VVVVVVMap.csv">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      <Name>VVVVVVTestMap</Name>
+      <Name>VVVVVVMap</Name>
     </None>
     <None Include="Maps\MapCleaned.csv">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
@@ -936,6 +936,13 @@
       <Name>rightIdleMarioSmallFlip</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Sound\Music\Potential for Anything.mp3">
+      <Name>Potential for Anything</Name>
+      <Importer>Mp3Importer</Importer>
+      <Processor>SongProcessor</Processor>
     </Compile>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\XNA Game Studio\$(XnaFrameworkVersion)\Microsoft.Xna.GameStudio.ContentPipeline.targets" />

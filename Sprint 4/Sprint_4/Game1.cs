@@ -40,9 +40,9 @@ namespace Sprint4
             gameCamera = new Camera(GraphicsDevice.Viewport, this);
             gameHUD = new HUD(this);
             level = new Level(this, StringHolder.levelOne);
-            gameState = new PlayGameState();
             keyboardController = new KeyboardController(level.mario);
             gamepadController = new GamepadController(level.mario);
+            gameState = new PlayGameState();
             background = new BackgroundHolder();
             base.Initialize();
         }

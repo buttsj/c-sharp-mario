@@ -153,7 +153,8 @@
     <Compile Include="Physics States\Enemy Physics\EnemyGroundState.cs" />
     <Compile Include="Physics States\Item Physics\ItemGroundState.cs" />
     <Compile Include="Physics States\Item Physics\ItemFallingState.cs" />
-    <Compile Include="Physics States\Mario Physics\VVVVVVPhysState.cs" />
+    <Compile Include="Physics States\Mario Physics\VVVVVVGroundState.cs" />
+    <Compile Include="Physics States\Mario Physics\VVVVVVAirState.cs" />
     <Compile Include="Physics States\Mario Physics\FallingState.cs" />
     <Compile Include="Game Object Classes\Block.cs" />
     <Compile Include="Game Object Classes\Enemy.cs" />
