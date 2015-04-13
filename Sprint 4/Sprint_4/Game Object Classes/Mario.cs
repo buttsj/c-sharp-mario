@@ -227,7 +227,6 @@ namespace Sprint4
 
         public void Flip()
         {
-            state.Flip();
             physState.Flip();
         }
        }

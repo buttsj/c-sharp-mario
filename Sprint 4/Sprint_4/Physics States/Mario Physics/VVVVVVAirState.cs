@@ -21,9 +21,12 @@ namespace Sprint4
         public void Update(Mario mario, GameTime gameTime)
         {
             mario.position.Y += gravity;
+            if (Game1.GetInstance().level.collision.standingBlocks.Count > 0)
+            {
+                mario.physState = new VVVVVVGroundState(mario, gravity / 3);
+            }
         }
         public void Run() {
-            mario.physState = new VVVVVVGroundState(mario, gravity/3);
         }
         public void Flip() { 
         }

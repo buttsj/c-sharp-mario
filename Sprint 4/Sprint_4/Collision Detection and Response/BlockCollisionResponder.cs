@@ -41,23 +41,15 @@ namespace Sprint4
             {
                 if (marioRect.Bottom > blockRect.Top && marioRect.Bottom < blockRect.Bottom)
                 {
-                    if (!game.isVVVVVV)
-                    {
-                        if (!mario.physState.GetType().Equals((new JumpingState()).GetType()))
-                        {
-                            mario.velocity.Y = 0;
-                        }
-                        if (intersection.Height > 1)
-                        {
-                            mario.position.Y -= intersection.Height;
-                        }
-                        standingBlocks.Add(block);
-                    }
-                    else
-                    {
-                        mario.physState.Run();
-                        mario.position.Y -= intersection.Height;
-                    }
+                       if (!mario.physState.GetType().Equals((new JumpingState()).GetType()))
+                       {
+                           mario.velocity.Y = 0;
+                       }
+                       if (intersection.Height > 1)
+                       {
+                           mario.position.Y -= intersection.Height;
+                       }
+                       standingBlocks.Add(block);
                 }
                 else
                 {
@@ -77,8 +69,8 @@ namespace Sprint4
                     }
                     else
                     {
-                        mario.physState.Run();
                         mario.position.Y = mario.position.Y + intersection.Height;
+                        standingBlocks.Add(block);
                     }
                 }
             }
