@@ -76,6 +76,8 @@
     <Reference Include="System.Net" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Achievements\AchievementsManager.cs" />
+    <Compile Include="Achievements\Achievement.cs" />
     <Compile Include="Collision Detection and Response\PipeCollisionResponder.cs" />
     <Compile Include="Command Classes\FlipCommand.cs" />
     <Compile Include="Controller Classes\VVVVVVPadController.cs" />

@@ -4,7 +4,7 @@ Author: Thomas Kiener
 Date: 4/12/2015
 Sprint: Five
 Name of .cs file: HUD.cs
-Author of .cs file: Thomas Kiener
+Author of .cs file: Jack Butts
 
 Comments:
 -The class contains many properties and fields. Maybe this can be refactored
