@@ -8,9 +8,9 @@ namespace Sprint4
 {
     class VVVVVVAirState :IMarioPhysicsState
     {
-        Vector2 fallingVelocityDecayRate = new Vector2((float).90, 1);
-        Vector2 fallingVelocity = new Vector2(0, (float)1.2);
-        int gravity = 3;
+        public Vector2 speedDecayRate = new Vector2((float)0.73, (float)0.70);
+        float positionDtAdjust = 10;
+        int gravity = 4;
         Mario mario;
 
         public VVVVVVAirState(int sign, Mario mario)
@@ -20,6 +20,8 @@ namespace Sprint4
         }
         public void Update(Mario mario, GameTime gameTime)
         {
+            mario.position += mario.velocity * ((float)gameTime.ElapsedGameTime.Milliseconds / positionDtAdjust);
+            mario.velocity *= speedDecayRate;
             mario.position.Y += gravity;
             if (Game1.GetInstance().level.collision.standingBlocks.Count > 0)
             {

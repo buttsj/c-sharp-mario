@@ -10,6 +10,8 @@ namespace Sprint4
     {
         int gravity =1;
         Mario mario;
+        public Vector2 speedDecayRate = new Vector2((float)0.73, (float)0.70);
+        float positionDtAdjust = 10;
 
         public VVVVVVGroundState(Mario mario, int gravity)
         {
@@ -18,6 +20,8 @@ namespace Sprint4
         }
         public void Update(Mario mario, GameTime gameTime)
         {
+            mario.position += mario.velocity * ((float)gameTime.ElapsedGameTime.Milliseconds / positionDtAdjust);
+            mario.velocity *= speedDecayRate;
         }
         public void Run() 
         {

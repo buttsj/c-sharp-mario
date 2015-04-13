@@ -10,7 +10,6 @@ namespace Sprint4
     class VVVVVVGameState :IGameState
     {
         Game1 game;
-        int inputBuffer = 10,  i = 0;
 
         public VVVVVVGameState()
         {
