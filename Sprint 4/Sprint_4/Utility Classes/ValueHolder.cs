@@ -48,6 +48,7 @@ namespace Sprint4
         public static Color normalScreenText = Color.Black;
         public static int startingTime = 300;
         public static int hurryTime = 100;
+        public static int achTimer = 200;
 
         //fireball
         public static int fireballXSpawn = 5;

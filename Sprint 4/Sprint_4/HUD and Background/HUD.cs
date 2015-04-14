@@ -97,7 +97,7 @@ namespace Sprint4
             }
             if (!hideAch)
             {
-                spriteBatch.Draw(Achievement, new Rectangle(200, 50, 400, 50), Color.White);
+                spriteBatch.Draw(Achievement, new Rectangle(200, 50, 400, 60), Color.White);
             }
         }
     }

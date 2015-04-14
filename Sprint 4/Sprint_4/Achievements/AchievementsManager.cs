@@ -12,7 +12,7 @@ namespace Sprint4
     {
         private Dictionary<AchievementType, Achievement> achievementKeeper;
         private SoundEffectInstance achFX;
-        private int achTimer = 200;
+        private int achTimer = ValueHolder.achTimer;
         Game1 game;
 
         public enum AchievementType
@@ -71,7 +71,7 @@ namespace Sprint4
                 if (achTimer == 0)
                 {
                     game.gameHUD.hideAch = true;
-                    achTimer = 100;
+                    achTimer = ValueHolder.achTimer;
                 }
             }
         }
