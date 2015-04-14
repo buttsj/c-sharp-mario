@@ -27,6 +27,7 @@ namespace Sprint4
         {
         }
         public void Flip() {
+            SoundManager.flip.Play();
             mario.state.Flip();
             gravity = -gravity;
             mario.position.Y += 2*gravity;

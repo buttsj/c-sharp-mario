@@ -40,10 +40,10 @@ namespace Sprint4
             soundManager = new SoundManager(this);
             gameCamera = new Camera(GraphicsDevice.Viewport, this);
             gameHUD = new HUD(this);
-            level = new Level(this, StringHolder.levelOne);
+            level = new Level(this, StringHolder.levelTwo);
             keyboardController = new KeyboardController(level.mario);
             gamepadController = new GamepadController(level.mario);
-            gameState = new TitleScreenGameState();
+            gameState = new VVVVVVGameState();
             background = new BackgroundHolder();
             ach = new AchievementsManager(this);
             base.Initialize();
@@ -74,7 +74,7 @@ namespace Sprint4
             gameState.Draw(spriteBatch);
             spriteBatch.End();
 
-            if (!isTitle)
+            if (!isTitle && !isVVVVVV)
             {
                 spriteBatch.Begin();
                 gameHUD.Draw(spriteBatch);

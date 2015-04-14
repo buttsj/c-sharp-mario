@@ -155,7 +155,10 @@ namespace Sprint4
                     spikeDrawer.Draw(spriteBatch);
                 }
             }
-            mario.Draw(spriteBatch);
+            if (!game.isTitle)
+            {
+                mario.Draw(spriteBatch);
+            }
             if (game.gameCamera.InCameraView(exitPole.GetBoundingBox(exitPosition)))
             {
                 exitPole.Draw(spriteBatch, exitPosition);
