@@ -84,6 +84,7 @@
     <Compile Include="Controller Classes\VVVVVVKeyController.cs" />
     <Compile Include="Factories\PipeFactory.cs" />
     <Compile Include="Game Object Classes\Pipe.cs" />
+    <Compile Include="Game Object Sprite Classes\GameLogoSprite.cs" />
     <Compile Include="Game Object Sprite Classes\MarioMovingSprite.cs" />
     <Compile Include="Game Object Sprite Classes\StaticSprite.cs" />
     <Compile Include="Game Object State Classes\Block States\GroundBlockState.cs" />
@@ -94,6 +95,7 @@
     <Compile Include="Game Object State Classes\PipeStates\LeftPipeState.cs" />
     <Compile Include="Game Object State Classes\PipeStates\UpPipeState.cs" />
     <Compile Include="Game Object State Classes\PipeStates\DownPipeState.cs" />
+    <Compile Include="Game States\TitleScreenGameState.cs" />
     <Compile Include="Game States\PipeTransitionGameState.cs" />
     <Compile Include="Game States\VVVVVVGameState.cs" />
     <Compile Include="Game States\VictoryGameState.cs" />

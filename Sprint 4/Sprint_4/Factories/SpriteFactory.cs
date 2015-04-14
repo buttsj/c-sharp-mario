@@ -23,7 +23,7 @@ namespace Sprint4
             bluePipe, bush1, bush2, bush3, launcherPiper, launcherPipeSupport, yellowPipe, whitePipe, leftPipe, downPipe, exitSign,
             ground, rightEdge, leftEdge, undergroundBackground, overworldBackground, overworldHillsBackground,undergroundFloor,
             undergroundLeftBottomCorner, undergroundRightBottomCorner, undergroundRightTopCorner, undergroundLeftTopCorner,
-            undergroundRightWall, undergroundLeftWall, undergroundRoof, exit, exitBroken, castle,
+            undergroundRightWall, undergroundLeftWall, undergroundRoof, exit, exitBroken, castle, title,
             // Mario big
             leftCrouchingMarioBig,  leftIdleMarioBig, leftJumpingMarioBig,  
             leftMovingMarioBig, leftQuickturnMarioBig, leftShellKickMarioBig, leftSlidingMarioBig, rightCrouchingMarioBig,
@@ -212,6 +212,11 @@ namespace Sprint4
             {
                 Texture2D overworldHillsBackground = Game1.gameContent.Load<Texture2D>("Overworld Sprites/background2");
                 return new OverworldBGHillsSprite(overworldHillsBackground, 1, 1);
+            }
+            if (sprite == sprites.title)
+            {
+                Texture2D title = Game1.gameContent.Load<Texture2D>("game logo");
+                return new GameLogoSprite(title);
             }
             if (sprite == sprites.fireball)
             {
