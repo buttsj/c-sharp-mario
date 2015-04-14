@@ -34,7 +34,7 @@ namespace Sprint4
 
         public static int normalAnimationTimer = 90;
         public static int slowdownRate = 3;
-        public static Vector2 textPosition = new Vector2(-40, 110);
+        public static Vector2 textPosition = new Vector2(-40, 80);
 
         //HUD
         public static Rectangle coinSpritePos = new Rectangle(650, 30, 53, 25);
@@ -49,6 +49,7 @@ namespace Sprint4
         public static int startingTime = 300;
         public static int hurryTime = 100;
         public static int achTimer = 200;
+        public static int achRemaining = 0;
 
         //fireball
         public static int fireballXSpawn = 5;

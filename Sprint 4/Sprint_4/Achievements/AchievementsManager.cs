@@ -35,6 +35,7 @@ namespace Sprint4
             ach.isUnlocked = true;
             game.gameHUD.Achievement = ach.image;
             game.gameHUD.hideAch = false;
+            ValueHolder.achRemaining--;
         }
 
         public AchievementsManager(Game1 game)
@@ -49,6 +50,7 @@ namespace Sprint4
             achievementKeeper.Add(AchievementType.Fireball, new Achievement() { isUnlocked = false, image = Game1.gameContent.Load<Texture2D>("Achievements/achievementFireball"), unlockCheck = 1, unlockMark = 0 });
             achievementKeeper.Add(AchievementType.Enemy, new Achievement() { isUnlocked = false, image = Game1.gameContent.Load<Texture2D>("Achievements/achievementEnemy"), unlockCheck = 1, unlockMark = 0 });
             achievementKeeper.Add(AchievementType.Life, new Achievement() { isUnlocked = false, image = Game1.gameContent.Load<Texture2D>("Achievements/achievementLife"), unlockCheck = 1, unlockMark = 0 });
+            ValueHolder.achRemaining = achievementKeeper.Count();
         }
 
         public void AchievementAdjustment(AchievementType ach)

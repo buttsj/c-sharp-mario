@@ -21,17 +21,16 @@ namespace Sprint4
         public SpriteFont LivesFont { get; set; }
         public SpriteFont TimeFont { get; set; }
         public SpriteFont ScoreFont { get; set; }
-
         public float countDuration = 1f;
         public float currentTime = 0f;
         public Game1 game;
         public Color textColor = Color.Black;
-        public bool PausedCheck = false;
         public SpriteFont Paused;
         public int pointMultiplier = 1;
         bool changedMusic = false;
         public bool gameEnded = false;
         public bool hideAch = true;
+        public bool PausedCheck = false;
 
         public HUD(Game1 game)
         {
@@ -78,7 +77,6 @@ namespace Sprint4
                 game.level.mario.state.MakeDeadMario();
                 Game1.GetInstance().gameState = new DeadGameState(game.level.mario);
             }
-
         }
 
         public void Draw(SpriteBatch spriteBatch)
@@ -94,6 +92,8 @@ namespace Sprint4
             {
                 spriteBatch.DrawString(Paused, StringHolder.pausedMessaged, game.gameCamera.CenterScreen + 
                     ValueHolder.textPosition, Color.Black);
+
+                spriteBatch.DrawString(Paused, "Achievements remaining: " + ValueHolder.achRemaining, game.gameCamera.CenterScreen + new Vector2(-120, 100), Color.Black);
             }
             if (!hideAch)
             {
