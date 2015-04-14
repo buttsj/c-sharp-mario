@@ -24,8 +24,8 @@ namespace Sprint4
             SoundManager.PlaySong(SoundManager.songs.title);
             game = Game1.GetInstance();
             font = Game1.gameContent.Load<SpriteFont>(StringHolder.hudPauseFont);
-            game.keyboardController = new PauseMenuKeyController();
-            game.gamepadController = new PauseMenuGamepadController();
+            game.keyboardController = new TitleKeyController();
+            //game.gamepadController = new PauseMenuGamepadController();
         }
 
         public void Update(GameTime gameTime)
@@ -43,7 +43,7 @@ namespace Sprint4
 
         public void Draw(SpriteBatch spriteBatch)
         {
-            spriteBatch.DrawString(font, "Press Start", new Vector2(130, 430), Color.Black);
+            spriteBatch.DrawString(font, "Press Space", new Vector2(140, 420), Color.Black);
             game.level.Draw(spriteBatch);
             if (setLogo)
             {

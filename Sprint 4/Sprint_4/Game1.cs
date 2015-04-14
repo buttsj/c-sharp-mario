@@ -22,7 +22,7 @@ namespace Sprint4
         public Level level;
         public static SoundManager soundManager;
         public Camera gameCamera;
-        public bool isPaused = false, isVictory = false, isGameOver = false, isVVVVVV = false;
+        public bool isPaused = false, isVictory = false, isGameOver = false, isVVVVVV = false, isTitle = true;
         private static Game1 sInstance = new Game1();
         public BackgroundHolder background;
         public HUD gameHUD;
@@ -43,7 +43,7 @@ namespace Sprint4
             level = new Level(this, StringHolder.levelOne);
             keyboardController = new KeyboardController(level.mario);
             gamepadController = new GamepadController(level.mario);
-            gameState = new PlayGameState();
+            gameState = new TitleScreenGameState();
             background = new BackgroundHolder();
             ach = new AchievementsManager(this);
             base.Initialize();
@@ -74,9 +74,12 @@ namespace Sprint4
             gameState.Draw(spriteBatch);
             spriteBatch.End();
 
-            spriteBatch.Begin();
-            gameHUD.Draw(spriteBatch);
-            spriteBatch.End();
+            if (!isTitle)
+            {
+                spriteBatch.Begin();
+                gameHUD.Draw(spriteBatch);
+                spriteBatch.End();
+            }
 
             base.Draw(gameTime);
         }

@@ -80,6 +80,8 @@
     <Compile Include="Achievements\Achievement.cs" />
     <Compile Include="Collision Detection and Response\PipeCollisionResponder.cs" />
     <Compile Include="Command Classes\FlipCommand.cs" />
+    <Compile Include="Command Classes\StartCommand.cs" />
+    <Compile Include="Controller Classes\TitleKeyController.cs" />
     <Compile Include="Controller Classes\VVVVVVPadController.cs" />
     <Compile Include="Controller Classes\VVVVVVKeyController.cs" />
     <Compile Include="Factories\PipeFactory.cs" />
