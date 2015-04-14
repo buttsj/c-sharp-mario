@@ -25,7 +25,7 @@ namespace Sprint4
             game = Game1.GetInstance();
             font = Game1.gameContent.Load<SpriteFont>(StringHolder.hudPauseFont);
             game.keyboardController = new TitleKeyController();
-            //game.gamepadController = new PauseMenuGamepadController();
+            game.gamepadController = new PauseMenuGamepadController();
         }
 
         public void Update(GameTime gameTime)

@@ -130,6 +130,14 @@ namespace Sprint4
                         level.levelPipes.Add(exitPipe);
                         events = 4;
                     }
+                    if (words[i] == "V")
+                    {
+                        level.levelSpikes.Add(new Spike(new Vector2(xCoord, yCoord), false));
+                    }
+                    if (words[i] == "^")
+                    {
+                        level.levelSpikes.Add(new Spike(new Vector2(xCoord, yCoord), true));
+                    }
                     xCoord+=spacingIncrement * events;
                 }
             }

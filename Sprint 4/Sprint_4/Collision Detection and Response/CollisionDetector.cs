@@ -35,7 +35,7 @@ namespace Sprint4
         }
 
         public void Detect(Mario mario, List<Fireball> levelFireballs, List<Enemy> levelEnemies,
-            List<Block> levelBlocks, List<ICollectable> levelItems, List<Pipe> levelPipes)
+            List<Block> levelBlocks, List<ICollectable> levelItems, List<Pipe> levelPipes, List<Spike> levelSpikes)
         {
             standingBlocks = new List<Block>();
             standingPipes = new List<Pipe>();
@@ -138,6 +138,15 @@ namespace Sprint4
                     {
                         blockResponder.ItemBlockCollide(item, block);
                     }
+                }
+            }
+
+            foreach (Spike spike in levelSpikes)
+            {
+                Rectangle spikeRect = spike.GetBoundingBox();
+                if (marioRect.Intersects(spikeRect))
+                {
+                    mario.TakeDamage();
                 }
             }
 

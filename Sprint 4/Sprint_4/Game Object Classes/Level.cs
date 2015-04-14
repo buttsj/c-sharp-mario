@@ -19,6 +19,7 @@ namespace Sprint4
         public List<Enemy> levelEnemies = new List<Enemy>();
         public List<Pipe> levelPipes = new List<Pipe>();
         public List<Block> levelBlocks = new List<Block>();
+        public List<Spike> levelSpikes = new List<Spike>();
         public List<ICollectable> levelItems = new List<ICollectable>();
         public List<KeyValuePair<IAnimatedSprite, Vector2>> levelBackgroundObjects = new List<KeyValuePair<IAnimatedSprite, Vector2>>();
         public CollisionDetector collision;
@@ -97,7 +98,7 @@ namespace Sprint4
                 levelFireballs.Remove(fireball);              
             }
              
-            collision.Detect(mario, levelFireballs, levelEnemies, levelBlocks, levelItems, levelPipes); 
+            collision.Detect(mario, levelFireballs, levelEnemies, levelBlocks, levelItems, levelPipes, levelSpikes); 
 
             mario.Update(gameTime, game);
             if (mario.position.X < 0)
@@ -145,6 +146,13 @@ namespace Sprint4
                 if (game.gameCamera.InCameraView(blockDrawer.GetBoundingBox()))
                 {
                     blockDrawer.Draw(spriteBatch, blockDrawer.position);
+                }
+            }
+            foreach (Spike spikeDrawer in levelSpikes)
+            {
+                if (game.gameCamera.InCameraView(spikeDrawer.GetBoundingBox()))
+                {
+                    spikeDrawer.Draw(spriteBatch);
                 }
             }
             mario.Draw(spriteBatch);
