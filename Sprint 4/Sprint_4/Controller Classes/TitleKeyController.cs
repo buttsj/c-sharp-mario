@@ -16,11 +16,13 @@ namespace Sprint4
         ICommands currentCommand;
         Dictionary<Keys, ICommands> commandLibrary;
 
-        public TitleKeyController()
+        public TitleKeyController(GUI menu)
         {
             commandLibrary = new Dictionary<Keys, ICommands>();
-            commandLibrary.Add(Keys.Space, currentCommand = new StartCommand());
+            commandLibrary.Add(Keys.Space, currentCommand = new LoadLevelCommand(StringHolder.levelOne));
             commandLibrary.Add(Keys.Q, currentCommand = new QuitCommand());
+            commandLibrary.Add(Keys.Down, new MenuDownCommand(menu));
+            commandLibrary.Add(Keys.Up, new MenuUpCommand(menu));
         }
 
         public void Update()

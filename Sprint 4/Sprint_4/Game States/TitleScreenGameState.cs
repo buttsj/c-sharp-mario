@@ -15,6 +15,7 @@ namespace Sprint4
         bool setLogo = false;
         SpriteFactory factory;
         IAnimatedSprite logo;
+        GUI menu;
 
         public TitleScreenGameState()
         {
@@ -23,9 +24,9 @@ namespace Sprint4
             SoundManager.StopMusic();
             SoundManager.PlaySong(SoundManager.songs.title);
             game = Game1.GetInstance();
-            font = Game1.gameContent.Load<SpriteFont>(StringHolder.hudPauseFont);
-            game.keyboardController = new TitleKeyController();
-            game.gamepadController = new PauseMenuGamepadController();
+            menu = new GUI(game);
+            game.keyboardController = new TitleKeyController(menu);
+            game.gamepadController = new TitlePadController();
         }
 
         public void Update(GameTime gameTime)
@@ -43,12 +44,12 @@ namespace Sprint4
 
         public void Draw(SpriteBatch spriteBatch)
         {
-            spriteBatch.DrawString(font, "Press Space", new Vector2(140, 420), Color.Black);
             game.level.Draw(spriteBatch);
             if (setLogo)
             {
                 logo.Draw(spriteBatch, new Vector2(100, 280));
             }
+            menu.Draw(spriteBatch);
         }
     }
 }

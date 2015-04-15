@@ -5,10 +5,12 @@ using System.Text;
 
 namespace Sprint4
 {
-    public class StartCommand : ICommands
+    public class LoadLevelCommand : ICommands
     {
-        public StartCommand()
+        String levelName;
+        public LoadLevelCommand(String levelName)
         {
+            this.levelName = levelName;
         }
         public void Execute()
         {

@@ -25,7 +25,7 @@ namespace Sprint4
             commands = new List<ICommands>();
             if (gamepadState.Buttons.Start == ButtonState.Pressed)
             {
-                commands.Add(new StartCommand());
+                commands.Add(new LoadLevelCommand(StringHolder.levelTwo));
             }
             if (gamepadState.Buttons.LeftShoulder.Equals(ButtonState.Pressed))
             {

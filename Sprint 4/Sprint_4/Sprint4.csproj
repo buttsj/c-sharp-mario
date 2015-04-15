@@ -80,7 +80,9 @@
     <Compile Include="Achievements\Achievement.cs" />
     <Compile Include="Collision Detection and Response\PipeCollisionResponder.cs" />
     <Compile Include="Command Classes\FlipCommand.cs" />
-    <Compile Include="Command Classes\StartCommand.cs" />
+    <Compile Include="Command Classes\MenuUpCommand.cs" />
+    <Compile Include="Command Classes\MenuDownCommand.cs" />
+    <Compile Include="Command Classes\LoadLevelCommand.cs" />
     <Compile Include="Controller Classes\TitlePadController.cs" />
     <Compile Include="Controller Classes\TitleKeyController.cs" />
     <Compile Include="Controller Classes\VVVVVVPadController.cs" />
@@ -229,6 +231,7 @@
     <Compile Include="LevelBuilder.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Program.cs" />
+    <Compile Include="GUI.cs" />
     <Compile Include="SoundManager.cs" />
     <Compile Include="Factories\BlockFactory.cs" />
     <Compile Include="Factories\SpriteFactory.cs" />
