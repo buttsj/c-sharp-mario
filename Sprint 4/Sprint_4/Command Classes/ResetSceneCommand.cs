@@ -13,8 +13,9 @@ namespace Sprint4
 
         public void Execute()
         {
-            Game1.GetInstance().level = new Level(Game1.GetInstance(), "/Maps/MapCleaned.csv");
-            Game1.GetInstance().gameState = new PlayGameState();
+            Game1.GetInstance().level = new Level(StringHolder.levelOne);
+            Game1.GetInstance().gameState = new TitleScreenGameState();
+            Game1.GetInstance().isTitle = true;
         }
     }
 }

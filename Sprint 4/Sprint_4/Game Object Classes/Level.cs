@@ -28,14 +28,13 @@ namespace Sprint4
         public Vector2 exitPosition { get; set; }
         public IAnimatedSprite exitPole { get; set; }
         
-        public Level(Game1 game, string fileName)
+        public Level(string fileName)
         {
-            this.game = game;
+            this.game = Game1.GetInstance();
             builder = new LevelBuilder(this);
             mario = builder.Build(fileName);
             game.gameCamera.LookAt(mario.position);
             collision = new CollisionDetector(mario, game);
-            SoundManager.PlaySong(SoundManager.songs.overworld);
             exitPole = new GateSprite(Game1.gameContent.Load<Texture2D>("Items/gateFramedFinal"), 2, 23);
             game.gameHUD.Time = ValueHolder.startingTime;
         }

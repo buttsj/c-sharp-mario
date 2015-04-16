@@ -14,7 +14,7 @@ namespace Sprint4
         {
             if (Game1.GetInstance().isPaused)
             {
-                Game1.GetInstance().gameState = new PlayGameState();
+                Game1.GetInstance().gameState = new SuperMarioGameState();
                 Game1.GetInstance().isPaused = false;
             }
             else

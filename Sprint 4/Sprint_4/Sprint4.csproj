@@ -150,7 +150,7 @@
     <Compile Include="Game States\LivesScreenGameState.cs" />
     <Compile Include="Game States\PauseGameState.cs" />
     <Compile Include="Game States\TransitionGameState.cs" />
-    <Compile Include="Game States\PlayGameState .cs" />
+    <Compile Include="Game States\SuperMarioGameState .cs" />
     <Compile Include="Game States\DeadGameState.cs" />
     <Compile Include="HUD and Background\HUD.cs" />
     <Compile Include="Interfaces\IPipeState.cs" />

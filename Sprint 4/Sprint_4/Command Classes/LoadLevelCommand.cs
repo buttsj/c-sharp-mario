@@ -14,8 +14,16 @@ namespace Sprint4
         }
         public void Execute()
         {
-            Game1.GetInstance().gameState = new PlayGameState();
-            SoundManager.PlaySong(SoundManager.songs.overworld);
+            Game1.GetInstance().level = new Level(levelName);
+            if (levelName == StringHolder.levelOne)
+            {
+                Game1.GetInstance().gameState = new SuperMarioGameState();
+                SoundManager.PlaySong(SoundManager.songs.overworld);
+            }
+            if (levelName == StringHolder.levelTwo)
+            {
+                Game1.GetInstance().gameState = new VVVVVVGameState();
+            }
             Game1.GetInstance().isTitle = false;
         }
     }

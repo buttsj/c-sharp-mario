@@ -43,7 +43,7 @@ namespace Sprint4
             {
                 mario.position.Y -= (newRect.Height - prevRect.Height);
                 mario.state = newState;
-                game.gameState = new PlayGameState();
+                game.gameState = new SuperMarioGameState();
             }
         }
 

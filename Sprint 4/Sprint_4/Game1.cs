@@ -40,7 +40,7 @@ namespace Sprint4
             soundManager = new SoundManager(this);
             gameCamera = new Camera(GraphicsDevice.Viewport, this);
             gameHUD = new HUD(this);
-            level = new Level(this, StringHolder.levelOne);
+            level = new Level(StringHolder.levelOne);
             keyboardController = new KeyboardController(level.mario);
             gamepadController = new GamepadController(level.mario);
             gameState = new TitleScreenGameState();

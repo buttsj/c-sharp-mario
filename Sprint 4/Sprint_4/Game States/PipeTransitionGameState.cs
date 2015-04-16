@@ -58,7 +58,7 @@ namespace Sprint4
             }
             else if (pipeTimer < 0 && mode == direction.comeOut)
             {
-                game.gameState = new PlayGameState();
+                game.gameState = new SuperMarioGameState();
             }
             pipeTimer--;
         }

@@ -28,8 +28,8 @@ namespace Sprint4
             timer--;
             if (timer <= 0)
             {
-                game.level = new Level(game, StringHolder.levelOne);
-                game.gameState = new PlayGameState();
+                game.level = new Level(StringHolder.levelOne);
+                game.gameState = new SuperMarioGameState();
                 game.gameHUD.textColor = ValueHolder.normalScreenText;
             }
             game.keyboardController.Update();

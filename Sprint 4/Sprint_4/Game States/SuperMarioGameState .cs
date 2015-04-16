@@ -7,18 +7,19 @@ using System.Text;
 
 namespace Sprint4
 {
-    class PlayGameState :IGameState
+    class SuperMarioGameState :IGameState
     {
         int gameStateTransitionBuffer = 5;
         Game1 game;
 
-        public PlayGameState()
+        public SuperMarioGameState()
         {
             game = Game1.GetInstance();
             game.keyboardController = new KeyboardController(game.level.mario);
             game.gamepadController = new GamepadController(game.level.mario);
             game.gameHUD.PausedCheck = false;
             game.gameHUD.gameEnded = false;
+            game.isVVVVVV = false;
         }
         public void Update(GameTime gameTime)
         {
