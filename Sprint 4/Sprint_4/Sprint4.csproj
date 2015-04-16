@@ -104,7 +104,7 @@
     <Compile Include="Game Object State Classes\PipeStates\LeftPipeState.cs" />
     <Compile Include="Game Object State Classes\PipeStates\UpPipeState.cs" />
     <Compile Include="Game Object State Classes\PipeStates\DownPipeState.cs" />
-    <Compile Include="Game States\AchievementGameState.cs" />
+    <Compile Include="Game States\AchievementMenuGameState.cs" />
     <Compile Include="Game States\TitleScreenGameState.cs" />
     <Compile Include="Game States\PipeTransitionGameState.cs" />
     <Compile Include="Game States\VVVVVVGameState.cs" />

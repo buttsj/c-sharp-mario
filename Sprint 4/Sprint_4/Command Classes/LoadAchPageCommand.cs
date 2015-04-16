@@ -12,7 +12,7 @@ namespace Sprint4
         }
         public void Execute()
         {
-            Game1.GetInstance().gameState = new AchievementGameState();
+            Game1.GetInstance().gameState = new AchievementMenuGameState();
         }
     }
 }

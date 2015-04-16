@@ -7,13 +7,13 @@ using System.Text;
 
 namespace Sprint4
 {
-    public class AchievementGameState :IGameState
+    public class AchievementMenuGameState :IGameState
     {
         Game1 game;
         public GUI menu;
-        int inputBuffer = 10;
+        int inputBuffer = 0;
 
-        public AchievementGameState()
+        public AchievementMenuGameState()
         {
             game = Game1.GetInstance();
             menu = new GUI(game);
@@ -26,12 +26,12 @@ namespace Sprint4
         public void Update(GameTime gameTime)
         {
             game.level.Update(gameTime);
-            inputBuffer--;
-            if (inputBuffer <= 0)
+            inputBuffer++;
+            if (inputBuffer > 6)
             {
                 game.keyboardController.Update();
                 game.gamepadController.Update();
-                inputBuffer = 10;
+                inputBuffer = 0;
             }
         }
 

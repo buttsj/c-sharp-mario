@@ -15,7 +15,6 @@ namespace Sprint4
         SpriteFactory factory;
         IAnimatedSprite logo;
         public GUI menu;
-        int inputBuffer = 10;
 
         public TitleScreenGameState()
         {
