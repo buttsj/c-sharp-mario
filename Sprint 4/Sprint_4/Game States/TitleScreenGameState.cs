@@ -43,13 +43,8 @@ namespace Sprint4
                 setLogo = true;
                 logo.Update(gameTime);
             }
-            inputBuffer--;
-            if (inputBuffer <= 0)
-            {
-                game.keyboardController.Update();
-                game.gamepadController.Update();
-                inputBuffer = 10;
-            }
+            game.keyboardController.Update();
+            game.gamepadController.Update();
         }
 
         public void Draw(SpriteBatch spriteBatch)

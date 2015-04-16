@@ -36,7 +36,7 @@ namespace Sprint4
             {
                 buffer = 0;
                 selection++;
-                if (selection > 3)
+                if (selection >= options.Count)
                 {
                     selection = 0;
                 }
@@ -51,7 +51,7 @@ namespace Sprint4
                 selection--;
                 if (selection < 0)
                 {
-                    selection = 2;
+                    selection = options.Count - 1;
                 }
                 currentCommand = options[selection].Key;
             }
