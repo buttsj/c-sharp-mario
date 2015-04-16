@@ -80,6 +80,7 @@
     <Compile Include="Achievements\Achievement.cs" />
     <Compile Include="Collision Detection and Response\PipeCollisionResponder.cs" />
     <Compile Include="Command Classes\FlipCommand.cs" />
+    <Compile Include="Command Classes\MenuSelectCommand.cs" />
     <Compile Include="Command Classes\MenuUpCommand.cs" />
     <Compile Include="Command Classes\MenuDownCommand.cs" />
     <Compile Include="Command Classes\LoadLevelCommand.cs" />

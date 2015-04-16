@@ -59,6 +59,12 @@ namespace Sprint4
                 currentCommand = options[selection].Key;
             }
         }
+
+        public void Select()
+        {
+            currentCommand.Execute();
+        }
+        
         public void Draw(SpriteBatch spriteBatch)
         {
             buffer++;

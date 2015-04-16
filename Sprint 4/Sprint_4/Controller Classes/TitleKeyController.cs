@@ -23,6 +23,7 @@ namespace Sprint4
             commandLibrary.Add(Keys.Q, currentCommand = new QuitCommand());
             commandLibrary.Add(Keys.Down, new MenuDownCommand(menu));
             commandLibrary.Add(Keys.Up, new MenuUpCommand(menu));
+            commandLibrary.Add(Keys.Enter, new MenuSelectCommand(menu));
         }
 
         public void Update()
