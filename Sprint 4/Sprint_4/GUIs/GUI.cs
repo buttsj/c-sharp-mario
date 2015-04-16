@@ -13,8 +13,8 @@ namespace Sprint4
     public class GUI
     {
         Game1 game;
-        List<KeyValuePair<ICommands, String>> options = new List<KeyValuePair<ICommands, String>>();
-        ICommands currentCommand;
+        public List<KeyValuePair<ICommands, String>> options { get; set; }
+        public ICommands currentCommand { get; set; }
         int selection = 0, n = 0;
         SpriteFont font;
         Vector2 adjust = new Vector2(0, 15);
@@ -25,10 +25,7 @@ namespace Sprint4
         public GUI(Game1 game)
         {
             this.game = game;
-            options.Add(new KeyValuePair<ICommands, String>(new LoadLevelCommand(StringHolder.levelOne), "Level 1"));
-            options.Add(new KeyValuePair<ICommands, String>(new LoadLevelCommand(StringHolder.levelTwo), "Level 2"));
-            options.Add(new KeyValuePair<ICommands, String>(new QuitCommand(), "Quit"));
-            currentCommand = options[0].Key;
+            options = new List<KeyValuePair<ICommands, String>>();
             font = Game1.gameContent.Load<SpriteFont>(StringHolder.hudPauseFont);
             factory = new SpriteFactory();
             coin = factory.build(SpriteFactory.sprites.coin);
@@ -39,7 +36,7 @@ namespace Sprint4
             {
                 buffer = 0;
                 selection++;
-                if (selection > 2)
+                if (selection > 3)
                 {
                     selection = 0;
                 }

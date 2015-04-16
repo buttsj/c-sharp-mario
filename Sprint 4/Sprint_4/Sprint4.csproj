@@ -80,6 +80,8 @@
     <Compile Include="Achievements\Achievement.cs" />
     <Compile Include="Collision Detection and Response\PipeCollisionResponder.cs" />
     <Compile Include="Command Classes\FlipCommand.cs" />
+    <Compile Include="Command Classes\LoadMenuCommand.cs" />
+    <Compile Include="Command Classes\LoadAchPageCommand.cs" />
     <Compile Include="Command Classes\MenuSelectCommand.cs" />
     <Compile Include="Command Classes\MenuUpCommand.cs" />
     <Compile Include="Command Classes\MenuDownCommand.cs" />
@@ -102,6 +104,7 @@
     <Compile Include="Game Object State Classes\PipeStates\LeftPipeState.cs" />
     <Compile Include="Game Object State Classes\PipeStates\UpPipeState.cs" />
     <Compile Include="Game Object State Classes\PipeStates\DownPipeState.cs" />
+    <Compile Include="Game States\AchievementGameState.cs" />
     <Compile Include="Game States\TitleScreenGameState.cs" />
     <Compile Include="Game States\PipeTransitionGameState.cs" />
     <Compile Include="Game States\VVVVVVGameState.cs" />

@@ -7,15 +7,15 @@ using System.Text;
 
 namespace Sprint4
 {
-    class TitleScreenGameState :IGameState
+    public class TitleScreenGameState :IGameState
     {
         Game1 game;
-        SpriteFont font;
         int logoTimer = 270;
         bool setLogo = false;
         SpriteFactory factory;
         IAnimatedSprite logo;
-        GUI menu;
+        public GUI menu;
+        int inputBuffer = 10;
 
         public TitleScreenGameState()
         {
@@ -25,6 +25,11 @@ namespace Sprint4
             SoundManager.PlaySong(SoundManager.songs.title);
             game = Game1.GetInstance();
             menu = new GUI(game);
+            menu.options.Add(new KeyValuePair<ICommands, String>(new LoadLevelCommand(StringHolder.levelOne), "Level 1"));
+            menu.options.Add(new KeyValuePair<ICommands, String>(new LoadLevelCommand(StringHolder.levelTwo), "Level 2"));
+            menu.options.Add(new KeyValuePair<ICommands, String>(new LoadAchPageCommand(), "Achievements"));
+            menu.options.Add(new KeyValuePair<ICommands, String>(new QuitCommand(), "Quit"));
+            menu.currentCommand = menu.options[0].Key;
             game.keyboardController = new TitleKeyController(menu);
             game.gamepadController = new TitlePadController();
         }
@@ -32,13 +37,18 @@ namespace Sprint4
         public void Update(GameTime gameTime)
         {
             game.level.Update(gameTime);
-            game.keyboardController.Update();
-            game.gamepadController.Update();
             logoTimer--;
             if (logoTimer <= 0)
             {
                 setLogo = true;
                 logo.Update(gameTime);
+            }
+            inputBuffer--;
+            if (inputBuffer <= 0)
+            {
+                game.keyboardController.Update();
+                game.gamepadController.Update();
+                inputBuffer = 10;
             }
         }
 

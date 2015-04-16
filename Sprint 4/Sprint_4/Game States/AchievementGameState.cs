@@ -7,23 +7,25 @@ using System.Text;
 
 namespace Sprint4
 {
-    class PauseGameState :IGameState
+    public class AchievementGameState :IGameState
     {
-        int inputBuffer = 10;
         Game1 game;
+        public GUI menu;
+        int inputBuffer = 10;
 
-        public PauseGameState()
+        public AchievementGameState()
         {
             game = Game1.GetInstance();
-            game.isPaused = true;
-            game.keyboardController = new PauseMenuKeyController();
-            game.gamepadController = new PauseMenuGamepadController();
-            SoundManager.pause.Play();
-            game.gameHUD.PausedCheck = true;
+            menu = new GUI(game);
+            menu.options.Add(new KeyValuePair<ICommands, String>(new LoadMenuCommand(), "Back"));
+            menu.currentCommand = menu.options[0].Key;
+            game.keyboardController = new TitleKeyController(menu);
+            game.gamepadController = new TitlePadController();
         }
 
         public void Update(GameTime gameTime)
         {
+            game.level.Update(gameTime);
             inputBuffer--;
             if (inputBuffer <= 0)
             {
@@ -36,6 +38,7 @@ namespace Sprint4
         public void Draw(SpriteBatch spriteBatch)
         {
             game.level.Draw(spriteBatch);
+            menu.Draw(spriteBatch);
         }
     }
 }
