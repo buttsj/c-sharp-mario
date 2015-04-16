@@ -232,7 +232,7 @@
     <Compile Include="LevelBuilder.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Program.cs" />
-    <Compile Include="GUI.cs" />
+    <Compile Include="GUIs\GUI.cs" />
     <Compile Include="SoundManager.cs" />
     <Compile Include="Factories\BlockFactory.cs" />
     <Compile Include="Factories\SpriteFactory.cs" />
