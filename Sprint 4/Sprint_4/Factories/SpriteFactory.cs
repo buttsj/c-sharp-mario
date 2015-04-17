@@ -39,7 +39,9 @@ namespace Sprint4
             leftMovingMarioSmall, rightCrouchingMarioSmall, rightIdleMarioSmall, rightJumpingMarioSmall, 
             rightMovingMarioSmall, leftSprintMarioSmall, rightSprintMarioSmall, victoryMarioSmall,
             // Mario flip
-            leftIdleMarioFlip, rightIdleMarioFlip, leftMovingMarioFlip, rightMovingMarioFlip
+            leftIdleMarioFlip, rightIdleMarioFlip, leftMovingMarioFlip, rightMovingMarioFlip,
+            // Trampoline
+            trampoline
         }
 
         public SpriteFactory()
@@ -500,6 +502,12 @@ namespace Sprint4
                 return new MarioMovingSprite(rightMovingMarioFlip, 1, 2);
             }
 
+            // TRAMPOLINE
+            if (sprite == sprites.trampoline)
+            {
+                Texture2D trampoline = Game1.gameContent.Load<Texture2D>("Items/trampoline");
+                return new TrampolineSprite(trampoline, 1, 10);
+            }
             return product;
         }
     }

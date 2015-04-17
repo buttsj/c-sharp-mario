@@ -20,6 +20,7 @@ namespace Sprint4
         public List<Pipe> levelPipes = new List<Pipe>();
         public List<Block> levelBlocks = new List<Block>();
         public List<Spike> levelSpikes = new List<Spike>();
+        public List<Trampoline> levelTrampolines = new List<Trampoline>();
         public List<ICollectable> levelItems = new List<ICollectable>();
         public List<KeyValuePair<IAnimatedSprite, Vector2>> levelBackgroundObjects = new List<KeyValuePair<IAnimatedSprite, Vector2>>();
         public CollisionDetector collision;
@@ -45,6 +46,13 @@ namespace Sprint4
             foreach (KeyValuePair<IAnimatedSprite, Vector2> backgroundObject in levelBackgroundObjects)
             {
                 backgroundObject.Key.Update(gameTime);
+            }
+            foreach (Trampoline trampolineDrawer in levelTrampolines)
+            {
+                if (game.gameCamera.InCameraView(trampolineDrawer.GetBoundingBox()))
+                {
+                    trampolineDrawer.Update(gameTime);
+                }
             }
             foreach (Enemy enemy in levelEnemies)
             {
@@ -97,7 +105,7 @@ namespace Sprint4
                 levelFireballs.Remove(fireball);              
             }
              
-            collision.Detect(mario, levelFireballs, levelEnemies, levelBlocks, levelItems, levelPipes, levelSpikes); 
+            collision.Detect(mario, levelFireballs, levelEnemies, levelBlocks, levelItems, levelPipes, levelSpikes, levelTrampolines); 
 
             mario.Update(gameTime, game);
             if (mario.position.X < 0)
@@ -152,6 +160,13 @@ namespace Sprint4
                 if (game.gameCamera.InCameraView(spikeDrawer.GetBoundingBox()))
                 {
                     spikeDrawer.Draw(spriteBatch);
+                }
+            }
+            foreach (Trampoline trampolineDrawer in levelTrampolines)
+            {
+                if (game.gameCamera.InCameraView(trampolineDrawer.GetBoundingBox()))
+                {
+                    trampolineDrawer.Draw(spriteBatch);
                 }
             }
             if (!game.isTitle)

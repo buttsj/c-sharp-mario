@@ -138,6 +138,10 @@ namespace Sprint4
                     {
                         level.levelSpikes.Add(new Spike(new Vector2(xCoord, yCoord), true));
                     }
+                    if (words[i] == "t")
+                    {
+                        level.levelTrampolines.Add(new Trampoline(new Vector2(xCoord, yCoord)));
+                    }
                     xCoord+=spacingIncrement * events;
                 }
             }

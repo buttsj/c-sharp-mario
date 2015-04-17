@@ -35,7 +35,7 @@ namespace Sprint4
         }
 
         public void Detect(Mario mario, List<Fireball> levelFireballs, List<Enemy> levelEnemies,
-            List<Block> levelBlocks, List<ICollectable> levelItems, List<Pipe> levelPipes, List<Spike> levelSpikes)
+            List<Block> levelBlocks, List<ICollectable> levelItems, List<Pipe> levelPipes, List<Spike> levelSpikes, List<Trampoline> levelTrampolines)
         {
             standingBlocks = new List<Block>();
             standingPipes = new List<Pipe>();
