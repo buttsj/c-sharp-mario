@@ -37,6 +37,7 @@ namespace Sprint4
             game.gameHUD.Achievement = ach.image;
             game.gameHUD.hideAch = false;
             ValueHolder.achRemaining--;
+            ValueHolder.achGained++;
         }
 
         public AchievementsManager(Game1 game)

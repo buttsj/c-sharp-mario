@@ -50,6 +50,7 @@ namespace Sprint4
         public static int hurryTime = 100;
         public static int achTimer = 200;
         public static int achRemaining = 0;
+        public static int achGained = 0;
 
         //fireball
         public static int fireballXSpawn = 5;

@@ -19,6 +19,7 @@ namespace Sprint4
         Texture2D achLevel;
         Texture2D achLife;
         Texture2D achMushroom;
+        SpriteFont font;
 
         public AchievementMenuGameState()
         {
@@ -35,6 +36,7 @@ namespace Sprint4
             achLife = Game1.gameContent.Load<Texture2D>("Achievements/achLife");
             achLevel = Game1.gameContent.Load<Texture2D>("Achievements/achLevel");
             achMushroom = Game1.gameContent.Load<Texture2D>("Achievements/achMushroom");
+            font = Game1.gameContent.Load<SpriteFont>("Fonts/SpriteFont1");
         }
 
         public void Update(GameTime gameTime)
@@ -60,6 +62,7 @@ namespace Sprint4
             spriteBatch.Draw(achLevel, new Rectangle(160, 302, 75, 51), Color.White);
             spriteBatch.Draw(achLife, new Rectangle(236, 302, 75, 51), Color.White);
             spriteBatch.Draw(achMushroom, new Rectangle(160, 354, 75, 51), Color.White);
+            spriteBatch.DrawString(font, "Achievements unlocked: " + ValueHolder.achGained + " out of 7", game.gameCamera.CenterScreen + new Vector2(-360, 225), Color.Black);
         }
     }
 }
