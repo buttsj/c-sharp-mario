@@ -28,6 +28,7 @@ namespace Sprint4
 
         public void AchievementUnlocked(Achievement ach)
         {
+            achTimer = ValueHolder.achTimer;
             if (achFX.State == SoundState.Stopped)
             {
                 achFX.Play();
