@@ -25,7 +25,14 @@ namespace Sprint4
 
         public void TakeDamage()
         {
-            mario.state = new DeadMS(mario);
+            if (Game1.GetInstance().isVVVVVV)
+            {
+                mario.state = new DeadFlipMS(mario);
+            }
+            else
+            {
+                mario.state = new DeadMS(mario);
+            }
         }
         public void Up()
         {

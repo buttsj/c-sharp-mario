@@ -142,6 +142,10 @@ namespace Sprint4
                     {
                         level.levelTrampolines.Add(new Trampoline(new Vector2(xCoord, yCoord)));
                     }
+                    if (words[i] == "Ch")
+                    {
+                        level.checkpoint = new Vector2(xCoord, yCoord);
+                    }
                     xCoord+=spacingIncrement * events;
                 }
             }

@@ -230,6 +230,12 @@ namespace Sprint4
         {
             physState.Flip();
         }
+
+        public void Respawn()
+        {
+            state = new RightIdleSmallMS(this);
+            position = Game1.GetInstance().level.checkpoint;
+        }
        }
     }
 

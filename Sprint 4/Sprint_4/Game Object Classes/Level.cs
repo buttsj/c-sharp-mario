@@ -28,6 +28,7 @@ namespace Sprint4
         public bool isUnderground = false;
         public Vector2 exitPosition { get; set; }
         public IAnimatedSprite exitPole { get; set; }
+        public Vector2 checkpoint;
         
         public Level(string fileName)
         {

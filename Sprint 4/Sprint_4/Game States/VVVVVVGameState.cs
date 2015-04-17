@@ -21,7 +21,6 @@ namespace Sprint4
             game.gameHUD.gameEnded = false;
             game.isVVVVVV = true;
             game.isTitle = false;
-            SoundManager.PlaySong(SoundManager.songs.vmusic);
         }
         public void Update(GameTime gameTime)
         {

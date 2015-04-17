@@ -23,6 +23,7 @@ namespace Sprint4
             if (levelName == StringHolder.levelTwo)
             {
                 Game1.GetInstance().gameState = new VVVVVVGameState();
+                SoundManager.PlaySong(SoundManager.songs.vmusic);
             }
             Game1.GetInstance().isTitle = false;
         }

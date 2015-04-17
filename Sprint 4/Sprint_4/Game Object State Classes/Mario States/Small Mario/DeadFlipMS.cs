@@ -7,61 +7,50 @@ using System.Text;
 
 namespace Sprint4
 {
-    class LeftIdleSmallFlipMS : IMarioState
+    public class DeadFlipMS : IMarioState
     {
-        public IAnimatedSprite Sprite { get; set; }
         Mario mario;
-
-        public LeftIdleSmallFlipMS(Mario mario)
-        {
+        public IAnimatedSprite Sprite { get; set; }
+       
+        public DeadFlipMS(Mario mario){
             ISpriteFactory factory = new SpriteFactory();
-            Sprite = factory.build(SpriteFactory.sprites.leftIdleMarioFlip);
+            Sprite = factory.build(SpriteFactory.sprites.deadMario);
             this.mario = mario;
+            Game1.GetInstance().gameState = new DeadFlipGameState(mario);
         }
         public Rectangle GetBoundingBox(Vector2 location)
         {
             return Sprite.GetBoundingBox(location);
         }
-
         public void TakeDamage()
         {
-            mario.state = new DeadFlipMS(mario);
         }
         public void Up()
         {
-            mario.state = new LeftJumpingSmallMS(mario);         
         }
         public void Down()
         {
-            mario.state = new LeftCrouchingSmallMS(mario);          
         }
         public void GoLeft()
         {
-            mario.state = new LeftMovingSmallFlipMS(mario);            
         }
         public void GoRight()
         {
-            mario.state = new RightMovingSmallFlipMS(mario);            
         }
         public void Idle()
         {
-
         }
         public void Land()
         {
-
         }
         public void MakeBigMario()
         {
-            mario.TransitionState(mario.state, new LeftIdleBigMS(mario));            
         }
         public void MakeSmallMario()
         {
-            // null
         }
         public void MakeFireMario()
         {
-            mario.TransitionState(mario.state, new LeftIdleFireMS(mario));            
         }
         public void MakeFireballMario()
         {
@@ -69,12 +58,8 @@ namespace Sprint4
         }
         public void MakeDeadMario()
         {
-            mario.state = new DeadMS(mario);
         }
-        public void Flip() 
-        {
-            mario.state = new LeftIdleSmallMS(mario);
-        }
+        public void Flip() { }
         public void Update(GameTime gameTime)
         {
             Sprite.Update(gameTime);

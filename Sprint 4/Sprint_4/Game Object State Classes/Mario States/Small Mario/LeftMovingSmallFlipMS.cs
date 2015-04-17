@@ -25,7 +25,7 @@ namespace Sprint4
 
         public void TakeDamage()
         {
-            mario.state = new DeadMS(mario);
+            mario.state = new DeadFlipMS(mario);
         }
         public void Up()
         {

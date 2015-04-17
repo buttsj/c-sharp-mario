@@ -31,7 +31,7 @@ namespace Sprint4
             SoundManager.flip.Play();
             mario.state.Flip();
             gravity = -gravity;
-            mario.position.Y += 2*gravity;
+            mario.position.Y += 5*gravity;
             mario.physState = new VVVVVVAirState(gravity, mario);
         }
     }
