@@ -30,7 +30,8 @@ namespace Sprint4
         }
         public void Run() {
         }
-        public void Flip() { 
+        public void Flip() {
+            mario.physState = new VVVVVVGroundState(mario, gravity / 3);
         }
     }
 }

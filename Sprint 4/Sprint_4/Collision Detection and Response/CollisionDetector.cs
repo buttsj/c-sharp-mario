@@ -149,6 +149,14 @@ namespace Sprint4
                     mario.TakeDamage();
                 }
             }
+            foreach (Trampoline trampoline in levelTrampolines)
+            {
+                Rectangle trampolineRect = trampoline.GetBoundingBox();
+                if (marioRect.Intersects(trampolineRect))
+                {
+                    mario.Flip();
+                }
+            }
 
             foreach (ICollectable obtainedItem in obtainedItems)
             {

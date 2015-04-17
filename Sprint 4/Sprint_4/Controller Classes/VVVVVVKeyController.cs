@@ -41,7 +41,6 @@ namespace Sprint4
         {
             flipBuffer++;
             currentCommand = new NullCommand();
-            GamePadState gamepadState = GamePad.GetState(PlayerIndex.One);
             keyboardState = Keyboard.GetState();
             foreach (Keys key in keyboardState.GetPressedKeys())
             {
