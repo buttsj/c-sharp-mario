@@ -22,6 +22,7 @@ namespace Sprint4
         {
             mario.position += mario.velocity * ((float)gameTime.ElapsedGameTime.Milliseconds / positionDtAdjust);
             mario.velocity *= speedDecayRate;
+            mario.gravity = this.gravity;
         }
         public void Run() 
         {

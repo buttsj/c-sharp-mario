@@ -23,6 +23,7 @@ namespace Sprint4
             mario.position += mario.velocity * ((float)gameTime.ElapsedGameTime.Milliseconds / positionDtAdjust);
             mario.velocity *= speedDecayRate;
             mario.position.Y += gravity;
+            mario.gravity = this.gravity;
             if (Game1.GetInstance().level.collision.standingBlocks.Count > 0)
             {
                 mario.physState = new VVVVVVGroundState(mario, gravity / 3);
@@ -31,7 +32,6 @@ namespace Sprint4
         public void Run() {
         }
         public void Flip() {
-            mario.physState = new VVVVVVGroundState(mario, gravity / 3);
         }
     }
 }
