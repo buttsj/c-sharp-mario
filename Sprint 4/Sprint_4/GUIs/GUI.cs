@@ -71,10 +71,10 @@ namespace Sprint4
             buffer++;
             foreach (KeyValuePair<ICommands, String> pair in options)
             {
-                spriteBatch.DrawString(font, pair.Value, new Vector2(160, 400) + (adjust* n), Color.Black);
+                spriteBatch.DrawString(font, pair.Value, new Vector2(160, 380) + (adjust* n), Color.Black);
                 n++;
             }
-            coin.Draw(spriteBatch, new Vector2(140, 405) + (adjust * selection));
+            coin.Draw(spriteBatch, new Vector2(140, 385) + (adjust * selection));
             n = 0;
         }
     }
