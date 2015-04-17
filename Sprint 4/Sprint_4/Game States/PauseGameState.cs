@@ -9,7 +9,7 @@ namespace Sprint4
 {
     class PauseGameState :IGameState
     {
-        int inputBuffer = 5;
+        int inputBuffer = 10;
         Game1 game;
 
         public PauseGameState()
@@ -29,7 +29,7 @@ namespace Sprint4
             {
                 game.keyboardController.Update();
                 game.gamepadController.Update();
-                inputBuffer = 5;
+                inputBuffer = 10;
             }
         }
 

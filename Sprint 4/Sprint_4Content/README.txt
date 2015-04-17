@@ -6,5 +6,5 @@ Up/Down arrow keys to Jump or Crouch
 W/S keys to Jump or Crouch
 
 B to shoot fireball while with Fireball Mario
-R to reset the scene
+R to reset to the main menu
 Enter to pause the game

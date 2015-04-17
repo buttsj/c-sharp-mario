@@ -59,7 +59,11 @@ namespace Sprint4
 
         public void Select()
         {
-            currentCommand.Execute();
+            if (buffer >= 10)
+            {
+                buffer = 0;
+                currentCommand.Execute();
+            }
         }
         
         public void Draw(SpriteBatch spriteBatch)

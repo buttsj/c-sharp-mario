@@ -92,8 +92,6 @@ namespace Sprint4
             {
                 spriteBatch.DrawString(Paused, StringHolder.pausedMessaged, game.gameCamera.CenterScreen + 
                     ValueHolder.textPosition, Color.Black);
-
-                spriteBatch.DrawString(Paused, "Achievements remaining: " + ValueHolder.achRemaining, game.gameCamera.CenterScreen + new Vector2(-120, 100), Color.Black);
             }
             if (!hideAch)
             {
