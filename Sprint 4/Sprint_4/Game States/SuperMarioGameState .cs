@@ -20,7 +20,6 @@ namespace Sprint4
             game.gameHUD.PausedCheck = false;
             game.gameHUD.gameEnded = false;
             game.isVVVVVV = false;
-            SoundManager.PlaySong(SoundManager.songs.overworld);
         }
         public void Update(GameTime gameTime)
         {

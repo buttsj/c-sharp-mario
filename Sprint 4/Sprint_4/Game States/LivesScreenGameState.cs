@@ -31,6 +31,7 @@ namespace Sprint4
                 game.level = new Level(StringHolder.levelOne);
                 game.gameState = new SuperMarioGameState();
                 game.gameHUD.textColor = ValueHolder.normalScreenText;
+                SoundManager.PlaySong(SoundManager.songs.overworld);
             }
             game.keyboardController.Update();
         }
