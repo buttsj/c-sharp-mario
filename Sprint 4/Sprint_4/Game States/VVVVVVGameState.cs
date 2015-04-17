@@ -17,6 +17,7 @@ namespace Sprint4
             game.level.mario.physState = new VVVVVVGroundState(game.level.mario, 1);
             game.keyboardController = new VVVVVVKeyController(game.level.mario);
             game.gamepadController = new VVVVVVPadController(game.level.mario);
+            game.background.CurrentSprite = new NullSprite();
             game.gameHUD.PausedCheck = false;
             game.gameHUD.gameEnded = false;
             game.isVVVVVV = true;
@@ -31,6 +32,7 @@ namespace Sprint4
 
         public void Draw(SpriteBatch spriteBatch)
         {
+            game.GraphicsDevice.Clear(Color.Black);
             game.level.Draw(spriteBatch);
         }
     }
