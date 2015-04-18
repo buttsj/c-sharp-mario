@@ -154,9 +154,9 @@ namespace Sprint4
                 Rectangle trampolineRect = trampoline.GetBoundingBox();
                 if (marioRect.Intersects(trampolineRect))
                 {
-                    if (!mario.physState.GetType().Equals(new VVVVVVGroundState(mario, mario.gravity / 3).GetType()))
+                    if (mario.physState.GetType().Equals(new VVVVVVAirState(mario, 1).GetType()))
                     {
-                        mario.physState = new VVVVVVGroundState(mario, mario.gravity / 3);
+                        mario.physState = new VVVVVVGroundState(mario, mario.gravityDirection);
                     }
                     mario.Flip();
                 }

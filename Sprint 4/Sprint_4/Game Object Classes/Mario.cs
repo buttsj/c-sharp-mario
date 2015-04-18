@@ -19,7 +19,7 @@ namespace Sprint4
         private int fireballTimer = ValueHolder.fireballDelay;
         public int fireballCount = 0;
         public int invicibilityFrames = 0;
-        public int gravity = 1;
+        public int gravityDirection = 1;
         public Vector2 position;
         public Vector2 velocity;
         public Vector2 maxVelocity = new Vector2((float)6, (float)17);

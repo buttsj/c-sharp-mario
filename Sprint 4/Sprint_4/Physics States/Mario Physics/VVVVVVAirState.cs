@@ -13,20 +13,19 @@ namespace Sprint4
         int gravity = 4;
         Mario mario;
 
-        public VVVVVVAirState(int sign, Mario mario)
+        public VVVVVVAirState(Mario mario, int sign)
         {
             this.mario = mario;
-            gravity = this.gravity * sign;
+            gravity *= sign;
         }
         public void Update(Mario mario, GameTime gameTime)
         {
             mario.position += mario.velocity * ((float)gameTime.ElapsedGameTime.Milliseconds / positionDtAdjust);
             mario.velocity *= speedDecayRate;
             mario.position.Y += gravity;
-            mario.gravity = this.gravity;
             if (Game1.GetInstance().level.collision.standingBlocks.Count > 0)
             {
-                mario.physState = new VVVVVVGroundState(mario, gravity / 3);
+                mario.physState = new VVVVVVGroundState(mario, mario.gravityDirection);
             }
         }
         public void Run() {

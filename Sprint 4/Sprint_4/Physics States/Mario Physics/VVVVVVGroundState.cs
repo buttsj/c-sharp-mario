@@ -8,22 +8,22 @@ namespace Sprint4
 {
     class VVVVVVGroundState :IMarioPhysicsState
     {
-        int gravity =1;
+        int gravity = 1;
         Mario mario;
         public Vector2 speedDecayRate = new Vector2((float)0.73, (float)0.70);
         float positionDtAdjust = 10;
+        int positionShift = 5;
 
-        public VVVVVVGroundState(Mario mario, int gravity)
+        public VVVVVVGroundState(Mario mario, int sign)
         {
             this.mario = mario;
-            this.gravity *= gravity;
+            gravity*=sign;
         }
         public void Update(Mario mario, GameTime gameTime)
         {
             mario.position += mario.velocity * ((float)gameTime.ElapsedGameTime.Milliseconds / positionDtAdjust);
             mario.velocity *= speedDecayRate;
-            mario.gravity = this.gravity;
-            mario.position.Y += gravity*3;
+            mario.position.Y += gravity * ValueHolder.flipFallRate;
         }
         public void Run() 
         {
@@ -31,9 +31,9 @@ namespace Sprint4
         public void Flip() {
             SoundManager.flip.Play();
             mario.state.Flip();
-            gravity = -gravity;
-            mario.position.Y += 5*gravity;
-            mario.physState = new VVVVVVAirState(gravity, mario);
+            mario.gravityDirection = -mario.gravityDirection;
+            mario.position.Y += positionShift*mario.gravityDirection;
+            mario.physState = new VVVVVVAirState(mario, mario.gravityDirection);
         }
     }
 }
