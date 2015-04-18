@@ -20,7 +20,6 @@ namespace Sprint4
         {
             factory = new SpriteFactory();
             logo = factory.build(SpriteFactory.sprites.title);
-            SoundManager.StopMusic();
             SoundManager.PlaySong(SoundManager.songs.title);
             game = Game1.GetInstance();
             menu = new GUI(game);
@@ -44,6 +43,7 @@ namespace Sprint4
             }
             game.keyboardController.Update();
             game.gamepadController.Update();
+            menu.Update();
         }
 
         public void Draw(SpriteBatch spriteBatch)

@@ -15,12 +15,14 @@ namespace Sprint4
         Game1 game;
         public List<KeyValuePair<ICommands, String>> options { get; set; }
         public ICommands currentCommand { get; set; }
-        int selection = 0, n = 0;
+        int selection = 0, menuNumber = 0;
         SpriteFont font;
         Vector2 adjust = new Vector2(0, 15);
         SpriteFactory factory;
         IAnimatedSprite coin;
         int buffer = 0;
+        public Vector2 textStartingPosition = new Vector2(160, 380);
+        public Vector2 coinStartingPosition = new Vector2(140, 385);
 
         public GUI(Game1 game)
         {
@@ -65,17 +67,21 @@ namespace Sprint4
                 currentCommand.Execute();
             }
         }
+
+        public void Update()
+        {
+            buffer++;
+        }
         
         public void Draw(SpriteBatch spriteBatch)
         {
-            buffer++;
             foreach (KeyValuePair<ICommands, String> pair in options)
             {
-                spriteBatch.DrawString(font, pair.Value, new Vector2(160, 380) + (adjust* n), Color.Black);
-                n++;
+                spriteBatch.DrawString(font, pair.Value, textStartingPosition + (adjust* menuNumber), Color.Black);
+                menuNumber++;
             }
-            coin.Draw(spriteBatch, new Vector2(140, 385) + (adjust * selection));
-            n = 0;
+            coin.Draw(spriteBatch, coinStartingPosition + (adjust * selection));
+            menuNumber = 0;
         }
     }
 }

@@ -37,6 +37,8 @@ namespace Sprint4
             achLevel = Game1.gameContent.Load<Texture2D>("Achievements/achLevel");
             achMushroom = Game1.gameContent.Load<Texture2D>("Achievements/achMushroom");
             font = Game1.gameContent.Load<SpriteFont>("Fonts/SpriteFont1");
+            menu.textStartingPosition.Y += 25;
+            menu.coinStartingPosition.Y += 25;
         }
 
         public void Update(GameTime gameTime)
@@ -49,6 +51,7 @@ namespace Sprint4
                 game.gamepadController.Update();
                 inputBuffer = 0;
             }
+            menu.Update();
         }
 
         public void Draw(SpriteBatch spriteBatch)

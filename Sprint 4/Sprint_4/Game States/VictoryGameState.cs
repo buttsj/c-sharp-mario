@@ -41,9 +41,10 @@ namespace Sprint4
             else
             {
                 game.level.mario.MakeVictoryMario();
-                if (walkTimer < -60)
+                if (walkTimer < -70)
                 {
                     Game1.GetInstance().level = new Level(StringHolder.levelOne);
+                    Game1.GetInstance().background.CurrentSprite = Game1.GetInstance().background.OverworldSprite;
                     Game1.GetInstance().gameState = new TitleScreenGameState();
                     Game1.GetInstance().isTitle = true;
                     Game1.GetInstance().gameHUD.Coins = 0;

@@ -14,8 +14,9 @@ namespace Sprint4
         public static Song athletic, star, overworld, underground, placeHolderSong, overworldFast, vmusic, title;
         public static SoundEffect coinCollect, brickBreak, grow, shrink, blockHit, oneUp, enemyDamage, jump, itemSpawn,
             pause, death, gameOver, fireball, launch, clear, achUnlocked, flip;
+        public static songs currentSong;
             
-        public enum songs{athletic, star, overworld, underground, overworldFast, vmusic, title}
+        public enum songs{athletic, star, overworld, underground, overworldFast, vmusic, title, nullSong}
         public SoundManager(Game1 game){
             this.game = game;
             jump = game.Content.Load<SoundEffect>("Sound/SFX/SFX Jump");
@@ -43,6 +44,7 @@ namespace Sprint4
             achUnlocked = game.Content.Load<SoundEffect>("Achievements/AchievementUnlocked");
             title = game.Content.Load<Song>("Sound/Music/title music");
             flip = game.Content.Load<SoundEffect>("Sound/SFX/flip");
+            currentSong = songs.nullSong;
         }
         public static void PlaySong(SoundManager.songs song)
         {
@@ -74,8 +76,12 @@ namespace Sprint4
             {
                 placeHolderSong = title;
             }
-            MediaPlayer.Play(placeHolderSong);
-            MediaPlayer.IsRepeating = true;
+            if (!currentSong.Equals(song))
+            {
+                MediaPlayer.Play(placeHolderSong);
+                MediaPlayer.IsRepeating = true;
+                currentSong = song;
+            }
         }
         public static void StopMusic()
         {

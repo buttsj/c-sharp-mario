@@ -32,7 +32,6 @@ namespace Sprint4
 
         public void Draw(SpriteBatch spriteBatch)
         {
-            game.GraphicsDevice.Clear(Color.Black);
             game.level.Draw(spriteBatch);
         }
     }

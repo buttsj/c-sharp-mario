@@ -12,7 +12,7 @@ namespace Sprint4
         Mario mario;
         public Vector2 speedDecayRate = new Vector2((float)0.73, (float)0.70);
         float positionDtAdjust = 10;
-        int positionShift = 5;
+        int positionShift = 7;
 
         public VVVVVVGroundState(Mario mario, int sign)
         {
