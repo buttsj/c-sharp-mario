@@ -52,6 +52,34 @@ namespace Sprint4
                 inputBuffer = 0;
             }
             menu.Update();
+            if (game.ach.achievementKeeper[AchievementsManager.AchievementType.Coins].isUnlocked)
+            {
+                achCoins = game.ach.achievementKeeper[AchievementsManager.AchievementType.Coins].greyImage;
+            }
+            if (game.ach.achievementKeeper[AchievementsManager.AchievementType.Death].isUnlocked)
+            {
+                achFall = game.ach.achievementKeeper[AchievementsManager.AchievementType.Death].greyImage;
+            }
+            if (game.ach.achievementKeeper[AchievementsManager.AchievementType.Fireball].isUnlocked)
+            {
+                achFireball = game.ach.achievementKeeper[AchievementsManager.AchievementType.Fireball].greyImage;
+            }
+            if (game.ach.achievementKeeper[AchievementsManager.AchievementType.Enemy].isUnlocked)
+            {
+                achHitEnemy = game.ach.achievementKeeper[AchievementsManager.AchievementType.Enemy].greyImage;
+            }
+            if (game.ach.achievementKeeper[AchievementsManager.AchievementType.Level].isUnlocked)
+            {
+                achLevel = game.ach.achievementKeeper[AchievementsManager.AchievementType.Level].greyImage;
+            }
+            if (game.ach.achievementKeeper[AchievementsManager.AchievementType.Life].isUnlocked)
+            {
+                achLife = game.ach.achievementKeeper[AchievementsManager.AchievementType.Life].greyImage;
+            }
+            if (game.ach.achievementKeeper[AchievementsManager.AchievementType.Mushroom].isUnlocked)
+            {
+                achMushroom = game.ach.achievementKeeper[AchievementsManager.AchievementType.Mushroom].greyImage;
+            }
         }
 
         public void Draw(SpriteBatch spriteBatch)

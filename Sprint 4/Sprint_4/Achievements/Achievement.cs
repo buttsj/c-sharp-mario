@@ -11,6 +11,7 @@ namespace Sprint4
     {
         public bool isUnlocked { get; set; }
         public Texture2D image { get; set; }
+        public Texture2D greyImage { get; set; }
         public int unlockCheck { get; set; }
         public int unlockMark { get; set; }
     }
