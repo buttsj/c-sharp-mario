@@ -1025,7 +1025,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ThrowingStar.png">
+    <Compile Include="Items\ThrowingStar.png">
       <Name>ThrowingStar</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
