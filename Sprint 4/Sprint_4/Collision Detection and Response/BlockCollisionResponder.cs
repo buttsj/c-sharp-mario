@@ -11,7 +11,6 @@ namespace Sprint4
     {
         Game1 game;
         SoundEffectInstance hitBlock;
-        int brickBreakPoints = 50;
 
 
         public BlockCollisionResponder(Game1 game)
@@ -62,9 +61,7 @@ namespace Sprint4
                         mario.marioHeight = 0;
                         if (block.state.GetType().Equals(new BrickBlockState().GetType()) && mario.isBig)
                         {
-                            destroyedBlocks.Add(block);
-                            game.gameHUD.Score += brickBreakPoints;
-                            SoundManager.brickBreak.Play();
+                            block.Explode();
                         }
                     }
                     else

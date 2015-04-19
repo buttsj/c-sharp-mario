@@ -13,6 +13,7 @@ namespace Sprint4
         public static int enemyHurtPoints = 100;
         public static int itemCollectPoints = 1000;
         public static int remainingTimePoints = 50;
+        public static int brickBreakPoints = 50;
 
         public static int fireballDelay = 10;
         public static int fallingMarioBoundary = 500;
