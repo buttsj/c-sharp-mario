@@ -60,6 +60,10 @@ namespace Sprint4
                 Coins = 0;
                 Lives++;
             }
+            if (Coins == 20)
+            {
+                game.ach.AchievementAdjustment(AchievementsManager.AchievementType.Coins);
+            }
             currentTime += (float)gameTime.ElapsedGameTime.TotalSeconds;
             if (currentTime >= countDuration && !game.isVictory)
             {

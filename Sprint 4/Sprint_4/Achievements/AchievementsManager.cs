@@ -45,7 +45,7 @@ namespace Sprint4
             this.game = game;
             achievementKeeper = new Dictionary<AchievementType, Achievement>();
             achievementKeeper.Add(AchievementType.Level, new Achievement() { isUnlocked = false, image = Game1.gameContent.Load<Texture2D>("Achievements/achievementBeatLevel"), unlockCheck = 1, unlockMark = 0 });
-            achievementKeeper.Add(AchievementType.Coins, new Achievement() { isUnlocked = false, image = Game1.gameContent.Load<Texture2D>("Achievements/achievementCoins"), unlockCheck = 20, unlockMark = 0 });
+            achievementKeeper.Add(AchievementType.Coins, new Achievement() { isUnlocked = false, image = Game1.gameContent.Load<Texture2D>("Achievements/achievementCoins"), unlockCheck = 1, unlockMark = 0 });
             achievementKeeper.Add(AchievementType.Mushroom, new Achievement() { isUnlocked = false, image = Game1.gameContent.Load<Texture2D>("Achievements/achievementEat"), unlockCheck = 1, unlockMark = 0 });
             achievementKeeper.Add(AchievementType.Death, new Achievement() { isUnlocked = false, image = Game1.gameContent.Load<Texture2D>("Achievements/achievementFall"), unlockCheck = 1, unlockMark = 0 });
             achievementKeeper.Add(AchievementType.Fireball, new Achievement() { isUnlocked = false, image = Game1.gameContent.Load<Texture2D>("Achievements/achievementFireball"), unlockCheck = 1, unlockMark = 0 });
