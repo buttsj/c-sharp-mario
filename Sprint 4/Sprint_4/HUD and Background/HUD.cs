@@ -60,7 +60,7 @@ namespace Sprint4
                 Coins = 0;
                 Lives++;
             }
-            if (Coins == 20)
+            if (Coins >= 20)
             {
                 game.ach.AchievementAdjustment(AchievementsManager.AchievementType.Coins);
             }
