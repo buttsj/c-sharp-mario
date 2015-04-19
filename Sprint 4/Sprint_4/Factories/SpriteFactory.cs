@@ -105,13 +105,13 @@ namespace Sprint4
             }
             if (sprite == sprites.upSpike)
             {
-                Texture2D upSpike = Game1.gameContent.Load<Texture2D>("Enemies/upSpike");
-                return new StaticSprite(upSpike);
+                Texture2D upSpike = Game1.gameContent.Load<Texture2D>("Enemies/upSpikeAnimated");
+                return new SpikeSprite(upSpike, 1, 2);
             }
             if (sprite == sprites.downSpike)
             {
-                Texture2D downSpike = Game1.gameContent.Load<Texture2D>("Enemies/downSpike");
-                return new StaticSprite(downSpike);
+                Texture2D downSpike = Game1.gameContent.Load<Texture2D>("Enemies/downSpikeAnimated");
+                return new SpikeSprite(downSpike, 1, 2);
             }
 
             //ITEMS

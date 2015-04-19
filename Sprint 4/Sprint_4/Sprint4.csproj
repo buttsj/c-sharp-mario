@@ -97,6 +97,7 @@
     <Compile Include="Game Object Sprite Classes\ExplosionSprite.cs" />
     <Compile Include="Game Object Sprite Classes\MarioMovingSprite.cs" />
     <Compile Include="Game Object Sprite Classes\StaticSprite.cs" />
+    <Compile Include="Game Object Sprite Classes\SpikeSprite.cs" />
     <Compile Include="Game Object State Classes\Block States\ExplodingBlockState.cs" />
     <Compile Include="Game Object State Classes\Block States\GroundBlockState.cs" />
     <Compile Include="Game Object State Classes\Mario States\Small Mario\DeadFlipMS.cs" />

@@ -31,6 +31,10 @@ namespace Sprint4
         {
             sprite.Draw(spriteBatch, position);        
         }
+        public void Update(GameTime gameTime)
+        {
+            sprite.Update(gameTime);
+        }
         public Rectangle GetBoundingBox()
         {
             return sprite.GetBoundingBox(position);

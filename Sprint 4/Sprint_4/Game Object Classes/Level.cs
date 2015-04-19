@@ -87,7 +87,13 @@ namespace Sprint4
             {
                 exitPole.Update(gameTime);
             }
-            
+            foreach (Spike spike in levelSpikes)
+            {
+                if (game.gameCamera.InCameraView(spike.GetBoundingBox()))
+                {
+                    spike.Update(gameTime);
+                }
+            }
             foreach (Fireball fireball in levelFireballs)
              {
                 fireball.Update(gameTime);
@@ -100,7 +106,6 @@ namespace Sprint4
                     } 
                 }                             
              }
-
             foreach (Fireball fireball in deadFireballs)
             {
                 levelFireballs.Remove(fireball);              
