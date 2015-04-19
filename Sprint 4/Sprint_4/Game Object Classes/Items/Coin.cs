@@ -15,6 +15,7 @@ namespace Sprint4
         public Vector2 velocity { get; set; }
         public ICollectablePhysicsState physState { get; set; }
         ISpriteFactory factory = new SpriteFactory();
+        int spawnTimer = 5;
 
         public Coin(Vector2 location)
         {
@@ -25,7 +26,17 @@ namespace Sprint4
         }
         public void Draw(SpriteBatch spriteBatch)
         {
-            sprite.Draw(spriteBatch, position);
+            if (isSpawning)
+            {
+                if (spawnTimer > 0)
+                {
+                    sprite.Draw(spriteBatch, position);
+                }
+            }
+            else
+            {
+                sprite.Draw(spriteBatch, position);
+            }
         }
         public void GoLeft()
         {
@@ -36,6 +47,10 @@ namespace Sprint4
         public void Update(GameTime gameTime)
         {
             sprite.Update(gameTime);
+            if (isSpawning)
+            {
+                spawnTimer--;
+            }
         }
 
         public Rectangle GetBoundingBox()
@@ -44,8 +59,11 @@ namespace Sprint4
         }
 
         public void Spawn(){
+            Game1.GetInstance().level.levelItems.Add(this);
             SoundManager.coinCollect.Play();
             Game1.GetInstance().gameHUD.Coins++;
+            position = position - new Vector2(0, 20);
+            isSpawning = true;
         }
     }
 }
