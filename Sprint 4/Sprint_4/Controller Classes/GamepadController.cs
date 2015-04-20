@@ -57,7 +57,7 @@ namespace Sprint4
             }
             if (gamepadState.Buttons.B.Equals(ButtonState.Pressed))
             {
-                commands.Add(new FireballCommand(mario));                              
+                commands.Add(new ProjectileCommand(mario));                              
             }
             if (gamepadState.Buttons.LeftShoulder.Equals(ButtonState.Pressed))
             {

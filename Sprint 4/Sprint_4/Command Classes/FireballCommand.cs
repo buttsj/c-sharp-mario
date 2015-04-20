@@ -5,17 +5,25 @@ using System.Text;
 
 namespace Sprint4
 {
-    public class FireballCommand : ICommands
+    public class ProjectileCommand : ICommands
     {
         Mario mario;
-        public FireballCommand(Mario mario)
+        public ProjectileCommand(Mario mario)
         {
             this.mario = mario;
         }
 
         public void Execute()
         {
-            mario.MakeFireballMario();
+            if (mario.isFire)
+            {
+                mario.MakeFireballMario();
+            }
+            else
+            {
+                mario.MakeNinjaMario();
+            }
+            
         }
     }
 }

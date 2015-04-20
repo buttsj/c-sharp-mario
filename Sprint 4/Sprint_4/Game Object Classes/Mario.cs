@@ -170,6 +170,11 @@ namespace Sprint4
                 }
             }           
         }
+        public void MakeNinjaMario()
+        {
+
+        }
+
         public void Update(GameTime gameTime, Game1 game)
         {            
             if (starTimer != 0 & isStar)

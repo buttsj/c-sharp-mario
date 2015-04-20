@@ -75,6 +75,10 @@ namespace Sprint4
         {
             
         }
+        public void MakeNinjaMario()
+        {
+
+        }
         public void MakeDeadMario()
         {
             mario.state = new DeadMS(mario);

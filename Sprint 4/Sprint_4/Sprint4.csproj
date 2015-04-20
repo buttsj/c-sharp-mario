@@ -93,8 +93,10 @@
     <Compile Include="Factories\PipeFactory.cs" />
     <Compile Include="Game Object Classes\Spike.cs" />
     <Compile Include="Game Object Classes\Pipe.cs" />
+    <Compile Include="Game Object Classes\Projectiles\ThrowingStar.cs" />
     <Compile Include="Game Object Sprite Classes\GameLogoSprite.cs" />
     <Compile Include="Game Object Sprite Classes\ExplosionSprite.cs" />
+    <Compile Include="Game Object Sprite Classes\Item Sprites\ThrowingStarSprite.cs" />
     <Compile Include="Game Object Sprite Classes\MarioMovingSprite.cs" />
     <Compile Include="Game Object Sprite Classes\StaticSprite.cs" />
     <Compile Include="Game Object Sprite Classes\SpikeSprite.cs" />
@@ -139,7 +141,7 @@
     <Compile Include="Controller Classes\KeyboardController.cs" />
     <Compile Include="Factories\CollectableFactory.cs" />
     <Compile Include="Factories\EnemyFactory.cs" />
-    <Compile Include="Game Object Classes\Fireball.cs" />
+    <Compile Include="Game Object Classes\Projectiles\Fireball.cs" />
     <Compile Include="Game Object Classes\Items\Coin.cs" />
     <Compile Include="Game Object Classes\Items\OneUpMushroom.cs" />
     <Compile Include="Game Object Classes\Items\Star.cs" />

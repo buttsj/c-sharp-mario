@@ -56,6 +56,10 @@ namespace Sprint4
         {
             
         }
+        public void MakeNinjaMario()
+        {
+
+        }
         public void MakeDeadMario()
         {
         }

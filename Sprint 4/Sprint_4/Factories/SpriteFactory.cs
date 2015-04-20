@@ -16,7 +16,7 @@ namespace Sprint4
             walkingRightSquishedDino, walkingLeftSquishedDino, deadShellessKoopa, leftWalkShellessKoopa, rightWalkShellessKoopa,
             banzaiBill, deadBanzaiBill, upSpike, downSpike,
             // Items
-            oneUpMushroom, fireFlower, superMushroom, coin, star, fireball,
+            oneUpMushroom, fireFlower, superMushroom, coin, star, fireball, throwingStar, ninja,
             // Blocks
             questionBlock, brickBlock, usedBlock, exclamationBlock, 
             // Background items
@@ -229,6 +229,16 @@ namespace Sprint4
             {
                 Texture2D fireball = Game1.gameContent.Load<Texture2D>("Items/fireball1");
                 return new FireballSprite(fireball, 1, 4);
+            }
+            if (sprite == sprites.ninja)
+            {
+                Texture2D ninja = Game1.gameContent.Load<Texture2D>("Items/ninja");
+                return new StaticSprite(ninja);
+            }
+            if (sprite == sprites.throwingStar)
+            {
+                Texture2D throwingStar = Game1.gameContent.Load<Texture2D>("Items/ThrowingStar");
+                return new ThrowingStarSprite(throwingStar, 1, 3);
             }
 
             //BLOCKS

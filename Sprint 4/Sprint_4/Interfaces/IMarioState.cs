@@ -23,6 +23,7 @@ namespace Sprint4
         void MakeSmallMario();
         void MakeFireMario();
         void MakeFireballMario();
+        void MakeNinjaMario();
         void MakeDeadMario();
         void Flip();
         Rectangle GetBoundingBox(Vector2 location);
