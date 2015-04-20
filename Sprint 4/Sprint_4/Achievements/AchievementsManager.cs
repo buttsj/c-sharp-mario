@@ -26,19 +26,6 @@ namespace Sprint4
             Level
         }
 
-        public void AchievementUnlocked(Achievement ach)
-        {
-            achTimer = ValueHolder.achTimer;
-            if (achFX.State == SoundState.Stopped)
-            {
-                achFX.Play();
-            }
-            ach.isUnlocked = true;
-            game.gameHUD.Achievement = ach.image;
-            game.gameHUD.hideAch = false;
-            ValueHolder.achGained++;
-        }
-
         public AchievementsManager(Game1 game)
         {
             achFX = SoundManager.achUnlocked.CreateInstance();
@@ -51,6 +38,19 @@ namespace Sprint4
             achievementKeeper.Add(AchievementType.Fireball, new Achievement() { isUnlocked = false, image = Game1.gameContent.Load<Texture2D>("Achievements/achievementFireball"), greyImage = Game1.gameContent.Load<Texture2D>("Achievements/achFireballGrey"), unlockCheck = 1, unlockMark = 0 });
             achievementKeeper.Add(AchievementType.Enemy, new Achievement() { isUnlocked = false, image = Game1.gameContent.Load<Texture2D>("Achievements/achievementEnemy"), greyImage = Game1.gameContent.Load<Texture2D>("Achievements/achHitEnemyGrey"), unlockCheck = 1, unlockMark = 0 });
             achievementKeeper.Add(AchievementType.Life, new Achievement() { isUnlocked = false, image = Game1.gameContent.Load<Texture2D>("Achievements/achievementLife"), greyImage = Game1.gameContent.Load<Texture2D>("Achievements/achLifeGrey"), unlockCheck = 1, unlockMark = 0 });
+        }
+
+        public void AchievementUnlocked(Achievement ach)
+        {
+            achTimer = ValueHolder.achTimer;
+            if (achFX.State == SoundState.Stopped)
+            {
+                achFX.Play();
+            }
+            ach.isUnlocked = true;
+            game.gameHUD.Achievement = ach.image;
+            game.gameHUD.hideAch = false;
+            ValueHolder.achGained++;
         }
 
         public void AchievementAdjustment(AchievementType ach)

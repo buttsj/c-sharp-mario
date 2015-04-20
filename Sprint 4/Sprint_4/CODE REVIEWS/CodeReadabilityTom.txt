@@ -1,0 +1,17 @@
+﻿
+Code Readability Review
+4/20/15
+
+Reviewer: Thomas Kiener
+Class Reviewed: AchievementManager.cs
+Class Author: Jack Butts
+Time taken: 5 min
+
+Comments: 
+-Methods are short and easy to read. Everything is well organized.
+
+-Constructor is below a method. This should be fixed.
+
+-The achievementKeeper.Add statements are huge, and haven't been returned to the next line. 
+
+-All identifiers make sense.

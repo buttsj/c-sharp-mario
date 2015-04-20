@@ -78,6 +78,8 @@
   <ItemGroup>
     <Compile Include="Achievements\AchievementsManager.cs" />
     <Compile Include="Achievements\Achievement.cs" />
+    <Content Include="CODE REVIEWS\CodeQualityTom.txt" />
+    <Content Include="CODE REVIEWS\CodeReadabilityTom.txt" />
     <Compile Include="Collision Detection and Response\PipeCollisionResponder.cs" />
     <Compile Include="Command Classes\FlipCommand.cs" />
     <Compile Include="Command Classes\LoadMenuCommand.cs" />
@@ -286,9 +288,7 @@
       <Install>true</Install>
     </BootstrapperPackage>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="CODE REVIEWS\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\XNA Game Studio\Microsoft.Xna.GameStudio.targets" />
   <!--
