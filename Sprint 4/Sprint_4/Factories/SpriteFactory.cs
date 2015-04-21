@@ -238,7 +238,7 @@ namespace Sprint4
             if (sprite == sprites.throwingStar)
             {
                 Texture2D throwingStar = Game1.gameContent.Load<Texture2D>("Items/ThrowingStar");
-                return new ThrowingStarSprite(throwingStar, 1, 3);
+                return new ThrowingStarSprite(throwingStar, 1, 4);
             }
 
             //BLOCKS

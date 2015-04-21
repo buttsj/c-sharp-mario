@@ -78,9 +78,8 @@
   <ItemGroup>
     <Compile Include="Achievements\AchievementsManager.cs" />
     <Compile Include="Achievements\Achievement.cs" />
-    <Content Include="CODE REVIEWS\CodeQualityTom.txt" />
-    <Content Include="CODE REVIEWS\CodeReadabilityTom.txt" />
     <Compile Include="Collision Detection and Response\PipeCollisionResponder.cs" />
+    <Compile Include="Collision Detection and Response\ThrowingStarCollisionResponse.cs" />
     <Compile Include="Command Classes\FlipCommand.cs" />
     <Compile Include="Command Classes\LoadMenuCommand.cs" />
     <Compile Include="Command Classes\LoadAchPageCommand.cs" />
@@ -93,6 +92,7 @@
     <Compile Include="Controller Classes\VVVVVVPadController.cs" />
     <Compile Include="Controller Classes\VVVVVVKeyController.cs" />
     <Compile Include="Factories\PipeFactory.cs" />
+    <Compile Include="Game Object Classes\Items\Ninja.cs" />
     <Compile Include="Game Object Classes\Spike.cs" />
     <Compile Include="Game Object Classes\Pipe.cs" />
     <Compile Include="Game Object Classes\Projectiles\ThrowingStar.cs" />
@@ -288,7 +288,9 @@
       <Install>true</Install>
     </BootstrapperPackage>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="CODE REVIEWS\" />
+  </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\XNA Game Studio\Microsoft.Xna.GameStudio.targets" />
   <!--

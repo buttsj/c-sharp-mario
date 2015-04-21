@@ -15,7 +15,6 @@ namespace Sprint4
         public static int remainingTimePoints = 50;
         public static int brickBreakPoints = 50;
 
-        public static int fireballDelay = 10;
         public static int fallingMarioBoundary = 500;
 
         //items
@@ -29,9 +28,9 @@ namespace Sprint4
         public static float walkingVelocity = 1;
         public static int flipFallRate = 3;
         public static int maxCoins = 100;
-        public static int maxFireballs = 3;
         public static int maxInvinciblityTime = 100;
         public static int maxStarTime = 1000;
+        public static int maxNinjaTime = 1200;
         public static int normalAnimationTimer = 90;
         public static int slowdownRate = 3;
         public static Vector2 textPosition = new Vector2(-40, 120);
@@ -51,9 +50,13 @@ namespace Sprint4
         public static int achTimer = 200;
         public static int achGained = 0;
 
-        //fireball
-        public static int fireballXSpawn = 5;
-        public static int fireballYSpawn = 3;
+        //projectiles
+        public static int projectileXSpawn = 5;
+        public static int projectileYSpawn = 3;
+        public static int projectileDelay = 10;
+        public static int maxFireballs = 3;
+        public static int maxThrowingStars = 6;
+
 
         //camera
         public static int camClamp = -200;

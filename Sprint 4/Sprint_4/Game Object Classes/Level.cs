@@ -13,8 +13,11 @@ namespace Sprint4
         Game1 game;
         public Mario mario;
         public Fireball fireball;
+        public ThrowingStar throwingStar;
         public List<Fireball> levelFireballs = new List<Fireball>();
         public List<Fireball> deadFireballs = new List<Fireball>();
+        public List<ThrowingStar> levelThrowingStars = new List<ThrowingStar>();
+        public List<ThrowingStar> deadThrowingStars = new List<ThrowingStar>();
         public LevelBuilder builder;
         public List<Enemy> levelEnemies = new List<Enemy>();
         public List<Pipe> levelPipes = new List<Pipe>();
@@ -110,8 +113,24 @@ namespace Sprint4
             {
                 levelFireballs.Remove(fireball);              
             }
+            foreach (ThrowingStar throwingStar in levelThrowingStars)
+            {
+                throwingStar.Update(gameTime);
+                if (throwingStar.throwingStarLifespan == 0)
+                {
+                    deadThrowingStars.Add(throwingStar);
+                    if (mario.throwingStarCount > 0)
+                    {
+                        mario.throwingStarCount--;
+                    }
+                }
+            }
+            foreach (ThrowingStar throwingStar in deadThrowingStars)
+            {
+                levelThrowingStars.Remove(throwingStar);
+            }
              
-            collision.Detect(mario, levelFireballs, levelEnemies, levelBlocks, levelItems, levelPipes, levelSpikes, levelTrampolines); 
+            collision.Detect(mario, levelFireballs, levelThrowingStars, levelEnemies, levelBlocks, levelItems, levelPipes, levelSpikes, levelTrampolines); 
 
             mario.Update(gameTime, game);
             if (mario.position.X < 0)
@@ -152,6 +171,13 @@ namespace Sprint4
                 if (game.gameCamera.InCameraView(fireball.GetBoundingBox()))
                 {                   
                     fireball.Draw(spriteBatch);                     
+                }
+            }
+            foreach (ThrowingStar throwingStar in levelThrowingStars)
+            {
+                if (game.gameCamera.InCameraView(throwingStar.GetBoundingBox()))
+                {
+                    throwingStar.Draw(spriteBatch);
                 }
             }
             foreach (Block blockDrawer in levelBlocks)

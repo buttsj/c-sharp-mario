@@ -17,6 +17,7 @@ namespace Sprint4
         public EnemyCollisionResponder enemyResponder;
         public BlockCollisionResponder blockResponder;
         public FireballCollisionResponder fireballResponder;
+        public ThrowingStarCollisionResponder throwingStarResponder;
         public PipeCollisionResponder pipeResponder;
         public List<Block> standingBlocks;
         public List<Pipe> standingPipes;
@@ -29,12 +30,13 @@ namespace Sprint4
             blockResponder = new BlockCollisionResponder(game);
             enemyResponder = new EnemyCollisionResponder(game);
             fireballResponder = new FireballCollisionResponder(mario, game);
+            throwingStarResponder = new ThrowingStarCollisionResponder(mario, game);
             pipeResponder = new PipeCollisionResponder(game);
             standingBlocks = new List<Block>();
             standingPipes = new List<Pipe>();
         }
 
-        public void Detect(Mario mario, List<Fireball> levelFireballs, List<Enemy> levelEnemies,
+        public void Detect(Mario mario, List<Fireball> levelFireballs, List<ThrowingStar> levelThrowingStars, List<Enemy> levelEnemies,
             List<Block> levelBlocks, List<ICollectable> levelItems, List<Pipe> levelPipes, List<Spike> levelSpikes, List<Trampoline> levelTrampolines)
         {
             standingBlocks = new List<Block>();
@@ -58,6 +60,17 @@ namespace Sprint4
                       if (fireballRect.Intersects(enemyRect))
                       {
                           fireballResponder.EnemyFireballCollide(enemy, fireball);
+                      }
+                  }
+              }
+              foreach (ThrowingStar throwingStar in levelThrowingStars)
+              {
+                  if (!enemy.isDead)
+                  {
+                      Rectangle throwingStarRect = throwingStar.GetBoundingBox();
+                      if (throwingStarRect.Intersects(enemyRect))
+                      {
+                          throwingStarResponder.EnemyThrowingStarCollide(enemy, throwingStar);
                       }
                   }
               }
@@ -128,6 +141,14 @@ namespace Sprint4
                     if(fireballRect.Intersects(blockRect))
                     {
                         fireballResponder.BlockFireballCollide(block, fireball);
+                    }
+                }
+                foreach (ThrowingStar throwingStar in levelThrowingStars)
+                {
+                    Rectangle throwingStarRect = throwingStar.GetBoundingBox();
+                    if (throwingStarRect.Intersects(blockRect))
+                    {
+                        throwingStarResponder.BlockThrowingStarCollide(block, throwingStar);
                     }
                 }
                 foreach (ICollectable item in levelItems)

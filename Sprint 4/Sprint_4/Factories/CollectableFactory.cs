@@ -12,7 +12,7 @@ namespace Sprint4
     {
         public enum CollectableType
         {
-            coin, star, oneUp, fireFlower, superMushroom
+            coin, star, oneUp, fireFlower, superMushroom, ninja,
         }
         SpriteFactory factory;
         ICollectable product;
@@ -44,6 +44,11 @@ namespace Sprint4
             {
                 product = new SuperMushroom(location);
             }
+            if (type == CollectableType.ninja)
+            {
+                product = new Ninja(location);
+            }
+            
             return product;
         }
     }

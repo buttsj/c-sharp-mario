@@ -12,20 +12,22 @@ namespace Sprint4
     {
         public IMarioState state;
         public IMarioPhysicsState physState;
-        public bool isStar = false, isBig = false, isFire = false,
-            isDead = false, isCrouch = false, isFireball = false, isLeft = false, isJumping = false,
-            isFalling = false;
+        public Fireball fireball;
+        public ThrowingStar throwingStar;
+        public bool isStar = false, isBig = false, isFire = false, 
+            isDead = false, isCrouch = false, isFireball = false, isLeft = false, isNinja = false, isFalling = false, isJumping = false;
         private int starTimer = ValueHolder.maxStarTime;
-        private int fireballTimer = ValueHolder.fireballDelay;
+        private int ninjaTimer = ValueHolder.maxNinjaTime;
+        private int projectileTimer = ValueHolder.projectileDelay;
         public int fireballCount = 0;
+        public int throwingStarCount = 0;
         public int invicibilityFrames = 0;
         public int gravityDirection = 1;
         public Vector2 position;
         public Vector2 velocity;
         public Vector2 maxVelocity = new Vector2((float)6, (float)17);
         public Vector2 minVelocity = new Vector2((float) -6, (float)-3.5);
-        public int marioHeight = 0;
-        private Fireball fireball;
+        public int marioHeight = 0;        
         private SoundEffectInstance jumpFX;
         private SpriteFactory factory;
         private int modVal = 5;
@@ -77,11 +79,11 @@ namespace Sprint4
         {
             if (!isCrouch)
             {
-                state.GoLeft();
+            state.GoLeft();
                 if (velocity.X > minVelocity.X)
-                {
-                    velocity.X -= ValueHolder.walkingVelocity;
-                }
+            {
+                velocity.X -= ValueHolder.walkingVelocity;
+            }
             }
             isLeft = true;
         }
@@ -90,11 +92,11 @@ namespace Sprint4
         {
             if (!isCrouch)
             {
-                state.GoRight();
+            state.GoRight();
                 if (velocity.X < maxVelocity.X)
-                {
-                    velocity.X += ValueHolder.walkingVelocity;
-                }
+            {
+                velocity.X += ValueHolder.walkingVelocity;
+            }
             }
             isLeft = false;
         }
@@ -105,9 +107,9 @@ namespace Sprint4
             (velocity.Y < ValueHolder.rightMarioIdlingRange.Y && velocity.Y > ValueHolder.leftMarioIdlingRange.Y) &&
             !isFalling)
             {
-                state.Idle();
-                isCrouch = false;
-            }
+            state.Idle();
+            isCrouch = false;
+        }
         }
 
         public void MakeBigMario()
@@ -155,17 +157,17 @@ namespace Sprint4
             isFireball = true;
             if (fireballCount < ValueHolder.maxFireballs && isFire)
             {
-                if (fireballTimer == 0)
+                if (projectileTimer == 0)
                 {
                     if (isLeft)
                     {
-                        fireball = new Fireball(new Vector2(position.X - ValueHolder.fireballXSpawn, position.Y +
-                            ValueHolder.fireballYSpawn), true);
+                        fireball = new Fireball(new Vector2(position.X - ValueHolder.projectileXSpawn, position.Y +
+                            ValueHolder.projectileYSpawn), true);
                     }
                     else
                     {
-                        fireball = new Fireball(new Vector2(position.X + ValueHolder.fireballXSpawn, position.Y +
-                            ValueHolder.fireballYSpawn), false);
+                        fireball = new Fireball(new Vector2(position.X + ValueHolder.projectileXSpawn, position.Y +
+                            ValueHolder.projectileYSpawn), false);
                     }
                     Game1.GetInstance().level.levelFireballs.Add(fireball);
                     fireballCount++;
@@ -174,9 +176,29 @@ namespace Sprint4
         }
         public void MakeNinjaMario()
         {
-
+            state.MakeNinjaMario();
+            isNinja = true;
+            if (throwingStarCount < ValueHolder.maxThrowingStars && isNinja)
+            {
+                if (projectileTimer == 0)
+                {
+                    if (isLeft)
+                    {
+                        throwingStar = new ThrowingStar(new Vector2(position.X - ValueHolder.projectileXSpawn, position.Y +
+                            ValueHolder.projectileYSpawn), true);
+                    }
+                    else
+                    {
+                        throwingStar = new ThrowingStar(new Vector2(position.X + ValueHolder.projectileXSpawn, position.Y +
+                            ValueHolder.projectileYSpawn), false);
+                    }
+                    Game1.GetInstance().level.levelFireballs.Add(fireball);
+                    throwingStarCount++;
+                }
+            }           
         }
 
+       
         public void TransitionState(IMarioState prevState, IMarioState newState)
         {
             Game1.GetInstance().gameState = new TransitionGameState(this, prevState, newState);
@@ -194,6 +216,10 @@ namespace Sprint4
             {
                 starTimer--;
             }
+            if (ninjaTimer != 0 & isNinja)
+            {
+                ninjaTimer--;
+            }
             if (invicibilityFrames != 0)
             {
                 invicibilityFrames--;
@@ -204,20 +230,27 @@ namespace Sprint4
                 starTimer = ValueHolder.maxStarTime;
                 SoundManager.PlaySong(SoundManager.songs.overworld);
             }
+            if (ninjaTimer == 0)
+            {
+                isNinja = false;
+                ninjaTimer = ValueHolder.maxNinjaTime;
+                SoundManager.PlaySong(SoundManager.songs.overworld);
+            }
             if (position.Y > ValueHolder.fallingMarioBoundary)
             {
                 state = new DeadMS(this);
                 game.ach.AchievementAdjustment(AchievementsManager.AchievementType.Death);
             }         
                         
-            if (fireballTimer != 0 )
+            if (projectileTimer != 0 )
             {
-                fireballTimer--;
+                projectileTimer--;
                 isFireball = false;                
+                isNinja = false;
             }
             else
             {
-                fireballTimer = ValueHolder.fireballDelay;                
+                projectileTimer = ValueHolder.projectileDelay;                
             }           
             state.Update(gameTime);
             physState.Update(gameTime);
@@ -238,6 +271,11 @@ namespace Sprint4
                 state.Draw(spriteBatch, position);
             }
          }
+        public void Flip()
+        {
+
+        }
+       
        }
     }
 
