@@ -69,26 +69,32 @@ namespace Sprint4
         public void Crouch()
         {
             state.Down();
-            velocity.Y++;
+            velocity.Y+=.1f;
             isCrouch = true;
         }
 
         public void GoLeft()
         {
-            state.GoLeft();
-            if (velocity.X > minVelocity.X && !isCrouch)
+            if (!isCrouch)
             {
-                velocity.X -= ValueHolder.walkingVelocity;
+                state.GoLeft();
+                if (velocity.X > minVelocity.X)
+                {
+                    velocity.X -= ValueHolder.walkingVelocity;
+                }
             }
             isLeft = true;
         }
 
         public void GoRight()
         {
-            state.GoRight();
-            if (velocity.X < maxVelocity.X && !isCrouch)
+            if (!isCrouch)
             {
-                velocity.X += ValueHolder.walkingVelocity;
+                state.GoRight();
+                if (velocity.X < maxVelocity.X)
+                {
+                    velocity.X += ValueHolder.walkingVelocity;
+                }
             }
             isLeft = false;
         }
@@ -171,6 +177,17 @@ namespace Sprint4
 
         }
 
+        public void TransitionState(IMarioState prevState, IMarioState newState)
+        {
+            Game1.GetInstance().gameState = new TransitionGameState(this, prevState, newState);
+        }
+
+        public void Respawn()
+        {
+            state = new RightIdleSmallMS(this);
+            position = Game1.GetInstance().level.checkpoint;
+        }
+
         public void Update(GameTime gameTime, Game1 game)
         {            
             if (starTimer != 0 & isStar)
@@ -221,17 +238,6 @@ namespace Sprint4
                 state.Draw(spriteBatch, position);
             }
          }
-
-        public void TransitionState(IMarioState prevState, IMarioState newState)
-        {
-            Game1.GetInstance().gameState = new TransitionGameState(this, prevState, newState);
-        }
-
-        public void Respawn()
-        {
-            state = new RightIdleSmallMS(this);
-            position = Game1.GetInstance().level.checkpoint;
-        }
        }
     }
 

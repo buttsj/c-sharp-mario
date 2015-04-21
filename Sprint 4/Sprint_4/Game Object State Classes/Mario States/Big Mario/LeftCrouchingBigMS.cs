@@ -32,8 +32,7 @@ namespace Sprint4
             mario.state = new LeftIdleBigMS(mario);          
         }
         public void Down()
-        {
-            mario.position.Y++;            
+        {        
         }
         public void GoLeft()
         {
