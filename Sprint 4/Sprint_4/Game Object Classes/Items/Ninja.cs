@@ -11,11 +11,11 @@ namespace Sprint4
     {
         public IAnimatedSprite sprite { get; set; }
         public bool isSpawning { get; set; }
+        private int spawnTimer = 0;
         public Vector2 position { get; set; }
         public Vector2 velocity { get; set; }
         public ICollectablePhysicsState physState { get; set; }
         ISpriteFactory factory = new SpriteFactory();
-        int spawnTimer = 5;
 
         public Ninja(Vector2 location)
         {
@@ -26,17 +26,7 @@ namespace Sprint4
         }
         public void Draw(SpriteBatch spriteBatch)
         {
-            if (isSpawning)
-            {
-                if (spawnTimer > 0)
-                {
-                    sprite.Draw(spriteBatch, position);
-                }
-            }
-            else
-            {
-                sprite.Draw(spriteBatch, position);
-            }
+            sprite.Draw(spriteBatch, position);
         }
         public void GoLeft()
         {
@@ -46,10 +36,18 @@ namespace Sprint4
         }
         public void Update(GameTime gameTime)
         {
-            sprite.Update(gameTime);
-            if (isSpawning)
+            if (!isSpawning)
             {
+                sprite.Update(gameTime);
+            }
+            else
+            {
+                position = new Vector2(position.X, position.Y - (float)ValueHolder.itemSpawnRate);
                 spawnTimer--;
+                if (spawnTimer == 0)
+                {
+                    isSpawning = false;
+                }
             }
         }
 
@@ -60,9 +58,10 @@ namespace Sprint4
 
         public void Spawn()
         {
-            Game1.GetInstance().level.levelItems.Add(this);            
-            position = position - new Vector2(0, 20);
             isSpawning = true;
+            Game1.GetInstance().level.levelItems.Add(this);
+            spawnTimer = ValueHolder.itemSpawnTimer;
+            SoundManager.itemSpawn.Play();
         }
     }
 }

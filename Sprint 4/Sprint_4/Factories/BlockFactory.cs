@@ -12,7 +12,7 @@ namespace Sprint4
     {
         public enum BlockType
         {
-            used, question, exclamation, brick, ground, leftEdge, rightEdge, quesMush,
+            used, question, exclamation, brick, ground, leftEdge, rightEdge, quesMush, quesNinja,
             quesCoin, ques1up, quesStar, quesFlower, undergroundRoof, undergroundFloor, undergroundLeftWall, undergroundRightWall,
             undergroundLeftTop, undergroundRightTop, undergroundRightBottom, undergroundLeftBottom, brokenPipe
         }
@@ -80,6 +80,10 @@ namespace Sprint4
             {
                 state = new QuestionBlockState();
                 prize = new FireFlower(location);
+            }
+            if (type == BlockType.quesNinja){
+                state = new QuestionBlockState();
+                prize = new Ninja(location);
             }
             if (type == BlockType.undergroundRoof)
             {
