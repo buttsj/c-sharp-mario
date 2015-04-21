@@ -8,7 +8,7 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace Sprint4
 {
-    class RightTallDinoState : IEnemyState
+    public class RightTallDinoState : IEnemyState
     {
         IAnimatedSprite sprite;
         

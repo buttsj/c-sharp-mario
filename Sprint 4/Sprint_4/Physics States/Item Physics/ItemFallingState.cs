@@ -6,13 +6,13 @@ using System.Text;
 
 namespace Sprint4
 {
-    class ItemFallingState : ICollectablePhysicsState
+    public class ItemFallingState : ICollectablePhysicsState
     {
-        Vector2 fallingVelocityDecayRate = new Vector2((float).90, 1);
-        Vector2 fallingVelocity = new Vector2(0, (float)1.2);
-        float positionDtAdjust = 50;
-        Vector2 oldPos;
-        float maxVelocity = 15;
+        private Vector2 fallingVelocityDecayRate = new Vector2((float).90, 1);
+        private Vector2 fallingVelocity = new Vector2(0, (float)1.2);
+        private float positionDtAdjust = 50;
+        private Vector2 oldPos;
+        private float maxVelocity = 15;
 
         public ItemFallingState(ICollectable item)
         {

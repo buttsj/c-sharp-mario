@@ -7,7 +7,7 @@ using System.Text;
 
 namespace Sprint4
 {
-    class GameOverState :IGameState
+    public class GameOverState :IGameState
     {
         Game1 game;
         SpriteFont font;

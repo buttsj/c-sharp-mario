@@ -7,7 +7,7 @@ using Microsoft.Xna.Framework;
 
 namespace Sprint4
 {
-    class StaticSprite : IAnimatedSprite
+    public class StaticSprite : IAnimatedSprite
     {
         public Texture2D Texture { get; set; }
         public int Rows { get; set; }

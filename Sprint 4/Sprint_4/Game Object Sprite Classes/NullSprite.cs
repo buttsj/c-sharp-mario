@@ -7,7 +7,7 @@ using Microsoft.Xna.Framework;
 
 namespace Sprint4
 {
-    class NullSprite : IAnimatedSprite
+    public class NullSprite : IAnimatedSprite
     {
         public int UpdateSpeed { get; set; }
         public NullSprite()

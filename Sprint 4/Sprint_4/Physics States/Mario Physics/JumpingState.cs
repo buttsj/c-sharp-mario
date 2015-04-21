@@ -6,11 +6,11 @@ using System.Text;
 
 namespace Sprint4
 {
-    class JumpingState : IMarioPhysicsState
+    public class JumpingState : IMarioPhysicsState
     {
         private Mario mario;
         private Vector2 speedDecayRate = new Vector2((float)0.75, (float)0.80);
-        private static int maxJumpHeight = 125, jumpHeight = 0, heightIncrement = 7;
+        private static int maxJumpHeight = 125, heightIncrement = 7;
         private double minJumpingVelocity = -.1;
         private float positionXDtAdjust = 40;
         private float positionYDtAdjust = 17;

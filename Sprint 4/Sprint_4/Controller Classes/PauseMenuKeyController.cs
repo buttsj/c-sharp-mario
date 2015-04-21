@@ -9,7 +9,7 @@ using Microsoft.Xna.Framework.Design;
 
 namespace Sprint4
 {
-    class PauseMenuKeyController : IController
+    public class PauseMenuKeyController : IController
     {
         private KeyboardState keyboardState;
 

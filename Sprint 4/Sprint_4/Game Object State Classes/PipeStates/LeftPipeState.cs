@@ -7,7 +7,7 @@ using System.Text;
 
 namespace Sprint4
 {
-    class LeftPipeState : IPipeState
+    public class LeftPipeState : IPipeState
     {
         IAnimatedSprite sprite;
         ISpriteFactory factory;

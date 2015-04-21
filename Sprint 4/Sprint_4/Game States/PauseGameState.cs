@@ -7,7 +7,7 @@ using System.Text;
 
 namespace Sprint4
 {
-    class PauseGameState :IGameState
+    public class PauseGameState :IGameState
     {
         int inputBuffer = 10;
         Game1 game;

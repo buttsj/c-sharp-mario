@@ -6,7 +6,7 @@ using System.Text;
 
 namespace Sprint4
 {
-    class VVVVVVAirState : IMarioPhysicsState
+    public class VVVVVVAirState : IMarioPhysicsState
     {
         private Mario mario;
         private float speedDecayRate = .73f;

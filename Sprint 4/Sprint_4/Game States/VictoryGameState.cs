@@ -7,7 +7,7 @@ using System.Text;
 
 namespace Sprint4
 {
-    class VictoryGameState :IGameState
+    public class VictoryGameState :IGameState
     {
         Game1 game;
         int walkTimer = 433;

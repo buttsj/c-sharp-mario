@@ -7,7 +7,7 @@ using System.Text;
 
 namespace Sprint4
 {
-    class BrickBlockState : IBlockState
+    public class BrickBlockState : IBlockState
     {
         IAnimatedSprite sprite;
         int bumpAnimTimer = 0;

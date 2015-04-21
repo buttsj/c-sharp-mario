@@ -8,7 +8,7 @@ using Microsoft.Xna.Framework.Audio;
 
 namespace Sprint4
 {
-    class BanzaiBillState : IEnemyState
+    public class BanzaiBillState : IEnemyState
     {
         IAnimatedSprite sprite;
         ISpriteFactory factory;

@@ -6,10 +6,10 @@ using System.Text;
 
 namespace Sprint4
 {
-    public class ItemGroundState :ICollectablePhysicsState
+    public class ItemGroundState : ICollectablePhysicsState
     {
-        Vector2 oldPos;
-        double positionDifference = .5;
+        private Vector2 oldPos;
+        private float positionDifference = .5f;
 
         public ItemGroundState(ICollectable item)
         {
@@ -18,7 +18,7 @@ namespace Sprint4
         }
         public void Update(ICollectable item, GameTime gameTime)
         {
-            if ((item.position.Y - oldPos.Y) > (float)positionDifference) { 
+            if ((item.position.Y - oldPos.Y) > positionDifference) { 
                 item.physState = new ItemFallingState(item);
             }
             oldPos = item.position;

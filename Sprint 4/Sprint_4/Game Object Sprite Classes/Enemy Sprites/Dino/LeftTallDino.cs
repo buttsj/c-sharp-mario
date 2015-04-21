@@ -7,7 +7,7 @@ using System.Text;
 
 namespace Sprint4
 {
-    class LeftTallDino : IAnimatedSprite
+    public class LeftTallDino : IAnimatedSprite
     {
         public Texture2D Texture { get; set; }
         public int Rows { get; set; }

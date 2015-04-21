@@ -6,18 +6,20 @@ using System.Text;
 
 namespace Sprint4
 {
-    class EnemyFallingState : IEnemyPhysicsState
+    public class EnemyFallingState : IEnemyPhysicsState
     {
-        Vector2 fallingVelocityDecayRate = new Vector2((float).90, 1);
-        Vector2 fallingVelocity = new Vector2(0, (float)1.2);
-        float positionDtAdjust = 50;
-        Vector2 oldPos;
-        float maxVelocity = 15;
+        private Vector2 fallingVelocityDecayRate = new Vector2((float).90, 1);
+        private Vector2 fallingVelocity = new Vector2(0, (float)1.2);
+        private float positionDtAdjust = 50;
+        private Vector2 oldPos;
+        private float maxVelocity = 15;
+        private float positionDifference = .5f;
 
         public EnemyFallingState(Enemy enemy)
         {
             oldPos = enemy.position;
         }
+
         public void Update(Enemy enemy, GameTime gameTime)
         {
             enemy.position += enemy.velocity * ((float)gameTime.ElapsedGameTime.Milliseconds / positionDtAdjust);
@@ -26,7 +28,7 @@ namespace Sprint4
             if (enemy.velocity.Y > maxVelocity){
                  enemy.velocity = new Vector2(enemy.velocity.X, maxVelocity);
             }
-            if ((enemy.position.Y - oldPos.Y) < (float).5)
+            if ((enemy.position.Y - oldPos.Y) < positionDifference)
             {
                 enemy.physState = new EnemyGroundState(enemy);
             }

@@ -7,7 +7,7 @@ using System.Text;
 
 namespace Sprint4
 {
-    class GenericBlockState : IBlockState
+    public class GenericBlockState : IBlockState
     {
         IAnimatedSprite sprite;
         ISpriteFactory factory;

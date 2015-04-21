@@ -7,7 +7,7 @@ using System.Text;
 
 namespace Sprint4
 {
-    class LivesScreenGameState :IGameState
+    public class LivesScreenGameState :IGameState
     {
         int timer = 150;
         SpriteFont font;

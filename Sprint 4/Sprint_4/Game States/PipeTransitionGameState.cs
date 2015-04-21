@@ -7,7 +7,7 @@ using System.Text;
 
 namespace Sprint4
 {
-    class PipeTransitionGameState :IGameState
+    public class PipeTransitionGameState :IGameState
     {
         int pipeTimer = 30;
         Pipe pipe;

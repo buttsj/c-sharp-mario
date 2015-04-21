@@ -7,7 +7,7 @@ using System.Text;
 
 namespace Sprint4
 {
-    class NullEnemyState :IEnemyState
+    public class NullEnemyState :IEnemyState
     {
         public Rectangle GetBoundingBox(Vector2 position)
         {

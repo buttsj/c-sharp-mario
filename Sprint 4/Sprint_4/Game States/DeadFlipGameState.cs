@@ -7,7 +7,7 @@ using System.Text;
 
 namespace Sprint4
 {
-    class DeadFlipGameState :IGameState
+    public class DeadFlipGameState :IGameState
     {
         Game1 game;
         Mario mario;

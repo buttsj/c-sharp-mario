@@ -7,7 +7,7 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace Sprint4
 {
-    class DeadShellessKS : IEnemyState
+    public class DeadShellessKS : IEnemyState
     {
         IAnimatedSprite sprite;
         

@@ -9,7 +9,7 @@ using Microsoft.Xna.Framework.Design;
 
 namespace Sprint4
 {
-    class TitleKeyController : IController
+    public class TitleKeyController : IController
     {
         private KeyboardState keyboardState;
 

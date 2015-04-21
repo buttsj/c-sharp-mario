@@ -9,7 +9,7 @@ using Microsoft.Xna.Framework.Design;
 
 namespace Sprint4
 {
-    class TitlePadController : IController
+    public class TitlePadController : IController
     {
         private GamePadState gamepadState;
         public List<ICommands> commands;

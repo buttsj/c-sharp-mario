@@ -7,7 +7,7 @@ using System.Text;
 
 namespace Sprint4
 {
-    class SuperMarioGameState :IGameState
+    public class SuperMarioGameState :IGameState
     {
         int gameStateTransitionBuffer = 5;
         Game1 game;

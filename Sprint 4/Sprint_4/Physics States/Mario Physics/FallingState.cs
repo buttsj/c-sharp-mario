@@ -6,7 +6,7 @@ using System.Text;
 
 namespace Sprint4
 {
-    class FallingState : IMarioPhysicsState
+    public class FallingState : IMarioPhysicsState
     {
         private Mario mario;
         private Vector2 fallingVelocityDecayRate = new Vector2((float).90, 1);

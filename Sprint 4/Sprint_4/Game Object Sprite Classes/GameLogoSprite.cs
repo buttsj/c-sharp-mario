@@ -7,7 +7,7 @@ using Microsoft.Xna.Framework;
 
 namespace Sprint4
 {
-    class GameLogoSprite : IAnimatedSprite
+    public class GameLogoSprite : IAnimatedSprite
     {
         //Credit for fade-in code: http://xnadevelopment.com/tutorials/fadeinfadeout/FadeInFadeOut.shtml
         public Texture2D Texture { get; set; }

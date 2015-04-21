@@ -7,7 +7,7 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace Sprint4
 {
-    class LeftSmashedDinoState : IEnemyState
+    public class LeftSmashedDinoState : IEnemyState
     {
         IAnimatedSprite sprite;
         ISpriteFactory factory;
