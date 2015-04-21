@@ -8,19 +8,21 @@ namespace Sprint4
 {
     public class GroundState :IMarioPhysicsState
     {
-        public Vector2 speedDecayRate = new Vector2((float)0.73, (float)0.70);
-        float positionDtAdjust = 40;
-        Mario mario;
-        double runMultiplier = 1.4;
+        private Mario mario;
+        private Vector2 speedDecayRate = new Vector2((float)0.73, (float)0.70);
+        private float positionDtAdjust = 40;
+        private double runMultiplier = 1.4;
 
         public GroundState(Mario mario)
         {
-            mario.Land();
+            mario.state.Land();
             mario.velocity.Y = 0;
             this.mario = mario;
             Game1.GetInstance().gameHUD.pointMultiplier = 1;
+            mario.isJumping = false;
+            mario.isFalling = false;
         }
-        public void Update(Mario mario, GameTime gameTime)
+        public void Update(GameTime gameTime)
         {
             mario.velocity.Y = 0;
             mario.position += mario.velocity * ((float)gameTime.ElapsedGameTime.Milliseconds / positionDtAdjust);
@@ -29,7 +31,7 @@ namespace Sprint4
             if (Game1.GetInstance().level.collision.standingBlocks.Count == 0 &&
                 Game1.GetInstance().level.collision.standingPipes.Count == 0)
             {
-                mario.physState = new FallingState();
+                mario.physState = new FallingState(mario);
             } 
         }
         public void Run()

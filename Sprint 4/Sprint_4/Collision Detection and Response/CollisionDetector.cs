@@ -45,7 +45,6 @@ namespace Sprint4
                 Rectangle enemyRect = enemy.GetBoundingBox();
                 if (!enemy.isDead && mario.invicibilityFrames == 0)
                 {
-                    
                     if (marioRect.Intersects(enemyRect))
                     {
                         enemyResponder.MarioEnemyCollide(mario, enemy);
@@ -158,7 +157,7 @@ namespace Sprint4
                     {
                         mario.physState = new VVVVVVGroundState(mario, mario.gravityDirection);
                     }
-                    mario.Flip();
+                    mario.physState.Flip();
                 }
             }
 

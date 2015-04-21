@@ -14,7 +14,7 @@ namespace Sprint4
         }
         public void Execute()
         {
-            mario.Flip();
+            mario.physState.Flip();
         }
     }
 }

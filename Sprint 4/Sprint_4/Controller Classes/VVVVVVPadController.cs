@@ -59,9 +59,7 @@ namespace Sprint4
             {
                 command.Execute();
             }
-            if ((mario.velocity.X < ValueHolder.rightMarioIdlingRange.X && mario.velocity.X > ValueHolder.leftMarioIdlingRange.X) &&
-               (mario.velocity.Y < ValueHolder.rightMarioIdlingRange.Y && mario.velocity.Y > ValueHolder.leftMarioIdlingRange.Y) &&
-               !mario.physState.GetType().Equals((new FallingState()).GetType()))
+            if (currentCommand.GetType() == new NullCommand().GetType())
             {
                 currentCommand = new IdleCommand(mario);
                 currentCommand.Execute();

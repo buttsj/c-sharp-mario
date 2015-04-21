@@ -40,7 +40,7 @@ namespace Sprint4
             {
                 if (marioRect.Bottom > blockRect.Top && marioRect.Bottom < blockRect.Bottom)
                 {
-                       if (!mario.physState.GetType().Equals((new JumpingState()).GetType()))
+                       if (!mario.isJumping)
                        {
                            mario.velocity.Y = 0;
                        }
@@ -56,7 +56,7 @@ namespace Sprint4
                     {
                         mario.position.Y = mario.position.Y + intersection.Height;
                         block.Reaction();
-                        mario.physState = new FallingState();
+                        mario.physState = new FallingState(mario);
                         hitBlock.Play();
                         mario.marioHeight = 0;
                         if (block.state.GetType().Equals(new BrickBlockState().GetType()) && mario.isBig)

@@ -6,30 +6,33 @@ using System.Text;
 
 namespace Sprint4
 {
-    class VVVVVVAirState :IMarioPhysicsState
+    class VVVVVVAirState : IMarioPhysicsState
     {
-        public Vector2 speedDecayRate = new Vector2((float)0.73, (float)0.70);
-        float positionDtAdjust = 10;
-        int gravity = 4;
-        Mario mario;
+        private Mario mario;
+        private float speedDecayRate = .73f;
+        private float positionDtAdjust = 10;
+        private int gravityStrength = 4;
 
         public VVVVVVAirState(Mario mario, int sign)
         {
             this.mario = mario;
-            gravity *= sign;
+            gravityStrength *= sign;
         }
-        public void Update(Mario mario, GameTime gameTime)
+
+        public void Update(GameTime gameTime)
         {
-            mario.position += mario.velocity * ((float)gameTime.ElapsedGameTime.Milliseconds / positionDtAdjust);
-            mario.velocity *= speedDecayRate;
-            mario.position.Y += gravity;
+            mario.position.X += mario.velocity.X * ((float)gameTime.ElapsedGameTime.Milliseconds / positionDtAdjust);
+            mario.velocity.X *= speedDecayRate;
+            mario.position.Y += gravityStrength;
             if (Game1.GetInstance().level.collision.standingBlocks.Count > 0)
             {
                 mario.physState = new VVVVVVGroundState(mario, mario.gravityDirection);
             }
         }
+
         public void Run() {
         }
+
         public void Flip() {
         }
     }

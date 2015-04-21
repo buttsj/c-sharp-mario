@@ -12,9 +12,9 @@ namespace Sprint4
     {
         public IMarioState state;
         public IMarioPhysicsState physState;
-        public Fireball fireball;
-        public bool isStar = false, isBig = false, isFire = false, 
-            isDead = false, isCrouch = false, isFireball = false, isLeft = false;
+        public bool isStar = false, isBig = false, isFire = false,
+            isDead = false, isCrouch = false, isFireball = false, isLeft = false, isJumping = false,
+            isFalling = false;
         private int starTimer = ValueHolder.maxStarTime;
         private int fireballTimer = ValueHolder.fireballDelay;
         public int fireballCount = 0;
@@ -25,9 +25,10 @@ namespace Sprint4
         public Vector2 maxVelocity = new Vector2((float)6, (float)17);
         public Vector2 minVelocity = new Vector2((float) -6, (float)-3.5);
         public int marioHeight = 0;
-        SoundEffectInstance jumpFX;
-        SpriteFactory factory;
-        int modVal = 5;
+        private Fireball fireball;
+        private SoundEffectInstance jumpFX;
+        private SpriteFactory factory;
+        private int modVal = 5;
 
         public Mario(Vector2 position)
         {
@@ -36,11 +37,6 @@ namespace Sprint4
             this.position = position;
             jumpFX = SoundManager.jump.CreateInstance();
             factory = new SpriteFactory();
-        }
-
-        public void Run()
-        {
-            physState.Run();
         }
 
         public void TakeDamage()
@@ -56,11 +52,11 @@ namespace Sprint4
             isFire = false;
         }
 
-        public void Up()
+        public void Jump()
         {
-            if (velocity.Y > minVelocity.Y && physState.GetType() != (new FallingState()).GetType())
+            if (velocity.Y > minVelocity.Y && !isFalling)
             {
-                physState = new JumpingState();
+                physState = new JumpingState(this);
                 velocity.Y -= ValueHolder.initialJumpingVelocity;
                 if (jumpFX.State == SoundState.Stopped)
                 {
@@ -70,7 +66,7 @@ namespace Sprint4
             state.Up();
         }
 
-        public void Down()
+        public void Crouch()
         {
             state.Down();
             velocity.Y++;
@@ -99,13 +95,13 @@ namespace Sprint4
 
         public void Idle()
         {
-            state.Idle();
-            isCrouch = false;
-        }
-
-        public void Land()
-        {
-            state.Land();
+            if ((velocity.X < ValueHolder.rightMarioIdlingRange.X && velocity.X > ValueHolder.leftMarioIdlingRange.X) &&
+            (velocity.Y < ValueHolder.rightMarioIdlingRange.Y && velocity.Y > ValueHolder.leftMarioIdlingRange.Y) &&
+            !isFalling)
+            {
+                state.Idle();
+                isCrouch = false;
+            }
         }
 
         public void MakeBigMario()
@@ -207,7 +203,7 @@ namespace Sprint4
                 fireballTimer = ValueHolder.fireballDelay;                
             }           
             state.Update(gameTime);
-            physState.Update(this, gameTime);
+            physState.Update(gameTime);
         }
 
         public void Draw(SpriteBatch spriteBatch)
@@ -229,11 +225,6 @@ namespace Sprint4
         public void TransitionState(IMarioState prevState, IMarioState newState)
         {
             Game1.GetInstance().gameState = new TransitionGameState(this, prevState, newState);
-        }
-
-        public void Flip()
-        {
-            physState.Flip();
         }
 
         public void Respawn()

@@ -6,28 +6,31 @@ using System.Text;
 
 namespace Sprint4
 {
-    class VVVVVVGroundState :IMarioPhysicsState
+    class VVVVVVGroundState : IMarioPhysicsState
     {
-        int gravity = 1;
-        Mario mario;
-        public Vector2 speedDecayRate = new Vector2((float)0.73, (float)0.70);
-        float positionDtAdjust = 10;
-        int positionShift = 7;
+        private Mario mario;
+        private float speedDecayRate = .73f;
+        private float positionDtAdjust = 10;
+        private int positionShift = 7;
+        private int gravityStrength = 3;
 
         public VVVVVVGroundState(Mario mario, int sign)
         {
             this.mario = mario;
-            gravity*=sign;
+            gravityStrength*=sign;
         }
-        public void Update(Mario mario, GameTime gameTime)
+
+        public void Update(GameTime gameTime)
         {
-            mario.position += mario.velocity * ((float)gameTime.ElapsedGameTime.Milliseconds / positionDtAdjust);
-            mario.velocity *= speedDecayRate;
-            mario.position.Y += gravity * ValueHolder.flipFallRate;
+            mario.position.X += mario.velocity.X * ((float)gameTime.ElapsedGameTime.Milliseconds / positionDtAdjust);
+            mario.velocity.X *= speedDecayRate;
+            mario.position.Y += gravityStrength;
         }
+
         public void Run() 
         {
         }
+
         public void Flip() {
             SoundManager.flip.Play();
             mario.state.Flip();

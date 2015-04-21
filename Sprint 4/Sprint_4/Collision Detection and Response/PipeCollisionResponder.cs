@@ -40,7 +40,7 @@ namespace Sprint4
             {
                 if (marioRect.Bottom > pipeRect.Top && marioRect.Bottom < pipeRect.Bottom)
                 {  
-                    if (!mario.physState.GetType().Equals((new JumpingState()).GetType()))
+                    if (!mario.isJumping)
                     {
                         mario.velocity.Y = 0;
                     }

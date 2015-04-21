@@ -14,7 +14,7 @@ namespace Sprint4
         }
         public void Execute()
         {
-            mario.Up();
+            mario.Jump();
         }
     }
 }

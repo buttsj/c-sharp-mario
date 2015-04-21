@@ -14,7 +14,7 @@ namespace Sprint4
         }
         public void Execute()
         {
-            mario.Run();
+            mario.physState.Run();
         }
     }
 }
