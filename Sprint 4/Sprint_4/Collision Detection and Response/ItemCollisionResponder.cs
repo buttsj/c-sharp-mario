@@ -22,6 +22,12 @@ namespace Sprint4
                 game.gameHUD.Score += ValueHolder.itemCollectPoints;
                 SoundManager.PlaySong(SoundManager.songs.star);
             }
+            if (item.GetType().Equals(new Ninja(item.position).GetType()))
+            {
+                mario.MakeNinjaMario();
+                mario.isNinja = true;
+                game.gameHUD.Score += ValueHolder.itemCollectPoints;
+            }
             if (item.GetType().Equals(new SuperMushroom(item.position).GetType()))
             {
                 mario.MakeBigMario();

@@ -77,7 +77,7 @@ namespace Sprint4
         }
         public void MakeNinjaMario()
         {
-
+            mario.TransitionState(mario.state, new RightIdleBigMS(mario));
         }
         public void MakeDeadMario()
         {

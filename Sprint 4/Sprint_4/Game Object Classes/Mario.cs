@@ -192,7 +192,7 @@ namespace Sprint4
                         throwingStar = new ThrowingStar(new Vector2(position.X + ValueHolder.projectileXSpawn, position.Y +
                             ValueHolder.projectileYSpawn), false);
                     }
-                    Game1.GetInstance().level.levelFireballs.Add(fireball);
+                    Game1.GetInstance().level.levelThrowingStars.Add(throwingStar);
                     throwingStarCount++;
                 }
             }           
@@ -267,6 +267,10 @@ namespace Sprint4
                 state.Draw(spriteBatch, position);
             }
             if (!isStar && invicibilityFrames == 0)
+            {
+                state.Draw(spriteBatch, position);
+            }
+            if (isNinja && ninjaTimer % modVal != 0)
             {
                 state.Draw(spriteBatch, position);
             }
