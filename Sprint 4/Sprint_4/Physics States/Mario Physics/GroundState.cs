@@ -9,9 +9,9 @@ namespace Sprint4
     public class GroundState :IMarioPhysicsState
     {
         private Mario mario;
-        private Vector2 speedDecayRate = new Vector2((float)0.73, (float)0.70);
+        private Vector2 speedDecayRate = new Vector2(0.73f, 0.70f);
         private float positionDtAdjust = 40;
-        private double runMultiplier = 1.4;
+        private float runMultiplier = 1.4f;
 
         public GroundState(Mario mario)
         {
@@ -38,7 +38,7 @@ namespace Sprint4
         {
             if (mario.velocity.X > mario.minVelocity.X && mario.velocity.X < mario.maxVelocity.X)
             {
-                mario.velocity.X *= (float)runMultiplier;
+                mario.velocity.X *= runMultiplier;
                 mario.state.Sprite.UpdateSpeed-=2;
             }
         }

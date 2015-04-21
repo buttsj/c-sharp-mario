@@ -49,7 +49,6 @@ namespace Sprint4
         }
         public void GoRight()
         {
-            mario.position.X++;
         }
         public void Idle()
         {

@@ -59,11 +59,7 @@ namespace Sprint4
             {
                 command.Execute();
             }
-            if (currentCommand.GetType() == new NullCommand().GetType())
-            {
-                currentCommand = new IdleCommand(mario);
-                currentCommand.Execute();
-            }
+            mario.Idle();
         }
     }
 }

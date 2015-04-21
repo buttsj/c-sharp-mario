@@ -9,9 +9,9 @@ namespace Sprint4
     public class FallingState : IMarioPhysicsState
     {
         private Mario mario;
-        private Vector2 fallingVelocityDecayRate = new Vector2((float).90, 1);
-        private Vector2 fallingVelocity = new Vector2(0, (float)1.2);
-        private float positionDtAdjust = 50;
+        private Vector2 fallingVelocityDecayRate = new Vector2(.73f, 1);
+        private Vector2 fallingVelocity = new Vector2(0, .85f);
+        private float positionDtAdjust = 40;
 
         public FallingState(Mario mario)
         {
@@ -22,8 +22,8 @@ namespace Sprint4
 
         public void Update(GameTime gameTime)
         {
-            mario.position += mario.velocity * ((float)gameTime.ElapsedGameTime.Milliseconds / positionDtAdjust);
             mario.velocity += fallingVelocity;
+            mario.position += mario.velocity * ((float)gameTime.ElapsedGameTime.Milliseconds / positionDtAdjust);
             mario.velocity *= fallingVelocityDecayRate;
             if (mario.velocity.Y > mario.maxVelocity.Y){
                 mario.velocity.Y = mario.maxVelocity.Y;

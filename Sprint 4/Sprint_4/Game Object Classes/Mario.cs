@@ -57,7 +57,7 @@ namespace Sprint4
             if (velocity.Y > minVelocity.Y && !isFalling)
             {
                 physState = new JumpingState(this);
-                velocity.Y -= ValueHolder.initialJumpingVelocity;
+                velocity.Y -= ValueHolder.jumpingVelocity;
                 if (jumpFX.State == SoundState.Stopped)
                 {
                     jumpFX.Play();

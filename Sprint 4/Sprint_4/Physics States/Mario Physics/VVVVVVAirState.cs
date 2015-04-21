@@ -10,7 +10,7 @@ namespace Sprint4
     {
         private Mario mario;
         private float speedDecayRate = .73f;
-        private float positionDtAdjust = 10;
+        private float positionDtAdjust = 20;
         private int gravityStrength = 4;
 
         public VVVVVVAirState(Mario mario, int sign)

@@ -30,7 +30,6 @@ namespace Sprint4
         }
         public void Up()
         {
-            mario.position.Y--;
         }
         public void Down()
         {
@@ -42,7 +41,6 @@ namespace Sprint4
         }
         public void GoRight()
         {
-            mario.position.X++;
         }
         public void Idle()
         {

@@ -25,8 +25,8 @@ namespace Sprint4
         //physics
         public static Vector2 leftMarioIdlingRange = new Vector2((float)-.2, (float)-.1);
         public static Vector2 rightMarioIdlingRange = new Vector2((float).2, (float).1);
-        public static float initialJumpingVelocity = (float)2;
-        public static float walkingVelocity = (float)0.3;
+        public static float jumpingVelocity = 2;
+        public static float walkingVelocity = 1;
         public static int flipFallRate = 3;
         public static int maxCoins = 100;
         public static int maxFireballs = 3;
