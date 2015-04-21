@@ -52,6 +52,7 @@ namespace Sprint4
             isFireball = false;
             isBig = false;
             isFire = false;
+            isNinja = false;
         }
 
         public void Jump()
@@ -118,11 +119,12 @@ namespace Sprint4
             {
                 state.MakeBigMario();
                 isFire = false;
-            }
-            else
+            } 
+            else 
             {
                 isFire = true;
-            }            
+            }
+                 
             isBig = true;          
             isFireball = false;
         }
@@ -177,8 +179,7 @@ namespace Sprint4
         public void MakeNinjaMario()
         {
             state.MakeNinjaMario();
-            isNinja = true;
-            if (throwingStarCount < ValueHolder.maxThrowingStars && isNinja)
+            if (throwingStarCount < ValueHolder.maxThrowingStars)
             {
                 if (projectileTimer == 0)
                 {
@@ -245,8 +246,6 @@ namespace Sprint4
             if (projectileTimer != 0 )
             {
                 projectileTimer--;
-                isFireball = false;                
-                isNinja = false;
             }
             else
             {

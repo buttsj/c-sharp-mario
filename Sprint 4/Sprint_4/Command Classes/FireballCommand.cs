@@ -19,11 +19,10 @@ namespace Sprint4
             {
                 mario.MakeFireballMario();
             }
-            if(mario.isNinja && !mario.isFire)
+            if (mario.isNinja && !mario.isFire)
             {
                 mario.MakeNinjaMario();
             }
-            
         }
     }
 }

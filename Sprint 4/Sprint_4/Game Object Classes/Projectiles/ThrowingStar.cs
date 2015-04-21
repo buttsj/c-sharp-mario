@@ -15,7 +15,7 @@ namespace Sprint4
         public bool left = true;
         public Vector2 position;
         public int throwingStarLifespan = 200;
-        int gravityTime = 100;
+        int gravityTime = 50;
         int moveRate = 3;
 
         public ThrowingStar(Vector2 location, bool left)
@@ -54,8 +54,7 @@ namespace Sprint4
             if (throwingStarLifespan < gravityTime)
             {
                 position.Y = position.Y + 1;
-            }
-            
+            }          
         }
         public void Draw(SpriteBatch spriteBatch)
         {

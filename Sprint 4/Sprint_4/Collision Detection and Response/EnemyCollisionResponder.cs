@@ -52,7 +52,7 @@ namespace Sprint4
                     {
                         enemy.TakeDamage();
                         game.gameHUD.Score += ValueHolder.enemyHurtPoints;
-                    }
+                    }                    
                 }
             }
         }

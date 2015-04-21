@@ -1025,13 +1025,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Items\ThrowingStar.png">
-      <Name>ThrowingStar</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
     <Compile Include="Items\explode.png">
       <Name>explode</Name>
       <Importer>TextureImporter</Importer>
@@ -1102,6 +1095,13 @@
   <ItemGroup>
     <Compile Include="Items\ninja.png">
       <Name>ninja</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Items\ThrowingStar.png">
+      <Name>ThrowingStar</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
