@@ -128,7 +128,7 @@
     <Compile Include="Collision Detection and Response\ItemCollisionResponder.cs" />
     <Compile Include="Command Classes\NullCommand.cs" />
     <Compile Include="Command Classes\PauseCommand.cs" />
-    <Compile Include="Command Classes\FireballCommand.cs" />
+    <Compile Include="Command Classes\ProjectileCommand.cs" />
     <Compile Include="Command Classes\RunCommand.cs" />
     <Compile Include="Command Classes\DownCommand.cs" />
     <Compile Include="Command Classes\IdleCommand.cs" />
