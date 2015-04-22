@@ -30,7 +30,7 @@ namespace Sprint4
         public static int maxCoins = 100;
         public static int maxInvinciblityTime = 100;
         public static int maxStarTime = 1000;
-        public static int maxNinjaTime = 1200;
+        public static int maxNinjaTime = 1500;
         public static int normalAnimationTimer = 90;
         public static int slowdownRate = 3;
         public static Vector2 textPosition = new Vector2(-40, 120);

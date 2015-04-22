@@ -286,7 +286,11 @@ namespace Sprint4
             if (isNinja)
             {
                 if (ninjaTimer % modVal != 0) state.Draw(spriteBatch, position, Color.DarkSlateGray);
-                else state.Draw(spriteBatch, position, Color.IndianRed);
+                else
+                {
+                    if (!isStar) state.Draw(spriteBatch, position, Color.IndianRed);
+                    else state.Draw(spriteBatch, position, Color.Gold);
+                }
             }
             
          }
