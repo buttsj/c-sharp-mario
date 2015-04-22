@@ -32,10 +32,13 @@ namespace Sprint4
             Rectangle intersection = Rectangle.Intersect(blockRect, throwingStarRect);
             if (throwingStarRect.Bottom > blockRect.Top && throwingStarRect.Bottom < blockRect.Bottom)
             {
-                throwingStar.position.Y = throwingStar.position.Y - intersection.Height;
+                throwingStar.position.Y = throwingStar.position.Y - intersection.Height;                
+            }
+            if (!block.state.GetType().Equals((new GenericBlockState(SpriteFactory.sprites.ground).GetType())))
+            {
                 game.level.deadThrowingStars.Add(throwingStar);
                 mario.throwingStarCount--;
-            }            
+            }
         }
     }
 }

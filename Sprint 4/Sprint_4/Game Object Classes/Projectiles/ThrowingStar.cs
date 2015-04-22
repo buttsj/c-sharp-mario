@@ -13,9 +13,10 @@ namespace Sprint4
         IAnimatedSprite sprite;
         ISpriteFactory factory;
         public bool left = true;
+        public bool down = true;
         public Vector2 position;
-        public int throwingStarLifespan = 200;
-        int gravityTime = 50;
+        public int throwingStarLifespan = 150;
+        int gravityTime = 110;
         int moveRate = 3;
 
         public ThrowingStar(Vector2 location, bool left)
@@ -53,8 +54,8 @@ namespace Sprint4
             }
             if (throwingStarLifespan < gravityTime)
             {
-                position.Y = position.Y + 1;
-            }          
+                position.Y = position.Y + (float) 0.2;
+            }
         }
         public void Draw(SpriteBatch spriteBatch)
         {

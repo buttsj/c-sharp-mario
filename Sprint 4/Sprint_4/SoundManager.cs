@@ -11,17 +11,18 @@ namespace Sprint4
     public class SoundManager
     {
         Game1 game;
-        public static Song athletic, star, overworld, underground, placeHolderSong, overworldFast, vmusic, title;
+        public static Song athletic, star, overworld, underground, placeHolderSong, overworldFast, vmusic, title, ninja;
         public static SoundEffect coinCollect, brickBreak, grow, shrink, blockHit, oneUp, enemyDamage, jump, itemSpawn,
             pause, death, gameOver, fireball, launch, clear, achUnlocked, flip;
         public static songs currentSong;
             
-        public enum songs{athletic, star, overworld, underground, overworldFast, vmusic, title, nullSong}
+        public enum songs{athletic, star, overworld, underground, overworldFast, vmusic, title, nullSong, ninja}
         public SoundManager(Game1 game){
             this.game = game;
             jump = game.Content.Load<SoundEffect>("Sound/SFX/SFX Jump");
             athletic = game.Content.Load<Song>("Sound/Music/Map BGM");
             star = game.Content.Load<Song>("Sound/Music/Star BGM");
+            ninja = game.Content.Load<Song>("Sound/Music/Shadow Ninja");
             death = game.Content.Load<SoundEffect>("Sound/SFX/Player Down");
             coinCollect = game.Content.Load<SoundEffect>("Sound/SFX/SFX coin collect");
             brickBreak = game.Content.Load<SoundEffect>("Sound/SFX/SFX Brick Break");
@@ -44,6 +45,7 @@ namespace Sprint4
             achUnlocked = game.Content.Load<SoundEffect>("Achievements/AchievementUnlocked");
             title = game.Content.Load<Song>("Sound/Music/title music");
             flip = game.Content.Load<SoundEffect>("Sound/SFX/flip");
+            
             currentSong = songs.nullSong;
         }
         public static void PlaySong(SoundManager.songs song)
@@ -55,6 +57,10 @@ namespace Sprint4
             if (song == songs.star)
             {
                 placeHolderSong = star;
+            }
+            if (song == songs.ninja)
+            {
+                placeHolderSong = ninja;
             }
             if (song == songs.overworld)
             {

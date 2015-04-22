@@ -27,6 +27,7 @@ namespace Sprint4
                 mario.MakeNinjaMario();
                 mario.isNinja = true;
                 game.gameHUD.Score += ValueHolder.itemCollectPoints;
+                SoundManager.PlaySong(SoundManager.songs.ninja);
             }
             if (item.GetType().Equals(new SuperMushroom(item.position).GetType()))
             {

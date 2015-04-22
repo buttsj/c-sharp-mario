@@ -49,6 +49,10 @@ namespace Sprint4
                 SoundManager.shrink.Play();
                 invicibilityFrames = ValueHolder.maxInvinciblityTime;
             }
+            if (isNinja)
+            {
+                SoundManager.PlaySong(SoundManager.songs.overworld);
+            }
             isFireball = false;
             isBig = false;
             isFire = false;
@@ -132,9 +136,14 @@ namespace Sprint4
         public void MakeFireMario()
         {
             state.MakeFireMario();
+            if (isNinja)
+            {
+                SoundManager.PlaySong(SoundManager.songs.overworld);
+            }
             isBig = true;
             isFire = true;
             isFireball = false;
+            isNinja = false;
         }
 
         public void MakeVictoryMario()

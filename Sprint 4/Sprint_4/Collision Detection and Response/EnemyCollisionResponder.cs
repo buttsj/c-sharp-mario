@@ -24,7 +24,7 @@ namespace Sprint4
             {
                 if (!mario.isStar)
                 {
-                    mario.TakeDamage();
+                    mario.TakeDamage();                    
                 }
                 else
                 {
