@@ -28,7 +28,7 @@ namespace Sprint4
 
         public void Draw(SpriteBatch spriteBatch)
         {
-            CurrentSprite.Draw(spriteBatch, new Vector2(0, 0));
+            CurrentSprite.Draw(spriteBatch, new Vector2(0, 0), Color.White);
         }
     }
 }

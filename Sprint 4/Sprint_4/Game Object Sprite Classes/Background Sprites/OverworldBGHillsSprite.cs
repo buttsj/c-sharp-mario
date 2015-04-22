@@ -28,7 +28,7 @@ namespace Sprint4
             return new Rectangle((int)location.X, (int)location.Y, width, height);
         }
         public void Update(GameTime gameTime) { }
-        public void Draw(SpriteBatch spriteBatch, Vector2 location)
+        public void Draw(SpriteBatch spriteBatch, Vector2 location, Color color)
         {
             spriteBatch.Draw(Texture, new Rectangle(0, 0, 800, 500), Color.White);
         }

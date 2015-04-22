@@ -10,13 +10,14 @@ namespace Sprint4
     public class RightIdleBigMS : IMarioState
     {
         Mario mario;
+        
         public IAnimatedSprite Sprite { get; set; }
         
         public RightIdleBigMS(Mario mario)
         {
             ISpriteFactory factory = new SpriteFactory();
             Sprite = factory.build(SpriteFactory.sprites.rightIdleMarioBig);
-            this.mario = mario;
+            this.mario = mario;            
         }
         public Rectangle GetBoundingBox(Vector2 location)
         {
@@ -83,9 +84,9 @@ namespace Sprint4
         {
             Sprite.Update(gameTime);
         }
-        public void Draw(SpriteBatch spriteBatch, Vector2 location)
-        {
-            Sprite.Draw(spriteBatch, location);
+        public void Draw(SpriteBatch spriteBatch, Vector2 location, Color color)
+        {            
+            Sprite.Draw(spriteBatch, location, color);            
         }
     }
 }

@@ -42,7 +42,7 @@ namespace Sprint4
                 { currentFrame = 0; }
             }    
         }
-        public void Draw(SpriteBatch spriteBatch, Vector2 location)
+        public void Draw(SpriteBatch spriteBatch, Vector2 location, Color color)
         {
             int width = Texture.Width / Columns;
             int height = Texture.Height / Rows;

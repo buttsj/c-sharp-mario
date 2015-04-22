@@ -11,7 +11,7 @@ namespace Sprint4
     {
         IAnimatedSprite Sprite { get; set; }
         void Update(GameTime gameTime);
-        void Draw(SpriteBatch spriteBatch, Vector2 location);
+        void Draw(SpriteBatch spriteBatch, Vector2 location, Color color);
         void TakeDamage();
         void Up();
         void Down();

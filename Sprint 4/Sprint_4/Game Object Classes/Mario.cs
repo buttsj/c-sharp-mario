@@ -205,7 +205,9 @@ namespace Sprint4
                     Game1.GetInstance().level.levelThrowingStars.Add(throwingStar);
                     throwingStarCount++;
                 }
-            }           
+            }
+            isBig = true;
+            isFire = false;
         }
 
        
@@ -266,22 +268,24 @@ namespace Sprint4
 
         public void Draw(SpriteBatch spriteBatch)
         {
+            
             if (isStar && starTimer % modVal != 0)
             {
-                state.Draw(spriteBatch, position);
+                state.Draw(spriteBatch, position, Color.Yellow);
             }
             if (invicibilityFrames % modVal != 0)
             {
-                state.Draw(spriteBatch, position);
+                state.Draw(spriteBatch, position, Color.White);
             }
-            if (!isStar && invicibilityFrames == 0)
+            if (!isStar && !isNinja && invicibilityFrames == 0)
             {
-                state.Draw(spriteBatch, position);
+                state.Draw(spriteBatch, position, Color.White);
             }
             if (isNinja && ninjaTimer % modVal != 0)
-            {
-                state.Draw(spriteBatch, position);
+            {                
+                state.Draw(spriteBatch, position, Color.Black);                
             }
+            
          }
        
        }

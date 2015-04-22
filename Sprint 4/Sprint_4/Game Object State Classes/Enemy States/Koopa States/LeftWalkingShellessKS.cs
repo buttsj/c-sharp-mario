@@ -52,7 +52,7 @@ namespace Sprint4
         }
         public void Draw(SpriteBatch spriteBatch, Vector2 location)
         {
-            sprite.Draw(spriteBatch, location);
+            sprite.Draw(spriteBatch, location, Color.White);
         }
     }
 }

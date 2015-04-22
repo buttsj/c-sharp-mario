@@ -150,7 +150,7 @@ namespace Sprint4
         {
             foreach (KeyValuePair<IAnimatedSprite, Vector2> backgroundObject in levelBackgroundObjects)
             {
-                backgroundObject.Key.Draw(spriteBatch, backgroundObject.Value);
+                backgroundObject.Key.Draw(spriteBatch, backgroundObject.Value, Color.White);
             }
             foreach (ICollectable item in levelItems)
             {
@@ -201,13 +201,17 @@ namespace Sprint4
                     trampolineDrawer.Draw(spriteBatch);
                 }
             }
-            if (!game.isTitle)
+            if (!game.isTitle && !mario.isNinja)
+            {
+                mario.Draw(spriteBatch);
+            }
+            if (mario.isNinja)
             {
                 mario.Draw(spriteBatch);
             }
             if (game.gameCamera.InCameraView(exitPole.GetBoundingBox(exitPosition)))
             {
-                exitPole.Draw(spriteBatch, exitPosition);
+                exitPole.Draw(spriteBatch, exitPosition, Color.White);
             }
             foreach (Pipe pipeDrawer in levelPipes)
             {

@@ -80,7 +80,7 @@ namespace Sprint4
                 spriteBatch.DrawString(font, pair.Value, textStartingPosition + (adjust* menuNumber), Color.Black);
                 menuNumber++;
             }
-            coin.Draw(spriteBatch, coinStartingPosition + (adjust * selection));
+            coin.Draw(spriteBatch, coinStartingPosition + (adjust * selection), Color.White);
             menuNumber = 0;
         }
     }

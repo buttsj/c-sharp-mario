@@ -62,7 +62,7 @@ namespace Sprint4
                 launch.Play();
                 sfxPlayed = true;
             }
-            sprite.Draw(spriteBatch, location);
+            sprite.Draw(spriteBatch, location, Color.White);
         }
     }
 }

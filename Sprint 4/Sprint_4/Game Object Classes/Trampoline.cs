@@ -21,7 +21,7 @@ namespace Sprint4
         }
         public void Draw(SpriteBatch spriteBatch)
         {
-            sprite.Draw(spriteBatch, position);
+            sprite.Draw(spriteBatch, position, Color.White);
         }
         public void Update(GameTime gameTime)
         {

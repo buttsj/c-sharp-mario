@@ -30,12 +30,12 @@ namespace Sprint4
             {
                 if (spawnTimer > 0)
                 {
-                    sprite.Draw(spriteBatch, position);
+                    sprite.Draw(spriteBatch, position, Color.White);
                 }
             }
             else
             {
-                sprite.Draw(spriteBatch, position);
+                sprite.Draw(spriteBatch, position, Color.White);
             }
         }
         public void GoLeft()

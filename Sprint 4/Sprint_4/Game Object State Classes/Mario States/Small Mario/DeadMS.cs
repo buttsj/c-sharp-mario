@@ -71,9 +71,9 @@ namespace Sprint4
         {
             Sprite.Update(gameTime);
         }
-        public void Draw(SpriteBatch spriteBatch, Vector2 location)
+        public void Draw(SpriteBatch spriteBatch, Vector2 location, Color color)
         {
-            Sprite.Draw(spriteBatch, location);
+            Sprite.Draw(spriteBatch, location, color);
         }
     }
 }

@@ -51,7 +51,7 @@ namespace Sprint4
             game.level.Draw(spriteBatch);
             if (setLogo)
             {
-                logo.Draw(spriteBatch, new Vector2(100, 280));
+                logo.Draw(spriteBatch, new Vector2(100, 280), Color.White);
             }
             menu.Draw(spriteBatch);
         }
