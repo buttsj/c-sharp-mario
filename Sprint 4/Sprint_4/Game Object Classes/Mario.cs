@@ -166,6 +166,7 @@ namespace Sprint4
         {
             state.MakeFireballMario();
             isFireball = true;
+            isNinja = false;
             if (fireballCount < ValueHolder.maxFireballs && isFire)
             {
                 if (projectileTimer == 0)
@@ -206,8 +207,7 @@ namespace Sprint4
                     throwingStarCount++;
                 }
             }
-            isBig = true;
-            isFire = false;
+            isBig = true;            
         }
 
        
@@ -240,13 +240,15 @@ namespace Sprint4
             {
                 isStar = false;
                 starTimer = ValueHolder.maxStarTime;
-                SoundManager.PlaySong(SoundManager.songs.overworld);
+                if (!isNinja) SoundManager.PlaySong(SoundManager.songs.overworld);
+                else SoundManager.PlaySong(SoundManager.songs.ninja);
             }
             if (ninjaTimer == 0)
             {
                 isNinja = false;
                 ninjaTimer = ValueHolder.maxNinjaTime;
-                SoundManager.PlaySong(SoundManager.songs.overworld);
+                if (!isStar) SoundManager.PlaySong(SoundManager.songs.overworld);
+                else SoundManager.PlaySong(SoundManager.songs.star);
             }
             if (position.Y > ValueHolder.fallingMarioBoundary)
             {
@@ -284,7 +286,7 @@ namespace Sprint4
             if (isNinja)
             {
                 if (ninjaTimer % modVal != 0) state.Draw(spriteBatch, position, Color.DarkSlateGray);
-                else state.Draw(spriteBatch, position, Color.Black);
+                else state.Draw(spriteBatch, position, Color.IndianRed);
             }
             
          }

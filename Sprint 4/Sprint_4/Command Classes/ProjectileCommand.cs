@@ -15,11 +15,11 @@ namespace Sprint4
 
         public void Execute()
         {
-            if (mario.isFire)
+            if (mario.isFire && !mario.isNinja)
             {
                 mario.MakeFireballMario();
             }
-            if (mario.isNinja && !mario.isFire)
+            if (mario.isNinja)
             {
                 mario.MakeNinjaMario();
             }

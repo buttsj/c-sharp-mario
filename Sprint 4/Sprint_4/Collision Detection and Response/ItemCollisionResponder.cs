@@ -20,7 +20,7 @@ namespace Sprint4
             {
                 mario.isStar = true;
                 game.gameHUD.Score += ValueHolder.itemCollectPoints;
-                SoundManager.PlaySong(SoundManager.songs.star);
+                if (!mario.isNinja) SoundManager.PlaySong(SoundManager.songs.star);
             }
             if (item.GetType().Equals(new Ninja(item.position).GetType()))
             {
