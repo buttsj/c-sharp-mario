@@ -25,8 +25,8 @@ namespace Sprint4
         public int gravityDirection = 1;
         public Vector2 position;
         public Vector2 velocity;
-        public Vector2 maxVelocity = new Vector2((float)6, (float)17);
-        public Vector2 minVelocity = new Vector2((float) -6, (float)-3.5);
+        public Vector2 maxVelocity = new Vector2(6, 15);
+        public Vector2 minVelocity = new Vector2(-6, -3.5f);
         public int marioHeight = 0;        
         private SoundEffectInstance jumpFX;
         private SpriteFactory factory;
