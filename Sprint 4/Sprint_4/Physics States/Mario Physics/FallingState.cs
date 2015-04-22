@@ -9,7 +9,7 @@ namespace Sprint4
     public class FallingState : IMarioPhysicsState
     {
         private Mario mario;
-        private Vector2 fallingVelocityDecayRate = new Vector2(.73f, 1);
+        private Vector2 fallingVelocityDecayRate = new Vector2(.78f, 1);
         private Vector2 fallingVelocity = new Vector2(0, .85f);
         private float positionDtAdjust = 40;
 

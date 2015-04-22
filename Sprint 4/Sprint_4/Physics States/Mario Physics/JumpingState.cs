@@ -9,7 +9,7 @@ namespace Sprint4
     public class JumpingState : IMarioPhysicsState
     {
         private Mario mario;
-        private Vector2 speedDecayRate = new Vector2(.73f, .5f);
+        private Vector2 speedDecayRate = new Vector2(.78f, .5f);
         private static int maxJumpHeight = 150;
         private static int heightIncrement = 7;
         private double minJumpingVelocity = -.005;
