@@ -271,7 +271,7 @@ namespace Sprint4
             
             if (isStar && starTimer % modVal != 0)
             {
-                state.Draw(spriteBatch, position, Color.Yellow);
+                state.Draw(spriteBatch, position, Color.Gold);
             }
             if (invicibilityFrames % modVal != 0)
             {
@@ -281,9 +281,10 @@ namespace Sprint4
             {
                 state.Draw(spriteBatch, position, Color.White);
             }
-            if (isNinja && ninjaTimer % modVal != 0)
-            {                
-                state.Draw(spriteBatch, position, Color.Black);                
+            if (isNinja)
+            {
+                if (ninjaTimer % modVal != 0) state.Draw(spriteBatch, position, Color.DarkSlateGray);
+                else state.Draw(spriteBatch, position, Color.Black);
             }
             
          }
