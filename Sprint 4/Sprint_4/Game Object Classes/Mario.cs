@@ -112,9 +112,9 @@ namespace Sprint4
             (velocity.Y < ValueHolder.rightMarioIdlingRange.Y && velocity.Y > ValueHolder.leftMarioIdlingRange.Y) &&
             !isFalling)
             {
-            state.Idle();
-            isCrouch = false;
-        }
+                state.Idle();
+                isCrouch = false;
+            }
         }
 
         public void MakeBigMario()
@@ -283,10 +283,6 @@ namespace Sprint4
                 state.Draw(spriteBatch, position);
             }
          }
-        public void Flip()
-        {
-
-        }
        
        }
     }

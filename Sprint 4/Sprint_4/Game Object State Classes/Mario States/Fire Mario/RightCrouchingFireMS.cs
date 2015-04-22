@@ -49,6 +49,9 @@ namespace Sprint4
         {
 
         }
+        public void Fall()
+        {
+        }
         public void MakeBigMario()
         {
             mario.state = new RightCrouchingBigMS(mario);

@@ -11,10 +11,11 @@ namespace Sprint4
     {
         Mario mario;
         public IAnimatedSprite Sprite { get; set; }
+        ISpriteFactory factory;
         
         public LeftJumpingBigMS(Mario mario)
         {
-            ISpriteFactory factory = new SpriteFactory();
+            factory = new SpriteFactory();
             Sprite = factory.build(SpriteFactory.sprites.leftJumpingMarioBig);
             this.mario = mario;
         }
@@ -48,6 +49,10 @@ namespace Sprint4
         public void Land()
         {
             mario.state = new LeftMovingBigMS(mario);
+        }
+        public void Fall()
+        {
+            mario.state = new LeftFallingBigMS(mario);
         }
         public void MakeBigMario()
         {

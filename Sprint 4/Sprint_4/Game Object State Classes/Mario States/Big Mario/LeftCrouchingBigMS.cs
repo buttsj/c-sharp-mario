@@ -47,7 +47,9 @@ namespace Sprint4
         }
         public void Land()
         {
-
+        }
+        public void Fall()
+        {
         }
         public void MakeBigMario()
         {

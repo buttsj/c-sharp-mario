@@ -7,15 +7,16 @@ using System.Text;
 
 namespace Sprint4
 {
-    public class RightIdleFireMS : IMarioState
+    class RightFallingFireMS : IMarioState
     {
         Mario mario;
-        public IAnimatedSprite Sprite { get; set; }      
-
-        public RightIdleFireMS(Mario mario)
+        public IAnimatedSprite Sprite { get; set; }
+        ISpriteFactory factory;
+        
+        public RightFallingFireMS(Mario mario)
         {
-            ISpriteFactory factory = new SpriteFactory();
-            Sprite = factory.build(SpriteFactory.sprites.rightIdleMarioFire);
+            factory = new SpriteFactory();
+            Sprite = factory.build(SpriteFactory.sprites.rightFallingMarioFire);
             this.mario = mario;
         }
         public Rectangle GetBoundingBox(Vector2 location)
@@ -25,50 +26,46 @@ namespace Sprint4
 
         public void TakeDamage()
         {
-            mario.TransitionState(mario.state, new RightIdleSmallMS(mario));
+            mario.TransitionState(mario.state, new RightFallingSmallMS(mario));
         }
         public void Up()
         {
-            mario.state = new RightJumpingFireMS(mario);
         }
         public void Down()
         {
-            mario.state = new RightCrouchingFireMS(mario);
         }
         public void GoLeft()
         {
-            mario.state = new LeftIdleFireMS(mario);
+            mario.state = new LeftFallingFireMS(mario);
         }
         public void GoRight()
         {
-            mario.state = new RightMovingFireMS(mario);
         }
         public void Idle()
         {
-
         }
         public void Land()
         {
-
+            mario.state = new RightMovingFireMS(mario);
         }
         public void Fall()
         {
         }
         public void MakeBigMario()
         {
-            mario.state = new RightIdleBigMS(mario);
+            mario.TransitionState(mario.state, new RightFallingBigMS(mario));
         }
         public void MakeSmallMario()
         {
-            mario.state = new RightIdleSmallMS(mario);
+            mario.TransitionState(mario.state, new RightFallingSmallMS(mario));
         }
         public void MakeFireMario()
         {
-            // null
+            
         }
         public void MakeFireballMario()
         {
-           mario.state = new RightFireballFireMS(mario);            
+            
         }
         public void MakeNinjaMario()
         {

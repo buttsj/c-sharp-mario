@@ -19,6 +19,7 @@ namespace Sprint4
         void GoRight();
         void Idle();
         void Land();
+        void Fall();
         void MakeBigMario();
         void MakeSmallMario();
         void MakeFireMario();

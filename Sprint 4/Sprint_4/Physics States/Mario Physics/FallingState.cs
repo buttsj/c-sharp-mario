@@ -16,6 +16,7 @@ namespace Sprint4
         public FallingState(Mario mario)
         {
             this.mario = mario;
+            mario.state.Fall();
             mario.isFalling = true;
             mario.isJumping = false;
         }

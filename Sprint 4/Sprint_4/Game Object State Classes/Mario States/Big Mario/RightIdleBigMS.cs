@@ -51,6 +51,9 @@ namespace Sprint4
         {
 
         }
+        public void Fall()
+        {
+        }
         public void MakeBigMario()
         {
             // null

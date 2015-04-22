@@ -49,6 +49,10 @@ namespace Sprint4
         {
             mario.state = new LeftMovingSmallMS(mario);
         }
+        public void Fall()
+        {
+            mario.state = new LeftFallingSmallMS(mario);
+        }
         public void MakeBigMario()
         {
             mario.TransitionState(mario.state, new LeftJumpingBigMS(mario));

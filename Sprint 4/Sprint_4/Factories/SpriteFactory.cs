@@ -29,15 +29,17 @@ namespace Sprint4
             leftMovingMarioBig, leftQuickturnMarioBig, leftShellKickMarioBig, leftSlidingMarioBig, rightCrouchingMarioBig,
             rightIdleMarioBig, rightJumpingMarioBig,  rightMovingMarioBig, 
             rightQuickturnMarioBig, rightShellKickMarioBig, victoryMarioBig, leftSprintMarioBig, rightSprintMarioBig,
+            rightFallingMarioBig, leftFallingMarioBig,
             // Mario fire
             leftCrouchingMarioFire, leftIdleMarioFire, leftJumpingMarioFire, leftQuickturnMarioFire, 
             leftFireballMarioFire, leftMovingMarioFire, rightMovingMarioFire, rightCrouchingMarioFire,
             rightJumpingMarioFire, rightQuickturnMarioFire, rightFireballMarioFire,
-            rightIdleMarioFire, victoryMarioFire,
+            rightIdleMarioFire, victoryMarioFire, rightFallingMarioFire, leftFallingMarioFire,
             // Mario small
             deadMario, leftCrouchingMarioSmall, leftIdleMarioSmall, leftJumpingMarioSmall, 
             leftMovingMarioSmall, rightCrouchingMarioSmall, rightIdleMarioSmall, rightJumpingMarioSmall, 
             rightMovingMarioSmall, leftSprintMarioSmall, rightSprintMarioSmall, victoryMarioSmall,
+            rightFallingMarioSmall, leftFallingMarioSmall,
             // Mario flip
             leftIdleMarioFlip, rightIdleMarioFlip, leftMovingMarioFlip, rightMovingMarioFlip,
             // Trampoline
@@ -379,6 +381,16 @@ namespace Sprint4
                 Texture2D victoryMarioSmall = Game1.gameContent.Load<Texture2D>("Mario Sprites/Small Mario/smallMarioVictory");
                 return new StaticSprite(victoryMarioSmall);
             }
+            if (sprite == sprites.rightFallingMarioSmall)
+            {
+                Texture2D rightFallingMarioSmall = Game1.gameContent.Load<Texture2D>("Mario Sprites/Small Mario/rightFallingMarioSmall");
+                return new StaticSprite(rightFallingMarioSmall);
+            }
+            if (sprite == sprites.leftFallingMarioSmall)
+            {
+                Texture2D leftFallingMarioSmall = Game1.gameContent.Load<Texture2D>("Mario Sprites/Small Mario/leftFallingMarioSmall");
+                return new StaticSprite(leftFallingMarioSmall);
+            }
 
             //BIG MARIO
             if (sprite == sprites.leftCrouchingMarioBig)
@@ -435,6 +447,16 @@ namespace Sprint4
             {
                 Texture2D victoryMarioBig = Game1.gameContent.Load<Texture2D>("Mario Sprites/Big Mario/victoryMarioBig");
                 return new StaticSprite(victoryMarioBig);
+            }
+            if (sprite == sprites.rightFallingMarioBig)
+            {
+                Texture2D rightFallingMarioBig = Game1.gameContent.Load<Texture2D>("Mario Sprites/Big Mario/rightFallingMarioBig");
+                return new StaticSprite(rightFallingMarioBig);
+            }
+            if (sprite == sprites.leftFallingMarioBig)
+            {
+                Texture2D leftFallingMarioBig = Game1.gameContent.Load<Texture2D>("Mario Sprites/Big Mario/leftFallingMarioBig");
+                return new StaticSprite(leftFallingMarioBig);
             }
 
 
@@ -493,6 +515,16 @@ namespace Sprint4
             {
                 Texture2D rightFireballMarioFire = Game1.gameContent.Load<Texture2D>("Mario Sprites/Fire Mario/rightFireballMarioFire");
                 return new StaticSprite(rightFireballMarioFire);
+            }
+            if (sprite == sprites.rightFallingMarioFire)
+            {
+                Texture2D rightFallingMarioFire = Game1.gameContent.Load<Texture2D>("Mario Sprites/Fire Mario/rightFacingFallingMarioFire");
+                return new StaticSprite(rightFallingMarioFire);
+            }
+            if (sprite == sprites.leftFallingMarioFire)
+            {
+                Texture2D leftFallingMarioFire = Game1.gameContent.Load<Texture2D>("Mario Sprites/Fire Mario/leftfallingmariofire");
+                return new StaticSprite(leftFallingMarioFire);
             }
 
             // FLIP MARIO

@@ -104,7 +104,13 @@
     <Compile Include="Game Object Sprite Classes\SpikeSprite.cs" />
     <Compile Include="Game Object State Classes\Block States\ExplodingBlockState.cs" />
     <Compile Include="Game Object State Classes\Block States\GroundBlockState.cs" />
+    <Compile Include="Game Object State Classes\Mario States\Big Mario\RightFallingBigMS.cs" />
+    <Compile Include="Game Object State Classes\Mario States\Big Mario\LeftFallingBigMS.cs" />
+    <Compile Include="Game Object State Classes\Mario States\Fire Mario\LeftFallingFireMS.cs" />
+    <Compile Include="Game Object State Classes\Mario States\Fire Mario\RightFallingFireMS.cs" />
     <Compile Include="Game Object State Classes\Mario States\Small Mario\DeadFlipMS.cs" />
+    <Compile Include="Game Object State Classes\Mario States\Small Mario\LeftFallingSmallMS.cs" />
+    <Compile Include="Game Object State Classes\Mario States\Small Mario\RightFallingSmallMS.cs" />
     <Compile Include="Game Object State Classes\Mario States\Small Mario\RightMovingSmallFlipMS.cs" />
     <Compile Include="Game Object State Classes\Mario States\Small Mario\RightIdleSmallFlipMS.cs" />
     <Compile Include="Game Object State Classes\Mario States\Small Mario\LeftIdleSmallFlipMS.cs" />
@@ -254,6 +260,8 @@
     <Compile Include="Utility Classes\ValueHolder.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="CODE REVIEWS\CodeQualityTom.txt" />
+    <Content Include="CODE REVIEWS\CodeReadabilityTom.txt" />
     <Content Include="Game.ico" />
     <Content Include="GameThumbnail.png">
       <XnaPlatformSpecific>true</XnaPlatformSpecific>
@@ -288,9 +296,7 @@
       <Install>true</Install>
     </BootstrapperPackage>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="CODE REVIEWS\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\XNA Game Studio\Microsoft.Xna.GameStudio.targets" />
   <!--
