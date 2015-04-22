@@ -254,8 +254,7 @@ namespace Sprint4
             {
                 state = new DeadMS(this);
                 game.ach.AchievementAdjustment(AchievementsManager.AchievementType.Death);
-            }         
-                        
+            }                        
             if (projectileTimer != 0 )
             {
                 projectileTimer--;
@@ -291,10 +290,8 @@ namespace Sprint4
                     if (!isStar) state.Draw(spriteBatch, position, Color.IndianRed);
                     else state.Draw(spriteBatch, position, Color.Gold);
                 }
-            }
-            
-         }
-       
+            }            
+         }       
        }
     }
 
