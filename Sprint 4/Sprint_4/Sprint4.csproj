@@ -262,6 +262,8 @@
   <ItemGroup>
     <Content Include="CODE REVIEWS\CodeQualityTom.txt" />
     <Content Include="CODE REVIEWS\CodeReadabilityTom.txt" />
+    <Content Include="CODE REVIEWS\CodeQualityJack.txt" />
+    <Content Include="CODE REVIEWS\CodeReadabilityJack.txt" />
     <Content Include="Game.ico" />
     <Content Include="GameThumbnail.png">
       <XnaPlatformSpecific>true</XnaPlatformSpecific>
