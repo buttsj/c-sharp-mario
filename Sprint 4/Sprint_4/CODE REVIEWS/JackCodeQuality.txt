@@ -1,0 +1,15 @@
+CODE QUALITY
+
+Author of code review: John (Jack) Butts
+Date of code review: 04/23/15
+Sprint number: Six
+Name of .cs file: Ninja.cs
+Author of .cs file: Caleb Underwood
+Time taken: 6 minutes
+Comments:
+- Very little coupling, very self contained
+
+- Easy to understand how the item is created
+
+Changes:
+- Nothing comes to mind!
