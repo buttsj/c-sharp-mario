@@ -1,0 +1,23 @@
+CODE QUALITY REVIEW
+
+Name:			Caleb Underwood
+
+Date:			April 26, 2015
+	
+Sprint number:		Sprint 6
+
+Name of the .cs file:	VVVVVVGameState.cs
+
+Author of the .cs file:	Tom Kiener
+
+Time Taken to Review:	 7 minutes
+
+
+Specific comments on quality of code:
+
+- Appropriate amount of code. (around 37 lines)
+
+- High Cohesion: Very maintainable and easy to edit / make changes.  Low complexity makes class easy to understand.
+
+- Low Coupling: Takes in a game object in order to load mario, keyboard, gamepad and gameHud objects. Controllers and level are updated in Update.  Level is drawn in Draw. No other dependencies.
+

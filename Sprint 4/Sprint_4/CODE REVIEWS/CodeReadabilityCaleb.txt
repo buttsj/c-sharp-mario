@@ -1,0 +1,23 @@
+CODE READABILITY REVIEW
+
+Name:			Caleb Underwood
+
+Date:			April 26, 2015
+	
+Sprint number:		Sprint 6
+
+Name of the .cs file:	VVVVVVGameState.cs
+
+Author of the .cs file:	Tom Kiener
+
+Time Taken to Review:	 7 minutes
+
+
+Specific comments on what is readable and what is not:
+
+- Minimal lines of code (37 lines)
+- Naming conventions are easy to understand
+- On initialization makes marios physic state the VVVVVVGroundState and changes the Keyboard and Gamepad controller 
+- Consists of Update and Draw methods
+- Possible Changes:
+	o None. Everything is readable and understandable.

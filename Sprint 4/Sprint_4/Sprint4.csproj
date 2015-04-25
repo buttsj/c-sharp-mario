@@ -260,7 +260,9 @@
     <Compile Include="Utility Classes\ValueHolder.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="CODE REVIEWS\CodeQualityCaleb.txt" />
     <Content Include="CODE REVIEWS\CodeQualityTom.txt" />
+    <Content Include="CODE REVIEWS\CodeReadabilityCaleb.txt" />
     <Content Include="CODE REVIEWS\CodeReadabilityTom.txt" />
     <Content Include="Game.ico" />
     <Content Include="GameThumbnail.png">
