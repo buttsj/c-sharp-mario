@@ -13,6 +13,7 @@ namespace Sprint4
         private float positionDtAdjust = 50;
         private Vector2 oldPos;
         private float maxVelocity = 15;
+        private float positionDifference = .5f;
 
         public ItemFallingState(ICollectable item)
         {
@@ -26,7 +27,7 @@ namespace Sprint4
             if (item.velocity.Y > maxVelocity){
                  item.velocity = new Vector2(item.velocity.X, maxVelocity);
             }
-            if ((item.position.Y - oldPos.Y) < (float).5)
+            if ((item.position.Y - oldPos.Y) < positionDifference)
             {
                 item.physState = new ItemGroundState(item);
             }

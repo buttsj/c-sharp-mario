@@ -16,6 +16,7 @@ namespace Sprint4
         public ICollectablePhysicsState physState { get; set; }
         ISpriteFactory factory = new SpriteFactory();
         int spawnTimer = 5;
+        Vector2 spawnAdjust = new Vector2(0, 20);
 
         public Coin(Vector2 location)
         {
@@ -62,7 +63,7 @@ namespace Sprint4
             Game1.GetInstance().level.levelItems.Add(this);
             SoundManager.coinCollect.Play();
             Game1.GetInstance().gameHUD.Coins++;
-            position = position - new Vector2(0, 20);
+            position = position - spawnAdjust;
             isSpawning = true;
         }
     }

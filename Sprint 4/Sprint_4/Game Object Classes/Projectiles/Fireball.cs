@@ -51,7 +51,7 @@ namespace Sprint4
                     GoRight();
                 }
             }
-            position.Y = position.Y + 1;     
+            position.Y++;    
         }
         public void Draw(SpriteBatch spriteBatch)
         {

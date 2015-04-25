@@ -21,8 +21,6 @@ namespace Sprint4
             OverworldSprite = factory.build(SpriteFactory.sprites.overworldBackground);
             UndergroundSprite = factory.build(SpriteFactory.sprites.undergroundBackground);
             OverworldHillsSprite = factory.build(SpriteFactory.sprites.overworldHillsBackground);
-
-            // Set current background with this
             CurrentSprite = OverworldSprite;
         }
 

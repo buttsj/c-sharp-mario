@@ -54,7 +54,7 @@ namespace Sprint4
             }
             if (throwingStarLifespan < gravityTime)
             {
-                position.Y = position.Y + (float) 0.2;
+                position.Y += 0.2f;
             }
         }
         public void Draw(SpriteBatch spriteBatch)

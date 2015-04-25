@@ -23,6 +23,7 @@ namespace Sprint4
         int buffer = 0;
         public Vector2 textStartingPosition = new Vector2(160, 380);
         public Vector2 coinStartingPosition = new Vector2(140, 385);
+        int inputBuffer = 10;
 
         public GUI(Game1 game)
         {
@@ -34,7 +35,7 @@ namespace Sprint4
         }
         public void Down()
         {
-            if (buffer >= 10)
+            if (buffer >= inputBuffer)
             {
                 buffer = 0;
                 selection++;
@@ -47,7 +48,7 @@ namespace Sprint4
         }
         public void Up()
         {
-            if (buffer >= 10)
+            if (buffer >= inputBuffer)
             {
                 buffer = 0;
                 selection--;
@@ -61,7 +62,7 @@ namespace Sprint4
 
         public void Select()
         {
-            if (buffer >= 10)
+            if (buffer >= inputBuffer)
             {
                 buffer = 0;
                 currentCommand.Execute();
