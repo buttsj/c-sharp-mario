@@ -29,6 +29,10 @@ namespace Sprint4
             {
                 commands.Add(new MenuSelectCommand(menu));
             }
+            if (gamepadState.Buttons.A == ButtonState.Pressed)
+            {
+                commands.Add(new MenuSelectCommand(menu));
+            }
             if (gamepadState.Buttons.LeftShoulder.Equals(ButtonState.Pressed))
             {
                 commands.Add(new QuitCommand());

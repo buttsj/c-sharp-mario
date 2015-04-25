@@ -46,8 +46,8 @@ namespace Sprint4
         public static Color blackScreenText = Color.White;
         public static Color normalScreenText = Color.Black;
         public static int startingLives = 3;
-        public static int startingTime = 300;
-        public static int hurryTime = 100;
+        public static int startingTime = 150;
+        public static int hurryTime = 50;
         public static int achTimer = 200;
         public static int achGained = 0;
 

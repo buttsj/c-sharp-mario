@@ -26,6 +26,10 @@ namespace Sprint4
             KeyboardState keyState = Keyboard.GetState();
             commands = new List<ICommands>();
 
+            if (gamepadState.DPad.Down.Equals(ButtonState.Pressed))
+            {
+                commands.Add(new DownCommand(mario));
+            }
             if (gamepadState.DPad.Left.Equals(ButtonState.Pressed))
             {
                 commands.Add(new LeftCommand(mario));
@@ -33,10 +37,6 @@ namespace Sprint4
             if (gamepadState.DPad.Right.Equals(ButtonState.Pressed))
             {
                 commands.Add(new RightCommand(mario));
-            }
-            if (gamepadState.DPad.Down.Equals(ButtonState.Pressed))
-            {
-                commands.Add(new DownCommand(mario));
             }
             if (gamepadState.Buttons.A.Equals(ButtonState.Pressed))
             {
