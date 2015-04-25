@@ -20,6 +20,7 @@ namespace Sprint4
             game.gameHUD.PausedCheck = false;
             game.gameHUD.gameEnded = false;
             game.isVVVVVV = false;
+            game.isVictory = false;
         }
         public void Update(GameTime gameTime)
         {
