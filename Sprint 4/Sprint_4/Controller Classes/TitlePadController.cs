@@ -13,9 +13,11 @@ namespace Sprint4
     {
         private GamePadState gamepadState;
         public List<ICommands> commands;
+        GUI menu;
 
-        public TitlePadController()
+        public TitlePadController(GUI menu)
         {
+            this.menu = menu;
         }
 
         public void Update()
@@ -25,11 +27,19 @@ namespace Sprint4
             commands = new List<ICommands>();
             if (gamepadState.Buttons.Start == ButtonState.Pressed)
             {
-                commands.Add(new LoadLevelCommand(StringHolder.levelTwo));
+                commands.Add(new MenuSelectCommand(menu));
             }
             if (gamepadState.Buttons.LeftShoulder.Equals(ButtonState.Pressed))
             {
                 commands.Add(new QuitCommand());
+            }
+            if (gamepadState.DPad.Down == ButtonState.Pressed)
+            {
+                commands.Add(new MenuDownCommand(menu));
+            }
+            if (gamepadState.DPad.Up == ButtonState.Pressed)
+            {
+                commands.Add(new MenuUpCommand(menu));
             }
             foreach (ICommands command in commands)
             {

@@ -29,7 +29,7 @@ namespace Sprint4
             menu.options.Add(new KeyValuePair<ICommands, String>(new QuitCommand(), "Quit"));
             menu.currentCommand = menu.options[0].Key;
             game.keyboardController = new TitleKeyController(menu);
-            game.gamepadController = new TitlePadController();
+            game.gamepadController = new TitlePadController(menu);
         }
 
         public void Update(GameTime gameTime)

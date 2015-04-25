@@ -28,7 +28,7 @@ namespace Sprint4
             menu.options.Add(new KeyValuePair<ICommands, String>(new LoadMenuCommand(), "Back"));
             menu.currentCommand = menu.options[0].Key;
             game.keyboardController = new TitleKeyController(menu);
-            game.gamepadController = new TitlePadController();
+            game.gamepadController = new TitlePadController(menu);
             achCoins = Game1.gameContent.Load<Texture2D>("Achievements/achCoins");
             achFall = Game1.gameContent.Load<Texture2D>("Achievements/achFall");
             achFireball = Game1.gameContent.Load<Texture2D>("Achievements/achFireball");

@@ -12,17 +12,24 @@ namespace Sprint4
         private Vector2 fallingVelocityDecayRate = new Vector2(.76f, 1);
         private Vector2 fallingVelocity = new Vector2(0, .65f);
         private float positionDtAdjust = 40;
+        int fallAnimTimer = 5;
+        bool isFallingSprite = false;
 
         public FallingState(Mario mario)
         {
             this.mario = mario;
-            mario.state.Fall();
             mario.isFalling = true;
             mario.isJumping = false;
         }
 
         public void Update(GameTime gameTime)
         {
+            fallAnimTimer--;
+            if (fallAnimTimer < 0 && !isFallingSprite)
+            {
+                mario.state.Fall();
+                isFallingSprite = true;
+            }
             if (mario.velocity.Y < mario.maxVelocity.Y)
             {
                 mario.velocity += fallingVelocity;
