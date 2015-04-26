@@ -132,7 +132,7 @@ namespace Sprint4
              
             collision.Detect(mario, levelFireballs, levelThrowingStars, levelEnemies, levelBlocks, levelItems, levelPipes, levelSpikes, levelTrampolines); 
 
-            mario.Update(gameTime, game);
+            mario.Update(gameTime);
             if (mario.position.X < 0)
             {
                 mario.position.X = 0;
@@ -201,11 +201,7 @@ namespace Sprint4
                     trampolineDrawer.Draw(spriteBatch);
                 }
             }
-            if (!game.isTitle && !mario.isNinja)
-            {
-                mario.Draw(spriteBatch);
-            }
-            if (mario.isNinja)
+            if (!game.isTitle)
             {
                 mario.Draw(spriteBatch);
             }

@@ -11,6 +11,7 @@ namespace Sprint4
     {
         Game1 game;
         SpriteFont font;
+        int songTimer = 370;
 
         public GameOverState()
         {
@@ -19,14 +20,21 @@ namespace Sprint4
             font = game.Content.Load<SpriteFont>(StringHolder.bigTextFont);
             SoundManager.StopMusic();
             SoundManager.gameOver.Play();
-            game.keyboardController = new PauseMenuKeyController();
-            game.gamepadController = new PauseMenuGamepadController();
         }
 
         public void Update(GameTime gameTime)
         {
-            game.keyboardController.Update();
-            game.gamepadController.Update();
+            songTimer--;
+            if (songTimer < 0)
+            {
+                Game1.GetInstance().level = new Level(StringHolder.levelOne);
+                Game1.GetInstance().background.CurrentSprite = Game1.GetInstance().background.OverworldSprite;
+                Game1.GetInstance().gameState = new TitleScreenGameState();
+                Game1.GetInstance().isTitle = true;
+                Game1.GetInstance().gameHUD.Coins = 0;
+                Game1.GetInstance().gameHUD.Lives = 3;
+                Game1.GetInstance().gameHUD.Score = 0;
+            }
         }
 
         public void Draw(SpriteBatch spriteBatch)

@@ -32,7 +32,6 @@ namespace Sprint4
             commandLibrary.Add(Keys.Left, currentCommand = new LeftCommand(mario));
             commandLibrary.Add(Keys.D, currentCommand = new RightCommand(mario));
             commandLibrary.Add(Keys.Right, currentCommand = new RightCommand(mario));
-            commandLibrary.Add(Keys.Enter, currentCommand = new PauseCommand());
             commandLibrary.Add(Keys.Q, currentCommand = new QuitCommand());
             commandLibrary.Add(Keys.R, currentCommand = new ResetSceneCommand());
         }

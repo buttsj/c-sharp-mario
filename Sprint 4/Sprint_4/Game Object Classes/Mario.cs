@@ -222,19 +222,11 @@ namespace Sprint4
             position = Game1.GetInstance().level.checkpoint;
         }
 
-        public void Update(GameTime gameTime, Game1 game)
+        public void Update(GameTime gameTime)
         {            
             if (starTimer != 0 & isStar)
             {
                 starTimer--;
-            }
-            if (ninjaTimer != 0 & isNinja)
-            {
-                ninjaTimer--;
-            }
-            if (invicibilityFrames != 0)
-            {
-                invicibilityFrames--;
             }
             if (starTimer == 0)
             {
@@ -243,18 +235,21 @@ namespace Sprint4
                 if (!isNinja) SoundManager.PlaySong(SoundManager.songs.overworld);
                 else SoundManager.PlaySong(SoundManager.songs.ninja);
             }
+            if (ninjaTimer != 0 & isNinja)
+            {
+                ninjaTimer--;
+            }
             if (ninjaTimer == 0)
             {
                 isNinja = false;
                 ninjaTimer = ValueHolder.maxNinjaTime;
                 if (!isStar) SoundManager.PlaySong(SoundManager.songs.overworld);
                 else SoundManager.PlaySong(SoundManager.songs.star);
-            }
-            if (position.Y > ValueHolder.fallingMarioBoundary)
+            }   
+            if (invicibilityFrames != 0)
             {
-                state = new DeadMS(this);
-                game.ach.AchievementAdjustment(AchievementsManager.AchievementType.Death);
-            }                        
+                invicibilityFrames--;
+            }
             if (projectileTimer != 0 )
             {
                 projectileTimer--;
@@ -269,7 +264,6 @@ namespace Sprint4
 
         public void Draw(SpriteBatch spriteBatch)
         {
-            
             if (isStar && starTimer % modVal != 0)
             {
                 state.Draw(spriteBatch, position, Color.Gold);

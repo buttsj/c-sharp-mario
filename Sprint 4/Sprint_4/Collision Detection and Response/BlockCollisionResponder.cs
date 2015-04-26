@@ -52,9 +52,9 @@ namespace Sprint4
                 }
                 else
                 {
+                    mario.position.Y += intersection.Height;
                     if (!game.isVVVVVV)
                     {
-                        mario.position.Y = mario.position.Y + intersection.Height;
                         block.Reaction();
                         mario.physState = new FallingState(mario);
                         hitBlock.Play();
@@ -66,7 +66,6 @@ namespace Sprint4
                     }
                     else
                     {
-                        mario.position.Y = mario.position.Y + intersection.Height;
                         standingBlocks.Add(block);
                     }
                 }

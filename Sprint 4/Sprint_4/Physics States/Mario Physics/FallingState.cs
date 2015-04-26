@@ -36,14 +36,16 @@ namespace Sprint4
             }
             mario.position += mario.velocity * ((float)gameTime.ElapsedGameTime.Milliseconds / positionDtAdjust);
             mario.velocity *= fallingVelocityDecayRate;
-            if (mario.velocity.Y > mario.maxVelocity.Y){
-                mario.velocity.Y = mario.maxVelocity.Y;
-            }
             if(Game1.GetInstance().level.collision.standingBlocks.Count > 0 ||
                 Game1.GetInstance().level.collision.standingPipes.Count > 0)
             {
                 mario.physState = new GroundState(mario);
             }
+            if (mario.position.Y > ValueHolder.fallingMarioBoundary)
+            {
+                mario.state = new DeadMS(mario);
+                Game1.GetInstance().ach.AchievementAdjustment(AchievementsManager.AchievementType.Death);
+            }       
         }
         public void Run() { }
         public void Flip() { }
