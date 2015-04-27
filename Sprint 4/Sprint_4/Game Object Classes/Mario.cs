@@ -219,6 +219,8 @@ namespace Sprint4
         public void Respawn()
         {
             state = new RightIdleSmallMS(this);
+            physState = new VVVVVVGroundState(this, 1);
+            gravityDirection = 1;
             position = Game1.GetInstance().level.checkpoint;
         }
 
