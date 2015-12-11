@@ -1,0 +1,197 @@
+Content\Items\1upMushroom.xnb
+Content\Items\bluePipe.xnb
+Content\Items\bush1.xnb
+Content\Items\bush2.xnb
+Content\Items\bush3.xnb
+Content\Items\dragonCoin.xnb
+Content\Items\exclamationBlock.xnb
+Content\Items\exitarrow.xnb
+Content\Items\FireFlower.xnb
+Content\Items\marioFireball.xnb
+Content\Items\questionBlock.xnb
+Content\Items\ShellRed.xnb
+Content\Items\spinningCoin.xnb
+Content\Items\star.xnb
+Content\Items\stoneBlock.xnb
+Content\Items\SuperMushroom.xnb
+Content\Items\usedBlock.xnb
+Content\Items\whitePipe.xnb
+Content\Items\wingedBlock.xnb
+Content\Items\yellowPipe.xnb
+Content\Enemies\banzaiBill.xnb
+Content\Enemies\deadBanzaiBill.xnb
+Content\Enemies\Dino\leftDeadDino.xnb
+Content\Enemies\Dino\walkingLeftDino.xnb
+Content\Enemies\Dino\walkingLeftSquishedDino.xnb
+Content\Enemies\Dino\walkingRightDino.xnb
+Content\Enemies\Dino\walkingRightSquishedDino.xnb
+Content\Enemies\piranhaPlant.xnb
+Content\Enemies\Shell-Less Koopa\deadShellessKoopa.xnb
+Content\Enemies\Shell-Less Koopa\leftWalkShellessKoopa.xnb
+Content\Enemies\Shell-Less Koopa\rightWalkShellessKoopa.xnb
+Content\Mario Sprites\Big Mario\leftCrouchingMarioBig.xnb
+Content\Mario Sprites\Big Mario\leftFallingMarioBig.xnb
+Content\Mario Sprites\Big Mario\leftIdleMarioBig.xnb
+Content\Mario Sprites\Big Mario\leftJumpingMarioBig.xnb
+Content\Mario Sprites\Big Mario\leftLookingUpMarioBig.xnb
+Content\Mario Sprites\Big Mario\leftMovingMarioBig.xnb
+Content\Mario Sprites\Big Mario\leftQuickturnMarioBig.xnb
+Content\Mario Sprites\Big Mario\leftShellKickMario.xnb
+Content\Mario Sprites\Big Mario\leftSlidingMarioBig.xnb
+Content\Mario Sprites\Big Mario\rightCrouchingMarioBig.xnb
+Content\Mario Sprites\Big Mario\rightFallingMarioBig.xnb
+Content\Mario Sprites\Big Mario\rightIdleMarioBig.xnb
+Content\Mario Sprites\Big Mario\rightJumpingMarioBig.xnb
+Content\Mario Sprites\Big Mario\rightLookingUpMarioBig.xnb
+Content\Mario Sprites\Big Mario\rightMovingMarioBig.xnb
+Content\Mario Sprites\Big Mario\rightQuickturnMarioBig.xnb
+Content\Mario Sprites\Big Mario\rightShellKickMario.xnb
+Content\Mario Sprites\Big Mario\rightSlidingMarioBig.xnb
+Content\Mario Sprites\Big Mario\soaringMario.xnb
+Content\Mario Sprites\Big Mario\spinningMarioBig.xnb
+Content\Mario Sprites\Big Mario\victoryMarioBig.xnb
+Content\Mario Sprites\Fire Mario\leftFacingCrouchingMarioFire.xnb
+Content\Mario Sprites\Fire Mario\leftFacingIdleMarioFire.xnb
+Content\Mario Sprites\Fire Mario\leftFacingJumpingMarioFire.xnb
+Content\Mario Sprites\Fire Mario\leftFacingLookingUpMarioFire.xnb
+Content\Mario Sprites\Fire Mario\leftFacingQuickturnMarioFire.xnb
+Content\Mario Sprites\Fire Mario\leftfallingmariofire.xnb
+Content\Mario Sprites\Fire Mario\leftFireballMarioFire.xnb
+Content\Mario Sprites\Fire Mario\movingLeftMarioFire.xnb
+Content\Mario Sprites\Fire Mario\movingRightMarioFire.xnb
+Content\Mario Sprites\Fire Mario\rightFacingCrouchingMarioFire.xnb
+Content\Mario Sprites\Fire Mario\rightFacingFallingMarioFire.xnb
+Content\Mario Sprites\Fire Mario\rightFacingJumpingMarioFire.xnb
+Content\Mario Sprites\Fire Mario\rightFacingLookingUpMarioFire.xnb
+Content\Mario Sprites\Fire Mario\rightfacingquickturnmariofire.xnb
+Content\Mario Sprites\Fire Mario\rightFireballMarioFire.xnb
+Content\Mario Sprites\Fire Mario\rightidlemariofire.xnb
+Content\Mario Sprites\Fire Mario\spinningMarioFire.xnb
+Content\Mario Sprites\Fire Mario\victoryMarioFire.xnb
+Content\Mario Sprites\Small Mario\deadMario.xnb
+Content\Mario Sprites\Small Mario\leftCrouchingMarioSmall.xnb
+Content\Mario Sprites\Small Mario\leftFallingMarioSmall.xnb
+Content\Mario Sprites\Small Mario\leftIdleMarioSmall.xnb
+Content\Mario Sprites\Small Mario\leftJumpingMarioSmall.xnb
+Content\Mario Sprites\Small Mario\leftLookingUpMarioSmall.xnb
+Content\Mario Sprites\Small Mario\leftMovingMarioSmall.xnb
+Content\Mario Sprites\Small Mario\rightCrouchingMarioSmall.xnb
+Content\Mario Sprites\Small Mario\rightFallingMarioSmall.xnb
+Content\Mario Sprites\Small Mario\rightIdleMarioSmall.xnb
+Content\Mario Sprites\Small Mario\rightJumpingMarioSmall.xnb
+Content\Mario Sprites\Small Mario\rightLookingUpMarioSmall.xnb
+Content\Mario Sprites\Small Mario\rightMovingMarioSmall.xnb
+Content\Mario Sprites\Small Mario\spinningMarioSmall.xnb
+Content\Overworld Sprites\background.xnb
+Content\ground tile.xnb
+Content\Documentation\CommandDesignPatern.xnb
+Content\Documentation\FactoryMethod.xnb
+Content\Documentation\LoaderParser.xnb
+Content\Documentation\StateDesignPattern.xnb
+Content\Documentation\UpdatedSpriteThreeClasses.xnb
+Content\Items\rightGroundEdge.xnb
+Content\Items\leftGroundEdge.xnb
+Content\Items\fireball1.xnb
+Content\Overworld Sprites\background2.xnb
+Content\game logo.xnb
+Content\Underground Sprites\undergroundLeftBottomCorner.xnb
+Content\Underground Sprites\undergroundLeftTopCorner.xnb
+Content\Underground Sprites\undergroundRightBottomCorner.xnb
+Content\Underground Sprites\undergroundRightTopCorner.xnb
+Content\Underground Sprites\undergroundFloor.xnb
+Content\Underground Sprites\undergroundBackground.xnb
+Content\Items\downFacingPipe.xnb
+Content\Items\leftFacingPipe.xnb
+Content\HUD Sprites\HUDCoinSprite.xnb
+Content\HUD Sprites\HUDMario.xnb
+Content\HUD Sprites\TimeSprite.xnb
+Content\Mario Sprites\Big Mario\bigMarioLeftSprint.xnb
+Content\Mario Sprites\Big Mario\bigMarioRightSprint.xnb
+Content\Mario Sprites\Small Mario\smallMarioLeftSprint.xnb
+Content\Mario Sprites\Small Mario\smallMarioRightSprint.xnb
+Content\Underground Sprites\undergroundLeftWall.xnb
+Content\Underground Sprites\undergroundRightWall.xnb
+Content\Underground Sprites\undergroundRoof.xnb
+Content\Items\gate.xnb
+Content\Items\gateBroken.xnb
+Content\Mario Sprites\Small Mario\smallMarioVictory.xnb
+Content\Items\castle.xnb
+Content\Items\gateFramedFinal.xnb
+Content\Achievements\achievementBeatLevel.xnb
+Content\Achievements\achievementCoins.xnb
+Content\Achievements\achievementEat.xnb
+Content\Achievements\achievementFall.xnb
+Content\Achievements\achievementFireball.xnb
+Content\Achievements\achievementEnemy.xnb
+Content\Achievements\achievementLife.xnb
+Content\Mario Sprites\Small Mario\leftIdleMarioSmallFlip.xnb
+Content\Mario Sprites\Small Mario\leftMovingMarioSmallFlip.xnb
+Content\Mario Sprites\Small Mario\rightMovingMarioSmallFlip.xnb
+Content\Mario Sprites\Small Mario\rightIdleMarioSmallFlip.xnb
+Content\Enemies\downSpike.xnb
+Content\Enemies\upSpike.xnb
+Content\Achievements\achCoins.xnb
+Content\Achievements\achFall.xnb
+Content\Achievements\achFireball.xnb
+Content\Achievements\achHitEnemy.xnb
+Content\Achievements\achLevel.xnb
+Content\Achievements\achLife.xnb
+Content\Achievements\achMushroom.xnb
+Content\Items\trampoline.xnb
+Content\Underground Sprites\undergroundRoof - Copy.xnb
+Content\Items\explode.xnb
+Content\Achievements\achCoinsGrey.xnb
+Content\Achievements\achFallGrey.xnb
+Content\Achievements\achHitEnemyGrey.xnb
+Content\Achievements\achFireballGrey.xnb
+Content\Achievements\achLevelGrey.xnb
+Content\Achievements\achLifeGrey.xnb
+Content\Achievements\achMushroomGrey.xnb
+Content\Enemies\downSpikeAnimated.xnb
+Content\Enemies\upSpikeAnimated.xnb
+Content\Items\ninja.xnb
+Content\Items\ThrowingStar.xnb
+Content\HUD Fonts\CoinsFont.xnb
+Content\HUD Fonts\LivesFont.xnb
+Content\Fonts\SpriteFont1.xnb
+Content\Fonts\SpriteFont2.xnb
+Content\HUD Fonts\TimeFont.xnb
+Content\HUD Fonts\ScoreFont.xnb
+Content\HUD Fonts\PauseFont.xnb
+Content\Sound\Music\Map BGM.xnb
+Content\Sound\Music\Star BGM.xnb
+Content\Sound\SFX\SFX 1up.xnb
+Content\Sound\SFX\SFX Brick Break.xnb
+Content\Sound\SFX\SFX coin collect.xnb
+Content\Sound\SFX\SFX Enemy damage.xnb
+Content\Sound\SFX\SFX Grow.xnb
+Content\Sound\SFX\SFX item spawn.xnb
+Content\Sound\SFX\SFX Jump.xnb
+Content\Sound\SFX\SFX kick.xnb
+Content\Sound\SFX\SFX land.xnb
+Content\Sound\SFX\SFX shrink.xnb
+Content\Sound\SFX\Player Down.xnb
+Content\Sound\SFX\menu.xnb
+Content\Sound\Music\Game Over.xnb
+Content\Sound\SFX\fireball.xnb
+Content\Sound\SFX\BillLaunch.xnb
+Content\Sound\Music\Overworld BGM.xnb
+Content\Sound\Music\Underground BGM.xnb
+Content\Sound\Music\Course Clear Fanfare.xnb
+Content\Sound\Music\OverworldTimeRunningOut.xnb
+Content\Achievements\AchievementUnlocked.xnb
+Content\Sound\Music\Potential for Anything.xnb
+Content\Sound\Music\title music.xnb
+Content\Sound\SFX\flip.xnb
+Content\Sound\Music\Shadow Ninja.xnb
+Content\Sound\Music\Map BGM.wma
+Content\Sound\Music\Star BGM.wma
+Content\Sound\Music\Overworld BGM.wma
+Content\Sound\Music\Underground BGM.wma
+Content\Sound\Music\OverworldTimeRunningOut.wma
+Content\Sound\Music\Potential for Anything.wma
+Content\Sound\Music\title music.wma
+Content\Sound\Music\Shadow Ninja.wma
+Content\Maps\VVVVVVMap.csv
+Content\Maps\MapCleaned.csv
+Content\Maps\MapOld.csv
