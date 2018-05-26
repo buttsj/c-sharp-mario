@@ -6,7 +6,10 @@ A basic example of Super Mario World written in C#
 
 My team for Ohio State's CSE 3902 course made this version of Super Mario World in C#.
 
-<img align="right" width="50" height="50" src="https://github.com/buttsj/c-sharp-mario/blob/master/GithubImages/image1.png">
+<img align="right" width="15" height="25" src="https://github.com/buttsj/c-sharp-mario/blob/master/GithubImages/image1.png">
+
+
+
 
 ---
 
