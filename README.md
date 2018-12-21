@@ -1,4 +1,4 @@
-# CSharp Mario
+# C# Mario
 
 A basic example of Super Mario World written in C# 
 
